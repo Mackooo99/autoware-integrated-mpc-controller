@@ -206,6 +206,38 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     x=35, window doesn't reach it -> correctly falls back, finds index 35).
   - Build: clean. All 7 sanity checks: PASS (tracking_state now covers all 3 new scenarios).
 
+- **Task 10 — Actuator delay-compensation (V2, off by default)** (commit pending)
+  - Inspected stock's approach first: `mpc_lateral_controller`'s `SteeringPredictor` and
+    `pid_longitudinal_controller`'s `predictedStateAfterDelay` both predict a corrected "now" state
+    by propagating through the actuator's own known dynamics using the history of commands the
+    controller itself already published, rather than trusting the raw sensor value directly for a
+    plant with a pure input delay the reduced control-design model does not include.
+  - New header-only `delay_compensation.hpp`: `propagateFirstOrderDelay` (exact ZOH solution of
+    `dot(delta)=(delta_cmd-delta)/tau` through a sequence of piecewise-constant published
+    commands) and `propagateIntegratorDelay` (exact ZOH solution of `dot(a)=j`). Pure functions,
+    no state, independently unit-testable.
+  - `integrated_mpc_node.cpp`: new `enable_delay_compensation` param (default `false` - V1
+    unchanged bit-for-bit, bench-verified below), `steering_input_delay`/`longitudinal_input_delay`
+    (defaults 0.24/0.10, matching the simulator plant). When on, `x0(3)` (steering) and `x0(4)`
+    (acceleration) are replaced by the propagated prediction using
+    `ceil(delay/ctrl_period)`-length histories of *actually published* commands (both the MPC-
+    optimal path and the fallback-hold path push into history, since both really reach the
+    actuator). `e_y`/`e_psi`/`e_v` are left as measured, matching how stock scopes its own delay
+    compensation to each sub-controller's own state rather than the full pose. Does not add a
+    state or change the MPC model/QP.
+  - New `delay_compensation_sanity_check` (5 cases: empty-history no-op, steering converges to a
+    held constant command, single-step exact value against the closed-form ZOH formula, exact
+    jerk integration, and an order-sensitivity check confirming history is applied oldest-first).
+  - Build: clean. All 8 sanity checks (7 existing + new): PASS.
+  - Bench-verified: with `enable_delay_compensation=false`, CLOSED LOOP output is bit-for-bit
+    identical to every prior task's baseline (`sent accel=+0.041435`, `raw jerk=+1.381166`). With
+    `enable_delay_compensation=true` (same synthetic inputs, several seconds of runtime so history
+    fills), output measurably differs (`sent accel=+0.159255`, `raw jerk=+1.061697`), confirming
+    the feature has real effect only when explicitly enabled.
+  - Not yet done (needs the real plant, RUNTIME VALIDATION PENDING): comparing V1 vs V2 lateral
+    RMSE/steering smoothness on an actual delayed simulator, which is what the delay values are
+    ultimately meant to improve.
+
 ## Next task
 
-Task 10 — delay-compensation support (V2, configurable, off by default).
+Task 11 — curvature/reference smoothing (configurable).

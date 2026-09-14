@@ -488,6 +488,29 @@ target_link_libraries(
 
 
 # ============================================================
+# Delay-compensation sanity test
+# ============================================================
+
+add_executable(
+  delay_compensation_sanity_check
+  src/delay_compensation_sanity_check.cpp
+)
+
+target_compile_features(
+  delay_compensation_sanity_check
+  PUBLIC
+  cxx_std_17
+)
+
+target_include_directories(
+  delay_compensation_sanity_check
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
+
+# ============================================================
 # Install libraries
 # ============================================================
 
@@ -518,6 +541,7 @@ install(
     mpc_cost_sanity_check
     mpc_constraint_sanity_check
     osqp_sanity_check
+    delay_compensation_sanity_check
   DESTINATION lib/${PROJECT_NAME}
 )
 

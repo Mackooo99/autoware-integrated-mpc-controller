@@ -1,3 +1,4 @@
+#include "autoware/integrated_mpc_trajectory_follower/delay_compensation.hpp"
 #include "autoware/integrated_mpc_trajectory_follower/integrated_prediction_builder.hpp"
 #include "autoware/integrated_mpc_trajectory_follower/mpc_constraint_builder.hpp"
 #include "autoware/integrated_mpc_trajectory_follower/mpc_cost_builder.hpp"
@@ -28,6 +29,7 @@
 #include <algorithm>
 #include <chrono>
 #include <cmath>
+#include <deque>
 #include <functional>
 #include <limits>
 #include <memory>
@@ -158,6 +160,39 @@ public:
       declare_parameter<int>(
         "incremental_search_window",
         15);
+
+    // V2, off by default (preserves V1 exactly). When on, x0's steering
+    // and acceleration entries are replaced by a prediction that
+    // accounts for the plant's actuator input delay, using the history
+    // of commands this node has actually published - see
+    // delay_compensation.hpp. Does not add a state or change the MPC
+    // model itself.
+    enable_delay_compensation_ =
+      declare_parameter<bool>(
+        "enable_delay_compensation",
+        false);
+
+    steering_input_delay_ =
+      declare_parameter<double>(
+        "steering_input_delay",
+        0.24);
+
+    longitudinal_input_delay_ =
+      declare_parameter<double>(
+        "longitudinal_input_delay",
+        0.1);
+
+    steering_history_length_ =
+      static_cast<std::size_t>(
+        std::ceil(
+          steering_input_delay_ /
+          ctrl_period_));
+
+    jerk_history_length_ =
+      static_cast<std::size_t>(
+        std::ceil(
+          longitudinal_input_delay_ /
+          ctrl_period_));
 
 
     // ========================================================
@@ -590,8 +625,35 @@ private:
       return;
     }
 
-    const Eigen::VectorXd x0 =
+    Eigen::VectorXd x0 =
       tracking_state->x0;
+
+    // ========================================================
+    // 2.5 Actuator input-delay compensation (V2, off by default)
+    //
+    // Replaces the measured steering/acceleration with a prediction
+    // that accounts for the plant's actuator dead time, using the
+    // history of commands THIS node has actually published - not the
+    // raw command just computed this cycle (see delay_compensation.hpp
+    // and the history push-backs in the publish section below).
+    // e_y/e_psi/e_v are left as measured, matching how stock scopes its
+    // own delay compensation to each sub-controller's own state.
+    // ========================================================
+
+    if (enable_delay_compensation_) {
+      x0(3) =
+        autoware::integrated_mpc::propagateFirstOrderDelay(
+          x0(3),
+          steering_command_history_,
+          steer_tau_,
+          ctrl_period_);
+
+      x0(4) =
+        autoware::integrated_mpc::propagateIntegratorDelay(
+          x0(4),
+          jerk_command_history_,
+          ctrl_period_);
+    }
 
     const auto t_tracking =
       std::chrono::steady_clock::now();
@@ -2239,6 +2301,13 @@ if (!solution_valid_for_control) {
   control_pub_->publish(
     fallback_cmd);
 
+  // The actuator still received this cycle's hold command (steering
+  // unchanged, zero jerk), so it belongs in the delay-compensation
+  // history the same as an MPC-optimal command would.
+  pushCommandHistory(
+    previous_steering_command_,
+    0.0);
+
   return;
 }
 
@@ -2456,6 +2525,10 @@ previous_steering_command_ =
 previous_acceleration_command_ =
   acceleration_command;
 
+pushCommandHistory(
+  steering_command,
+  jerk_command);
+
 
 // ========================================================
 // 23.11 Closed-loop diagnostic
@@ -2529,6 +2602,20 @@ RCLCPP_INFO_THROTTLE(
   bool use_incremental_nearest_search_{false};
 
   int incremental_search_window_{15};
+
+  bool enable_delay_compensation_{false};
+
+  double steering_input_delay_{0.24};
+
+  double longitudinal_input_delay_{0.1};
+
+  std::size_t steering_history_length_{0};
+
+  std::size_t jerk_history_length_{0};
+
+  std::deque<double> steering_command_history_;
+
+  std::deque<double> jerk_command_history_;
 
 
   // Prediction
@@ -2650,6 +2737,27 @@ RCLCPP_INFO_THROTTLE(
     stat.summary(
       level,
       control_state_message_);
+  }
+
+  // Records a command that was ACTUALLY published (fallback-hold or
+  // MPC-optimal), for delay_compensation.hpp to propagate through on a
+  // later cycle. Keeps only as many recent entries as each channel's
+  // configured input delay needs.
+  void pushCommandHistory(
+    const double steering_command,
+    const double jerk_command)
+  {
+    steering_command_history_.push_back(steering_command);
+
+    while (steering_command_history_.size() > steering_history_length_) {
+      steering_command_history_.pop_front();
+    }
+
+    jerk_command_history_.push_back(jerk_command);
+
+    while (jerk_command_history_.size() > jerk_history_length_) {
+      jerk_command_history_.pop_front();
+    }
   }
 
   std::shared_ptr<diagnostic_updater::Updater> diag_updater_ =

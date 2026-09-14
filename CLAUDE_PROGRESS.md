@@ -62,6 +62,21 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     the old unoptimized build **in the full graph**, which has ~150+ competing nodes). Full-graph
     rate after Release remains RUNTIME VALIDATION PENDING until the segfault blocker clears.
 
+- **Task 3 — Fix longitudinal acceleration command-side windup** (commit pending)
+  - Re-checked `autoware_control_msgs/msg/Longitudinal.msg` (`acceleration` is the actuating field;
+    `jerk` is informational, never consumed by `DELAY_STEER_ACC_GEARED`) and the simulator plant
+    (`acc_time_delay=0.1`, `acc_time_constant=0.1`).
+  - `src/integrated_mpc_node.cpp` 23.7: replaced
+    `a_cmd = previous_acceleration_command_ + jerk_command*ctrl_period` (open-loop accumulator)
+    with `a_cmd = x0(4) + jerk_command*ctrl_period` (measured current acceleration, receding-
+    horizon consistent with the MPC's own predicted `a_1`), then hard-clamped as before.
+  - `previous_acceleration_command_` retained (still used by the fallback branch and the
+    first-cycle init).
+  - Build: clean. All 7 sanity checks: PASS (unaffected, this code path isn't in a sanity binary).
+  - Bench-verified anti-windup with `scripts/synthetic_input_publisher.py`: measured acceleration
+    held at 0 while jerk stayed pinned near max, `sent accel` in the CLOSED LOOP log stayed flat
+    at ~+0.0414 m/s^2 across all cycles instead of ramping toward the acceleration limit.
+
 ## Next task
 
-Task 3 — longitudinal command semantics.
+Task 4 — real MPC predicted trajectory.

@@ -2027,32 +2027,38 @@ const double steering_rotation_rate =
 //
 // IMPORTANT:
 //
-// The MPC prediction horizon uses prediction_dt = 0.1 s,
-// but the real controller publishes every ctrl_period =
-// 0.03 s.
+// The command is advanced from the MEASURED current
+// acceleration x0(4), not from the previously PUBLISHED
+// command. Integrating from the previous command
+// (a_cmd(k+1) = a_cmd(k) + j0*ctrl_period) is an open-loop
+// accumulator: while downstream actuation is blocked (e.g.
+// not yet engaged) the published command keeps climbing even
+// though the vehicle's real acceleration stays near zero,
+// which is command-side windup and produces a large jump the
+// moment actuation is unblocked.
 //
-// Therefore the actually published acceleration command
-// advances by:
-//
-//   a_cmd(k+1) = a_cmd(k) + j0 * ctrl_period
-//
-// This preserves the requested jerk in the ACTUAL control
-// loop.
+// Anchoring to the measured state every cycle instead:
+//   - is receding-horizon consistent (the MPC's own predicted
+//     a_1 is likewise propagated from the measured a_0, not
+//     from a stored command);
+//   - cannot wind up, because it is recomputed from the
+//     vehicle's actual state every cycle rather than
+//     accumulated;
+//   - still advances by the MPC's requested jerk over one
+//     control period, same as before, once tracking is close
+//     (x0(4) ~= previous_acceleration_command_).
 //
 // Example:
 //
-//   j0 = 2.0 m/s^3
-//   ctrl_period = 0.03 s
+//   x0(4) = 0.0 m/s^2, j0 = 2.0 m/s^3, ctrl_period = 0.03 s
 //
 // gives:
 //
-//   Delta a = 0.06 m/s^2
-//
-// per published control cycle.
+//   a_cmd = 0.06 m/s^2
 // ========================================================
 
 double acceleration_command =
-  previous_acceleration_command_ +
+  x0(4) +
   jerk_command *
   ctrl_period_;
 

@@ -844,11 +844,28 @@ private:
         mpc_constraints.upper.size());
 
     /*
-     * For the first integration test we construct a fresh
-     * solver on every timer iteration.
+     * A fresh solver is constructed every timer iteration, i.e. every
+     * solve does a full CSC conversion and KKT factorisation instead of
+     * reusing a persistent workspace with a warm start.
      *
-     * This is NOT yet the final real-time implementation.
-     * Later we can keep the solver persistent and use warm start.
+     * Task 8 (performance review) investigated making this persistent
+     * via the local OSQPInterface's updateP/updateA/updateQ/updateBounds
+     * + setWarmStart API, which does structurally support it. It was
+     * NOT adopted: autoware::osqp_interface::calCSCMatrix (csc_matrix_
+     * conv.cpp) drops any entry with |value| < 1e-9 when converting a
+     * dense Eigen matrix to CSC, so the resulting sparsity PATTERN is
+     * data-dependent. H and A here depend on velocity and curvature
+     * (e.g. several Jacobian terms are exactly zero at kappa = 0 on a
+     * straight segment and nonzero on a curve), so the structural
+     * pattern is not provably invariant across operating points. OSQP's
+     * update_P/update_A only update values at already-existing sparsity
+     * positions; feeding them a matrix whose true nonzero pattern has
+     * shifted is either a silent wrong update or a hard mismatch,
+     * depending on how the call is used - not something to risk in a
+     * safety-critical controller. Reusing the workspace safely would
+     * require proving the pattern is fixed (or forcing one, e.g. by
+     * never emitting a true zero), which is a QP-construction change
+     * beyond this task's scope, not a "clean" fit for the existing API.
      */
     autoware::osqp_interface::OSQPInterface solver(
       1.0e-6,

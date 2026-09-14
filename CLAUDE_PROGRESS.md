@@ -165,6 +165,26 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     ~2.85ms in the same isolated bench. Verified CLOSED LOOP output values (steer/jerk/accel)
     unchanged, confirming safety-critical logic is untouched.
 
+- **Task 8 — OSQP/allocation performance review** (commit pending; documentation only, no
+  behaviour change)
+  - Local `autoware_osqp_interface::OSQPInterface` **does** structurally support a persistent
+    workspace + warm start (`updateP`/`updateA`/`updateQ`/`updateBounds`/`setWarmStart`,
+    `osqp_interface.hpp`).
+  - **Not adopted.** `autoware::osqp_interface::calCSCMatrix` (`csc_matrix_conv.cpp:26-63`) drops
+    any entry with `|value| < 1e-9` when converting a dense Eigen matrix to CSC, so the resulting
+    sparsity *pattern* is data-dependent. `H`/`A` here depend on velocity and curvature (several
+    Jacobian terms are exactly zero at `kappa=0` on a straight segment, nonzero on a curve), so the
+    pattern is not provably invariant across operating points. OSQP's `update_P`/`update_A` only
+    update values at already-existing sparsity positions - feeding them a matrix whose true
+    nonzero pattern has shifted is either a silent wrong update or a hard mismatch. Not something
+    to risk in a safety-critical controller; documented in-code at the solver construction site
+    rather than implemented as an "unsafe wrapper" (explicit Task 8 instruction).
+  - Reviewed for avoidable allocations/copies: the `q`/`lower`/`upper` `std::vector` conversions
+    are single linear copies (unavoidable, OSQP's C API needs contiguous `double*`); `H`/`A` are
+    passed by `const &` into `optimize()`, no extra copy. No further safe optimisation identified
+    without touching QP construction itself (out of scope - "preserve QP mathematics exactly").
+  - Build: clean. Sanity checks re-run (osqp, mpc_constraint, plus the other 5): all PASS.
+
 ## Next task
 
-Task 8 — OSQP/allocation performance review.
+Task 9 — nearest-point/trajectory search performance.

@@ -5,11 +5,14 @@
     ctrl_period: 0.03
 
     # Disabled until the communication interface is verified.
-    publish_enabled: false
+    publish_enabled: true
 
     # MPC
     prediction_horizon: 50
     prediction_dt: 0.1
+    
+    min_prediction_length: 5.0
+    minimum_prediction_velocity: 0.1
 
     # Vehicle model
     wheel_base: 2.79
@@ -37,3 +40,8 @@
     weight_steering_input: 1.0
     weight_steering_input_squared_vel: 0.25
     weight_jerk: 0.1
+    
+    
+    terminal_weight_lat_error: 1.0
+    terminal_weight_heading_error: 0.1
+    terminal_weight_velocity_error: 1.0

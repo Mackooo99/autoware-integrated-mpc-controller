@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- =====================================================
+       Arguments expected by Autoware planning simulation
+       ===================================================== -->
+
+  <arg name="map_path"/>
+
+  <arg
+    name="vehicle_model"
+    default="sample_vehicle"
+  />
+
+  <arg
+    name="sensor_model"
+    default="sample_sensor_kit"
+  />
+
+  <arg
+    name="data_path"
+    default="$(env HOME)/autoware_data/ml_models"
+  />
+
+  <arg
+    name="planning_module_preset"
+    default="default"
+  />
+
+  <arg
+    name="control_module_preset"
+    default="default"
+  />
+
+  <arg
+    name="rviz"
+    default="true"
+  />
+
+  <arg
+    name="rviz_config"
+    default="$(find-pkg-share autoware_launch)/rviz/autoware.rviz"
+  />
+
+  <arg
+    name="initial_engage_state"
+    default="true"
+  />
+
+  <!-- =====================================================
+       CRITICAL OVERRIDE
+
+       This argument propagates through planning_simulator
+       -> autoware.launch.xml
+       -> tier4_control_component
+       -> control.launch.xml
+
+       Since it is neither trajectory_follower_node nor
+       smart_mpc_trajectory_follower, the original controller
+       is not loaded.
+       ===================================================== -->
+
+  <arg
+    name="trajectory_follower_mode"
+    default="integrated_mpc_external"
+  />
+
+
+  <!-- =====================================================
+       Standard Autoware Planning Simulator
+       ===================================================== -->
+
+  <include
+    file="$(find-pkg-share autoware_launch)/launch/planning_simulator.launch.xml"
+  >
+
+    <arg
+      name="map_path"
+      value="$(var map_path)"
+    />
+
+    <arg
+      name="vehicle_model"
+      value="$(var vehicle_model)"
+    />
+
+    <arg
+      name="sensor_model"
+      value="$(var sensor_model)"
+    />
+
+    <arg
+      name="data_path"
+      value="$(var data_path)"
+    />
+
+    <arg
+      name="planning_module_preset"
+      value="$(var planning_module_preset)"
+    />
+
+    <arg
+      name="control_module_preset"
+      value="$(var control_module_preset)"
+    />
+
+    <arg
+      name="rviz"
+      value="$(var rviz)"
+    />
+
+    <arg
+      name="rviz_config"
+      value="$(var rviz_config)"
+    />
+
+    <arg
+      name="initial_engage_state"
+      value="$(var initial_engage_state)"
+    />
+
+  </include>
+
+
+  <!-- =====================================================
+       Our Integrated MPC
+       ===================================================== -->
+
+  <include
+    file="$(find-pkg-share autoware_integrated_mpc_trajectory_follower)/launch/integrated_mpc.launch.xml"
+  />
+
+</launch>

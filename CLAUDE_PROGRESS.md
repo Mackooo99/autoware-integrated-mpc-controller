@@ -341,6 +341,58 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     locally stable** under the unconstrained LQ approximation with the current V1 weights,
     spectral radius in `[0.87, 0.96]`. CSV + heatmap PNG produced.
 
-## Next task
+- **Task 16 — Final static engineering review** (commit pending)
+  - No stock Autoware modification: `git -C ~/autoware-new/Autoware/autoware status --short` shows
+    only two pre-existing *untracked* files (`mpc_runtime_paramters_sample.yaml` dated Aug 18,
+    `run_scenario.sh` dated Sep 10), both predating this session and not created/touched by it -
+    no tracked file changed.
+  - No benchmark baseline/scenario modification: nothing under `results/baseline_stock/` or
+    `scenarios/` has a newer mtime than the start of this session.
+  - Physical limits unchanged: final `ros2 param dump` shows `max_steering_angle=0.7`,
+    `min/max_acceleration=-5.0/3.0`, `min/max_jerk=-5.0/2.0` - identical to CLAUDE.md's original
+    values throughout every task.
+  - Clean rebuild from scratch (deleted build/install, full colcon build): `-O3 -DNDEBUG` confirmed
+    again; all 8 sanity checks (7 original + `delay_compensation`): PASS.
+  - Full runtime param dump matches `config/integrated_mpc.param.yaml` exactly; every new feature
+    flag defaults to the V1-preserving value: `debug_diagnostics=false`,
+    `enable_delay_compensation=false`, `use_incremental_nearest_search=false`,
+    `curvature_smoothing_stride=1`.
+  - `/diagnostics` still reports `controller_node_exe: control_state` (never unconditional OK -
+    WARN with no inputs, as designed).
+  - Node publishers: exactly `control_cmd`, `predicted_trajectory`, the two new timing topics, and
+    `/diagnostics`/`/rosout`/`/parameter_events` - no accidental second control publisher; launch
+    file confirms the stock controller branch is still excluded and only one node publishes
+    `control_cmd`.
+  - No unconditional fake diagnostic OK (Task 1); safe solver-failure fallback path unmodified by
+    any later task; hard clamps on applied steering/jerk unmodified; timing instrumentation
+    confirmed low-overhead when `debug_diagnostics=false` (Task 7 bench); optional lateral-accel
+    coupling was never implemented, so it is trivially "disabled by default" (no code path exists).
+  - 15 commits total this session, each independently traceable (listed below in the final
+    report).
 
-Task 16 — final static engineering review.
+## Runtime test order for the next session (once the simulator segfault is resolved)
+
+1. **V1 baseline S1**: default yaml as committed (`debug_diagnostics=false`,
+   `enable_delay_compensation=false`, `use_incremental_nearest_search=false`,
+   `curvature_smoothing_stride=1`). `cd ~/control_benchmark/scripts && ./run_experiment.sh
+   integrated_mpc_v1 1 1`.
+2. **V1 S2**: `./run_experiment.sh integrated_mpc_v1 2 1`.
+3. **Performance-clean V1 S1/S2**: same yaml, confirm `~/debug/processing_time_ms` /
+   `~/debug/solver_time_ms` and `/control/trajectory_follower/control_cmd` frequency approach the
+   configured 33.3 Hz in the *full* graph (only measured in isolation so far - this is the
+   RUNTIME VALIDATION PENDING item from Task 2/6/7).
+4. **Delay-aware V2 S1/S2**: set `enable_delay_compensation: true` in the yaml (or
+   `-p enable_delay_compensation:=true` override), rerun S1/S2, compare lateral RMSE and steering
+   smoothness against step 1/2.
+5. **Curvature-smoothed V2 S1/S2**: set `curvature_smoothing_stride: 5` (or another value), rerun,
+   compare `kappa_ref`/`delta_ref` behaviour and tracking error against step 1/2.
+6. **S3**, **7. S4**, **8. S5**: V1 config, once S1/S2 are confirmed reliable.
+9. **Weight tuning**: `python3 scripts/tuning/run_tuning.py --output-dir scripts/tuning/runs/<name>
+   --dev-scenarios 1 2 3 --held-out-scenarios 4 5` (drop `--dry-run`).
+10. **Held-out validation**: automatic at the end of the same `run_tuning.py` invocation (step 9);
+    also run `scripts/tuning/sensitivity_analysis.py --manifest <run>/manifest.json --output-dir
+    <run>/sensitivity` for the weight-vs-metric plots.
+11. **Optional lateral-acceleration-coupled MPC**: not built (Task 14 design doc only); would need
+    the Task 14 implementation plan executed first.
+
+Do not claim any variant is better than another until steps 1-5 produce real numbers.

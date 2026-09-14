@@ -40,13 +40,15 @@ public:
   TrackingStateBuilder(
     double wheel_base,
     double nearest_dist_threshold,
-    double nearest_yaw_threshold);
+    double nearest_yaw_threshold,
+    bool use_incremental_search = false,
+    std::size_t incremental_search_window = 15);
 
   std::optional<TrackingState> build(
     const autoware_planning_msgs::msg::Trajectory & trajectory,
     const nav_msgs::msg::Odometry & odometry,
     const autoware_vehicle_msgs::msg::SteeringReport & steering,
-    const geometry_msgs::msg::AccelWithCovarianceStamped & acceleration) const;
+    const geometry_msgs::msg::AccelWithCovarianceStamped & acceleration);
 
   static double calculateCurvature(
     const autoware_planning_msgs::msg::Trajectory & trajectory,
@@ -57,6 +59,16 @@ private:
     const autoware_planning_msgs::msg::Trajectory & trajectory,
     const nav_msgs::msg::Odometry & odometry) const;
 
+  // Searches only [previous_index - window, previous_index + window]
+  // (clamped) using the same distance/yaw acceptance criteria as
+  // findNearestIndex. Returns nullopt if no candidate in the window is
+  // accepted, or if previous_index is out of range for `trajectory` -
+  // in both cases the caller falls back to the full findNearestIndex.
+  std::optional<std::size_t> findNearestIndexIncremental(
+    const autoware_planning_msgs::msg::Trajectory & trajectory,
+    const nav_msgs::msg::Odometry & odometry,
+    std::size_t previous_index) const;
+
   static double yawFromPose(
     const geometry_msgs::msg::Pose & pose);
 
@@ -65,6 +77,10 @@ private:
   double wheel_base_;
   double nearest_dist_threshold_;
   double nearest_yaw_threshold_;
+
+  bool use_incremental_search_;
+  std::size_t incremental_search_window_;
+  std::optional<std::size_t> previous_nearest_index_;
 };
 
 }  // namespace autoware::integrated_mpc

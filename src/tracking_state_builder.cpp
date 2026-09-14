@@ -1,5 +1,6 @@
 #include "autoware/integrated_mpc_trajectory_follower/tracking_state_builder.hpp"
 
+#include <algorithm>
 #include <cmath>
 #include <limits>
 #include <stdexcept>
@@ -10,10 +11,14 @@ namespace autoware::integrated_mpc
 TrackingStateBuilder::TrackingStateBuilder(
   const double wheel_base,
   const double nearest_dist_threshold,
-  const double nearest_yaw_threshold)
+  const double nearest_yaw_threshold,
+  const bool use_incremental_search,
+  const std::size_t incremental_search_window)
 : wheel_base_(wheel_base),
   nearest_dist_threshold_(nearest_dist_threshold),
-  nearest_yaw_threshold_(nearest_yaw_threshold)
+  nearest_yaw_threshold_(nearest_yaw_threshold),
+  use_incremental_search_(use_incremental_search),
+  incremental_search_window_(incremental_search_window)
 {
   if (wheel_base_ <= 0.0) {
     throw std::invalid_argument("wheel_base must be positive");
@@ -76,6 +81,84 @@ TrackingStateBuilder::findNearestIndex(
   for (std::size_t i = 0; i < trajectory.points.size(); ++i) {
     const auto & ref_pose =
       trajectory.points.at(i).pose;
+
+    const double dx =
+      ego_pose.position.x -
+      ref_pose.position.x;
+
+    const double dy =
+      ego_pose.position.y -
+      ref_pose.position.y;
+
+    const double squared_distance =
+      dx * dx + dy * dy;
+
+    if (
+      squared_distance >
+      nearest_dist_threshold_ *
+      nearest_dist_threshold_)
+    {
+      continue;
+    }
+
+    const double ref_yaw =
+      yawFromPose(ref_pose);
+
+    const double yaw_error =
+      std::abs(
+        normalizeAngle(
+          ego_yaw - ref_yaw));
+
+    if (yaw_error > nearest_yaw_threshold_) {
+      continue;
+    }
+
+    if (squared_distance < best_squared_distance) {
+      best_squared_distance = squared_distance;
+      best_index = i;
+    }
+  }
+
+  return best_index;
+}
+
+std::optional<std::size_t>
+TrackingStateBuilder::findNearestIndexIncremental(
+  const autoware_planning_msgs::msg::Trajectory & trajectory,
+  const nav_msgs::msg::Odometry & odometry,
+  const std::size_t previous_index) const
+{
+  if (
+    trajectory.points.empty() ||
+    previous_index >= trajectory.points.size())
+  {
+    return std::nullopt;
+  }
+
+  const auto & ego_pose =
+    odometry.pose.pose;
+
+  const double ego_yaw =
+    yawFromPose(ego_pose);
+
+  const std::size_t lower =
+    (previous_index > incremental_search_window_) ?
+    previous_index - incremental_search_window_ :
+    0;
+
+  const std::size_t upper =
+    std::min(
+      previous_index + incremental_search_window_,
+      trajectory.points.size() - 1);
+
+  double best_squared_distance =
+    std::numeric_limits<double>::max();
+
+  std::optional<std::size_t> best_index;
+
+  for (std::size_t i = lower; i <= upper; ++i) {
+    const auto & ref_pose =
+      trajectory.points[i].pose;
 
     const double dx =
       ego_pose.position.x -
@@ -205,16 +288,40 @@ TrackingStateBuilder::build(
   const autoware_planning_msgs::msg::Trajectory & trajectory,
   const nav_msgs::msg::Odometry & odometry,
   const autoware_vehicle_msgs::msg::SteeringReport & steering,
-  const geometry_msgs::msg::AccelWithCovarianceStamped & acceleration) const
+  const geometry_msgs::msg::AccelWithCovarianceStamped & acceleration)
 {
-  const auto nearest_index =
-    findNearestIndex(
-      trajectory,
-      odometry);
+  // Incremental search (previous nearest index +/- a bounded window) is an
+  // optional optimisation over the full linear scan. It always falls back
+  // to the full search - on the first cycle (no previous index), when the
+  // previous index is out of range for a new/shorter trajectory, or when
+  // no candidate in the window satisfies the same distance/yaw thresholds
+  // the full search uses (which also covers a localization jump: the true
+  // nearest point would then be outside the window, so nothing there is
+  // accepted). This preserves full-search behaviour whenever the
+  // incremental path cannot confidently reproduce it.
+  std::optional<std::size_t> nearest_index;
+
+  if (use_incremental_search_ && previous_nearest_index_) {
+    nearest_index =
+      findNearestIndexIncremental(
+        trajectory,
+        odometry,
+        previous_nearest_index_.value());
+  }
 
   if (!nearest_index) {
+    nearest_index =
+      findNearestIndex(
+        trajectory,
+        odometry);
+  }
+
+  if (!nearest_index) {
+    previous_nearest_index_ = std::nullopt;
     return std::nullopt;
   }
+
+  previous_nearest_index_ = nearest_index;
 
   const std::size_t index =
     nearest_index.value();

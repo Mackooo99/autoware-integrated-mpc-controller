@@ -285,6 +285,105 @@ int main()
       1.0 / radius,
       1.0e-6);
 
+  // ========================================================
+  // TEST 3 - Incremental nearest-index search (Task 9)
+  //
+  // Verifies correctness (not just speed) of the bounded-window
+  // search: normal progression, a trajectory replacement that makes
+  // the previous index out of range, and a large localization jump -
+  // both of the latter must fall back to the full search rather than
+  // silently accept a wrong local candidate.
+  // ========================================================
+  {
+    autoware_planning_msgs::msg::Trajectory long_straight;
+
+    for (int i = 0; i < 40; ++i) {
+      long_straight.points.push_back(
+        makeTrajectoryPoint(
+          static_cast<double>(i), 0.0, 0.0,
+          5.0, 0.0));
+    }
+
+    autoware_vehicle_msgs::msg::SteeringReport steering3;
+    steering3.steering_tire_angle = 0.0F;
+
+    geometry_msgs::msg::AccelWithCovarianceStamped accel3;
+    accel3.accel.accel.linear.x = 0.0;
+
+    const auto makeOdomAt = [](const double x)
+    {
+      nav_msgs::msg::Odometry odom;
+      odom.pose.pose.position.x = x;
+      odom.pose.pose.position.y = 0.0;
+      odom.pose.pose.orientation = quaternionFromYaw(0.0);
+      odom.twist.twist.linear.x = 5.0;
+      return odom;
+    };
+
+    TrackingStateBuilder incremental_builder(
+      wheel_base,
+      3.0,    // nearest distance threshold
+      1.046,  // nearest yaw threshold
+      true,   // use_incremental_search
+      5);     // incremental_search_window
+
+    // 3a: normal progression
+    const auto r1 =
+      incremental_builder.build(
+        long_straight, makeOdomAt(10.0), steering3, accel3);
+    const auto r2 =
+      incremental_builder.build(
+        long_straight, makeOdomAt(11.0), steering3, accel3);
+
+    std::cout << "\n=== INCREMENTAL SEARCH: NORMAL PROGRESSION ===\n";
+    std::cout << "index at x=10 : " << (r1 ? r1->nearest_index : 999) << "\n";
+    std::cout << "index at x=11 : " << (r2 ? r2->nearest_index : 999) << "\n";
+
+    success &= r1.has_value() && r1->nearest_index == 10;
+    success &= r2.has_value() && r2->nearest_index == 11;
+
+    // 3b: trajectory replacement - the previous nearest index (11) is
+    // out of range for this 5-point trajectory, so this must fall back
+    // to the full search.
+    autoware_planning_msgs::msg::Trajectory short_traj;
+
+    for (int i = 0; i < 5; ++i) {
+      short_traj.points.push_back(
+        makeTrajectoryPoint(static_cast<double>(i), 0.0, 0.0, 5.0, 0.0));
+    }
+
+    const auto r3 =
+      incremental_builder.build(
+        short_traj, makeOdomAt(2.0), steering3, accel3);
+
+    std::cout << "\n=== INCREMENTAL SEARCH: TRAJECTORY REPLACEMENT ===\n";
+    std::cout << "index on 5-point trajectory at x=2 : "
+      << (r3 ? r3->nearest_index : 999) << "\n";
+
+    success &= r3.has_value() && r3->nearest_index == 2;
+
+    // 3c: large localization jump on the ORIGINAL long trajectory - the
+    // window around the previous index (5 +/- 5) does not reach x=35,
+    // so this must fall back to the full search rather than accept
+    // nothing / a wrong candidate.
+    TrackingStateBuilder jump_builder(
+      wheel_base, 3.0, 1.046, true, 5);
+
+    const auto r4 =
+      jump_builder.build(
+        long_straight, makeOdomAt(5.0), steering3, accel3);
+    const auto r5 =
+      jump_builder.build(
+        long_straight, makeOdomAt(35.0), steering3, accel3);
+
+    std::cout << "\n=== INCREMENTAL SEARCH: LOCALIZATION JUMP ===\n";
+    std::cout << "index at x=5  : " << (r4 ? r4->nearest_index : 999) << "\n";
+    std::cout << "index at x=35 : " << (r5 ? r5->nearest_index : 999) << "\n";
+
+    success &= r4.has_value() && r4->nearest_index == 5;
+    success &= r5.has_value() && r5->nearest_index == 35;
+  }
+
   std::cout
     << "\n====================================\n";
 

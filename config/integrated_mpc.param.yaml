@@ -28,6 +28,10 @@
     nearest_dist_threshold: 3.0
     nearest_yaw_threshold: 1.046
 
+    # Off by default (V1 behaviour: full linear scan every cycle).
+    use_incremental_nearest_search: false
+    incremental_search_window: 15
+
     # Physical limits
     max_steering_angle: 0.7
 

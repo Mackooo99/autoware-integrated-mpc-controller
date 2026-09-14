@@ -185,6 +185,27 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     without touching QP construction itself (out of scope - "preserve QP mathematics exactly").
   - Build: clean. Sanity checks re-run (osqp, mpc_constraint, plus the other 5): all PASS.
 
+- **Task 9 — Incremental nearest-index search** (commit pending)
+  - `TrackingStateBuilder`: new optional `findNearestIndexIncremental` searches only
+    `[previous_index - window, previous_index + window]` with the exact same distance/yaw
+    acceptance criteria as the full scan; `build()` tries it first (when enabled and a previous
+    index exists) and falls back to the existing full `findNearestIndex` whenever the incremental
+    result is `nullopt` - which happens structurally on the first cycle, when the previous index is
+    out of range for a new/shorter trajectory, and on a large localization jump (nothing in the
+    window then satisfies the thresholds). New ctor params
+    `use_incremental_search=false, incremental_search_window=15` (defaulted, so the existing 3-arg
+    call sites in the node and the sanity test are unaffected); `build()` is no longer `const`
+    (needs to remember the previous index) - call sites unaffected since the node holds it via
+    `unique_ptr` and the sanity test's local `builder` object was never const either.
+  - New node params `use_incremental_nearest_search` (default `false`, preserves V1's exhaustive
+    scan) and `incremental_search_window` (default `15`), added to the yaml.
+  - Extended `tracking_state_sanity_check.cpp` (append-only, existing tests untouched) with 3 new
+    cases: normal progression (x=10 -> index 10, x=11 -> index 11), trajectory replacement
+    (previous index 11 out of range for a new 5-point trajectory -> correctly falls back, finds
+    index 2), large localization jump on the original 40-point trajectory (x=5 -> index 5, then
+    x=35, window doesn't reach it -> correctly falls back, finds index 35).
+  - Build: clean. All 7 sanity checks: PASS (tracking_state now covers all 3 new scenarios).
+
 ## Next task
 
-Task 9 — nearest-point/trajectory search performance.
+Task 10 — delay-compensation support (V2, configurable, off by default).

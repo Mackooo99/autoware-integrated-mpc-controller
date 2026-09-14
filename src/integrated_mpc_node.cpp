@@ -144,6 +144,21 @@ public:
         "nearest_yaw_threshold",
         1.046);
 
+    // Off by default (preserves V1's exhaustive nearest-index search).
+    // When on, TrackingStateBuilder searches a bounded window around the
+    // previous nearest index first and falls back to the full scan
+    // whenever that is not confidently correct (see tracking_state_
+    // builder.cpp for the exact fallback conditions).
+    use_incremental_nearest_search_ =
+      declare_parameter<bool>(
+        "use_incremental_nearest_search",
+        false);
+
+    incremental_search_window_ =
+      declare_parameter<int>(
+        "incremental_search_window",
+        15);
+
 
     // ========================================================
     // Diagnostics
@@ -303,7 +318,9 @@ public:
         autoware::integrated_mpc::TrackingStateBuilder>(
           wheel_base_,
           nearest_dist_threshold_,
-          nearest_yaw_threshold_);
+          nearest_yaw_threshold_,
+          use_incremental_nearest_search_,
+          static_cast<std::size_t>(incremental_search_window_));
 
     prediction_reference_builder_ =
       std::make_unique<
@@ -2508,6 +2525,10 @@ RCLCPP_INFO_THROTTLE(
   double nearest_dist_threshold_{3.0};
 
   double nearest_yaw_threshold_{1.046};
+
+  bool use_incremental_nearest_search_{false};
+
+  int incremental_search_window_{15};
 
 
   // Prediction

@@ -6,6 +6,13 @@
 
     publish_enabled: true
 
+    # Off for benchmark runs: gates expensive debug-only computation
+    # (Hessian eigendecomposition, per-row violation identification,
+    # objective cross-check, optimal-sequence preview, reference-
+    # feasibility scan) that would otherwise contaminate timing results.
+    # Never gates the safety checks that decide whether to publish.
+    debug_diagnostics: false
+
     # MPC
     prediction_horizon: 50
     prediction_dt: 0.1

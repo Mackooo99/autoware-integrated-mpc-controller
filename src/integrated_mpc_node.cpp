@@ -112,6 +112,18 @@ public:
         "publish_enabled",
         false);
 
+    // Debug-only computation (Hessian eigendecomposition, H-H^T norm,
+    // per-row violation identification, objective cross-check, optimal-
+    // sequence preview, reference-feasibility scan) is expensive and
+    // must not contaminate the scientific timing benchmark (CLAUDE.md
+    // #4/#28). Off by default; the safety checks that gate publication
+    // (solver status, size, finiteness, bounds, max_violation tolerance,
+    // hard clamps) are never gated by this flag.
+    debug_diagnostics_ =
+      declare_parameter<bool>(
+        "debug_diagnostics",
+        false);
+
     wheel_base_ =
       declare_parameter<double>(
         "wheel_base",
@@ -753,29 +765,39 @@ private:
     // 8. Validate cost matrices
     // ========================================================
 
-    const double h_symmetry_error =
-      (
-        mpc_cost.H -
-        mpc_cost.H.transpose()
-      ).norm();
-
-    Eigen::SelfAdjointEigenSolver<
-      Eigen::MatrixXd>
-      h_eigen_solver(
-        mpc_cost.H);
+    // Debug-only: neither feeds solution_valid_for_control nor any other
+    // safety check, only the throttled cost-diagnostics log below. The
+    // eigendecomposition alone is O(n^3) on a 100x100 H every cycle, so
+    // it is gated behind debug_diagnostics_ (CLAUDE.md #28/Task 7).
+    double h_symmetry_error =
+      std::numeric_limits<double>::
+        quiet_NaN();
 
     double min_h_eigenvalue =
       std::numeric_limits<double>::
         quiet_NaN();
 
-    if (
-      h_eigen_solver.info() ==
-      Eigen::Success)
-    {
-      min_h_eigenvalue =
-        h_eigen_solver.
-          eigenvalues().
-          minCoeff();
+    if (debug_diagnostics_) {
+      h_symmetry_error =
+        (
+          mpc_cost.H -
+          mpc_cost.H.transpose()
+        ).norm();
+
+      Eigen::SelfAdjointEigenSolver<
+        Eigen::MatrixXd>
+        h_eigen_solver(
+          mpc_cost.H);
+
+      if (
+        h_eigen_solver.info() ==
+        Eigen::Success)
+      {
+        min_h_eigenvalue =
+          h_eigen_solver.
+            eigenvalues().
+            minCoeff();
+      }
     }
 
     const bool cost_finite =
@@ -953,82 +975,88 @@ private:
     if (violation > 1.0e-6) {
       ++constraint_violation_count;
 
-      // ======================================================
-      // Identify constraint group
-      //
-      // For N = 50:
-      //
-      //   0   ... 49  : steering angle
-      //   50  ... 99  : jerk
-      //   100 ... 149 : acceleration
-      //   150 ... 199 : steering rate
-      // ======================================================
+      // Debug-only from here down: the count/max tracked above (and
+      // below via std::max) are what solution_valid_for_control uses;
+      // identifying *which* row/step violated is only for the
+      // throttled log, so it is gated (CLAUDE.md #28/Task 7).
+      if (debug_diagnostics_) {
+        // ====================================================
+        // Identify constraint group
+        //
+        // For N = 50:
+        //
+        //   0   ... 49  : steering angle
+        //   50  ... 99  : jerk
+        //   100 ... 149 : acceleration
+        //   150 ... 199 : steering rate
+        // ====================================================
 
-      const Eigen::Index N =
-        static_cast<Eigen::Index>(
-          prediction_reference.points.size());
+        const Eigen::Index N =
+          static_cast<Eigen::Index>(
+            prediction_reference.points.size());
 
-      std::string constraint_name;
-      Eigen::Index step = -1;
+        std::string constraint_name;
+        Eigen::Index step = -1;
 
-      if (i < N) {
-        constraint_name =
-          "steering_angle";
+        if (i < N) {
+          constraint_name =
+            "steering_angle";
 
-        step = i;
+          step = i;
+        }
+        else if (i < 2 * N) {
+          constraint_name =
+            "jerk";
+
+          step =
+            i - N;
+        }
+        else if (i < 3 * N) {
+          constraint_name =
+            "acceleration";
+
+          step =
+            i - 2 * N;
+        }
+        else {
+          constraint_name =
+            "steering_rate";
+
+          step =
+            i - 3 * N;
+        }
+
+        char buffer[512];
+
+        std::snprintf(
+          buffer,
+          sizeof(buffer),
+
+          "  row=%ld"
+          " type=%s"
+          " k=%ld"
+          " value=%+.9f"
+          " lower=%+.9f"
+          " upper=%+.9f"
+          " violation=%.9e\n",
+
+          static_cast<long>(i),
+
+          constraint_name.c_str(),
+
+          static_cast<long>(step),
+
+          constraint_value(i),
+
+          mpc_constraints.lower(i),
+
+          mpc_constraints.upper(i),
+
+          violation);
+
+        violation_log +=
+          buffer;
       }
-      else if (i < 2 * N) {
-        constraint_name =
-          "jerk";
-
-        step =
-          i - N;
-      }
-      else if (i < 3 * N) {
-        constraint_name =
-          "acceleration";
-
-        step =
-          i - 2 * N;
-      }
-      else {
-        constraint_name =
-          "steering_rate";
-
-        step =
-          i - 3 * N;
-      }
-
-      char buffer[512];
-
-      std::snprintf(
-        buffer,
-        sizeof(buffer),
-
-        "  row=%ld"
-        " type=%s"
-        " k=%ld"
-        " value=%+.9f"
-        " lower=%+.9f"
-        " upper=%+.9f"
-        " violation=%.9e\n",
-
-        static_cast<long>(i),
-
-        constraint_name.c_str(),
-
-        static_cast<long>(step),
-
-        constraint_value(i),
-
-        mpc_constraints.lower(i),
-
-        mpc_constraints.upper(i),
-
-        violation);
-
-      violation_log +=
-        buffer;
     }
 
     maximum_constraint_violation =
@@ -1064,7 +1092,9 @@ private:
       std::numeric_limits<double>::
         quiet_NaN();
 
-    if (solution_size_valid) {
+    // Debug-only cross-check against OSQP's own reported objective; not
+    // used by any safety/validity check below (CLAUDE.md #28/Task 7).
+    if (debug_diagnostics_ && solution_size_valid) {
       /*
        * This is exactly the objective seen by OSQP:
        *
@@ -1130,6 +1160,7 @@ private:
 // ========================================================
 
 if (
+  debug_diagnostics_ &&
   solver_solved &&
   solution_size_valid &&
   optimal_solution_finite)
@@ -1732,71 +1763,74 @@ RCLCPP_INFO_THROTTLE(
     //  delta_ref_1, 0,
     //  ...]
     //
-    // This is only a diagnostic reference sequence.
+    // This is only a diagnostic reference sequence. Entirely debug-only
+    // (CLAUDE.md #28/Task 7): nothing downstream reads these results.
     // ========================================================
 
-    const Eigen::VectorXd reference_constraint_value =
-      mpc_constraints.A *
-      integrated_prediction.reference_input;
+    if (debug_diagnostics_) {
+      const Eigen::VectorXd reference_constraint_value =
+        mpc_constraints.A *
+        integrated_prediction.reference_input;
 
-    std::size_t reference_violation_count =
-      0;
+      std::size_t reference_violation_count =
+        0;
 
-    double maximum_reference_violation =
-      0.0;
+      double maximum_reference_violation =
+        0.0;
 
-    for (
-      Eigen::Index i = 0;
-      i < reference_constraint_value.size();
-      ++i)
-    {
-      double violation = 0.0;
-
-      if (
-        reference_constraint_value(i) <
-        mpc_constraints.lower(i))
+      for (
+        Eigen::Index i = 0;
+        i < reference_constraint_value.size();
+        ++i)
       {
-        violation =
-          mpc_constraints.lower(i) -
-          reference_constraint_value(i);
-      }
-      else if (
-        reference_constraint_value(i) >
-        mpc_constraints.upper(i))
-      {
-        violation =
-          reference_constraint_value(i) -
-          mpc_constraints.upper(i);
+        double violation = 0.0;
+
+        if (
+          reference_constraint_value(i) <
+          mpc_constraints.lower(i))
+        {
+          violation =
+            mpc_constraints.lower(i) -
+            reference_constraint_value(i);
+        }
+        else if (
+          reference_constraint_value(i) >
+          mpc_constraints.upper(i))
+        {
+          violation =
+            reference_constraint_value(i) -
+            mpc_constraints.upper(i);
+        }
+
+        if (violation > 0.0) {
+          ++reference_violation_count;
+
+          maximum_reference_violation =
+            std::max(
+              maximum_reference_violation,
+              violation);
+        }
       }
 
-      if (violation > 0.0) {
-        ++reference_violation_count;
+      RCLCPP_INFO_THROTTLE(
+        get_logger(),
+        *get_clock(),
+        1000,
 
-        maximum_reference_violation =
-          std::max(
-            maximum_reference_violation,
-            violation);
-      }
+        "\n"
+        "Constraint reference check:\n"
+        "  Uref size      = %ld\n"
+        "  violations     = %zu\n"
+        "  max violation  = %.6e",
+
+        static_cast<long>(
+          integrated_prediction.
+            reference_input.size()),
+
+        reference_violation_count,
+
+        maximum_reference_violation);
     }
-
-    RCLCPP_INFO_THROTTLE(
-      get_logger(),
-      *get_clock(),
-      1000,
-
-      "\n"
-      "Constraint reference check:\n"
-      "  Uref size      = %ld\n"
-      "  violations     = %zu\n"
-      "  max violation  = %.6e",
-
-      static_cast<long>(
-        integrated_prediction.
-          reference_input.size()),
-
-      reference_violation_count,
-
-      maximum_reference_violation);
 
 
     // ========================================================
@@ -2447,6 +2481,8 @@ RCLCPP_INFO_THROTTLE(
   double ctrl_period_{0.03};
 
   bool publish_enabled_{false};
+
+  bool debug_diagnostics_{false};
 
   double wheel_base_{2.79};
 

@@ -147,6 +147,24 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     (`python3 -m py_compile`), not run end-to-end - it needs the rest of a real scenario's
     row set (odometry, control_evaluator metrics, etc.) that this synthetic bench doesn't produce.
 
+- **Task 7 — Performance cleanup based on measurements** (commit pending)
+  - New `debug_diagnostics` param (default `false`, added to yaml). Gates only pure-diagnostic
+    computation identified by Task 6's profiling, never anything `solution_valid_for_control` or
+    the hard clamps depend on:
+    - Hessian eigendecomposition + H-H^T norm (S6) - only fed a throttled log.
+    - Per-row violation identification/string-building inside the constraint-violation scan -
+      `constraint_violation_count`/`maximum_constraint_violation` (used by
+      `solution_valid_for_control`) still computed unconditionally; only the "which row/step"
+      detail string is gated.
+    - Objective cross-check (`direct_qp_objective`/`full_mpc_cost`) - diagnostic-only.
+    - Optimal-sequence preview block - diagnostic-only.
+    - Reference-input feasibility scan (S9) - diagnostic-only, entire block gated.
+  - Build: clean. All 7 sanity checks: PASS (unaffected - node's onTimer isn't exercised by them).
+  - Bench-verified with `debug_diagnostics=false` vs the Task 6 always-on baseline: S6 dropped
+    ~0.52ms -> ~0.049ms (~10x), S8+S9 ~0.17ms -> ~0.11ms; whole-callback dropped from ~3.1-3.6ms to
+    ~2.85ms in the same isolated bench. Verified CLOSED LOOP output values (steer/jerk/accel)
+    unchanged, confirming safety-critical logic is untouched.
+
 ## Next task
 
-Task 7 — performance cleanup based on measurements.
+Task 8 — OSQP/allocation performance review.

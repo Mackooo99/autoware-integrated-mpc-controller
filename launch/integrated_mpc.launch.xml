@@ -1,0 +1,57 @@
+<launch>
+
+  <arg
+    name="param_file"
+    default="$(find-pkg-share autoware_integrated_mpc_trajectory_follower)/config/integrated_mpc.param.yaml"
+  />
+
+  <node
+    pkg="autoware_integrated_mpc_trajectory_follower"
+    exec="integrated_mpc_node"
+    name="integrated_mpc_node"
+    namespace="/control/trajectory_follower"
+    output="screen"
+  >
+
+    <!-- inputs -->
+    <remap
+      from="~/input/reference_trajectory"
+      to="/planning/trajectory"
+    />
+
+    <remap
+      from="~/input/current_odometry"
+      to="/localization/kinematic_state"
+    />
+
+    <remap
+      from="~/input/current_steering"
+      to="/vehicle/status/steering_status"
+    />
+
+    <remap
+      from="~/input/current_accel"
+      to="/localization/acceleration"
+    />
+
+    <remap
+      from="~/input/current_operation_mode"
+      to="/system/operation_mode/state"
+    />
+
+    <!-- outputs -->
+    <remap
+      from="~/output/control_cmd"
+      to="/control/trajectory_follower/control_cmd"
+    />
+
+    <remap
+      from="~/output/predicted_trajectory"
+      to="/control/trajectory_follower/lateral/predicted_trajectory"
+    />
+
+    <param from="$(var param_file)"/>
+
+  </node>
+
+</launch>

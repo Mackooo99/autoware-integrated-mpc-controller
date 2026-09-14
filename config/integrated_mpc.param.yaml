@@ -1,0 +1,39 @@
+/**:
+  ros__parameters:
+
+    # Controller timing
+    ctrl_period: 0.03
+
+    # Disabled until the communication interface is verified.
+    publish_enabled: false
+
+    # MPC
+    prediction_horizon: 50
+    prediction_dt: 0.1
+
+    # Vehicle model
+    wheel_base: 2.79
+    steer_tau: 0.27
+
+    # Delays
+    steering_input_delay: 0.24
+    longitudinal_delay: 0.10
+
+    # Physical limits
+    max_steer: 0.7
+
+    max_acc: 3.0
+    min_acc: -5.0
+
+    max_jerk: 2.0
+    min_jerk: -5.0
+
+    # Initial proposed weights
+    weight_lat_error: 1.0
+    weight_heading_error_squared_vel: 0.3
+    weight_velocity_error: 1.0
+    weight_acceleration_error: 0.1
+
+    weight_steering_input: 1.0
+    weight_steering_input_squared_vel: 0.25
+    weight_jerk: 0.1

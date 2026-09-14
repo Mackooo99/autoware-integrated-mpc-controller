@@ -2,6 +2,13 @@ cmake_minimum_required(VERSION 3.14)
 
 project(autoware_integrated_mpc_trajectory_follower)
 
+# Match stock Autoware's default build type so timing comparisons are valid
+# (stock packages are built -O3 -DNDEBUG; this package previously had no
+# CMAKE_BUILD_TYPE and therefore no optimisation flags at all).
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  set(CMAKE_BUILD_TYPE Release CACHE STRING "" FORCE)
+endif()
+
 # ============================================================
 # Dependencies
 # ============================================================

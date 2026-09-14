@@ -258,6 +258,43 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
   - Not yet done (RUNTIME VALIDATION PENDING): plotting `kappa_ref`/`delta_ref` before/after on a
     real scenario (`verify_reference_steer.py` per the audit), since that needs a live run.
 
+- **Task 12/13 — Automated tuning framework + sensitivity-analysis tooling** (commit pending;
+  pure Python, no controller code touched, no physical limits ever tuned)
+  - `scripts/tuning/param_space.py`: the 10 V1 cost-weight dimensions (`q_y` .. `terminal_q_v`,
+    mapped to their yaml keys), log-uniform coarse sampling, and local (multiplicative, log-space)
+    refinement around a center - never touches steering/accel/jerk/steer-rate limits.
+  - `scripts/tuning/scoring.py`: composite score from a `summary.json` (analyze_run.py's existing
+    shape) - normalized+weighted lateral/yaw/velocity RMSE and jerk/steering-rate RMSE
+    (smoothness), a large fixed penalty for anything not `status == PASS` or a missing metric, plus
+    a boundary-violation penalty. Also records each metric's *raw* RMSE (not just its weighted
+    contribution) for Task 13 to plot against.
+  - `scripts/tuning/run_tuning.py`: coarse sweep -> top-K local refinement -> dev-set selection ->
+    held-out-set report (never used to *select* the winner, only to report how it generalizes, so
+    a config isn't picked because it happens to fit the scenarios it was tuned on). V1 defaults are
+    always trial 0, so every sweep includes a direct comparison against the current design.
+    Resumable via `manifest.json` (skips trials already `done`/`failed`). Real-mode trials write
+    the candidate weights into `config/integrated_mpc.param.yaml` (line-oriented key replacement,
+    preserves comments/formatting/order for every untouched key), invoke the *existing, unmodified*
+    `control_benchmark/scripts/run_experiment.sh` (which already runs the scenario, launches the
+    benchmark logger, and calls `analyze_run.py`), then always restore the original yaml -
+    required no changes to `control_benchmark` at all. Exports `results.csv`, `summary.json`
+    (best config + dev/held-out scores), `best_config.param.yaml`.
+  - `scripts/tuning/sensitivity_analysis.py`: reads a completed manifest, plots each of the 10
+    weights against lateral/yaw/velocity RMSE, jerk/steering-rate RMSE, and mean callback time
+    (when real timing data is present); writes a raw CSV alongside. Does not fabricate data - a
+    dimension/metric with no PASS trials is skipped and reported, not plotted.
+  - Since real scenario execution is blocked (segfault), validated the *entire* pipeline via
+    `--dry-run` (a synthetic bowl-shaped scoring surface centered on V1, exercising sampling,
+    scoring, resume, ranking, dev/held-out split, and export, without touching the real yaml or
+    invoking the simulator): a 15-coarse/2-top-k/4-refine sweep correctly selected the V1 default
+    as best (score 1.33 vs up to 1000.0 for injected failures), held-out score tracked dev score
+    closely (1.328 vs ~1.33, no overfitting warning), resuming the same `--output-dir` reproduced
+    identical scores in 0.06 s (confirming skip-on-resume actually skips rather than re-drawing
+    random samples), and `sensitivity_analysis.py` produced 50 correct metric-vs-weight plots (10
+    dims x 5 metrics) plus a raw CSV from that manifest.
+  - **Do not run a real sweep yet** - needs the Planning/Scenario Simulator stack, currently
+    blocked. RUNTIME VALIDATION PENDING.
+
 ## Next task
 
-Task 12 — automated MPC tuning framework (offline tooling).
+Task 14 — optional shared lateral-acceleration constraint (experimental, evaluate feasibility first).

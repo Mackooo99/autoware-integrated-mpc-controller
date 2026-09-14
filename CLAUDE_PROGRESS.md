@@ -295,6 +295,25 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
   - **Do not run a real sweep yet** - needs the Planning/Scenario Simulator stack, currently
     blocked. RUNTIME VALIDATION PENDING.
 
+- **Task 14 — Shared lateral-acceleration constraint** (commit pending; design only, not
+  implemented, per the task's own stop condition)
+  - Derived the linearization of `a_y = v^2*tan(delta)/L` around each horizon step's
+    `(v_ref_k, delta_ref_k)`: affine in `e_v_k`/`delta_k`, hence affine in `U` via `Aex`/`Bex`/
+    `Wex` - structurally identical to how the existing acceleration-state constraint is already
+    built (one more row-block, not a new mechanism). A **hard** version of this constraint would
+    be a small, contained addition.
+  - The task mandates a **soft** (slack) form to avoid QP infeasibility, and that is what turns
+    it into a QP variable-count change: `U` widens from `2N=100` to `150` (50 slack scalars),
+    requiring `H`/`f`/`A` to be reshaped and every fixed-`100`-width read of `optimal_input`/
+    `optimal_state_prediction` in `integrated_mpc_node.cpp` (first-input extraction, the preview
+    loop, the 4-group violation-diagnostic row indexing) to be re-audited - judged a structural
+    rewrite per the task's own stop condition, not an incremental one.
+  - Documented the full derivation, the exact reshaping required, a proposed future-batch
+    implementation plan (unaugmented builder output + node-side block-diagonal augmentation +
+    `.head(2N)`/`.tail(N)` split + dedicated sanity test), and what would need independent
+    re-verification, in `docs/task14_lateral_acceleration_constraint_design.md`.
+  - **Not enabled; no code changed.** Remains disabled-by-default future work.
+
 ## Next task
 
-Task 14 — optional shared lateral-acceleration constraint (experimental, evaluate feasibility first).
+Task 15 — local stability analysis tooling (offline).

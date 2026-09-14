@@ -23,17 +23,27 @@ from geometry_msgs.msg import AccelWithCovarianceStamped
 from nav_msgs.msg import Odometry
 
 
-def make_straight_trajectory(num_points=60, spacing=1.0, speed=5.0):
+def make_trajectory(num_points=60, spacing=1.0, speed=5.0, curvature=0.0):
+    """curvature=0 -> straight line along +x. curvature!=0 -> constant-radius
+    arc of that signed curvature (positive = left turn), for offline
+    straight/curved predicted-trajectory bench checks."""
     traj = Trajectory()
     traj.header.frame_id = "map"
+    heading = 0.0
+    x = 0.0
+    y = 0.0
     for i in range(num_points):
         p = TrajectoryPoint()
-        p.pose.position.x = float(i) * spacing
-        p.pose.position.y = 0.0
-        p.pose.orientation.w = 1.0
+        p.pose.position.x = x
+        p.pose.position.y = y
+        p.pose.orientation.z = math.sin(heading * 0.5)
+        p.pose.orientation.w = math.cos(heading * 0.5)
         p.longitudinal_velocity_mps = speed
         p.acceleration_mps2 = 0.0
         traj.points.append(p)
+        x += spacing * math.cos(heading)
+        y += spacing * math.sin(heading)
+        heading += curvature * spacing
     return traj
 
 
@@ -41,7 +51,11 @@ class SyntheticInputPublisher(Node):
     def __init__(self):
         super().__init__("synthetic_bench_publisher")
         self.declare_parameter("ns", "/control/trajectory_follower/controller_node_exe")
+        self.declare_parameter("curvature", 0.0)
+        self.declare_parameter("speed", 5.0)
         ns = self.get_parameter("ns").value
+        curvature = self.get_parameter("curvature").value
+        speed = self.get_parameter("speed").value
 
         reliable = QoSProfile(depth=1, reliability=QoSReliabilityPolicy.RELIABLE)
         reliable_tl = QoSProfile(
@@ -60,7 +74,7 @@ class SyntheticInputPublisher(Node):
             OperationModeState, f"{ns}/input/current_operation_mode", reliable_tl
         )
 
-        self.trajectory = make_straight_trajectory()
+        self.trajectory = make_trajectory(curvature=curvature, speed=speed)
         self.timer = self.create_timer(0.02, self._tick)
 
     def _tick(self):

@@ -13,9 +13,11 @@
 #include <autoware_adapi_v1_msgs/msg/operation_mode_state.hpp>
 #include <autoware_control_msgs/msg/control.hpp>
 #include <autoware_planning_msgs/msg/trajectory.hpp>
+#include <autoware_planning_msgs/msg/trajectory_point.hpp>
 #include <autoware_vehicle_msgs/msg/steering_report.hpp>
 
 #include <geometry_msgs/msg/accel_with_covariance_stamped.hpp>
+#include <geometry_msgs/msg/quaternion.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 
 #include <Eigen/Core>
@@ -30,6 +32,29 @@
 #include <string>
 #include <vector>
 #include <cstdio>
+
+
+namespace
+{
+
+// Same convention as TrackingStateBuilder::yawFromPose (planar yaw from a
+// quaternion assumed level, i.e. roll = pitch = 0).
+double yawFromQuaternion(const geometry_msgs::msg::Quaternion & q)
+{
+  const double sin_yaw = 2.0 * (q.w * q.z + q.x * q.y);
+  const double cos_yaw = 1.0 - 2.0 * (q.y * q.y + q.z * q.z);
+  return std::atan2(sin_yaw, cos_yaw);
+}
+
+geometry_msgs::msg::Quaternion yawToQuaternion(double yaw)
+{
+  geometry_msgs::msg::Quaternion q;
+  q.z = std::sin(yaw * 0.5);
+  q.w = std::cos(yaw * 0.5);
+  return q;
+}
+
+}  // namespace
 
 
 class IntegratedMpcNode : public rclcpp::Node
@@ -1267,6 +1292,80 @@ control_state_message_ =
     std::to_string(maximum_constraint_violation);
 
 diag_updater_->force_update();
+
+// ========================================================
+// 14.6 Publish MPC predicted trajectory
+//
+// Reconstructs global pose from the real optimal Frenet-frame
+// prediction (optimal_state_prediction) plus the per-step
+// reference point, using the same convention as
+// TrackingStateBuilder:
+//
+//   e_y   = -sin(yaw_ref)*dx + cos(yaw_ref)*dy
+//   =>  x = x_ref - e_y*sin(yaw_ref)
+//       y = y_ref + e_y*cos(yaw_ref)
+//   psi = yaw_ref + e_psi
+//   v   = v_ref + e_v
+//
+// Only published when the solution is valid: there is no
+// genuine prediction to report otherwise (CLAUDE.md #27).
+// ========================================================
+
+if (solution_valid_for_control) {
+  autoware_planning_msgs::msg::Trajectory predicted_trajectory_msg;
+
+  predicted_trajectory_msg.header.stamp = now();
+  predicted_trajectory_msg.header.frame_id = trajectory_->header.frame_id;
+
+  constexpr Eigen::Index NX = 5;
+  const std::size_t num_steps = prediction_reference.points.size();
+
+  predicted_trajectory_msg.points.reserve(num_steps);
+
+  for (std::size_t k = 0; k < num_steps; ++k) {
+    const auto & ref_point = prediction_reference.points[k];
+
+    if (ref_point.trajectory_index >= trajectory_->points.size()) {
+      continue;
+    }
+
+    const auto & ref_pose =
+      trajectory_->points[ref_point.trajectory_index].pose;
+
+    const double yaw_ref = yawFromQuaternion(ref_pose.orientation);
+
+    const Eigen::Index state_index =
+      static_cast<Eigen::Index>(k) * NX;
+
+    const double e_y = optimal_state_prediction(state_index);
+    const double e_psi = optimal_state_prediction(state_index + 1);
+    const double e_v = optimal_state_prediction(state_index + 2);
+    const double delta = optimal_state_prediction(state_index + 3);
+    const double predicted_acceleration = optimal_state_prediction(state_index + 4);
+
+    autoware_planning_msgs::msg::TrajectoryPoint point;
+
+    point.time_from_start = static_cast<builtin_interfaces::msg::Duration>(
+      rclcpp::Duration::from_seconds(
+        static_cast<double>(k + 1) * prediction_reference.prediction_dt));
+
+    point.pose.position.x = ref_pose.position.x - e_y * std::sin(yaw_ref);
+    point.pose.position.y = ref_pose.position.y + e_y * std::cos(yaw_ref);
+    point.pose.position.z = ref_pose.position.z;
+    point.pose.orientation = yawToQuaternion(yaw_ref + e_psi);
+
+    point.longitudinal_velocity_mps =
+      static_cast<float>(ref_point.velocity + e_v);
+    point.acceleration_mps2 =
+      static_cast<float>(predicted_acceleration);
+    point.front_wheel_angle_rad =
+      static_cast<float>(delta);
+
+    predicted_trajectory_msg.points.push_back(point);
+  }
+
+  predicted_trajectory_pub_->publish(predicted_trajectory_msg);
+}
 
     // ========================================================
     // 15. OSQP diagnostics

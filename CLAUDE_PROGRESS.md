@@ -77,6 +77,25 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     held at 0 while jerk stayed pinned near max, `sent accel` in the CLOSED LOOP log stayed flat
     at ~+0.0414 m/s^2 across all cycles instead of ramping toward the acceleration limit.
 
+- **Task 4 — Publish real MPC predicted trajectory** (commit pending)
+  - `src/integrated_mpc_node.cpp` 14.6: builds `~/output/predicted_trajectory` from the actual
+    `optimal_state_prediction` (per-horizon-step `e_y, e_psi, e_v, delta, a`) plus each step's own
+    reference point pose (`trajectory_->points[trajectory_index]`), using the same convention as
+    `TrackingStateBuilder`: `x = x_ref - e_y*sin(yaw_ref)`, `y = y_ref + e_y*cos(yaw_ref)`,
+    `psi = yaw_ref + e_psi`, `v = v_ref + e_v`. Only published when `solution_valid_for_control`
+    (no fake/heartbeat trajectory on an invalid solve).
+  - Added tiny local `yawFromQuaternion`/`yawToQuaternion` helpers (same formula as
+    `TrackingStateBuilder::yawFromPose`, which is private and not reused to avoid touching a
+    validated builder's interface).
+  - Extended `scripts/synthetic_input_publisher.py` with a `curvature` param (straight or
+    constant-radius arc) for offline geometric checks.
+  - Build: clean. All 7 sanity checks: PASS.
+  - Bench-verified offline: straight road -> 50 points, all finite, `y` stays exactly 0, `x`
+    spans 2.0-26.0 m. Curved road (`curvature=0.05`, left turn) -> 50 points, all finite,
+    `(x,y)` sweeps from (2.0, 0.02) to (19.6, 14.2), consistent with a left-turning arc.
+  - Runtime consumer validation (lane departure / AEB / control_validator staying healthy on
+    this topic): RUNTIME VALIDATION PENDING (needs the full graph).
+
 ## Next task
 
-Task 4 — real MPC predicted trajectory.
+Task 5 — parameter/configuration cleanup.

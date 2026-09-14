@@ -314,6 +314,33 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     re-verification, in `docs/task14_lateral_acceleration_constraint_design.md`.
   - **Not enabled; no code changed.** Remains disabled-by-default future work.
 
+- **Task 15 — Local stability analysis tooling** (commit pending)
+  - `scripts/stability_analysis.py`: at each swept `(v_ref, kappa_ref)`, reproduces the
+    continuous Jacobians `Ac`/`Bc` (CLAUDE.md #6, the already-validated formulas) linearized at
+    the on-reference equilibrium, discretizes via the same exact affine/ZOH construction as
+    `integrated_kinematics_bicycle_model.cpp`, forms `Q`/`R` from the current V1 weights
+    (imports `scripts/tuning/param_space.py` as the single source of truth), solves the discrete
+    algebraic Riccati equation for the frozen-operating-point infinite-horizon LQ gain, and
+    reports the closed-loop `A_cl = Ad - Bd@K`'s eigenvalues/spectral radius.
+  - **Correctness guard**: `Ad(3,3)`/`Bd(3,0)`/`Ad(4,4)`/`Bd(4,1)` depend only on `tau`/`dt` (the
+    steering/acceleration sub-block is decoupled from `v`/`kappa`), so they're checked against
+    CLAUDE.md #12's documented closed form independent of any operating point - passes.
+  - **Verification tests** (hard `assert`, nonzero exit on failure, not just a printed warning):
+    straight-road moderate-speed spectral radius `< 0.99`; near-zero-but-nonzero speed resolves
+    finite; **exactly** `v_ref=0` is correctly reported as *not stabilizable* rather than crashing
+    or silently returning a wrong number - at `v=0` the `e_y`/`e_psi` rows of `Ac` lose all
+    coupling to steering, so lateral position/heading are structurally uncontrolled (a genuine
+    mathematical singularity of this Frenet formulation, not a numerical bug) and
+    `scipy.linalg.solve_discrete_are` correctly raises; the tool catches this and reports it as a
+    skipped, documented operating point rather than propagating the exception.
+  - Explicit, printed limitations, matching the task's requirement not to overclaim: local only
+    (frozen-operating-point LTI, not a joint LTV/switched-system analysis), unconstrained only
+    (ignores steering/jerk/accel/steer-rate bounds, which change the true active feedback law),
+    and not a recursive-feasibility/terminal-set argument.
+  - Ran the default 7-velocity x 9-curvature sweep (63 points, `v_ref` from 1-20 m/s): **all
+    locally stable** under the unconstrained LQ approximation with the current V1 weights,
+    spectral radius in `[0.87, 0.96]`. CSV + heatmap PNG produced.
+
 ## Next task
 
-Task 15 — local stability analysis tooling (offline).
+Task 16 — final static engineering review.

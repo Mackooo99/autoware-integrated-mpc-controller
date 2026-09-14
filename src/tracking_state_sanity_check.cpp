@@ -384,6 +384,130 @@ int main()
     success &= r5.has_value() && r5->nearest_index == 35;
   }
 
+  // ========================================================
+  // TEST 4 - Curvature smoothing stride (Task 11)
+  //
+  // stride=1 must reproduce the original adjacent-point behaviour
+  // exactly (already exercised by TEST 2 above via the 2-arg call).
+  // Widening the stride must preserve: zero curvature on a straight
+  // road, the correct magnitude and left(+)/right(-) sign on a
+  // constant-radius curve, a sign flip across an S-curve inflection,
+  // and finite (non-NaN/Inf) output near-collinear/near-coincident
+  // points.
+  // ========================================================
+  {
+    // --- straight road: curvature must stay ~0 for any stride ---
+    autoware_planning_msgs::msg::Trajectory straight;
+
+    for (int i = 0; i < 21; ++i) {
+      straight.points.push_back(
+        makeTrajectoryPoint(static_cast<double>(i), 0.0, 0.0, 5.0, 0.0));
+    }
+
+    const double straight_k1 =
+      TrackingStateBuilder::calculateCurvature(straight, 10, 1);
+    const double straight_k5 =
+      TrackingStateBuilder::calculateCurvature(straight, 10, 5);
+
+    std::cout << "\n=== CURVATURE SMOOTHING: STRAIGHT ROAD ===\n";
+    std::cout << "stride=1 : " << straight_k1 << "\n";
+    std::cout << "stride=5 : " << straight_k5 << "\n";
+
+    success &= approximatelyEqual(straight_k1, 0.0);
+    success &= approximatelyEqual(straight_k5, 0.0);
+
+    // --- constant-radius curve: magnitude ~= 1/R, sign by direction ---
+    constexpr double radius = 20.0;
+    constexpr double dtheta = 0.02;
+
+    autoware_planning_msgs::msg::Trajectory left_turn;
+    autoware_planning_msgs::msg::Trajectory right_turn;
+
+    for (int i = 0; i < 101; ++i) {
+      const double theta = static_cast<double>(i) * dtheta;
+
+      left_turn.points.push_back(
+        makeTrajectoryPoint(
+          radius * std::cos(theta), radius * std::sin(theta), 0.0, 5.0, 0.0));
+
+      right_turn.points.push_back(
+        makeTrajectoryPoint(
+          radius * std::cos(-theta), radius * std::sin(-theta), 0.0, 5.0, 0.0));
+    }
+
+    const double left_k1 =
+      TrackingStateBuilder::calculateCurvature(left_turn, 50, 1);
+    const double left_k10 =
+      TrackingStateBuilder::calculateCurvature(left_turn, 50, 10);
+    const double right_k1 =
+      TrackingStateBuilder::calculateCurvature(right_turn, 50, 1);
+    const double right_k10 =
+      TrackingStateBuilder::calculateCurvature(right_turn, 50, 10);
+
+    std::cout << "\n=== CURVATURE SMOOTHING: CONSTANT-RADIUS CURVE ===\n";
+    std::cout << "left  stride=1  : " << left_k1  << " (expected +" << 1.0 / radius << ")\n";
+    std::cout << "left  stride=10 : " << left_k10 << "\n";
+    std::cout << "right stride=1  : " << right_k1  << " (expected -" << 1.0 / radius << ")\n";
+    std::cout << "right stride=10 : " << right_k10 << "\n";
+
+    success &= approximatelyEqual(left_k1, 1.0 / radius, 1.0e-3);
+    success &= approximatelyEqual(left_k10, 1.0 / radius, 1.0e-3);
+    success &= approximatelyEqual(right_k1, -1.0 / radius, 1.0e-3);
+    success &= approximatelyEqual(right_k10, -1.0 / radius, 1.0e-3);
+
+    // --- S-curve: sign must flip across the inflection, both strides ---
+    autoware_planning_msgs::msg::Trajectory s_curve;
+
+    for (int i = 0; i < 60; ++i) {
+      s_curve.points.push_back(left_turn.points.at(static_cast<std::size_t>(i)));
+    }
+    for (int i = 0; i < 60; ++i) {
+      const auto & mirror_about = s_curve.points.back().pose.position;
+      autoware_planning_msgs::msg::TrajectoryPoint p =
+        right_turn.points.at(static_cast<std::size_t>(i));
+      p.pose.position.x += mirror_about.x;
+      p.pose.position.y += mirror_about.y;
+      s_curve.points.push_back(p);
+    }
+
+    const double before_inflection_k5 =
+      TrackingStateBuilder::calculateCurvature(s_curve, 40, 5);
+    const double after_inflection_k5 =
+      TrackingStateBuilder::calculateCurvature(s_curve, 80, 5);
+
+    std::cout << "\n=== CURVATURE SMOOTHING: S-CURVE SIGN FLIP ===\n";
+    std::cout << "before inflection (stride=5) : " << before_inflection_k5 << "\n";
+    std::cout << "after  inflection (stride=5) : " << after_inflection_k5 << "\n";
+
+    success &= before_inflection_k5 > 0.0;
+    success &= after_inflection_k5 < 0.0;
+
+    // --- numerical stability: nearly-collinear and near-coincident ---
+    autoware_planning_msgs::msg::Trajectory nearly_collinear;
+    nearly_collinear.points.push_back(makeTrajectoryPoint(0.0, 0.0, 0.0, 5.0, 0.0));
+    nearly_collinear.points.push_back(makeTrajectoryPoint(10.0, 1.0e-9, 0.0, 5.0, 0.0));
+    nearly_collinear.points.push_back(makeTrajectoryPoint(20.0, 0.0, 0.0, 5.0, 0.0));
+
+    const double collinear_k =
+      TrackingStateBuilder::calculateCurvature(nearly_collinear, 1, 1);
+
+    autoware_planning_msgs::msg::Trajectory nearly_coincident;
+    nearly_coincident.points.push_back(makeTrajectoryPoint(0.0, 0.0, 0.0, 5.0, 0.0));
+    nearly_coincident.points.push_back(makeTrajectoryPoint(1.0e-12, 1.0e-12, 0.0, 5.0, 0.0));
+    nearly_coincident.points.push_back(makeTrajectoryPoint(2.0e-12, 0.0, 0.0, 5.0, 0.0));
+
+    const double coincident_k =
+      TrackingStateBuilder::calculateCurvature(nearly_coincident, 1, 1);
+
+    std::cout << "\n=== CURVATURE SMOOTHING: NUMERICAL STABILITY ===\n";
+    std::cout << "nearly-collinear  : " << collinear_k << "\n";
+    std::cout << "nearly-coincident : " << coincident_k << "\n";
+
+    success &= std::isfinite(collinear_k);
+    success &= std::isfinite(coincident_k);
+    success &= approximatelyEqual(coincident_k, 0.0);
+  }
+
   std::cout
     << "\n====================================\n";
 

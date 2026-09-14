@@ -38,6 +38,12 @@
     steering_input_delay: 0.24
     longitudinal_input_delay: 0.10
 
+    # 1 = V1 exactly (adjacent-point curvature). > 1 widens the
+    # triangle used for the signed-curvature estimate (TrackingState
+    # Builder::calculateCurvature), analogous to stock's
+    # curvature_smoothing_num_traj/num_ref_steer.
+    curvature_smoothing_stride: 1
+
     # Physical limits
     max_steering_angle: 0.7
 

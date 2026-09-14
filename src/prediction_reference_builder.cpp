@@ -14,12 +14,15 @@ PredictionReferenceBuilder::PredictionReferenceBuilder(
   const std::size_t prediction_horizon,
   const double nominal_prediction_dt,
   const double min_prediction_length,
-  const double minimum_prediction_velocity)
+  const double minimum_prediction_velocity,
+  const std::size_t curvature_smoothing_stride)
 : wheel_base_(wheel_base),
   prediction_horizon_(prediction_horizon),
   nominal_prediction_dt_(nominal_prediction_dt),
   min_prediction_length_(min_prediction_length),
-  minimum_prediction_velocity_(minimum_prediction_velocity)
+  minimum_prediction_velocity_(minimum_prediction_velocity),
+  curvature_smoothing_stride_(
+    std::max<std::size_t>(1, curvature_smoothing_stride))
 {
   if (wheel_base_ <= 0.0) {
     throw std::invalid_argument(
@@ -313,7 +316,8 @@ PredictionReferenceBuilder::interpolateReferenceAtTime(
     const double curvature =
       TrackingStateBuilder::calculateCurvature(
         trajectory,
-        start_index);
+        start_index,
+        curvature_smoothing_stride_);
 
     PredictionReferencePoint result;
 
@@ -373,7 +377,8 @@ PredictionReferenceBuilder::interpolateReferenceAtTime(
     const double curvature =
       TrackingStateBuilder::calculateCurvature(
         trajectory,
-        last_index);
+        last_index,
+        curvature_smoothing_stride_);
 
     PredictionReferencePoint result;
 
@@ -416,7 +421,8 @@ const std::size_t upper_index =
     const double curvature =
       TrackingStateBuilder::calculateCurvature(
         trajectory,
-        upper_index);
+        upper_index,
+        curvature_smoothing_stride_);
 
     PredictionReferencePoint result;
 
@@ -505,12 +511,14 @@ const std::size_t upper_index =
   const double curvature_lower =
     TrackingStateBuilder::calculateCurvature(
       trajectory,
-      lower_index);
+      lower_index,
+      curvature_smoothing_stride_);
 
   const double curvature_upper =
     TrackingStateBuilder::calculateCurvature(
       trajectory,
-      upper_index);
+      upper_index,
+      curvature_smoothing_stride_);
 
   const double curvature =
     curvature_lower +

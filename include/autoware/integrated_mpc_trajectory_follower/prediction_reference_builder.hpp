@@ -45,7 +45,8 @@ public:
     std::size_t prediction_horizon,
     double nominal_prediction_dt,
     double min_prediction_length,
-    double minimum_prediction_velocity);
+    double minimum_prediction_velocity,
+    std::size_t curvature_smoothing_stride = 1);
 
   PredictionReferenceHorizon build(
     const autoware_planning_msgs::msg::Trajectory & trajectory,
@@ -82,6 +83,8 @@ PredictionReferencePoint interpolateReferenceAtTime(
   double nominal_prediction_dt_;
   double min_prediction_length_;
   double minimum_prediction_velocity_;
+
+  std::size_t curvature_smoothing_stride_;
 };
 
 }  // namespace autoware::integrated_mpc

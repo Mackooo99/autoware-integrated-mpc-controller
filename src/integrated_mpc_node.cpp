@@ -343,6 +343,14 @@ public:
         "steer_rate_deg_by_velocity",
         {60.0, 50.0, 40.0});
 
+    // stride=1 reproduces V1 exactly (adjacent-point curvature). A
+    // wider stride is analogous in purpose to stock's
+    // curvature_smoothing_num_traj/num_ref_steer.
+    curvature_smoothing_stride_ =
+      declare_parameter<int>(
+        "curvature_smoothing_stride",
+        1);
+
 
     // ========================================================
     // Helper/model builders
@@ -355,7 +363,8 @@ public:
           nearest_dist_threshold_,
           nearest_yaw_threshold_,
           use_incremental_nearest_search_,
-          static_cast<std::size_t>(incremental_search_window_));
+          static_cast<std::size_t>(incremental_search_window_),
+          static_cast<std::size_t>(curvature_smoothing_stride_));
 
     prediction_reference_builder_ =
       std::make_unique<
@@ -365,7 +374,8 @@ public:
             prediction_horizon_),
           prediction_dt_,
           min_prediction_length_,
-          minimum_prediction_velocity_);
+          minimum_prediction_velocity_,
+          static_cast<std::size_t>(curvature_smoothing_stride_));
 
     integrated_prediction_builder_ =
       std::make_unique<
@@ -2616,6 +2626,8 @@ RCLCPP_INFO_THROTTLE(
   std::deque<double> steering_command_history_;
 
   std::deque<double> jerk_command_history_;
+
+  int curvature_smoothing_stride_{1};
 
 
   // Prediction

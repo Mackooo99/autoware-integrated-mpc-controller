@@ -13,12 +13,15 @@ TrackingStateBuilder::TrackingStateBuilder(
   const double nearest_dist_threshold,
   const double nearest_yaw_threshold,
   const bool use_incremental_search,
-  const std::size_t incremental_search_window)
+  const std::size_t incremental_search_window,
+  const std::size_t curvature_smoothing_stride)
 : wheel_base_(wheel_base),
   nearest_dist_threshold_(nearest_dist_threshold),
   nearest_yaw_threshold_(nearest_yaw_threshold),
   use_incremental_search_(use_incremental_search),
-  incremental_search_window_(incremental_search_window)
+  incremental_search_window_(incremental_search_window),
+  curvature_smoothing_stride_(
+    std::max<std::size_t>(1, curvature_smoothing_stride))
 {
   if (wheel_base_ <= 0.0) {
     throw std::invalid_argument("wheel_base must be positive");
@@ -202,7 +205,8 @@ TrackingStateBuilder::findNearestIndexIncremental(
 
 double TrackingStateBuilder::calculateCurvature(
   const autoware_planning_msgs::msg::Trajectory & trajectory,
-  const std::size_t index) 
+  const std::size_t index,
+  const std::size_t stride)
 {
   const auto n =
     trajectory.points.size();
@@ -211,23 +215,28 @@ double TrackingStateBuilder::calculateCurvature(
     return 0.0;
   }
 
-  std::size_t i0;
-  std::size_t i1;
-  std::size_t i2;
+  // Widest stride that still fits a symmetric triangle inside
+  // [0, n-1]. stride=1 with n>=3 always gives effective_stride=1,
+  // reproducing the original index-1/index/index+1 selection exactly.
+  const std::size_t effective_stride =
+    std::max<std::size_t>(
+      1,
+      std::min(
+        stride,
+        (n - 1) / 2));
 
-  if (index == 0) {
-    i0 = 0;
-    i1 = 1;
-    i2 = 2;
-  } else if (index >= n - 1) {
-    i0 = n - 3;
-    i1 = n - 2;
-    i2 = n - 1;
+  std::size_t i1;
+
+  if (index < effective_stride) {
+    i1 = effective_stride;
+  } else if (index > n - 1 - effective_stride) {
+    i1 = n - 1 - effective_stride;
   } else {
-    i0 = index - 1;
     i1 = index;
-    i2 = index + 1;
   }
+
+  const std::size_t i0 = i1 - effective_stride;
+  const std::size_t i2 = i1 + effective_stride;
 
   const auto & p0 =
     trajectory.points.at(i0).pose.position;
@@ -392,7 +401,8 @@ TrackingStateBuilder::build(
   const double reference_curvature =
     calculateCurvature(
       trajectory,
-      index);
+      index,
+      curvature_smoothing_stride_);
 
   const double reference_steer =
     std::atan(

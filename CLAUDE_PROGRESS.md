@@ -238,6 +238,26 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     RMSE/steering smoothness on an actual delayed simulator, which is what the delay values are
     ultimately meant to improve.
 
+- **Task 11 — Configurable curvature/reference smoothing** (commit pending)
+  - `TrackingStateBuilder::calculateCurvature` generalized: new `stride` param (default 1)
+    replaces the hardcoded index-1/index+1 selection with a symmetric index-stride/index+stride
+    triangle, clamped so it always fits within the trajectory. Verified algebraically and by test
+    that `stride=1` reproduces the original 3-branch index selection exactly for every case (start,
+    end, interior) - existing sanity assertions pass unchanged.
+  - `PredictionReferenceBuilder` (all 5 internal `calculateCurvature` call sites feeding the whole
+    prediction horizon's `kappa_ref`/`delta_ref`) and the node both gained a
+    `curvature_smoothing_stride` parameter (default 1 = V1 exactly), threaded through consistently
+    so smoothing applies uniformly across current tracking state and the full horizon, not just
+    one of the two.
+  - Extended `tracking_state_sanity_check.cpp` (append-only) with: straight road (curvature ~0 at
+    stride 1 and 5), constant-radius curve (magnitude `1/R`, correct left(+)/right(-) sign, at
+    stride 1 and 10), S-curve sign flip across the inflection at stride 5, and numerical stability
+    on nearly-collinear (finite, ~0) and nearly-coincident (finite, exactly 0 via the existing
+    epsilon guard) points.
+  - Build: clean. All 8 sanity checks: PASS.
+  - Not yet done (RUNTIME VALIDATION PENDING): plotting `kappa_ref`/`delta_ref` before/after on a
+    real scenario (`verify_reference_steer.py` per the audit), since that needs a live run.
+
 ## Next task
 
-Task 11 — curvature/reference smoothing (configurable).
+Task 12 — automated MPC tuning framework (offline tooling).

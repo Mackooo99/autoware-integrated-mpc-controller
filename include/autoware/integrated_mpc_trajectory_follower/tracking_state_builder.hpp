@@ -42,7 +42,8 @@ public:
     double nearest_dist_threshold,
     double nearest_yaw_threshold,
     bool use_incremental_search = false,
-    std::size_t incremental_search_window = 15);
+    std::size_t incremental_search_window = 15,
+    std::size_t curvature_smoothing_stride = 1);
 
   std::optional<TrackingState> build(
     const autoware_planning_msgs::msg::Trajectory & trajectory,
@@ -50,9 +51,15 @@ public:
     const autoware_vehicle_msgs::msg::SteeringReport & steering,
     const geometry_msgs::msg::AccelWithCovarianceStamped & acceleration);
 
+  // stride = 1 reproduces V1 exactly (uses the immediately adjacent
+  // points index-1/index+1). stride > 1 widens the triangle to
+  // index-stride/index+stride, analogous in purpose to stock's
+  // curvature_smoothing_num_traj: less sensitive to per-point noise,
+  // at the cost of some averaging over a longer arc.
   static double calculateCurvature(
     const autoware_planning_msgs::msg::Trajectory & trajectory,
-    std::size_t index);
+    std::size_t index,
+    std::size_t stride = 1);
 
 private:
   std::optional<std::size_t> findNearestIndex(
@@ -81,6 +88,8 @@ private:
   bool use_incremental_search_;
   std::size_t incremental_search_window_;
   std::optional<std::size_t> previous_nearest_index_;
+
+  std::size_t curvature_smoothing_stride_;
 };
 
 }  // namespace autoware::integrated_mpc

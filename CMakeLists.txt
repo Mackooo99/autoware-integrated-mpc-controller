@@ -21,6 +21,7 @@ find_package(nav_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 find_package(autoware_osqp_interface REQUIRED)
+find_package(diagnostic_updater REQUIRED)
 
 # ============================================================
 # Integrated MPC vehicle model
@@ -279,6 +280,7 @@ ament_target_dependencies(
   geometry_msgs
   nav_msgs
   autoware_osqp_interface
+  diagnostic_updater
 )
 
 target_link_libraries(

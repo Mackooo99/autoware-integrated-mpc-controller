@@ -8,7 +8,7 @@
   <node
     pkg="autoware_integrated_mpc_trajectory_follower"
     exec="integrated_mpc_node"
-    name="integrated_mpc_node"
+    name="controller_node_exe"
     namespace="/control/trajectory_follower"
     output="screen"
   >

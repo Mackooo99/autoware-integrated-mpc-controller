@@ -6,6 +6,8 @@
 
 #include "autoware/osqp_interface/osqp_interface.hpp"
 
+#include <diagnostic_updater/diagnostic_updater.hpp>
+
 #include <rclcpp/rclcpp.hpp>
 
 #include <autoware_adapi_v1_msgs/msg/operation_mode_state.hpp>
@@ -34,7 +36,7 @@ class IntegratedMpcNode : public rclcpp::Node
 {
 public:
   IntegratedMpcNode()
-  : Node("integrated_mpc_node")
+  : Node("controller_node_exe")
   {
     // ========================================================
     // General controller parameters
@@ -69,6 +71,25 @@ public:
       declare_parameter<double>(
         "nearest_yaw_threshold",
         1.046);
+
+
+    // ========================================================
+    // Diagnostics
+    //
+    // Stock Autoware expects a diagnostic_updater task named
+    // "control_state" reported under the ROS node identity
+    // controller_node_exe (see autoware_pid_longitudinal_
+    // controller and autoware_trajectory_follower_node).
+    // The diagnostic graph promotes a missing/stale leaf to
+    // ERROR, which blocks autonomous mode availability.
+    // ========================================================
+
+    diag_updater_->setHardwareID("integrated_mpc_node");
+
+    diag_updater_->add(
+      "control_state",
+      this,
+      &IntegratedMpcNode::checkControlState);
 
 
     // ========================================================
@@ -387,6 +408,14 @@ private:
         2000,
         "Waiting for controller inputs...");
 
+      control_state_ =
+        ControlState::WAITING_FOR_INPUT;
+
+      control_state_message_ =
+        "waiting for controller inputs";
+
+      diag_updater_->force_update();
+
       return;
     }
 
@@ -396,6 +425,14 @@ private:
         *get_clock(),
         2000,
         "Received empty reference trajectory.");
+
+      control_state_ =
+        ControlState::WAITING_FOR_INPUT;
+
+      control_state_message_ =
+        "received empty reference trajectory";
+
+      diag_updater_->force_update();
 
       return;
     }
@@ -422,6 +459,14 @@ private:
         *get_clock(),
         1000,
         "Could not determine nearest reference point.");
+
+      control_state_ =
+        ControlState::WAITING_FOR_INPUT;
+
+      control_state_message_ =
+        "could not determine nearest reference point";
+
+      diag_updater_->force_update();
 
       return;
     }
@@ -1197,6 +1242,31 @@ const bool solution_valid_for_control =
   cost_finite &&
   maximum_constraint_violation <=
     PUBLISH_CONSTRAINT_TOLERANCE;
+
+// ========================================================
+// 14.5 Update control_state diagnostic
+//
+// Reflects real MPC/solver validity regardless of
+// publish_enabled_, so the diagnostic is meaningful in both
+// open-loop and closed-loop operation.
+// ========================================================
+
+control_state_ =
+  solution_valid_for_control ?
+  ControlState::OK :
+  ControlState::EMERGENCY;
+
+control_state_message_ =
+  solution_valid_for_control ?
+  "OK" :
+  "MPC solution rejected: status=" +
+    solver_status +
+    ", finite=" +
+    (optimal_solution_finite ? "true" : "false") +
+    ", max_violation=" +
+    std::to_string(maximum_constraint_violation);
+
+diag_updater_->force_update();
 
     // ========================================================
     // 15. OSQP diagnostics
@@ -2209,6 +2279,64 @@ RCLCPP_INFO_THROTTLE(
       40.0};
 
 
+
+
+    // ==========================================================
+    // Diagnostics: controller_node_exe: control_state
+    //
+    // Mirrors the stock autoware_pid_longitudinal_controller
+    // task of the same name so the diagnostic graph leaf
+    // /autoware/control/performance_monitoring/control_state
+    // is satisfied by a real health signal instead of staying
+    // STALE.
+    // ==========================================================
+
+  enum class ControlState : int32_t
+  {
+    WAITING_FOR_INPUT = 0,
+    OK = 1,
+    EMERGENCY = 2
+  };
+
+  void checkControlState(
+    diagnostic_updater::DiagnosticStatusWrapper & stat)
+  {
+    using diagnostic_msgs::msg::DiagnosticStatus;
+
+    int32_t level = DiagnosticStatus::OK;
+
+    switch (control_state_) {
+      case ControlState::WAITING_FOR_INPUT:
+        level = DiagnosticStatus::WARN;
+        break;
+
+      case ControlState::EMERGENCY:
+        level = DiagnosticStatus::ERROR;
+        break;
+
+      case ControlState::OK:
+      default:
+        level = DiagnosticStatus::OK;
+        break;
+    }
+
+    stat.add<int32_t>(
+      "control_state",
+      static_cast<int32_t>(control_state_));
+
+    stat.summary(
+      level,
+      control_state_message_);
+  }
+
+  std::shared_ptr<diagnostic_updater::Updater> diag_updater_ =
+    std::make_shared<diagnostic_updater::Updater>(this);
+
+  ControlState control_state_{
+    ControlState::WAITING_FOR_INPUT};
+
+  std::string control_state_message_{
+    "waiting for controller inputs"};
 
 
     // ==========================================================

@@ -28,6 +28,7 @@ find_package(nav_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 find_package(autoware_osqp_interface REQUIRED)
+find_package(autoware_internal_debug_msgs REQUIRED)
 find_package(diagnostic_updater REQUIRED)
 
 # ============================================================
@@ -287,6 +288,7 @@ ament_target_dependencies(
   geometry_msgs
   nav_msgs
   autoware_osqp_interface
+  autoware_internal_debug_msgs
   diagnostic_updater
 )
 

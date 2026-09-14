@@ -110,6 +110,43 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
     node launched with `--params-file` on this yaml: every key/value in the file matches the
     runtime dump exactly, and every declared node parameter is now represented in the file.
 
+- **Task 6 — Timing/profiling infrastructure** (commit pending, controller side;
+  benchmark-tooling side has no git history to commit into - see below)
+  - `src/integrated_mpc_node.cpp`: `ScopedCallbackTimer` (RAII, fires on every `onTimer` return
+    path) publishes whole-callback time on new `~/debug/processing_time_ms`. OSQP-only
+    `total_solver_time_ms` (already computed, wall-clock around `solver.optimize()`) published on
+    new `~/debug/solver_time_ms`. Both `autoware_internal_debug_msgs/Float64Stamped`, matching the
+    stock topic's message type but under integrated-MPC-specific names per CLAUDE.md #34 (no
+    lateral/longitudinal split to mislabel).
+  - Added chrono checkpoints for S1 tracking_state, S2 reference_horizon, S3 prediction_model, S4
+    constraints, S5 cost, S6 debug_validation (symmetry+eigensolver), S7 solver, S8+S9 post-solve
+    debug, S10 publish; logged (not published, to avoid topic proliferation) via one throttled
+    (1 Hz) `RCLCPP_INFO` block for offline bottleneck analysis (Task 7 input).
+  - Build: clean. All 7 sanity checks: PASS.
+  - Bench-verified: `~/debug/processing_time_ms` ~3.1-3.6 ms, `~/debug/solver_time_ms` ~0.66-0.73 ms
+    (isolated single-node bench, no full-graph contention). Section log for one representative
+    cycle: S1=0.005, S2=0.007, S3=0.198, S4=0.020, **S5=1.893**, S6=0.524, S7=0.807, S8+S9=0.167 ms.
+  - **Finding for later:** S5 (MpcCostBuilder::build, real math, not debug-only) is the single
+    largest non-solver contributor in this bench - bigger than the OSQP solve itself. This is core
+    computation, not something Task 7's debug-gating touches (CLAUDE.md #7/#35: don't rewrite a
+    validated builder without demonstrated evidence of a *bug*; a performance cost alone isn't
+    that). Flagging as a candidate for a *future* batch, not acted on here.
+  - Benchmark-tooling side (user-approved minimal extension, CLAUDE.md #33 exception granted this
+    session): `~/control_benchmark/monitor_ws/src/control_benchmark_monitor/control_benchmark_monitor/logger_node.py`
+    subscribes the two new topics and writes them into the existing `timings.csv` 3-column schema
+    under labels `integrated_callback`/`integrated_solver` (existing `lateral`/`longitudinal` rows
+    untouched). `~/control_benchmark/scripts/analyze_run.py`: both aggregation loops extended to
+    include the two new labels, producing `integrated_callback_processing_time_ms` and
+    `integrated_solver_processing_time_ms` in `summary.json` alongside (not replacing) the stock
+    keys. Rebuilt `control_benchmark_monitor` (`--symlink-install`, develop mode, package-scoped).
+    `control_benchmark` has no `.git` - these two file edits are not git-committable; recorded here
+    for traceability instead. Bench-verified end-to-end (controller + synthetic publisher +
+    logger_node): `timings.csv` contains 272 correctly-labeled rows each of
+    `integrated_callback`/`integrated_solver` with no interference with the stock columns.
+    `analyze_run.py`'s summary/plot aggregation itself was only syntax-checked
+    (`python3 -m py_compile`), not run end-to-end - it needs the rest of a real scenario's
+    row set (odometry, control_evaluator metrics, etc.) that this synthetic bench doesn't produce.
+
 ## Next task
 
-Task 6 — timing/profiling infrastructure.
+Task 7 — performance cleanup based on measurements.

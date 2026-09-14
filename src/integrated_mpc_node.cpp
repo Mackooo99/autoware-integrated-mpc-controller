@@ -8,6 +8,8 @@
 
 #include <diagnostic_updater/diagnostic_updater.hpp>
 
+#include <autoware_internal_debug_msgs/msg/float64_stamped.hpp>
+
 #include <rclcpp/rclcpp.hpp>
 
 #include <autoware_adapi_v1_msgs/msg/operation_mode_state.hpp>
@@ -53,6 +55,39 @@ geometry_msgs::msg::Quaternion yawToQuaternion(double yaw)
   q.w = std::cos(yaw * 0.5);
   return q;
 }
+
+// Publishes the whole-callback wall-clock time on scope exit, so it covers
+// every onTimer() return path (early-return on missing inputs, fallback,
+// successful publish) with a single instrumentation point instead of one
+// per return statement. Low overhead: one steady_clock read in the
+// constructor, one in the destructor, one small message publish.
+class ScopedCallbackTimer
+{
+public:
+  explicit ScopedCallbackTimer(
+    std::function<void(double)> on_finish)
+  : start_(std::chrono::steady_clock::now()),
+    on_finish_(std::move(on_finish))
+  {
+  }
+
+  ~ScopedCallbackTimer()
+  {
+    const double elapsed_ms =
+      std::chrono::duration<double, std::milli>(
+        std::chrono::steady_clock::now() - start_)
+        .count();
+
+    on_finish_(elapsed_ms);
+  }
+
+  ScopedCallbackTimer(const ScopedCallbackTimer &) = delete;
+  ScopedCallbackTimer & operator=(const ScopedCallbackTimer &) = delete;
+
+private:
+  std::chrono::steady_clock::time_point start_;
+  std::function<void(double)> on_finish_;
+};
 
 }  // namespace
 
@@ -362,6 +397,22 @@ public:
           "~/output/predicted_trajectory",
           rclcpp::QoS(1).reliable());
 
+    // Scientific timing (CLAUDE.md #4/#28): whole-callback time and
+    // OSQP-only solve time, kept separate and under integrated-MPC-
+    // specific names (this controller has no separate lateral/
+    // longitudinal stages to attribute stock's two topics to).
+    processing_time_pub_ =
+      create_publisher<
+        autoware_internal_debug_msgs::msg::Float64Stamped>(
+          "~/debug/processing_time_ms",
+          1);
+
+    solver_time_pub_ =
+      create_publisher<
+        autoware_internal_debug_msgs::msg::Float64Stamped>(
+          "~/debug/solver_time_ms",
+          1);
+
 
     // ========================================================
     // Control timer
@@ -416,6 +467,20 @@ public:
 private:
   void onTimer()
   {
+    // Whole-callback timing (CLAUDE.md #4/#28). Fires on every return path
+    // via RAII, so debug-only sections below never need their own
+    // early-return bookkeeping to keep this metric correct.
+    ScopedCallbackTimer callback_timer(
+      [this](double elapsed_ms)
+      {
+        autoware_internal_debug_msgs::msg::Float64Stamped msg;
+        msg.stamp = now();
+        msg.data = elapsed_ms;
+        processing_time_pub_->publish(msg);
+      });
+
+    const auto section_timer_start = std::chrono::steady_clock::now();
+
     // ========================================================
     // 1. Check input availability
     // ========================================================
@@ -499,6 +564,9 @@ private:
     const Eigen::VectorXd x0 =
       tracking_state->x0;
 
+    const auto t_tracking =
+      std::chrono::steady_clock::now();
+
 
     // ========================================================
     // 3. Build prediction reference horizon
@@ -508,6 +576,9 @@ private:
       prediction_reference_builder_->build(
         *trajectory_,
         tracking_state->nearest_index);
+
+    const auto t_reference =
+      std::chrono::steady_clock::now();
 
 
     // ========================================================
@@ -520,6 +591,9 @@ private:
       integrated_prediction_builder_->build(
         prediction_reference,
         x0);
+
+    const auto t_prediction =
+      std::chrono::steady_clock::now();
 
 
     // ========================================================
@@ -585,6 +659,9 @@ private:
       ctrl_period_,
       constraint_parameters);
 
+    const auto t_constraints =
+      std::chrono::steady_clock::now();
+
 
     // ========================================================
     // 6. Build MPC cost
@@ -640,6 +717,9 @@ private:
           prediction_reference,
           x0,
           cost_weights);
+
+    const auto t_cost =
+      std::chrono::steady_clock::now();
 
 
     // ========================================================
@@ -705,6 +785,9 @@ private:
       mpc_cost.f.allFinite() &&
       std::isfinite(
         mpc_cost.constant_term);
+
+    const auto t_validation =
+      std::chrono::steady_clock::now();
 
 
     // ========================================================
@@ -1367,6 +1450,60 @@ if (solution_valid_for_control) {
   predicted_trajectory_pub_->publish(predicted_trajectory_msg);
 }
 
+
+// ========================================================
+// 14.7 Scientific timing: solver time + section breakdown
+//
+// OSQP-only time (total_solver_time_ms, wall-clock around
+// solver.optimize()) is published separately from the whole-
+// callback time (ScopedCallbackTimer, published on function
+// exit), per CLAUDE.md #4/#28's requirement to distinguish the
+// two. Section breakdown is logged (not published as topics)
+// for offline bottleneck analysis; low overhead (chrono reads
+// already taken above, this is one throttled snprintf/publish
+// per second).
+// ========================================================
+
+{
+  autoware_internal_debug_msgs::msg::Float64Stamped solver_msg;
+  solver_msg.stamp = now();
+  solver_msg.data = total_solver_time_ms;
+  solver_time_pub_->publish(solver_msg);
+}
+
+const auto t_before_publish_section =
+  std::chrono::steady_clock::now();
+
+const auto ms = [](const auto & duration)
+{
+  return std::chrono::duration<double, std::milli>(duration).count();
+};
+
+RCLCPP_INFO_THROTTLE(
+  get_logger(),
+  *get_clock(),
+  1000,
+
+  "\n"
+  "Integrated MPC section timing (ms):\n"
+  "  S1 tracking_state       = %.4f\n"
+  "  S2 reference_horizon    = %.4f\n"
+  "  S3 prediction_model     = %.4f\n"
+  "  S4 constraints          = %.4f\n"
+  "  S5 cost                 = %.4f\n"
+  "  S6 debug_validation     = %.4f\n"
+  "  S7 solver (OSQP solve)  = %.4f\n"
+  "  S8+S9 post-solve debug  = %.4f",
+
+  ms(t_tracking - section_timer_start),
+  ms(t_reference - t_tracking),
+  ms(t_prediction - t_reference),
+  ms(t_constraints - t_prediction),
+  ms(t_cost - t_constraints),
+  ms(t_validation - t_cost),
+  total_solver_time_ms,
+  ms(t_before_publish_section - solve_end));
+
     // ========================================================
     // 15. OSQP diagnostics
     // ========================================================
@@ -1922,6 +2059,9 @@ if (!publish_enabled_) {
   return;
 }
 
+const auto t_publish_section_start =
+  std::chrono::steady_clock::now();
+
 
 // ========================================================
 // 23.1 Initialize previous command
@@ -2269,7 +2409,8 @@ RCLCPP_INFO_THROTTLE(
   "  target velocity = %+.6f m/s\n"
   "  e_y             = %+.6f m\n"
   "  e_psi           = %+.6f rad\n"
-  "  e_v             = %+.6f m/s",
+  "  e_v             = %+.6f m/s\n"
+  "  S10 publish(ms) = %.4f",
 
   raw_steering_command,
   steering_command,
@@ -2290,7 +2431,10 @@ RCLCPP_INFO_THROTTLE(
     heading_error,
 
   tracking_state->
-    velocity_error);
+    velocity_error,
+
+  std::chrono::duration<double, std::milli>(
+    std::chrono::steady_clock::now() - t_publish_section_start).count());
 
 
   }
@@ -2532,6 +2676,14 @@ RCLCPP_INFO_THROTTLE(
   rclcpp::Publisher<
     autoware_planning_msgs::msg::Trajectory>::
     SharedPtr predicted_trajectory_pub_;
+
+  rclcpp::Publisher<
+    autoware_internal_debug_msgs::msg::Float64Stamped>::
+    SharedPtr processing_time_pub_;
+
+  rclcpp::Publisher<
+    autoware_internal_debug_msgs::msg::Float64Stamped>::
+    SharedPtr solver_time_pub_;
 
   rclcpp::TimerBase::SharedPtr
     timer_;

@@ -96,6 +96,20 @@ a clean retry (possibly at a quieter time / isolated domain), or explicit user g
   - Runtime consumer validation (lane departure / AEB / control_validator staying healthy on
     this topic): RUNTIME VALIDATION PENDING (needs the full graph).
 
+- **Task 5 — Parameter/configuration cleanup** (commit pending)
+  - `config/integrated_mpc.param.yaml`: renamed `max_steer`->`max_steering_angle`,
+    `max_acc`->`max_acceleration`, `min_acc`->`min_acceleration` (previously silently ignored,
+    node ran on hardcoded defaults that happened to match).
+  - Added the previously-missing-but-declared `nearest_dist_threshold`, `nearest_yaw_threshold`,
+    and all four steer-rate map parameters, explicit at their current defaults.
+  - Removed `steering_input_delay` and `longitudinal_delay`: not declared/consumed anywhere yet
+    (dead keys); documented in-file that they must not return until Task 10 actually declares
+    and consumes them.
+  - Build: clean (no code change). All 7 sanity checks: PASS.
+  - Verified with `ros2 param dump /control/trajectory_follower/controller_node_exe` against a
+    node launched with `--params-file` on this yaml: every key/value in the file matches the
+    runtime dump exactly, and every declared node parameter is now represented in the file.
+
 ## Next task
 
-Task 5 — parameter/configuration cleanup.
+Task 6 — timing/profiling infrastructure.

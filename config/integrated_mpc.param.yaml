@@ -4,13 +4,12 @@
     # Controller timing
     ctrl_period: 0.03
 
-    # Disabled until the communication interface is verified.
     publish_enabled: true
 
     # MPC
     prediction_horizon: 50
     prediction_dt: 0.1
-    
+
     min_prediction_length: 5.0
     minimum_prediction_velocity: 0.1
 
@@ -18,20 +17,26 @@
     wheel_base: 2.79
     steer_tau: 0.27
 
-    # Delays
-    steering_input_delay: 0.24
-    longitudinal_delay: 0.10
+    # Nearest-point search thresholds (TrackingStateBuilder)
+    nearest_dist_threshold: 3.0
+    nearest_yaw_threshold: 1.046
 
     # Physical limits
-    max_steer: 0.7
+    max_steering_angle: 0.7
 
-    max_acc: 3.0
-    min_acc: -5.0
+    max_acceleration: 3.0
+    min_acceleration: -5.0
 
     max_jerk: 2.0
     min_jerk: -5.0
 
-    # Initial proposed weights
+    # Steering-rate limit maps (curvature/velocity -> deg/s), MpcConstraintBuilder
+    curvature_for_steer_rate: [0.001, 0.002, 0.01]
+    steer_rate_deg_by_curvature: [40.0, 50.0, 60.0]
+    velocity_for_steer_rate: [10.0, 15.0, 20.0]
+    steer_rate_deg_by_velocity: [60.0, 50.0, 40.0]
+
+    # V1 cost weights
     weight_lat_error: 1.0
     weight_heading_error_squared_vel: 0.3
     weight_velocity_error: 1.0
@@ -40,8 +45,13 @@
     weight_steering_input: 1.0
     weight_steering_input_squared_vel: 0.25
     weight_jerk: 0.1
-    
-    
+
     terminal_weight_lat_error: 1.0
     terminal_weight_heading_error: 0.1
     terminal_weight_velocity_error: 1.0
+
+    # NOTE: steering/longitudinal actuator-delay compensation is not yet
+    # implemented (Batch 2 / Task 10). Do not add steering_input_delay or
+    # longitudinal_delay keys here until the node actually declares and
+    # consumes them - an unconsumed key silently does nothing and is a
+    # reproducibility hazard for the thesis artefact (CLAUDE.md #33/#43).

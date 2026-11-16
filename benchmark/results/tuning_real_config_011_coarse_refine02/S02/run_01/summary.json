@@ -1,0 +1,118 @@
+{
+  "analysis_window": {
+    "start_time_s": 33.689195135000006,
+    "end_time_s": 50.689110553000006,
+    "duration_s": 16.999915418,
+    "samples": 341
+  },
+  "error_sources": {
+    "velocity": "velocity_error_eval",
+    "lateral": "lateral_error_eval",
+    "yaw": "yaw_error_eval"
+  },
+  "velocity_error": {
+    "rmse": 0.11284376902608194,
+    "mae": 0.0783389677419355,
+    "max_abs": 0.298286,
+    "p95_abs": 0.249622
+  },
+  "lateral_error": {
+    "rmse": 0.2205955161060816,
+    "mae": 0.14583009677419354,
+    "max_abs": 0.689734,
+    "p95_abs": 0.52228
+  },
+  "yaw_error": {
+    "rmse": 0.050526058393467216,
+    "mae": 0.02908176539589443,
+    "max_abs": 0.163439,
+    "p95_abs": 0.139542
+  },
+  "acceleration": {
+    "mean": -0.2881655291879508,
+    "median": -0.010684923751974142,
+    "std": 1.2543515027953571,
+    "p95": 2.276499079035884,
+    "p99": 2.6477075969383868,
+    "max": 2.683406486856907
+  },
+  "jerk": {
+    "rmse": 0.8637006865273412,
+    "mae": 0.5547211260997067,
+    "max_abs": 2.261221,
+    "p95_abs": 1.762651
+  },
+  "lateral_acceleration_abs": {
+    "mean": 0.46366112316715546,
+    "median": 0.066455,
+    "std": 0.9963304292612185,
+    "p95": 3.43256,
+    "p99": 4.1762632,
+    "max": 4.220833
+  },
+  "steering_rate": {
+    "rmse": 0.1552145474219532,
+    "mae": 0.07808830498533723,
+    "max_abs": 0.749243,
+    "p95_abs": 0.419611
+  },
+  "required_steer": {
+    "rmse": 0.08667438190299992,
+    "mae": 0.03641371754358106,
+    "max_abs": 0.40661366794049486,
+    "p95_abs": 0.2477076994245276
+  },
+  "reference_curvature": {
+    "rmse": 0.031917273283296216,
+    "mae": 0.013300319967472907,
+    "max_abs": 0.15434088938367796,
+    "p95_abs": 0.09064573043163993
+  },
+  "controller_to_actual_steering_error": {
+    "rmse": 0.009566116879578849,
+    "mae": 0.0035891488708775557,
+    "max_abs": 0.055934272706508636,
+    "p95_abs": 0.024893123656511307
+  },
+  "boundary": {
+    "departure_detected": false,
+    "first_departure_time_s": null,
+    "left_boundary_distance_min": 0.0,
+    "right_boundary_distance_min": 0.0,
+    "left_uncrossable_boundary_distance_min": 0.455166,
+    "right_uncrossable_boundary_distance_min": 6.393458
+  },
+  "lateral_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "longitudinal_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "integrated_callback_processing_time_ms": {
+    "mean": 2.1952181489971347,
+    "median": 2.4700569999999997,
+    "std": 1.1701037186234715,
+    "p95": 3.5697250499999997,
+    "p99": 4.053341349999998,
+    "max": 4.865116
+  },
+  "integrated_solver_processing_time_ms": {
+    "mean": 1.036235197053407,
+    "median": 0.829668,
+    "std": 0.43096835060790034,
+    "p95": 1.7722021000000001,
+    "p99": 2.2470587800000006,
+    "max": 2.422911
+  },
+  "scenario_status": "PASS"
+}

@@ -1,0 +1,19 @@
+[INFO] [1789415205.689615081] [benchmark_logger]: Benchmark logger started: controller=integrated_mpc_v1, scenario=S01, run=2, output=/home/nit-user/control_benchmark/results/integrated_mpc_v1/S01/run_02
+[INFO] [1789415251.742121519] [benchmark_logger]: Benchmark data saved to /home/nit-user/control_benchmark/results/integrated_mpc_v1/S01/run_02
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+Traceback (most recent call last):
+  File "/home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/lib/control_benchmark_monitor/logger_node", line 33, in <module>
+    sys.exit(load_entry_point('control-benchmark-monitor', 'console_scripts', 'logger_node')())
+  File "/home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/control_benchmark_monitor/logger_node.py", line 430, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 808, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 797, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 780, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 653, in _wait_for_ready_callbacks
+    wait_set = _rclpy.WaitSet(
+rclpy._rclpy_pybind11.RCLError: failed to initialize wait set: the given context is not valid, either rcl_init() was not called or rcl_shutdown() was called., at ./src/rcl/wait.c:130

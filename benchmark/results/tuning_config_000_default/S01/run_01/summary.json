@@ -1,0 +1,118 @@
+{
+  "analysis_window": {
+    "start_time_s": null,
+    "end_time_s": null,
+    "duration_s": 0.0,
+    "samples": 0
+  },
+  "error_sources": {
+    "velocity": "velocity_error_raw",
+    "lateral": "lateral_error_raw",
+    "yaw": "yaw_error_raw"
+  },
+  "velocity_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "lateral_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "yaw_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "acceleration": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "jerk": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "lateral_acceleration_abs": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "steering_rate": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "required_steer": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "reference_curvature": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "controller_to_actual_steering_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "boundary": {
+    "departure_detected": false,
+    "first_departure_time_s": null,
+    "left_boundary_distance_min": null,
+    "right_boundary_distance_min": null,
+    "left_uncrossable_boundary_distance_min": null,
+    "right_uncrossable_boundary_distance_min": null
+  },
+  "lateral_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "longitudinal_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "integrated_callback_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "integrated_solver_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "scenario_status": "UNKNOWN"
+}

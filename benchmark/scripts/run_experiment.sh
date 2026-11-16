@@ -1,0 +1,213 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+if [[ $# -lt 3 ]]; then
+  echo "Usage: $0 <controller_name> <scenario_number 1-5> <run_id> [--bag]"
+  echo "Example: $0 baseline_stock 1 1"
+  exit 2
+fi
+
+RESULT_LABEL="$1"
+SCENARIO_NUM="$2"
+RUN_ID="$3"
+BAG_MODE="${4:-}"
+
+# Tuning konfiguracije su samo različiti skupovi parametara
+# istog integrated_mpc_v1 kontrolera.
+case "${RESULT_LABEL}" in
+  baseline_stock)
+    CONTROLLER="baseline_stock"
+    ;;
+  integrated_mpc_v1)
+    CONTROLLER="integrated_mpc_v1"
+    ;;
+  tuning_*)
+    CONTROLLER="integrated_mpc_v1"
+    ;;
+  *)
+    echo "[ERROR] Unknown controller/result label: ${RESULT_LABEL}"
+    echo "Valid controllers: baseline_stock, integrated_mpc_v1"
+    echo "Tuning labels must start with: tuning_"
+    exit 2
+    ;;
+esac
+
+ROOT="${HOME}/control_benchmark"
+AUTOWARE_WS="${HOME}/autoware-new/Autoware/autoware"
+MONITOR_WS="${ROOT}/monitor_ws"
+
+printf -v SCENARIO_TAG "S%02d" "${SCENARIO_NUM}"
+printf -v RUN_TAG "run_%02d" "${RUN_ID}"
+
+RUN_DIR="${ROOT}/results/${RESULT_LABEL}/${SCENARIO_TAG}/${RUN_TAG}"
+mkdir -p "${RUN_DIR}"
+
+source /opt/ros/humble/setup.bash
+source "${AUTOWARE_WS}/install/setup.bash"
+source "${MONITOR_WS}/install/setup.bash"
+
+LOGGER_PID=""
+BAG_PID=""
+
+cleanup() {
+  set +e
+
+  if [[ -n "${BAG_PID:-}" ]] && kill -0 "${BAG_PID}" 2>/dev/null; then
+    echo "Stopping rosbag..."
+    kill -INT "${BAG_PID}" 2>/dev/null
+
+    for _ in $(seq 1 30); do
+      kill -0 "${BAG_PID}" 2>/dev/null || break
+      sleep 0.1
+    done
+
+    if kill -0 "${BAG_PID}" 2>/dev/null; then
+      kill -TERM "${BAG_PID}" 2>/dev/null
+    fi
+
+    wait "${BAG_PID}" 2>/dev/null || true
+  fi
+
+  if [[ -n "${LOGGER_PID:-}" ]] && kill -0 "${LOGGER_PID}" 2>/dev/null; then
+    echo "Stopping benchmark logger..."
+    kill -INT "${LOGGER_PID}" 2>/dev/null
+
+    for _ in $(seq 1 30); do
+      kill -0 "${LOGGER_PID}" 2>/dev/null || break
+      sleep 0.1
+    done
+
+    if kill -0 "${LOGGER_PID}" 2>/dev/null; then
+      echo "Logger did not stop after SIGINT, sending SIGTERM..."
+      kill -TERM "${LOGGER_PID}" 2>/dev/null
+    fi
+
+    for _ in $(seq 1 20); do
+      kill -0 "${LOGGER_PID}" 2>/dev/null || break
+      sleep 0.1
+    done
+
+    if kill -0 "${LOGGER_PID}" 2>/dev/null; then
+      echo "Logger still running, sending SIGKILL..."
+      kill -KILL "${LOGGER_PID}" 2>/dev/null
+    fi
+
+    wait "${LOGGER_PID}" 2>/dev/null || true
+  fi
+}
+trap cleanup EXIT INT TERM
+
+AUTOWARE_COMMIT="unknown"
+if git -C "${AUTOWARE_WS}" rev-parse HEAD >/dev/null 2>&1; then
+  AUTOWARE_COMMIT="$(git -C "${AUTOWARE_WS}" rev-parse HEAD)"
+fi
+
+cat > "${RUN_DIR}/metadata.yaml" <<EOF
+controller: ${CONTROLLER}
+scenario: ${SCENARIO_TAG}
+scenario_number: ${SCENARIO_NUM}
+run_id: ${RUN_ID}
+date_utc: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+autoware_workspace: ${AUTOWARE_WS}
+autoware_commit: ${AUTOWARE_COMMIT}
+architecture: awf/universe/20250130
+vehicle_model: sample_vehicle
+sensor_model: sample_sensor_kit
+wheelbase_m: 2.79
+scenario_max_steer_rad: 0.5236
+autoware_max_steer_rad: 0.7
+EOF
+
+
+echo "Starting benchmark logger..."
+
+"${MONITOR_WS}/install/control_benchmark_monitor/lib/control_benchmark_monitor/logger_node" \
+  --ros-args \
+  --params-file "${MONITOR_WS}/install/control_benchmark_monitor/share/control_benchmark_monitor/config/benchmark.yaml" \
+  -p output_dir:="${RUN_DIR}" \
+  -p controller_name:="${CONTROLLER}" \
+  -p scenario_name:="${SCENARIO_TAG}" \
+  -p run_id:="${RUN_ID}" \
+  > "${RUN_DIR}/logger.log" 2>&1 &
+
+LOGGER_PID=$!
+
+if [[ "${BAG_MODE}" == "--bag" ]]; then
+  echo "Starting rosbag..."
+  BAG_TOPICS=(
+    /planning/trajectory
+    /localization/kinematic_state
+    /localization/acceleration
+    /vehicle/status/steering_status
+    /control/trajectory_follower/control_cmd
+    /control/command/control_cmd
+    /control/control_evaluator/metrics/lateral_deviation
+    /control/control_evaluator/metrics/yaw_deviation
+    /control/control_evaluator/metrics/longitudinal_velocity_deviation
+    /control/control_evaluator/metrics/jerk
+    /diagnostics/motion_velocity_planner/boundary_departure
+    /control/trajectory_follower/controller_node_exe/lateral/debug/processing_time_ms
+    /control/trajectory_follower/controller_node_exe/longitudinal/debug/processing_time_ms
+  )
+
+  ros2 bag record \
+    -o "${RUN_DIR}/bag" \
+    "${BAG_TOPICS[@]}" \
+    > "${RUN_DIR}/bag.log" 2>&1 &
+  BAG_PID=$!
+fi
+
+sleep 2
+
+echo "Running ${SCENARIO_TAG}..."
+set +e
+"${ROOT}/scripts/run_scenario.sh" "${SCENARIO_NUM}" "${CONTROLLER}" \
+  2>&1 | tee "${RUN_DIR}/scenario.log"
+SCENARIO_RC=${PIPESTATUS[0]}
+set -e
+
+sleep 1
+
+# openscenario_interpreter wraps the verdict line in ANSI colour codes
+# (e.g. "...openscenario_interpreter]: \x1b[32mPassed\x1b[0m"), so a plain
+# grep for "Passed"/"SimulationFailure:" right after the "]: " never
+# matches and every run - including genuine passes - fell through to
+# UNKNOWN. Strip escape codes before classifying.
+CLEAN_LOG="$(sed -E 's/\x1b\[[0-9;]*[a-zA-Z]//g' "${RUN_DIR}/scenario.log")"
+
+if grep -Fq "[simulation.openscenario_interpreter]: Passed" <<< "${CLEAN_LOG}"; then
+    STATUS="PASS"
+elif grep -Fq "AutowareError: Simulator waited for the Autoware state to transition to WAITING_FOR_ENGAGE" <<< "${CLEAN_LOG}"; then
+    # Autoware never left PLANNING before the scenario runner's own
+    # timeout - an infrastructure/startup failure, not a scored scenario
+    # outcome. Keep it distinct from both a genuine FAIL and a truly
+    # unparseable UNKNOWN so invalid pre-engagement runs are never
+    # silently mixed into the benchmark results.
+    STATUS="INFRA_TIMEOUT_PRE_ENGAGE"
+elif grep -Fq "SimulationFailure:" <<< "${CLEAN_LOG}"; then
+    STATUS="FAIL"
+else
+    STATUS="UNKNOWN"
+fi
+
+echo "${STATUS}" > "${RUN_DIR}/status.txt"
+echo "scenario_exit_code: ${SCENARIO_RC}" >> "${RUN_DIR}/metadata.yaml"
+echo "scenario_status: ${STATUS}" >> "${RUN_DIR}/metadata.yaml"
+
+cleanup
+trap - EXIT INT TERM
+
+echo "Analyzing run..."
+python3 "${ROOT}/scripts/analyze_run.py" "${RUN_DIR}"
+
+echo
+echo "========================================"
+echo "Run complete"
+echo "Result label: ${RESULT_LABEL}"
+echo "Controller  : ${CONTROLLER}"
+echo "Scenario   : ${SCENARIO_TAG}"
+echo "Run        : ${RUN_ID}"
+echo "Status     : ${STATUS}"
+echo "Results    : ${RUN_DIR}"
+echo "========================================"
+

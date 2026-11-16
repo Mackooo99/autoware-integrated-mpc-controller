@@ -1,0 +1,3 @@
+[console_scripts]
+logger_node = control_benchmark_monitor.logger_node:main
+

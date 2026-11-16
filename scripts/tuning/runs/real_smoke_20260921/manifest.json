@@ -1,0 +1,102 @@
+[
+  {
+    "id": "config_000_default_S01",
+    "config_id": "config_000_default",
+    "scenario": 1,
+    "params": {
+      "q_y": 1.0,
+      "q_psi": 2.0,
+      "q_v": 2.0,
+      "q_a": 0.1,
+      "r_delta": 1.0,
+      "r_delta_v": 0.75,
+      "r_j": 0.1,
+      "terminal_q_y": 1.0,
+      "terminal_q_psi": 0.1,
+      "terminal_q_v": 1.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.015165352636715,
+    "breakdown": {
+      "lateral_error": 0.5655944212461577,
+      "lateral_error_rmse": 0.018853147374871922,
+      "yaw_error": 0.1968333275990917,
+      "yaw_error_rmse": 0.006561110919969723,
+      "velocity_error": 0.6102387319068147,
+      "velocity_error_rmse": 0.18307161957204438,
+      "jerk": 0.2597809009060849,
+      "jerk_rmse": 0.5195618018121698,
+      "steering_rate": 0.3827179709785658,
+      "steering_rate_rmse": 0.03827179709785658,
+      "total": 2.015165352636715
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_smoke2_config_000_default/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.316523705726872,
+      "median": 2.420433,
+      "std": 0.9590275367461584,
+      "p95": 3.5132393,
+      "p99": 3.9048648000000004,
+      "max": 5.041599
+    },
+    "solver_time_stats": {
+      "mean": 0.7163184071428571,
+      "median": 0.677027,
+      "std": 0.23566979125783774,
+      "p95": 1.3734821,
+      "p99": 1.4940540100000006,
+      "max": 1.688619
+    }
+  },
+  {
+    "id": "config_000_default_heldout_S02",
+    "config_id": "config_000_default_heldout",
+    "scenario": 2,
+    "params": {
+      "q_y": 1.0,
+      "q_psi": 2.0,
+      "q_v": 2.0,
+      "q_a": 0.1,
+      "r_delta": 1.0,
+      "r_delta_v": 0.75,
+      "r_j": 0.1,
+      "terminal_q_y": 1.0,
+      "terminal_q_psi": 0.1,
+      "terminal_q_v": 1.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 9.521839543290923,
+    "breakdown": {
+      "lateral_error": 5.213579698471839,
+      "lateral_error_rmse": 0.1737859899490613,
+      "yaw_error": 1.5519902098747553,
+      "yaw_error_rmse": 0.051733006995825184,
+      "velocity_error": 0.6845005415226653,
+      "velocity_error_rmse": 0.20535016245679957,
+      "jerk": 0.33220192540702786,
+      "jerk_rmse": 0.6644038508140557,
+      "steering_rate": 1.7395671680146376,
+      "steering_rate_rmse": 0.17395671680146377,
+      "total": 9.521839543290923
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_smoke2_config_000_default_heldout/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.190515717808219,
+      "median": 2.525639,
+      "std": 1.144131254287015,
+      "p95": 3.6513295999999995,
+      "p99": 4.047611250000001,
+      "max": 4.962422
+    },
+    "solver_time_stats": {
+      "mean": 0.9486919528795812,
+      "median": 0.810381,
+      "std": 0.40442936418649084,
+      "p95": 1.952941,
+      "p99": 2.1361529200000002,
+      "max": 2.666252
+    }
+  }
+]

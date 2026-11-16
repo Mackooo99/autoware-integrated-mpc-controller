@@ -1,0 +1,1038 @@
+
+============================================================
+ AUTOWARE CONTROLLER BENCHMARK
+============================================================
+ Scenario   : 3
+ Name       : S03_Alternating_Turns
+ YAML       : /home/nit-user/control_benchmark/scenarios/S03_Alternating_Turns.yaml
+ Controller : baseline_stock
+ Launch     : autoware_launch/planning_simulator.launch.xml
+ Autoware   : /home/nit-user/autoware-new/Autoware/autoware
+ Profile    : awf/universe/20250130
+ Vehicle    : sample_vehicle
+ Sensor     : sample_sensor_kit
+============================================================
+
+[INFO] [launch]: All log files can be found below /home/nit-user/.ros/log/2026-09-15-16-25-31-200503-nituser-System-Product-Name-27826
+[INFO] [launch]: Default logging verbosity is set to INFO
+architecture_type                           := awf/universe/20250130
+autoware_launch_file                        := planning_simulator.launch.xml
+autoware_launch_package                     := autoware_launch
+consider_acceleration_by_road_slope         := False
+consider_pose_by_road_slope                 := True
+enable_perf                                 := False
+global_frame_rate                           := 30.0
+global_real_time_factor                     := 1.0
+global_timeout                              := 180
+initialize_duration                         := 30
+initialize_localization                     := 10
+launch_autoware                             := True
+launch_rviz                                 := False
+launch_visualization                        := True
+output_directory                            := /tmp
+override_parameters                         := 
+parameter_file_path                         := /home/nit-user/autoware-new/Autoware/autoware/install/scenario_test_runner/share/scenario_test_runner/config/parameters.yaml
+pedestrian_ignore_see_around                := blind
+port                                        := 5555
+publish_empty_context                       := False
+record                                      := false
+record_option                               := 
+record_storage_id                           := 
+rviz_config                                 := /home/nit-user/autoware-new/Autoware/autoware/install/traffic_simulator/share/traffic_simulator/config/scenario_simulator_v2.rviz
+scenario                                    := /home/nit-user/control_benchmark/scenarios/S03_Alternating_Turns.yaml
+sensor_model                                := sample_sensor_kit
+sigterm_timeout                             := 8
+simulate_localization                       := True
+speed_condition                             := legacy
+trajectory_based_detection_offset           := 0.0
+use_custom_centerline                       := True
+use_sim_time                                := False
+use_trajectory_based_front_entity_detection := False
+vehicle_model                               := sample_vehicle
+vehicle_id                                  := default
+[INFO] [scenario_test_runner.py-1]: process started with pid [27851]
+[INFO] [simple_sensor_simulator_node-2]: process started with pid [27853]
+[INFO] [openscenario_interpreter_node-3]: process started with pid [27855]
+[INFO] [openscenario_preprocessor_node-4]: process started with pid [27857]
+[INFO] [visualization_node-5]: process started with pid [27859]
+[scenario_test_runner.py-1] [INFO] [1789482332.397064779] [simulation.scenario_test_runner]: Run S03_Alternating_Turns.xosc (1 of 1)
+[openscenario_interpreter_node-3] [WARN] [1789482334.546415497] [traffic_simulator]: use_custom_centerline is set to true (legacy mode). This default will change to false after end of January 2026. Please update your configuration to explicitly set use_custom_centerline to false.
+[simple_sensor_simulator_node-2] [WARN] [1789482335.201963253] [traffic_simulator]: use_custom_centerline is set to true (legacy mode). This default will change to false after end of January 2026. Please update your configuration to explicitly set use_custom_centerline to false.
+[openscenario_interpreter_node-3] [WARN] [1789482335.770100463] [traffic_simulator]: use_custom_centerline is set to true (legacy mode). This default will change to false after end of January 2026. Please update your configuration to explicitly set use_custom_centerline to false.
+[simple_sensor_simulator_node-2] [WARN] [1789482336.404815753] [traffic_simulator]: use_custom_centerline is set to true (legacy mode). This default will change to false after end of January 2026. Please update your configuration to explicitly set use_custom_centerline to false.
+[openscenario_interpreter_node-3] [INFO] [launch]: All log files can be found below /home/nit-user/.ros/log/2026-09-15-16-25-36-467650-nituser-System-Product-Name-27924
+[openscenario_interpreter_node-3] [INFO] [launch]: Default logging verbosity is set to INFO
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/mrm_comfortable_stop_operator' in container '/system/mrm_comfortable_stop_operator/mrm_comfortable_stop_operator_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_transform_map_to_base_link' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/mrm_emergency_stop_operator' in container '/system/mrm_emergency_stop_operator/mrm_emergency_stop_operator_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_system_emergency_control_cmd' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-1]: process started with pid [28004]
+[openscenario_interpreter_node-3] [INFO] [robot_state_publisher-2]: process started with pid [28006]
+[openscenario_interpreter_node-3] [INFO] [autoware_duplicated_node_checker_node-3]: process started with pid [28008]
+[openscenario_interpreter_node-3] [INFO] [processing_time_checker_node-4]: process started with pid [28010]
+[openscenario_interpreter_node-3] [INFO] [autoware_pipeline_latency_monitor_node-5]: process started with pid [28012]
+[openscenario_interpreter_node-3] [INFO] [service_log_checker_node-6]: process started with pid [28014]
+[openscenario_interpreter_node-3] [INFO] [component_container-7]: process started with pid [28016]
+[openscenario_interpreter_node-3] [INFO] [component_container-8]: process started with pid [28018]
+[openscenario_interpreter_node-3] [INFO] [component_container-9]: process started with pid [28020]
+[openscenario_interpreter_node-3] [INFO] [aggregator_node-10]: process started with pid [28022]
+[openscenario_interpreter_node-3] [INFO] [converter_node-11]: process started with pid [28024]
+[openscenario_interpreter_node-3] [INFO] [autoware_hazard_status_converter_node-12]: process started with pid [28026]
+[openscenario_interpreter_node-3] [INFO] [autoware_mrm_handler_node-13]: process started with pid [28028]
+[openscenario_interpreter_node-3] [INFO] [autoware_dummy_diag_publisher_node-14]: process started with pid [28030]
+[openscenario_interpreter_node-3] [INFO] [logging_node-15]: process started with pid [28032]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-16]: process started with pid [28034]
+[openscenario_interpreter_node-3] [INFO] [map_hash_generator-17]: process started with pid [28036]
+[openscenario_interpreter_node-3] [INFO] [autoware_map_projection_loader_node-18]: process started with pid [28038]
+[openscenario_interpreter_node-3] [INFO] [autoware_manual_lane_change_handler_node-19]: process started with pid [28040]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-20]: process started with pid [28042]
+[openscenario_interpreter_node-3] [INFO] [goal_pose_visualizer-21]: process started with pid [28044]
+[openscenario_interpreter_node-3] [INFO] [autoware_scenario_selector_node-22]: process started with pid [28046]
+[openscenario_interpreter_node-3] [INFO] [external_velocity_limit_selector-23]: process started with pid [28048]
+[openscenario_interpreter_node-3] [INFO] [component_container-24]: process started with pid [28050]
+[openscenario_interpreter_node-3] [INFO] [autoware_hazard_lights_selector_node-25]: process started with pid [28052]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-26]: process started with pid [28054]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-27]: process started with pid [28056]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-28]: process started with pid [28058]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-29]: process started with pid [28060]
+[openscenario_interpreter_node-3] [INFO] [planning_evaluator-30]: process started with pid [28062]
+[openscenario_interpreter_node-3] [INFO] [autoware_remaining_distance_time_calculator_node-31]: process started with pid [28064]
+[openscenario_interpreter_node-3] [INFO] [relay-32]: process started with pid [28066]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-33]: process started with pid [28121]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-34]: process started with pid [28172]
+[openscenario_interpreter_node-3] [INFO] [control_evaluator-35]: process started with pid [28233]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-36]: process started with pid [28235]
+[openscenario_interpreter_node-3] [INFO] [initial_pose_adaptor_node-37]: process started with pid [28237]
+[openscenario_interpreter_node-3] [INFO] [routing_adaptor_node-38]: process started with pid [28239]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-39]: process started with pid [28241]
+[openscenario_interpreter_node-3] [INFO] [rviz2-40]: process started with pid [28278]
+[openscenario_interpreter_node-3] [INFO] [autoware_fault_injection_node-41]: process started with pid [28295]
+[openscenario_interpreter_node-3] [INFO] [multi_object_tracker_node-42]: process started with pid [28303]
+[openscenario_interpreter_node-3] [INFO] [map_based_prediction-43]: process started with pid [28382]
+[openscenario_interpreter_node-3] [INFO] [autoware_perception_analytics_publisher_node-44]: process started with pid [28432]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_occlusion_predictor_node-45]: process started with pid [28494]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_occlusion_predictor_node-46]: process started with pid [28521]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_multi_camera_fusion_node-47]: process started with pid [28526]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_arbiter_node-48]: process started with pid [28577]
+[openscenario_interpreter_node-3] [INFO] [crosswalk_traffic_light_estimator_node-49]: process started with pid [28607]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_map_visualizer_node-50]: process started with pid [28695]
+[openscenario_interpreter_node-3] [INFO] [autoware_pose_initializer_node-51]: process started with pid [28872]
+[openscenario_interpreter_node-3] [INFO] [autoware_vehicle_door_simulator_node-52]: process started with pid [28874]
+[openscenario_interpreter_node-3] [INFO] [autoware_scenario_simulator_v2_adapter_node-53]: process started with pid [28896]
+[openscenario_interpreter_node-3] [INFO] [autoware_dummy_infrastructure_node-54]: process started with pid [28909]
+[openscenario_interpreter_node-3] [autoware_map_projection_loader_node-18] Load /home/nit-user/Documents/safeXloop/Marija/AWSIM/awsim_map/nishishinjuku_autoware_map/lanelet2_map.osm
+[openscenario_interpreter_node-3] [autoware_map_projection_loader_node-18] DEPRECATED WARNING: Loading map projection info from lanelet2 map may soon be deleted. Please use map_projector_info.yaml instead. For more info, visit https://github.com/autowarefoundation/autoware.universe/blob/main/map/map_projection_loader/README.md
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/component_state_monitor/component' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/external_cmd_selector' in container '/control/control_container'
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963734804] [robot_state_publisher]: got segment base_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963837195] [robot_state_publisher]: got segment camera0/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963845200] [robot_state_publisher]: got segment camera0/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963850029] [robot_state_publisher]: got segment camera1/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963854427] [robot_state_publisher]: got segment camera1/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963858484] [robot_state_publisher]: got segment camera2/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963862542] [robot_state_publisher]: got segment camera2/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963866770] [robot_state_publisher]: got segment camera3/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963870817] [robot_state_publisher]: got segment camera3/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963874905] [robot_state_publisher]: got segment camera4/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963879403] [robot_state_publisher]: got segment camera4/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963883301] [robot_state_publisher]: got segment camera5/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963887248] [robot_state_publisher]: got segment camera5/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963891175] [robot_state_publisher]: got segment gnss_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963903759] [robot_state_publisher]: got segment sensor_kit_base_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963908438] [robot_state_publisher]: got segment tamagawa/imu_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963912475] [robot_state_publisher]: got segment traffic_light_left_camera/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963916693] [robot_state_publisher]: got segment traffic_light_left_camera/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963991052] [robot_state_publisher]: got segment traffic_light_right_camera/camera_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.963996842] [robot_state_publisher]: got segment traffic_light_right_camera/camera_optical_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964000980] [robot_state_publisher]: got segment velodyne_left
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964042898] [robot_state_publisher]: got segment velodyne_left_base_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964048609] [robot_state_publisher]: got segment velodyne_rear
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964052666] [robot_state_publisher]: got segment velodyne_rear_base_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964068596] [robot_state_publisher]: got segment velodyne_right
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964079807] [robot_state_publisher]: got segment velodyne_right_base_link
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964084075] [robot_state_publisher]: got segment velodyne_top
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482348.964134529] [robot_state_publisher]: got segment velodyne_top_base_link
+[openscenario_interpreter_node-3] [autoware_pipeline_latency_monitor_node-5] [INFO] [1789482348.970616987] [system.pipeline_latency_monitor]: PipelineLatencyMonitorNode initialized
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482348.970106225] [system.component_state_monitor.container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_topic_state_monitor/lib/libautoware_topic_state_monitor.so
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482348.978713916] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482348.978744282] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.020787872] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.020824631] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.114019063] [system.component_state_monitor.container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_component_state_monitor/lib/libautoware_component_state_monitor.so
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.114992578] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::component_state_monitor::StateMonitor>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.115020540] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::component_state_monitor::StateMonitor>
+[openscenario_interpreter_node-3] [component_container-8] [INFO] [1789482348.962706566] [system.mrm_comfortable_stop_operator.mrm_comfortable_stop_operator_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_mrm_comfortable_stop_operator/lib/libautoware_mrm_comfortable_stop_operator_component.so
+[openscenario_interpreter_node-3] [component_container-8] [INFO] [1789482348.967642531] [system.mrm_comfortable_stop_operator.mrm_comfortable_stop_operator_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::mrm_comfortable_stop_operator::MrmComfortableStopOperator>
+[openscenario_interpreter_node-3] [component_container-8] [INFO] [1789482348.967670172] [system.mrm_comfortable_stop_operator.mrm_comfortable_stop_operator_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::mrm_comfortable_stop_operator::MrmComfortableStopOperator>
+[openscenario_interpreter_node-3] [component_container-9] [INFO] [1789482348.993428374] [system.mrm_emergency_stop_operator.mrm_emergency_stop_operator_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_mrm_emergency_stop_operator/lib/libautoware_mrm_emergency_stop_operator_component.so
+[openscenario_interpreter_node-3] [component_container-9] [INFO] [1789482349.011279371] [system.mrm_emergency_stop_operator.mrm_emergency_stop_operator_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::mrm_emergency_stop_operator::MrmEmergencyStopOperator>
+[openscenario_interpreter_node-3] [component_container-9] [INFO] [1789482349.011342689] [system.mrm_emergency_stop_operator.mrm_emergency_stop_operator_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::mrm_emergency_stop_operator::MrmEmergencyStopOperator>
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [INFO] [1789482349.074705253] [system.mrm_handler]: waiting for operation_mode_availability msg...
+[openscenario_interpreter_node-3] [logging_node-15] [WARN] [1789482349.092115378] [logging_diag_graph]: The target mode is not available for the following reasons:
+[openscenario_interpreter_node-3] [logging_node-15] - /autoware/modes/autonomous ERROR
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/map ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/map/topic_rate_check/vector_map STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/map/topic_rate_check/pointcloud_map STALE
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/localization ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/localization/state STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - [anonymous group] ERROR
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/localization/topic_rate_check/transform STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/localization/topic_rate_check/pose_twist_fusion STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/localization/scan_matching_status STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/localization/accuracy STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/localization/sensor_fusion_status STALE
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/planning ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/planning/routing/state STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - [anonymous group] ERROR
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/planning/topic_rate_check/route STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/planning/topic_rate_check/trajectory STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/planning/trajectory_validation ERROR
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/perception ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/perception/topic_rate_check/objects STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/perception/topic_rate_check/pointcloud STALE
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/control ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/topic_rate_check/trajectory_follower STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/topic_rate_check/control_command STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/node_alive_monitoring/command_gate ERROR
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/control/node_alive_monitoring/vehicle_cmd_gate STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/control/node_alive_monitoring/control_command_gate STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/emergency_braking STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/performance_monitoring/lane_departure STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/performance_monitoring/control_state STALE
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/vehicle ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/vehicle/topic_rate_check/velocity STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/vehicle/topic_rate_check/steering STALE
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/system ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/system/duplicated_node_checker STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/system/topic_rate_check/emergency_control_command STALE
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/system/emergency_stop_operation ERROR
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/system/emergency_stop_operation/vehicle_cmd_gate STALE
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/system/emergency_stop_operation/control_command_gate STALE
+[openscenario_interpreter_node-3] [logging_node-15]     - /adapi/mrm_request/delegate STALE
+[openscenario_interpreter_node-3] [logging_node-15] 
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482349.101696484] [planning.mission_planning.mission_planner_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_mission_planner_universe/lib/libautoware_mission_planner_universe_component.so
+[openscenario_interpreter_node-3] [component_container-24] [INFO] [1789482349.077970141] [planning.scenario_planning.velocity_smoother_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_velocity_smoother/lib/libautoware_velocity_smoother_node.so
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.093309255] [planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_behavior_velocity_planner/lib/libautoware_behavior_velocity_planner_lib.so
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482349.044362903] [planning.scenario_planning.parking.parking_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_costmap_generator/lib/libcostmap_generator_node.so
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.098938772] [control.control_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_external_cmd_selector/lib/libautoware_external_cmd_selector_node.so
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.112378213] [control.control_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::external_cmd_selector::ExternalCmdSelector>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.112419380] [control.control_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::external_cmd_selector::ExternalCmdSelector>
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.113519501] [control.control_check_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_autonomous_emergency_braking/lib/libautoware_autonomous_emergency_braking_node.so
+[openscenario_interpreter_node-3] [component_container_mt-29] [INFO] [1789482349.116684843] [planning.planning_validator_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_planning_validator/lib/libautoware_planning_validator_component.so
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [INFO] [1789482349.174743908] [system.mrm_handler]: MRM State changed: NORMAL -> MRM_OPERATING
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [WARN] [1789482349.174786517] [system.mrm_handler]: no mrm operation available: operate emergency_stop
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [WARN] [1789482349.175301287] [system.mrm_handler]: EMERGENCY_STOP is operated.
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177604111] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing detected_objects input stream index 0
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177912627] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 1
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177930279] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 2
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177936902] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 3
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177942693] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 4
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177947932] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 5
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177953042] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 6
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177958392] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 7
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177963371] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 8
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177968771] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 9
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177973670] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 10
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482349.177978329] [perception.object_recognition.tracking.multi_object_tracker]: InputManager::init Initializing none input stream index 11
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482349.178313063] [planning.mission_planning.mission_planner_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::mission_planner_universe::MissionPlanner>
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482349.178359570] [planning.mission_planning.mission_planner_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::mission_planner_universe::MissionPlanner>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.184157171] [control.control_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_trajectory_follower_node/lib/libcontroller_node.so
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.184384435] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.184418007] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482349.184486765] [map.map_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_map_loader/lib/libpointcloud_map_loader_node.so
+[openscenario_interpreter_node-3] [component_container-24] [INFO] [1789482349.200157377] [planning.scenario_planning.velocity_smoother_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::velocity_smoother::VelocitySmootherNode>
+[openscenario_interpreter_node-3] [component_container-24] [INFO] [1789482349.200197923] [planning.scenario_planning.velocity_smoother_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::velocity_smoother::VelocitySmootherNode>
+[openscenario_interpreter_node-3] [traffic_light_arbiter_node-48] [WARN] [1789482349.201973754] [perception.traffic_light_recognition.traffic_light_arbiter]: Received traffic signal messages before a map
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.202470901] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_path_optimizer/lib/libautoware_path_optimizer.so
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_vector_map' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [autoware_scenario_selector_node-22] [INFO] [1789482349.211636172] [planning.scenario_planning.scenario_selector]: Waiting for route handler.
+[openscenario_interpreter_node-3] [component_container_mt-29] [INFO] [1789482349.222359608] [planning.planning_validator_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::planning_validator::PlanningValidatorNode>
+[openscenario_interpreter_node-3] [component_container_mt-29] [INFO] [1789482349.222400955] [planning.planning_validator_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::planning_validator::PlanningValidatorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.229651906] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.229687753] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.241117516] [planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::behavior_velocity_planner::BehaviorVelocityPlannerNode>
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.241162510] [planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::behavior_velocity_planner::experimental::BehaviorVelocityPlannerNode>
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.241170645] [planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::behavior_velocity_planner::experimental::BehaviorVelocityPlannerNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_object_recognition_objects' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/mission_planning/mission_planner' in container '/planning/mission_planning/mission_planner_container'
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.246042690] [control.control_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::motion::control::trajectory_follower_node::Controller>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.246082394] [control.control_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::motion::control::trajectory_follower_node::Controller>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.263883258] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.263924415] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.272418364] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::path_optimizer::PathOptimizer>
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.272474498] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::path_optimizer::PathOptimizer>
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [INFO] [1789482349.274788103] [system.mrm_handler]: MRM State changed: MRM_OPERATING -> MRM_SUCCEEDED
+[openscenario_interpreter_node-3] [component_container_mt-39] [INFO] [1789482349.279157460] [evaluation_adapter.container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_evaluation_adapter/lib/libautoware_evaluation_adapter.so
+[openscenario_interpreter_node-3] [component_container_mt-39] [INFO] [1789482349.293281498] [evaluation_adapter.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::evaluation_adapter::AutowareEngage>
+[openscenario_interpreter_node-3] [component_container_mt-39] [INFO] [1789482349.293339005] [evaluation_adapter.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::evaluation_adapter::AutowareEngage>
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482349.298163592] [planning.mission_planning.mission_planner_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::mission_planner_universe::MissionPlanner>
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482349.298209487] [planning.mission_planning.mission_planner_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::mission_planner_universe::RouteSelector>
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482349.298216230] [planning.mission_planning.mission_planner_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::mission_planner_universe::RouteSelector>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_mission_planning_route' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.320169266] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.320213639] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/mission_planning/route_selector' in container '/planning/mission_planning/mission_planner_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/velocity_smoother' in container '/planning/scenario_planning/velocity_smoother_container'
+[openscenario_interpreter_node-3] [autoware_dummy_infrastructure_node-54] [INFO] [1789482349.330890097] [dummy_infrastructure]: waiting for command_array msg...
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/interface' in container '/adapi/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/trajectory_follower/controller_node_exe' in container '/control/control_container'
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.355769330] [control.control_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_shift_decider/lib/libautoware_shift_decider_node.so
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/evaluation_adapter/autoware_engage' in container '/evaluation_adapter/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_trajectory_follower_control_cmd' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.362214128] [control.control_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::shift_decider::ShiftDecider>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.362421605] [control.control_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::shift_decider::ShiftDecider>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.366664527] [system.topic_state_monitor_vector_map]: /map/vector_map has not received. Set ERROR in diagnostics.
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482349.369118423] [planning.mission_planning.mission_planner]: waiting lanelet map... Route API is not ready.
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.374081437] [control.trajectory_follower.controller_node_exe]: Waiting for trajectory data
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.374198806] [control.trajectory_follower.controller_node_exe]: Control is skipped since input data is not ready.
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [WARN] [1789482349.374774249] [system.mrm_handler]: no mrm operation available: operate emergency_stop
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.376083290] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.376574045] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container_mt-39] [INFO] [1789482349.376770542] [evaluation_adapter.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::evaluation_adapter::AutowareEngage>
+[openscenario_interpreter_node-3] [component_container_mt-39] [INFO] [1789482349.376820956] [evaluation_adapter.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::evaluation_adapter::VelocityLimit>
+[openscenario_interpreter_node-3] [component_container_mt-39] [INFO] [1789482349.376827438] [evaluation_adapter.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::evaluation_adapter::VelocityLimit>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/autoware_shift_decider' in container '/control/control_container'
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.384878491] [control.control_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_external_cmd_converter/lib/libautoware_external_cmd_converter.so
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.390953980] [control.control_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::external_cmd_converter::ExternalCmdConverterNode>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.391014553] [control.control_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::external_cmd_converter::ExternalCmdConverterNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/localization' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.401208632] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_path_smoother/lib/libautoware_path_smoother.so
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.403617474] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::path_smoother::ElasticBandSmoother>
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.403811506] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::path_smoother::ElasticBandSmoother>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/lane_driving/motion_planning/path_optimizer' in container '/planning/scenario_planning/lane_driving/motion_planning/motion_planning_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/evaluation_adapter/velocity_limit' in container '/evaluation_adapter/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_scenario_planning_trajectory' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.428804641] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.428908595] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.430255136] [control.control_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_vehicle_cmd_gate/lib/libvehicle_cmd_gate_node.so
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/external_cmd_converter' in container '/control/control_container'
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482349.440124970] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::map_loader::PointCloudMapLoaderNode>
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482349.440165827] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::map_loader::PointCloudMapLoaderNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/routing' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.443376383] [control.control_check_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::motion::control::autonomous_emergency_braking::AEB>
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.443428541] [control.control_check_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::motion::control::autonomous_emergency_braking::AEB>
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.444664606] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_motion_velocity_planner/lib/libautoware_motion_velocity_planner_lib.so
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.445836912] [control.control_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::vehicle_cmd_gate::VehicleCmdGate>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.445879721] [control.control_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::vehicle_cmd_gate::VehicleCmdGate>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/lane_driving/motion_planning/elastic_band_smoother' in container '/planning/scenario_planning/lane_driving/motion_planning/motion_planning_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_control_command_control_cmd' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.458900321] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.458940556] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482349.467000356] [planning.scenario_planning.parking.parking_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::costmap_generator::CostmapGenerator>
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482349.467064575] [planning.scenario_planning.parking.parking_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::costmap_generator::CostmapGenerator>
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [WARN] [1789482349.474687670] [system.mrm_handler]: no mrm operation available: operate emergency_stop
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_vehicle_status_velocity_status' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.501490200] [system.component_state_monitor.container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482349.501533981] [system.component_state_monitor.container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::topic_state_monitor::TopicStateMonitorNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/planning_validator' in container '/planning/planning_validator_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/autonomous_emergency_braking' in container '/control/control_check_container'
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.522443181] [control.control_check_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_control_validator/lib/libautoware_control_validator_component.so
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/system/topic_state_monitor_vehicle_status_steering_status' in container '/system/component_state_monitor/container'
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.533040452] [control.control_check_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::control_validator::ControlValidator>
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.533103370] [control.control_check_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::control_validator::ControlValidator>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/vehicle_cmd_gate' in container '/control/control_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/autoware_state' in container '/adapi/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/parking/costmap_generator' in container '/planning/scenario_planning/parking/parking_container'
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.542781567] [control.control_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_operation_mode_transition_manager/lib/libautoware_operation_mode_transition_manager_node.so
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482349.547804153] [planning.scenario_planning.parking.parking_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_freespace_planner/lib/libfreespace_planner_node.so
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.548893344] [control.control_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::operation_mode_transition_manager::AutonomousModeTransitionFlagNode>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.548934360] [control.control_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::operation_mode_transition_manager::OperationModeTransitionManager>
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.549050096] [control.control_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::operation_mode_transition_manager::OperationModeTransitionManager>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/diagnostics' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482349.563141342] [planning.scenario_planning.parking.parking_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::freespace_planner::FreespacePlannerNode>
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482349.563198779] [planning.scenario_planning.parking.parking_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::freespace_planner::FreespacePlannerNode>
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [WARN] [1789482349.575052032] [system.mrm_handler]: no mrm operation available: operate emergency_stop
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/control_validator' in container '/control/control_check_container'
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.577597729] [control.control_check_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_lane_departure_checker/lib/libautoware_lane_departure_checker.so
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/autoware_operation_mode_transition_manager' in container '/control/control_container'
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482349.586640271] [planning.scenario_planning.parking.freespace_planner]: initialize planning algorithm: astar
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/fail_safe' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-33] [WARN] [1789482349.590589946] [control.vehicle_cmd_gate]: Emergency!
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482349.590726621] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Acceleration change limit by longitudinal jerk: constraint(delta)=±0.000 [m/s^2], input_acc=-1.500 [m/s^2], output_acc=0.000 [m/s^2]
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/parking/freespace_planner' in container '/planning/scenario_planning/parking/parking_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/heartbeat' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.603537700] [control.control_check_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::lane_departure_checker::LaneDepartureCheckerNode>
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.603571744] [control.control_check_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::lane_departure_checker::LaneDepartureCheckerNode>
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.604200416] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::motion_velocity_planner::MotionVelocityPlannerNode>
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482349.604244969] [planning.scenario_planning.lane_driving.motion_planning.motion_planning_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::motion_velocity_planner::MotionVelocityPlannerNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/trajectory_follower/lane_departure_checker_node' in container '/control/control_check_container'
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.628207753] [control.control_check_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_collision_detector/lib/libautoware_collision_detector.so
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/manual/local' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.630168239] [control.control_check_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::collision_detector::CollisionDetectorNode>
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.630199768] [control.control_check_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::collision_detector::CollisionDetectorNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/control/collision_detector' in container '/control/control_check_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/manual/remote' in container '/adapi/container'
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [WARN] [1789482349.674695199] [system.mrm_handler]: no mrm operation available: operate emergency_stop
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/motion' in container '/adapi/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/mrm_request' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.709476637] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::CrosswalkModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.718319817] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::WalkwayModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482349.725372278] [control.trajectory_follower.lane_departure_checker_node]: waiting for lanelet_map msg...
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/operation_mode' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.733546942] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::TrafficLightModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/perception' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.764784030] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::IntersectionModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.774453471] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::BlindSpotModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.784397053] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::DetectionAreaModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/planning' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.790361545] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::VirtualTrafficLightModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.795876549] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::NoStoppingAreaModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.800380859] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: The scene plugin 'autoware::behavior_velocity_planner::experimental::StopLineModulePlugin' is loaded.
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/lane_driving/behavior_planning/behavior_velocity_planner' in container '/planning/scenario_planning/lane_driving/behavior_planning/behavior_planning_container'
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.804548971] [planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_behavior_path_planner/lib/libautoware_behavior_path_planner_lib.so
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/vehicle_status' in container '/adapi/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/vehicle_command' in container '/adapi/container'
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.824487220] [planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::behavior_path_planner::BehaviorPathPlannerNode>
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482349.824522907] [planning.scenario_planning.lane_driving.behavior_planning.behavior_planning_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::behavior_path_planner::BehaviorPathPlannerNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/vehicle_metrics' in container '/adapi/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/vehicle_info' in container '/adapi/container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/adapi/node/vehicle_door' in container '/adapi/container'
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [INFO] [1789482349.874755036] [system.mrm_handler]: MRM State changed: MRM_SUCCEEDED -> NORMAL
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [WARN] [1789482349.875015432] [system.mrm_handler]: EMERGENCY_STOP is canceled.
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482349.935612709] [control.vehicle_cmd_gate]: The operation mode is changed, but the GearCommand is not received yet:
+[openscenario_interpreter_node-3] [rviz2-40] [INFO] [1789482349.937659485] [rviz2]: Stereo is NOT SUPPORTED
+[openscenario_interpreter_node-3] [rviz2-40] [INFO] [1789482349.937759402] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[openscenario_interpreter_node-3] [rviz2-40] QFont::setPointSize: Point size <= 0 (0), must be greater than 0
+[openscenario_interpreter_node-3] [rviz2-40] [INFO] [1789482349.972922311] [rviz2]: Stereo is NOT SUPPORTED
+[openscenario_interpreter_node-3] [component_container_mt-26] added a slot with 1 modules
+[openscenario_interpreter_node-3] [component_container_mt-26] external_request_lane_change_left registered in slot_configuration is not registered, skipping
+[openscenario_interpreter_node-3] [component_container_mt-26] external_request_lane_change_right registered in slot_configuration is not registered, skipping
+[openscenario_interpreter_node-3] [component_container_mt-26] added a slot with 6 modules
+[openscenario_interpreter_node-3] [component_container_mt-26] added a slot with 1 modules
+[openscenario_interpreter_node-3] [component_container_mt-26] dynamic_obstacle_avoidance registered in slot_configuration is not registered, skipping
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482350.025137959] [planning.scenario_planning.lane_driving.behavior_planning.behavior_path_planner]: Parameter 'velocity_points' is not updated because the given parameter array is empty.
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482350.025194063] [planning.scenario_planning.lane_driving.behavior_planning.behavior_path_planner]: Parameter 'lateral_thresholds' is not updated because the given parameter array is empty.
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner' in container '/planning/scenario_planning/lane_driving/behavior_planning/behavior_planning_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planning/scenario_planning/lane_driving/motion_planning/motion_velocity_planner' in container '/planning/scenario_planning/lane_driving/motion_planning/motion_planning_container'
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/pointcloud_map_loader' in container '/map/map_container'
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.159213593] [map.map_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_map_loader/lib/liblanelet2_map_loader_node.so
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.171325298] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::map_loader::Lanelet2MapLoaderNode>
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.171353751] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::map_loader::Lanelet2MapLoaderNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/lanelet2_map_loader' in container '/map/map_container'
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.182569015] [map.map_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_lanelet2_map_visualizer/lib/liblanelet2_map_visualization_node.so
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.184134013] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::lanelet2_map_visualizer::Lanelet2MapVisualizationNode>
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.184144562] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::lanelet2_map_visualizer::Lanelet2MapVisualizationNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/lanelet2_map_visualization' in container '/map/map_container'
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.196536500] [map.map_container]: Load Library: /home/nit-user/autoware-new/Autoware/autoware/install/autoware_map_tf_generator/lib/libvector_map_tf_generator_node.so
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.202075449] [map.map_container]: Found class: rclcpp_components::NodeFactoryTemplate<autoware::map_tf_generator::VectorMapTFGeneratorNode>
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.202093653] [map.map_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<autoware::map_tf_generator::VectorMapTFGeneratorNode>
+[openscenario_interpreter_node-3] [INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map/vector_map_tf_generator' in container '/map/map_container'
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.342210352] [map.lanelet2_map_loader]: Loaded map format_version: 1
+[openscenario_interpreter_node-3] [rviz2-40] [ERROR] [1789482350.391766250] [rviz2]: PluginlibFactory: The plugin for class 'rviz_plugins/MrmSummaryOverlayDisplay' failed to load. Error: According to the loaded plugin descriptions the class rviz_plugins/MrmSummaryOverlayDisplay with base class type rviz_common::Display does not exist. Declared types are  autoware_mission_details_overlay_rviz_plugin/MissionDetailsDisplay autoware_overlay_rviz_plugin/SignalDisplay autoware_perception_rviz_plugin/DetectedObjects autoware_perception_rviz_plugin/PredictedObjects autoware_perception_rviz_plugin/TrackedObjects autoware_perception_rviz_plugin/TrafficLight autoware_string_stamped_rviz_plugin/StringStampedOverlayDisplay autoware_traffic_light_rviz_plugin/TrafficLightDisplay grid_map_rviz_plugin/GridMap openscenario_visualization/VisualizationConditionGroups rviz_2d_overlay_plugins/PieChartOverlay rviz_2d_overlay_plugins/TextOverlay rviz_default_plugins/AccelStamped rviz_default_plugins/Axes rviz_default_plugins/Camera rviz_default_plugins/DepthCloud rviz_default_plugins/Effort rviz_default_plugins/FluidPressure rviz_default_plugins/Grid rviz_default_plugins/GridCells rviz_default_plugins/Illuminance rviz_default_plugins/Image rviz_default_plugins/InteractiveMarkers rviz_default_plugins/LaserScan rviz_default_plugins/Map rviz_default_plugins/Marker rviz_default_plugins/MarkerArray rviz_default_plugins/Odometry rviz_default_plugins/Path rviz_default_plugins/PointCloud rviz_default_plugins/PointCloud2 rviz_default_plugins/PointStamped rviz_default_plugins/Polygon rviz_default_plugins/Pose rviz_default_plugins/PoseArray rviz_default_plugins/PoseWithCovariance rviz_default_plugins/Range rviz_default_plugins/RelativeHumidity rviz_default_plugins/RobotModel rviz_default_plugins/TF rviz_default_plugins/Temperature rviz_default_plugins/TwistStamped rviz_default_plugins/Wrench rviz_plugins/AccelerationMeter rviz_plugins/CandidateTrajectories rviz_plugins/ConsoleMeter rviz_plugins/MaxVelocity rviz_plugins/Path rviz_plugins/PathWithLaneId rviz_plugins/PolarGridDisplay rviz_plugins/PoseWithUuidStamped rviz_plugins/ScoredCandidateTrajectories rviz_plugins/SteeringAngle rviz_plugins/Trajectory rviz_plugins/TurnSignal rviz_plugins/VelocityHistory rviz_plugins::ColoredPoseWithCovarianceHistory rviz_plugins::PoseHistory rviz_plugins::PoseHistoryFootprint rviz_plugins::PoseWithCovarianceHistory tier4_perception_rviz_plugin/DetectedObjectsWithFeature tier4_planning_factor_rviz_plugin/PlanningFactorRvizPlugin
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.421184096] [map.lanelet2_map_loader]: Succeeded to load lanelet2_map. Map is published.
+[openscenario_interpreter_node-3] [autoware_dummy_infrastructure_node-54] [INFO] [1789482350.430122113] [dummy_infrastructure]: waiting for command_array msg...
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.571368348] [map.vector_map_tf_generator]: broadcast static tf. map_frame:map, viewer_frame:viewer, x:81711.4, y:50319.5, z:38.2854
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482350.573398775] [map.lanelet2_map_visualization]: Map is loaded
+[openscenario_interpreter_node-3] [component_container_mt-16] 
+[openscenario_interpreter_node-3] [component_container-7] [WARN] [1789482350.951212082] [system.topic_state_monitor_control_command_control_cmd]: /control/command/control_cmd topic is timeout. Set ERROR in diagnostics.
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482351.208953760] [control.trajectory_follower.lane_departure_checker_node]: waiting for route msg...
+[openscenario_interpreter_node-3] [autoware_scenario_selector_node-22] [INFO] [1789482351.501980785] [planning.scenario_planning.scenario_selector]: Waiting for route.
+[openscenario_interpreter_node-3] [autoware_dummy_infrastructure_node-54] [INFO] [1789482351.530104367] [dummy_infrastructure]: waiting for command_array msg...
+[openscenario_interpreter_node-3] [component_container_mt-36] [INFO] [1789482351.739988253] [adapi.node.autoware_state]: AutowareState: Initializing => WaitingForRoute
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482351.744852694] [route_handler]: getMainLanelets: lanelet_sequence = [ids: 247 497 124555 124543 214 216 402 179 ]
+[openscenario_interpreter_node-3] [autoware_manual_lane_change_handler_node-19] [INFO] [1789482351.745185885] [ManualLaneChangeHandler]: Received new route with 8 segments
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482351.745523916] [planning.mission_planning.mission_planner]: Route set via set_waypoint_route
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482351.745542741] [planning.mission_planning.mission_planner]: Initial pose - x: 81382.237420, y: 50110.401883, z: 38.270241
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482351.745551427] [planning.mission_planning.mission_planner]: Initial orientation - qx: -0.008231, qy: 0.007034, qz: 0.760179, qw: 0.649624
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482351.745556887] [planning.mission_planning.mission_planner]: Goal pose - x: 81549.664777, y: 50241.670076, z: 34.266045
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482351.745561896] [planning.mission_planning.mission_planner]: Goal orientation - qx: 0.000165, qy: -0.000145, qz: 0.783560, qw: 0.621316
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482351.825330283] [control.trajectory_follower.lane_departure_checker_node]: waiting for reference_trajectory msg...
+[openscenario_interpreter_node-3] [component_container_mt-36] [INFO] [1789482351.839982665] [adapi.node.autoware_state]: AutowareState: WaitingForRoute => Planning
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.405068595] [planning.scenario_planning.lane_driving.behavior_planning.behavior_path_planner.bidirectional_traffic]: Found 0 bidirectional lanes
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482352.420353938] [system.topic_state_monitor_scenario_planning_trajectory]: /planning/trajectory has not received. Set ERROR in diagnostics.
+[openscenario_interpreter_node-3] [rviz2-40] [WARN] [1789482352.442087295] [rviz2]: Failed to get vehicle_info: parameter 'wheel_radius' has invalid type: Wrong parameter type, parameter {wheel_radius} is of type {double}, setting it to {string} is not allowed.
+[openscenario_interpreter_node-3] [logging_node-15] [WARN] [1789482352.492013013] [logging_diag_graph]: The target mode is not available for the following reasons:
+[openscenario_interpreter_node-3] [logging_node-15] - /autoware/modes/autonomous ERROR
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/planning ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - [anonymous group] ERROR
+[openscenario_interpreter_node-3] [logging_node-15]             - /autoware/planning/topic_rate_check/trajectory ERROR
+[openscenario_interpreter_node-3] [logging_node-15]     - /autoware/control ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/topic_rate_check/trajectory_follower ERROR
+[openscenario_interpreter_node-3] [logging_node-15]         - /autoware/control/topic_rate_check/control_command ERROR
+[openscenario_interpreter_node-3] [logging_node-15] 
+[openscenario_interpreter_node-3] [autoware_dummy_infrastructure_node-54] [INFO] [1789482352.530114962] [dummy_infrastructure]: waiting for command_array msg...
+[openscenario_interpreter_node-3] [component_container_mt-33] [WARN] [1789482352.871808016] [control.autoware_operation_mode_transition_manager]: Subscribed control_cmd is timed out.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.970726131] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 624
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [624]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.971182442] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 625
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [624, 625]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.971511205] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 620
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [624, 625, 620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.971794784] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 621
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [624, 625, 620, 621]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.991082360] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: traffic_light
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.991128726] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: traffic_light
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 497
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [497, 402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482352.991270591] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner.traffic_light_module]: the traffic signal data associated with regulatory element id 1464 is not received
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.992104345] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: intersection
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 497
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [497]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482352.992659010] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: intersection
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402, 497]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482353.003579103] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: blind_spot
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 497
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [497]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482353.003631340] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: blind_spot
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81382.24, 50110.40, 38.27), velocity: (0.00, 0.00) m/s (stopped)
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [497, 402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [autoware_scenario_selector_node-22] [WARN] [1789482353.607764963] [planning.scenario_planning.scenario_selector]: trajectory is delayed: scenario = LaneDriving, delay = 1.782254, th_max_message_delay = 1.000000
+[openscenario_interpreter_node-3] [component_container-7] [WARN] [1789482354.051205618] [system.topic_state_monitor_control_command_control_cmd]: /control/command/control_cmd topic is timeout. Set ERROR in diagnostics.
+[openscenario_interpreter_node-3] [rviz2-40] [WARN] [1789482354.269345649] [rviz2]: Failed to get vehicle_info: parameter 'wheel_radius' has invalid type: Wrong parameter type, parameter {wheel_radius} is of type {double}, setting it to {string} is not allowed.
+[openscenario_interpreter_node-3] [logging_node-15] [INFO] [1789482354.591999089] [logging_diag_graph]: The target mode is available now.
+[openscenario_interpreter_node-3] [component_container_mt-36] [INFO] [1789482354.739983409] [adapi.node.autoware_state]: AutowareState: Planning => WaitingForEngage
+[openscenario_interpreter_node-3] [component_container_mt-27] [WARN] [1789482354.776871265] [planning.scenario_planning.lane_driving.motion_planning.motion_velocity_planner]: Initializing previous route pointer.. Reset output.
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482354.895204063] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Longitudinal acceleration limit: constraint=±1.000 [m/s^2], input=-1.500 [m/s^2], output=-1.000 [m/s^2]
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482354.925152739] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Acceleration change limit by longitudinal jerk: constraint(delta)=±0.015 [m/s^2], input_acc=-1.500 [m/s^2], output_acc=-1.015 [m/s^2]
+[openscenario_interpreter_node-3] [component_container_mt-36] [INFO] [1789482354.939981150] [adapi.node.autoware_state]: AutowareState: WaitingForEngage => Driving
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482356.005206523] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Velocity change limit by longitudinal acceleration: constraint(delta)=±0.148 [m/s], input_vel=0.250 [m/s], output_vel=0.148 [m/s]
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482356.371900306] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482358.705643034] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Steering angle change rate limit: constraint(delta)=±0.030 [rad], input_steer=0.000 [rad], output_steer=0.000 [rad]
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482359.471845311] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482362.471847841] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482364.636007844] [Trajectory]: The arc length -0.397684 is out of the trajectory length 244.551677
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482364.735142082] [Trajectory]: The arc length -0.953376 is out of the trajectory length 243.996898
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482364.835306000] [Trajectory]: The arc length -1.509781 is out of the trajectory length 243.438841
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482364.935744260] [Trajectory]: The arc length -2.066366 is out of the trajectory length 242.882606
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.036129762] [Trajectory]: The arc length -2.498623 is out of the trajectory length 242.455481
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.143914360] [Trajectory]: The arc length -2.498255 is out of the trajectory length 242.564451
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.241634511] [Trajectory]: The arc length -2.498257 is out of the trajectory length 242.783272
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482365.333344595] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 620
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81376.15, 50146.57, 37.52), velocity: (5.58, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [624, 625, 620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482365.333668179] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 621
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81376.15, 50146.57, 37.52), velocity: (5.58, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [624, 625, 620, 621]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.337794323] [Trajectory]: The arc length -2.498369 is out of the trajectory length 242.451196
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482365.349538312] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: intersection
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81376.15, 50146.57, 37.52), velocity: (5.58, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [497, 402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482365.355700503] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: blind_spot
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81376.15, 50146.57, 37.52), velocity: (5.58, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [497, 402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.436895209] [Trajectory]: The arc length -4.852113 is out of the trajectory length 240.098228
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.446841536] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner.traffic_light_module]: Failed to calculate stop point for regulatory element id 1464
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482365.471863144] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.536244398] [Trajectory]: The arc length -5.409085 is out of the trajectory length 239.538490
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.635257680] [Trajectory]: The arc length -5.966455 is out of the trajectory length 238.981930
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.735242084] [Trajectory]: The arc length -6.523200 is out of the trajectory length 238.426840
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.835151097] [Trajectory]: The arc length -7.078877 is out of the trajectory length 237.871045
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482365.935822281] [Trajectory]: The arc length -2.522487 is out of the trajectory length 237.314506
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.035246319] [Trajectory]: The arc length -3.077560 is out of the trajectory length 236.760480
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.135887337] [Trajectory]: The arc length -3.630212 is out of the trajectory length 236.209083
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.235658803] [Trajectory]: The arc length -2.190996 is out of the trajectory length 237.645210
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.335145489] [Trajectory]: The arc length -4.742073 is out of the trajectory length 235.095056
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.435091951] [Trajectory]: The arc length -5.295558 is out of the trajectory length 234.543606
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.535117612] [Trajectory]: The arc length -5.849007 is out of the trajectory length 233.990410
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.635469550] [Trajectory]: The arc length -6.402612 is out of the trajectory length 233.434152
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482366.734745944] [Trajectory]: The arc length -6.956970 is out of the trajectory length 232.880476
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482368.471873168] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482370.933876959] [Trajectory]: The arc length -0.547513 is out of the trajectory length 209.046692
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.033512592] [Trajectory]: The arc length -1.124809 is out of the trajectory length 208.467907
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.133207455] [Trajectory]: The arc length -1.683316 is out of the trajectory length 207.913143
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.233717218] [Trajectory]: The arc length -2.242075 is out of the trajectory length 207.353631
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.332930574] [Trajectory]: The arc length -2.800941 is out of the trajectory length 206.791902
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.432403403] [Trajectory]: The arc length -3.367945 is out of the trajectory length 206.225532
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.532723392] [Trajectory]: The arc length -3.939019 is out of the trajectory length 205.658188
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482371.571828843] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.633184805] [Trajectory]: The arc length -4.503759 is out of the trajectory length 205.090745
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.733543507] [Trajectory]: The arc length -5.064032 is out of the trajectory length 204.528328
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.832832473] [Trajectory]: The arc length -5.627851 is out of the trajectory length 203.967924
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482371.932982466] [Trajectory]: The arc length -4.186112 is out of the trajectory length 205.409006
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482372.032495340] [Trajectory]: The arc length -4.748934 is out of the trajectory length 204.844456
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482372.132842459] [Trajectory]: The arc length -5.309743 is out of the trajectory length 204.282654
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482372.232542032] [Trajectory]: The arc length -5.875303 is out of the trajectory length 203.721791
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482372.332683538] [Trajectory]: The arc length -6.433661 is out of the trajectory length 203.160474
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482372.432435128] [Trajectory]: The arc length -2.841043 is out of the trajectory length 200.600852
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482372.534174974] [Trajectory]: The arc length -3.401748 is out of the trajectory length 200.040767
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482373.585603980] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Steering angle change rate limit: constraint(delta)=±0.027 [rad], input_steer=0.000 [rad], output_steer=0.000 [rad]
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482374.132115875] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 620
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81408.31, 50175.40, 36.96), velocity: (5.55, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482374.132425913] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 621
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81408.31, 50175.40, 36.96), velocity: (5.55, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [620, 621]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482374.140772577] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: traffic_light
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81408.31, 50175.40, 36.96), velocity: (5.55, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482374.141623233] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: intersection
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81408.31, 50175.40, 36.96), velocity: (5.55, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482374.145242212] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: blind_spot
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81408.31, 50175.40, 36.96), velocity: (5.55, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482374.571832556] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.532633640] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 620
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81421.26, 50178.03, 36.73), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.533369142] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 621
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81421.26, 50178.03, 36.73), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [621, 620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.541263954] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: traffic_light
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81421.26, 50178.03, 36.73), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.542077891] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: intersection
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81421.26, 50178.03, 36.73), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.545682693] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: blind_spot
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81421.26, 50178.03, 36.73), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.731277076] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 620
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81422.34, 50178.23, 36.71), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.731650963] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 621
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81422.34, 50178.23, 36.71), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [620, 621]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.739767238] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: traffic_light
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81422.34, 50178.23, 36.71), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.740660704] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: intersection
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81422.34, 50178.23, 36.71), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482376.743962330] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: blind_spot
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81422.34, 50178.23, 36.71), velocity: (5.49, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482377.571851877] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482379.675475376] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Steering angle change rate limit: constraint(delta)=±0.028 [rad], input_steer=0.000 [rad], output_steer=0.000 [rad]
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482380.671878324] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482383.330787999] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 620
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81458.29, 50184.89, 35.89), velocity: (5.50, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482383.331170953] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: crosswalk
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 621
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81458.29, 50184.89, 35.89), velocity: (5.50, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [621, 620]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482383.337381454] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: traffic_light
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81458.29, 50184.89, 35.89), velocity: (5.50, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482383.338274029] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: intersection
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81458.29, 50184.89, 35.89), velocity: (5.50, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482383.341301384] [planning.scenario_planning.lane_driving.behavior_planning.behavior_velocity_planner]: 
+[openscenario_interpreter_node-3] [component_container_mt-26] === BEHAVIOR VELOCITY PLANNER MODULE REGISTRATION ===
+[openscenario_interpreter_node-3] [component_container_mt-26] Module Name: blind_spot
+[openscenario_interpreter_node-3] [component_container_mt-26] Module ID: 402
+[openscenario_interpreter_node-3] [component_container_mt-26] Ego position: (81458.29, 50184.89, 35.89), velocity: (5.50, 0.00) m/s
+[openscenario_interpreter_node-3] [component_container_mt-26] Registered Module IDs: [402]
+[openscenario_interpreter_node-3] [component_container_mt-26] ========================================================
+[openscenario_interpreter_node-3] [component_container_mt-26] 
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482383.771842435] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482386.771861015] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482387.985324561] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Steering angle change rate limit: constraint(delta)=±0.027 [rad], input_steer=0.000 [rad], output_steer=0.000 [rad]
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482389.871813454] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482392.871869734] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482395.971877827] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482396.475320780] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Steering angle change rate limit: constraint(delta)=±0.026 [rad], input_steer=-0.000 [rad], output_steer=-0.000 [rad]
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482398.971878293] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.130829894] [Trajectory]: The arc length -1.455103 is out of the trajectory length 51.241112
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.230916448] [Trajectory]: The arc length -2.022841 is out of the trajectory length 50.671136
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.341639767] [Trajectory]: The arc length -2.593381 is out of the trajectory length 50.100949
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.441336243] [Trajectory]: The arc length -3.120220 is out of the trajectory length 49.574011
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.532828080] [Trajectory]: The arc length -3.121937 is out of the trajectory length 49.586935
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.632106908] [Trajectory]: The arc length -3.120593 is out of the trajectory length 49.588332
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.731229424] [Trajectory]: The arc length -3.120183 is out of the trajectory length 49.577894
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.830788976] [Trajectory]: The arc length -5.477353 is out of the trajectory length 47.218091
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482399.930543951] [Trajectory]: The arc length -6.052493 is out of the trajectory length 46.641727
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.030706046] [Trajectory]: The arc length -6.630090 is out of the trajectory length 46.063835
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.130847542] [Trajectory]: The arc length -7.212716 is out of the trajectory length 45.482122
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.230527889] [Trajectory]: The arc length -1.840651 is out of the trajectory length 44.713812
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.330920834] [Trajectory]: The arc length -2.411940 is out of the trajectory length 44.140481
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.431495438] [Trajectory]: The arc length -2.999400 is out of the trajectory length 43.565227
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.530778093] [Trajectory]: The arc length -3.575377 is out of the trajectory length 42.986453
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.630865659] [Trajectory]: The arc length -4.146009 is out of the trajectory length 42.404690
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.731144060] [Trajectory]: The arc length -4.739367 is out of the trajectory length 41.818757
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.830557489] [Trajectory]: The arc length -5.347230 is out of the trajectory length 41.225848
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482400.930479927] [Trajectory]: The arc length -5.908414 is out of the trajectory length 40.645023
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.030519383] [Trajectory]: The arc length -6.508612 is out of the trajectory length 40.044637
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.130120432] [Trajectory]: The arc length -7.094742 is out of the trajectory length 39.472907
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.429771148] [Trajectory]: The arc length -0.198563 is out of the trajectory length 37.745338
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.529241803] [Trajectory]: The arc length -0.783487 is out of the trajectory length 37.152722
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.629209826] [Trajectory]: The arc length -1.358555 is out of the trajectory length 36.569880
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.729266364] [Trajectory]: The arc length -1.983485 is out of the trajectory length 35.959524
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.829589519] [Trajectory]: The arc length -2.550083 is out of the trajectory length 35.390059
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482401.929754479] [Trajectory]: The arc length -3.106595 is out of the trajectory length 34.822297
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482401.971966834] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.030613223] [Trajectory]: The arc length -3.683937 is out of the trajectory length 34.254586
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.130001515] [Trajectory]: The arc length -4.263712 is out of the trajectory length 33.680620
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.229449528] [Trajectory]: The arc length -4.842874 is out of the trajectory length 33.092207
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.329276327] [Trajectory]: The arc length -5.422908 is out of the trajectory length 32.506990
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.429267794] [Trajectory]: The arc length -6.034718 is out of the trajectory length 31.908336
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.529402007] [Trajectory]: The arc length -6.605662 is out of the trajectory length 31.334090
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.629477861] [Trajectory]: The arc length -7.163597 is out of the trajectory length 30.764864
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.729499524] [Trajectory]: The arc length -1.021320 is out of the trajectory length 30.200587
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482402.745562266] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Steering angle change rate limit: constraint(delta)=±0.026 [rad], input_steer=-0.001 [rad], output_steer=-0.001 [rad]
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.829391124] [Trajectory]: The arc length -6.315523 is out of the trajectory length 31.628556
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482402.929752831] [Trajectory]: The arc length -6.878227 is out of the trajectory length 31.057056
+[openscenario_interpreter_node-3] [component_container_mt-26] [WARN] [1789482403.029447374] [Trajectory]: The arc length -0.729239 is out of the trajectory length 30.492435
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482405.071913031] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [component_container_mt-33] [ERROR] [1789482407.485251704] [control.vehicle_cmd_gate]: [VehicleCmdFilter] Velocity change limit by longitudinal acceleration: constraint(delta)=±0.151 [m/s], input_vel=0.000 [m/s], output_vel=1.081 [m/s]
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482408.171841525] [control.autoware_operation_mode_transition_manager]: Engage unavailable: enable_engage_on_driving is false, and the vehicle is not stationary.
+[openscenario_interpreter_node-3] [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[openscenario_interpreter_node-3] [INFO] [autoware_dummy_infrastructure_node-54]: sending signal 'SIGINT' to process[autoware_dummy_infrastructure_node-54]
+[openscenario_interpreter_node-3] [INFO] [autoware_scenario_simulator_v2_adapter_node-53]: sending signal 'SIGINT' to process[autoware_scenario_simulator_v2_adapter_node-53]
+[openscenario_interpreter_node-3] [INFO] [autoware_vehicle_door_simulator_node-52]: sending signal 'SIGINT' to process[autoware_vehicle_door_simulator_node-52]
+[openscenario_interpreter_node-3] [INFO] [autoware_pose_initializer_node-51]: sending signal 'SIGINT' to process[autoware_pose_initializer_node-51]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_map_visualizer_node-50]: sending signal 'SIGINT' to process[traffic_light_map_visualizer_node-50]
+[openscenario_interpreter_node-3] [INFO] [crosswalk_traffic_light_estimator_node-49]: sending signal 'SIGINT' to process[crosswalk_traffic_light_estimator_node-49]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_arbiter_node-48]: sending signal 'SIGINT' to process[traffic_light_arbiter_node-48]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_multi_camera_fusion_node-47]: sending signal 'SIGINT' to process[traffic_light_multi_camera_fusion_node-47]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_occlusion_predictor_node-46]: sending signal 'SIGINT' to process[traffic_light_occlusion_predictor_node-46]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_occlusion_predictor_node-45]: sending signal 'SIGINT' to process[traffic_light_occlusion_predictor_node-45]
+[openscenario_interpreter_node-3] [INFO] [autoware_perception_analytics_publisher_node-44]: sending signal 'SIGINT' to process[autoware_perception_analytics_publisher_node-44]
+[openscenario_interpreter_node-3] [INFO] [map_based_prediction-43]: sending signal 'SIGINT' to process[map_based_prediction-43]
+[openscenario_interpreter_node-3] [INFO] [multi_object_tracker_node-42]: sending signal 'SIGINT' to process[multi_object_tracker_node-42]
+[openscenario_interpreter_node-3] [INFO] [autoware_fault_injection_node-41]: sending signal 'SIGINT' to process[autoware_fault_injection_node-41]
+[openscenario_interpreter_node-3] [INFO] [rviz2-40]: sending signal 'SIGINT' to process[rviz2-40]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-39]: sending signal 'SIGINT' to process[component_container_mt-39]
+[openscenario_interpreter_node-3] [INFO] [routing_adaptor_node-38]: sending signal 'SIGINT' to process[routing_adaptor_node-38]
+[openscenario_interpreter_node-3] [INFO] [initial_pose_adaptor_node-37]: sending signal 'SIGINT' to process[initial_pose_adaptor_node-37]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-36]: sending signal 'SIGINT' to process[component_container_mt-36]
+[openscenario_interpreter_node-3] [INFO] [control_evaluator-35]: sending signal 'SIGINT' to process[control_evaluator-35]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-34]: sending signal 'SIGINT' to process[component_container_mt-34]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-33]: sending signal 'SIGINT' to process[component_container_mt-33]
+[openscenario_interpreter_node-3] [INFO] [relay-32]: sending signal 'SIGINT' to process[relay-32]
+[openscenario_interpreter_node-3] [INFO] [autoware_remaining_distance_time_calculator_node-31]: sending signal 'SIGINT' to process[autoware_remaining_distance_time_calculator_node-31]
+[openscenario_interpreter_node-3] [INFO] [planning_evaluator-30]: sending signal 'SIGINT' to process[planning_evaluator-30]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-29]: sending signal 'SIGINT' to process[component_container_mt-29]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-28]: sending signal 'SIGINT' to process[component_container_mt-28]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-27]: sending signal 'SIGINT' to process[component_container_mt-27]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-26]: sending signal 'SIGINT' to process[component_container_mt-26]
+[openscenario_interpreter_node-3] [INFO] [autoware_dummy_infrastructure_node-54]: process has finished cleanly [pid 28909]
+[openscenario_interpreter_node-3] [INFO] [autoware_hazard_lights_selector_node-25]: sending signal 'SIGINT' to process[autoware_hazard_lights_selector_node-25]
+[openscenario_interpreter_node-3] [INFO] [component_container-24]: sending signal 'SIGINT' to process[component_container-24]
+[openscenario_interpreter_node-3] [INFO] [external_velocity_limit_selector-23]: sending signal 'SIGINT' to process[external_velocity_limit_selector-23]
+[openscenario_interpreter_node-3] [INFO] [autoware_scenario_selector_node-22]: sending signal 'SIGINT' to process[autoware_scenario_selector_node-22]
+[openscenario_interpreter_node-3] [INFO] [autoware_vehicle_door_simulator_node-52]: process has finished cleanly [pid 28874]
+[openscenario_interpreter_node-3] [INFO] [goal_pose_visualizer-21]: sending signal 'SIGINT' to process[goal_pose_visualizer-21]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-20]: sending signal 'SIGINT' to process[component_container_mt-20]
+[openscenario_interpreter_node-3] [INFO] [autoware_pose_initializer_node-51]: process has finished cleanly [pid 28872]
+[openscenario_interpreter_node-3] [INFO] [autoware_manual_lane_change_handler_node-19]: sending signal 'SIGINT' to process[autoware_manual_lane_change_handler_node-19]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_arbiter_node-48]: process has finished cleanly [pid 28577]
+[openscenario_interpreter_node-3] [INFO] [autoware_map_projection_loader_node-18]: sending signal 'SIGINT' to process[autoware_map_projection_loader_node-18]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_map_visualizer_node-50]: process has finished cleanly [pid 28695]
+[openscenario_interpreter_node-3] [INFO] [map_hash_generator-17]: sending signal 'SIGINT' to process[map_hash_generator-17]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-16]: sending signal 'SIGINT' to process[component_container_mt-16]
+[openscenario_interpreter_node-3] [INFO] [crosswalk_traffic_light_estimator_node-49]: process has finished cleanly [pid 28607]
+[openscenario_interpreter_node-3] [INFO] [multi_object_tracker_node-42]: process has finished cleanly [pid 28303]
+[openscenario_interpreter_node-3] [INFO] [logging_node-15]: sending signal 'SIGINT' to process[logging_node-15]
+[openscenario_interpreter_node-3] [INFO] [autoware_perception_analytics_publisher_node-44]: process has finished cleanly [pid 28432]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_occlusion_predictor_node-45]: process has finished cleanly [pid 28494]
+[openscenario_interpreter_node-3] [INFO] [autoware_dummy_diag_publisher_node-14]: sending signal 'SIGINT' to process[autoware_dummy_diag_publisher_node-14]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-39]: process has finished cleanly [pid 28241]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_multi_camera_fusion_node-47]: process has finished cleanly [pid 28526]
+[openscenario_interpreter_node-3] [INFO] [traffic_light_occlusion_predictor_node-46]: process has finished cleanly [pid 28521]
+[openscenario_interpreter_node-3] [INFO] [autoware_mrm_handler_node-13]: sending signal 'SIGINT' to process[autoware_mrm_handler_node-13]
+[openscenario_interpreter_node-3] [INFO] [map_based_prediction-43]: process has finished cleanly [pid 28382]
+[openscenario_interpreter_node-3] [INFO] [autoware_hazard_status_converter_node-12]: sending signal 'SIGINT' to process[autoware_hazard_status_converter_node-12]
+[openscenario_interpreter_node-3] [INFO] [routing_adaptor_node-38]: process has finished cleanly [pid 28239]
+[openscenario_interpreter_node-3] [INFO] [converter_node-11]: sending signal 'SIGINT' to process[converter_node-11]
+[openscenario_interpreter_node-3] [INFO] [initial_pose_adaptor_node-37]: process has finished cleanly [pid 28237]
+[openscenario_interpreter_node-3] [INFO] [aggregator_node-10]: sending signal 'SIGINT' to process[aggregator_node-10]
+[openscenario_interpreter_node-3] [INFO] [component_container-9]: sending signal 'SIGINT' to process[component_container-9]
+[openscenario_interpreter_node-3] [INFO] [relay-32]: process has finished cleanly [pid 28066]
+[openscenario_interpreter_node-3] [INFO] [component_container-8]: sending signal 'SIGINT' to process[component_container-8]
+[openscenario_interpreter_node-3] [INFO] [autoware_scenario_simulator_v2_adapter_node-53]: process has finished cleanly [pid 28896]
+[openscenario_interpreter_node-3] [INFO] [component_container-7]: sending signal 'SIGINT' to process[component_container-7]
+[openscenario_interpreter_node-3] [INFO] [autoware_fault_injection_node-41]: process has finished cleanly [pid 28295]
+[openscenario_interpreter_node-3] [INFO] [service_log_checker_node-6]: sending signal 'SIGINT' to process[service_log_checker_node-6]
+[openscenario_interpreter_node-3] [INFO] [autoware_remaining_distance_time_calculator_node-31]: process has finished cleanly [pid 28064]
+[openscenario_interpreter_node-3] [INFO] [autoware_pipeline_latency_monitor_node-5]: sending signal 'SIGINT' to process[autoware_pipeline_latency_monitor_node-5]
+[openscenario_interpreter_node-3] [INFO] [processing_time_checker_node-4]: sending signal 'SIGINT' to process[processing_time_checker_node-4]
+[openscenario_interpreter_node-3] [INFO] [autoware_duplicated_node_checker_node-3]: sending signal 'SIGINT' to process[autoware_duplicated_node_checker_node-3]
+[openscenario_interpreter_node-3] [INFO] [autoware_hazard_lights_selector_node-25]: process has finished cleanly [pid 28052]
+[openscenario_interpreter_node-3] [INFO] [robot_state_publisher-2]: sending signal 'SIGINT' to process[robot_state_publisher-2]
+[openscenario_interpreter_node-3] [INFO] [component_container-24]: process has finished cleanly [pid 28050]
+[openscenario_interpreter_node-3] [INFO] [control_evaluator-35]: process has finished cleanly [pid 28233]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-1]: sending signal 'SIGINT' to process[component_container_mt-1]
+[openscenario_interpreter_node-3] [INFO] [external_velocity_limit_selector-23]: process has finished cleanly [pid 28048]
+[openscenario_interpreter_node-3] [autoware_dummy_infrastructure_node-54] [INFO] [1789482408.453514037] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_scenario_simulator_v2_adapter_node-53] [INFO] [1789482408.461646271] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_vehicle_door_simulator_node-52] [INFO] [1789482408.492043965] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_pose_initializer_node-51] [INFO] [1789482408.498488582] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [traffic_light_map_visualizer_node-50] [INFO] [1789482408.505725768] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [crosswalk_traffic_light_estimator_node-49] [INFO] [1789482408.514089945] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [traffic_light_arbiter_node-48] [INFO] [1789482408.521592825] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [traffic_light_multi_camera_fusion_node-47] [INFO] [1789482408.529471868] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [traffic_light_occlusion_predictor_node-46] [INFO] [1789482408.537299584] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [traffic_light_occlusion_predictor_node-45] [INFO] [1789482408.544894757] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_perception_analytics_publisher_node-44] [INFO] [1789482408.552914712] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [map_based_prediction-43] [INFO] [1789482408.561323282] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [multi_object_tracker_node-42] [INFO] [1789482408.570241331] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_fault_injection_node-41] [INFO] [1789482408.577526667] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [rviz2-40] [INFO] [1789482408.584158453] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-39] [INFO] [1789482408.590293092] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [routing_adaptor_node-38] [INFO] [1789482408.597253412] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [initial_pose_adaptor_node-37] [INFO] [1789482408.604644093] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-36] [INFO] [1789482408.612745951] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [control_evaluator-35] [INFO] [1789482408.621485027] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-34] [INFO] [1789482408.630256523] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-33] [INFO] [1789482408.639793317] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [relay-32] [INFO] [1789482408.648995196] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_remaining_distance_time_calculator_node-31] [INFO] [1789482408.657051058] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [planning_evaluator-30] [INFO] [1789482408.666747339] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-29] [INFO] [1789482408.675243061] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-28] [INFO] [1789482408.684713030] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-27] [INFO] [1789482408.694833111] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482408.706937442] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_hazard_lights_selector_node-25] [INFO] [1789482408.716368158] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-26] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[openscenario_interpreter_node-3] [component_container_mt-26]          at line 127 in ./src/class_loader.cpp
+[openscenario_interpreter_node-3] [component_container_mt-26] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[openscenario_interpreter_node-3] [component_container_mt-26]          at line 127 in ./src/class_loader.cpp
+[openscenario_interpreter_node-3] [component_container_mt-26] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[openscenario_interpreter_node-3] [component_container_mt-26]          at line 127 in ./src/class_loader.cpp
+[openscenario_interpreter_node-3] [component_container_mt-26] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[openscenario_interpreter_node-3] [component_container_mt-26]          at line 127 in ./src/class_loader.cpp
+[openscenario_interpreter_node-3] [component_container_mt-26] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[openscenario_interpreter_node-3] [component_container_mt-26]          at line 127 in ./src/class_loader.cpp
+[openscenario_interpreter_node-3] [component_container_mt-26] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[openscenario_interpreter_node-3] [component_container_mt-26]          at line 127 in ./src/class_loader.cpp
+[openscenario_interpreter_node-3] [component_container_mt-26] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[openscenario_interpreter_node-3] [component_container_mt-26]          at line 127 in ./src/class_loader.cpp
+[openscenario_interpreter_node-3] [component_container-24] [INFO] [1789482408.727407233] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [external_velocity_limit_selector-23] [INFO] [1789482408.737706368] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482408.739874971] [planning.scenario_planning.lane_driving.behavior_planning.behavior_path_planner.start_planner]: freespace planner callback finished
+[openscenario_interpreter_node-3] [autoware_scenario_selector_node-22] [INFO] [1789482408.751375327] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [goal_pose_visualizer-21] [INFO] [1789482408.764426634] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-20] [INFO] [1789482408.778727230] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_manual_lane_change_handler_node-19] [INFO] [1789482408.791744253] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [logging_node-15] [WARN] [1789482408.792076102] [logging_diag_graph]: The target mode is not available for the following reasons:
+[openscenario_interpreter_node-3] [logging_node-15] - /autoware/modes/autonomous ERROR
+[openscenario_interpreter_node-3] [logging_node-15]     - /adapi/mrm_request/delegate STALE
+[openscenario_interpreter_node-3] [logging_node-15] 
+[openscenario_interpreter_node-3] [autoware_map_projection_loader_node-18] [INFO] [1789482408.804377812] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-16] [INFO] [1789482408.832321609] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [logging_node-15] [INFO] [1789482408.844129598] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_dummy_diag_publisher_node-14] [INFO] [1789482408.854502691] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_mrm_handler_node-13] [INFO] [1789482408.864383836] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-26] [INFO] [1789482408.864696820] [planning.scenario_planning.lane_driving.behavior_planning.behavior_path_planner.goal_planner]: lane parking and freespace parking callbacks finished
+[openscenario_interpreter_node-3] [autoware_hazard_status_converter_node-12] [INFO] [1789482408.873406100] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [converter_node-11] [INFO] [1789482408.882892620] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [aggregator_node-10] [INFO] [1789482408.892190829] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container-9] [INFO] [1789482408.902382764] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container-8] [INFO] [1789482408.910136833] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container-7] [INFO] [1789482408.918743542] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [service_log_checker_node-6] [INFO] [1789482408.927317661] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_pipeline_latency_monitor_node-5] [INFO] [1789482408.935899774] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [processing_time_checker_node-4] [INFO] [1789482408.944465186] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [autoware_duplicated_node_checker_node-3] [INFO] [1789482408.952800639] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [robot_state_publisher-2] [INFO] [1789482408.961009146] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [component_container_mt-1] [INFO] [1789482408.968590603] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [ERROR] [component_container_mt-27]: process has died [pid 28056, exit code -11, cmd '/opt/ros/humble/lib/rclcpp_components/component_container_mt --ros-args -r __node:=motion_planning_container -r __ns:=/planning/scenario_planning/lane_driving/motion_planning -p use_sim_time:=False -p wheel_radius:=0.383 -p wheel_width:=0.235 -p wheel_base:=2.79 -p wheel_tread:=1.64 -p front_overhang:=1.0 -p rear_overhang:=1.1 -p left_overhang:=0.128 -p right_overhang:=0.128 -p vehicle_height:=2.5 -p max_steer_angle:=0.7 -p use_sim_time:=False -p use_sim_time:=False -p use_sim_time:=False -p wheel_radius:=0.383 -p wheel_width:=0.235 -p wheel_base:=2.79 -p wheel_tread:=1.64 -p front_overhang:=1.0 -p rear_overhang:=1.1 -p left_overhang:=0.128 -p right_overhang:=0.128 -p vehicle_height:=2.5 -p max_steer_angle:=0.7'].
+[openscenario_interpreter_node-3] [ERROR] [component_container_mt-20]: process has died [pid 28042, exit code -11, cmd '/opt/ros/humble/lib/rclcpp_components/component_container_mt --ros-args -r __node:=mission_planner_container -r __ns:=/planning/mission_planning -p use_sim_time:=False -p wheel_radius:=0.383 -p wheel_width:=0.235 -p wheel_base:=2.79 -p wheel_tread:=1.64 -p front_overhang:=1.0 -p rear_overhang:=1.1 -p left_overhang:=0.128 -p right_overhang:=0.128 -p vehicle_height:=2.5 -p max_steer_angle:=0.7 -p use_sim_time:=False -p use_sim_time:=False -p use_sim_time:=False -p wheel_radius:=0.383 -p wheel_width:=0.235 -p wheel_base:=2.79 -p wheel_tread:=1.64 -p front_overhang:=1.0 -p rear_overhang:=1.1 -p left_overhang:=0.128 -p right_overhang:=0.128 -p vehicle_height:=2.5 -p max_steer_angle:=0.7'].
+[openscenario_interpreter_node-3] [INFO] [goal_pose_visualizer-21]: process has finished cleanly [pid 28044]
+[openscenario_interpreter_node-3] [INFO] [autoware_map_projection_loader_node-18]: process has finished cleanly [pid 28038]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-29]: process has finished cleanly [pid 28060]
+[openscenario_interpreter_node-3] [INFO] [planning_evaluator-30]: process has finished cleanly [pid 28062]
+[openscenario_interpreter_node-3] [INFO] [logging_node-15]: process has finished cleanly [pid 28032]
+[openscenario_interpreter_node-3] [INFO] [map_hash_generator-17]: process has finished cleanly [pid 28036]
+[openscenario_interpreter_node-3] [INFO] [autoware_dummy_diag_publisher_node-14]: process has finished cleanly [pid 28030]
+[openscenario_interpreter_node-3] [INFO] [autoware_scenario_selector_node-22]: process has finished cleanly [pid 28046]
+[openscenario_interpreter_node-3] [INFO] [autoware_hazard_status_converter_node-12]: process has finished cleanly [pid 28026]
+[openscenario_interpreter_node-3] [INFO] [converter_node-11]: process has finished cleanly [pid 28024]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-28]: process has finished cleanly [pid 28058]
+[openscenario_interpreter_node-3] [INFO] [autoware_mrm_handler_node-13]: process has finished cleanly [pid 28028]
+[openscenario_interpreter_node-3] [INFO] [autoware_manual_lane_change_handler_node-19]: process has finished cleanly [pid 28040]
+[openscenario_interpreter_node-3] [INFO] [aggregator_node-10]: process has finished cleanly [pid 28022]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-34]: process has finished cleanly [pid 28172]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-33]: process has finished cleanly [pid 28121]
+[openscenario_interpreter_node-3] [INFO] [component_container-8]: process has finished cleanly [pid 28018]
+[openscenario_interpreter_node-3] [INFO] [rviz2-40]: process has finished cleanly [pid 28278]
+[openscenario_interpreter_node-3] [INFO] [service_log_checker_node-6]: process has finished cleanly [pid 28014]
+[openscenario_interpreter_node-3] [INFO] [autoware_pipeline_latency_monitor_node-5]: process has finished cleanly [pid 28012]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-1]: process has finished cleanly [pid 28004]
+[openscenario_interpreter_node-3] [INFO] [robot_state_publisher-2]: process has finished cleanly [pid 28006]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-16]: process has finished cleanly [pid 28034]
+[openscenario_interpreter_node-3] [INFO] [processing_time_checker_node-4]: process has finished cleanly [pid 28010]
+[openscenario_interpreter_node-3] [INFO] [autoware_duplicated_node_checker_node-3]: process has finished cleanly [pid 28008]
+[openscenario_interpreter_node-3] [INFO] [component_container-9]: process has finished cleanly [pid 28020]
+[openscenario_interpreter_node-3] [INFO] [component_container-7]: process has finished cleanly [pid 28016]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-36]: process has finished cleanly [pid 28235]
+[openscenario_interpreter_node-3] [INFO] [component_container_mt-26]: process has finished cleanly [pid 28054]
+[openscenario_interpreter_node-3] [INFO] [1789482411.324426902] [simulation.openscenario_interpreter]: [32mPassed[0m
+[scenario_test_runner.py-1] [INFO] [1789482411.325869702] [simulation.scenario_test_runner]: [33mShutdown interpreter.[0m
+[INFO] [scenario_test_runner.py-1]: process has finished cleanly [pid 27851]
+[INFO] [launch]: process[scenario_test_runner.py-1] was required: shutting down launched system
+[INFO] [visualization_node-5]: sending signal 'SIGINT' to process[visualization_node-5]
+[INFO] [openscenario_preprocessor_node-4]: sending signal 'SIGINT' to process[openscenario_preprocessor_node-4]
+[INFO] [openscenario_interpreter_node-3]: sending signal 'SIGINT' to process[openscenario_interpreter_node-3]
+[INFO] [simple_sensor_simulator_node-2]: sending signal 'SIGINT' to process[simple_sensor_simulator_node-2]
+[visualization_node-5] [INFO] [1789482412.580105046] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_preprocessor_node-4] [INFO] [1789482412.580345996] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[openscenario_interpreter_node-3] [INFO] [1789482412.580581805] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[simple_sensor_simulator_node-2] [INFO] [1789482412.580801595] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [visualization_node-5]: process has finished cleanly [pid 27859]
+[INFO] [openscenario_preprocessor_node-4]: process has finished cleanly [pid 27857]
+[INFO] [simple_sensor_simulator_node-2]: process has finished cleanly [pid 27853]
+[INFO] [openscenario_interpreter_node-3]: process has finished cleanly [pid 27855]

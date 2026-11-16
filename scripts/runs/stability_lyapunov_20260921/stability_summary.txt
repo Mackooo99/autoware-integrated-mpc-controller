@@ -1,0 +1,21 @@
+LOCAL STABILITY ANALYSIS SUMMARY
+================================
+
+Analysed operating points: 63
+Skipped operating points: 0
+
+Minimum spectral radius: 0.9207921787
+Maximum spectral radius: 0.9593864350
+Worst spectral-radius point: v_ref=1.0, kappa_ref=0.0
+
+Minimum lambda_min(P_LQR): 3.0653579251e-02
+Minimum lambda_min(P_Lyapunov): 1.2258923454e+00
+Worst Lyapunov-margin point: v_ref=20.0, kappa_ref=0.0
+
+Maximum Lyapunov equation residual (inf norm): 6.3948846218e-14
+
+Unstable operating points: 0
+Non-certified operating points: 0
+
+All spectral-radius checks PASS: True
+All Lyapunov checks PASS: True

@@ -25,16 +25,39 @@ c7a8d79  chore: remove accidentally committed __pycache__, add .gitignore
 13bd258  docs: final static engineering review                             (Task 16)
 ```
 
-## Blocker (still open, unrelated to this batch)
+## Blocker (still open, unrelated to this batch, and to the controller choice)
 
-`mission_planner_container` / `motion_planning_container` (stock, unrelated to
-`/control/control_container` where our node loads) segfault inside `librclcpp.so` at the same
-code offset across every attempt, both before and unaffected by this batch. Autoware never
-reaches `WAITING_FOR_ENGAGE`, so no full closed-loop run has been possible this session. Stock
-baseline results from 2026-09-11 prove the full stack has worked on this machine before —
-whatever regressed is environmental, not something Task 1–16 touched. **Do not modify stock
-Autoware or rclcpp to work around this.** This is the reason every item in "Runtime validation
-pending" below is pending.
+`mission_planner_container` / `motion_planning_container` intermittently fail to advance
+`AutowareState` past `Planning` and then segfault (`exit code -11`, same `librclcpp.so` offset)
+once the scenario runner's timeout tears the run down. Confirmed on 2026-09-14 with **matched,
+correctly-labelled** back-to-back runs on an otherwise identical environment:
+
+- `results/baseline_stock/S01/run_102` (genuine stock — `autoware_launch/planning_simulator.launch.xml`)
+  → stuck in `Planning`, timed out, `-11` before `WAITING_FOR_ENGAGE`.
+- `results/integrated_mpc_v1/S01/run_03` (genuine custom launch) → `Planning → Driving` in 3 s,
+  scenario `Passed`, `-11` only during post-`Passed` teardown (benign, matches this section's prior
+  finding).
+
+A wider sweep of every run sharing one identical launch config that day showed **3 fails / 2
+passes interleaved** regardless of which controller was nominally under test — ruling out a
+controller-code-caused divergence. This is environmental Autoware/simulator-stack flakiness on
+this machine, not something in this package. **Do not modify stock Autoware or rclcpp to work
+around this**; retry runs instead, and always check the per-run `AutowareState` transition log
+before drawing any conclusion from a single run.
+
+**Separate, now-fixed benchmark-tooling bug (2026-09-14):** `~/control_benchmark/scripts/run_scenario.sh`
+had been rewritten (mtime `2026-09-14 07:24`, no git history in that directory to show why) to
+unconditionally launch `autoware_integrated_mpc_trajectory_follower/integrated_planning_simulator.launch.xml`
+regardless of which controller `run_experiment.sh` claimed to be running. Every `baseline_stock`
+result recorded from `run_99` onward (`run_99`, `run_100`, `run_101`) was actually the **custom**
+controller mislabelled as stock — confirmed by `[integrated_mpc_node-55] ... controller_node_exe:
+Integrated MPC node started` appearing in those logs. Only `run_01`–`run_03` (2026-09-11) are
+genuine stock S1 data. Fixed with explicit user approval: `run_scenario.sh` now takes an optional
+second `<controller>` argument (`baseline_stock` → `autoware_launch/planning_simulator.launch.xml`,
+default `integrated_mpc_v1` → the custom launch, preserving the documented single-arg `./run_scenario.sh 1`
+usage), and `run_experiment.sh` forwards `$CONTROLLER` to it. Verified with `run_102`/`run_03` above.
+**Treat every `baseline_stock` result dated 2026-09-14 before this fix as invalid; do not use
+`run_99`/`run_100`/`run_101` in the thesis comparison.**
 
 ---
 

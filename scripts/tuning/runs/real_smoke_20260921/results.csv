@@ -1,0 +1,2 @@
+config_id,dev_score,q_y,q_psi,q_v,q_a,r_delta,r_delta_v,r_j,terminal_q_y,terminal_q_psi,terminal_q_v
+config_000_default,2.015165352636715,1.0,2.0,2.0,0.1,1.0,0.75,0.1,1.0,0.1,1.0

@@ -19,11 +19,11 @@ Dimension = namedtuple("Dimension", ["yaml_key", "low", "high", "log_scale", "de
 # candidate so V1 itself is always in the comparison.
 DIMENSIONS = {
     "q_y": Dimension("weight_lat_error", 0.1, 10.0, True, 1.0),
-    "q_psi": Dimension("weight_heading_error_squared_vel", 0.03, 3.0, True, 0.3),
-    "q_v": Dimension("weight_velocity_error", 0.1, 10.0, True, 1.0),
+    "q_psi": Dimension("weight_heading_error_squared_vel", 0.03, 3.0, True, 2.0),
+    "q_v": Dimension("weight_velocity_error", 0.1, 10.0, True, 2.0),
     "q_a": Dimension("weight_acceleration_error", 0.01, 1.0, True, 0.1),
     "r_delta": Dimension("weight_steering_input", 0.1, 10.0, True, 1.0),
-    "r_delta_v": Dimension("weight_steering_input_squared_vel", 0.025, 2.5, True, 0.25),
+    "r_delta_v": Dimension("weight_steering_input_squared_vel", 0.025, 2.5, True, 0.75),
     "r_j": Dimension("weight_jerk", 0.01, 1.0, True, 0.1),
     "terminal_q_y": Dimension("terminal_weight_lat_error", 0.1, 10.0, True, 1.0),
     "terminal_q_psi": Dimension("terminal_weight_heading_error", 0.01, 1.0, True, 0.1),

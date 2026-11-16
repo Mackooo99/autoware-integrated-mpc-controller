@@ -34,7 +34,7 @@
 
     # V2, off by default (preserves V1 exactly - see CLAUDE_PROGRESS.md
     # Task 10 for validation status before enabling for a real run).
-    enable_delay_compensation: false
+    enable_delay_compensation: true
     steering_input_delay: 0.24
     longitudinal_input_delay: 0.10
 
@@ -61,12 +61,12 @@
 
     # V1 cost weights
     weight_lat_error: 1.0
-    weight_heading_error_squared_vel: 0.3
-    weight_velocity_error: 1.0
+    weight_heading_error_squared_vel: 2.0
+    weight_velocity_error: 2.0
     weight_acceleration_error: 0.1
 
     weight_steering_input: 1.0
-    weight_steering_input_squared_vel: 0.25
+    weight_steering_input_squared_vel: 0.75
     weight_jerk: 0.1
 
     terminal_weight_lat_error: 1.0

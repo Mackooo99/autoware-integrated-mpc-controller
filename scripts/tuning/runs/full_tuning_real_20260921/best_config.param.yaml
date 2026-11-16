@@ -1,0 +1,80 @@
+/**:
+  ros__parameters:
+
+    # Controller timing
+    ctrl_period: 0.03
+
+    publish_enabled: true
+
+    # Off for benchmark runs: gates expensive debug-only computation
+    # (Hessian eigendecomposition, per-row violation identification,
+    # objective cross-check, optimal-sequence preview, reference-
+    # feasibility scan) that would otherwise contaminate timing results.
+    # Never gates the safety checks that decide whether to publish.
+    debug_diagnostics: false
+
+    # MPC
+    prediction_horizon: 50
+    prediction_dt: 0.1
+
+    min_prediction_length: 5.0
+    minimum_prediction_velocity: 0.1
+
+    # Vehicle model
+    wheel_base: 2.79
+    steer_tau: 0.27
+
+    # Nearest-point search thresholds (TrackingStateBuilder)
+    nearest_dist_threshold: 3.0
+    nearest_yaw_threshold: 1.046
+
+    # Off by default (V1 behaviour: full linear scan every cycle).
+    use_incremental_nearest_search: false
+    incremental_search_window: 15
+
+    # V2, off by default (preserves V1 exactly - see CLAUDE_PROGRESS.md
+    # Task 10 for validation status before enabling for a real run).
+    enable_delay_compensation: true
+    steering_input_delay: 0.24
+    longitudinal_input_delay: 0.10
+
+    # 1 = V1 exactly (adjacent-point curvature). > 1 widens the
+    # triangle used for the signed-curvature estimate (TrackingState
+    # Builder::calculateCurvature), analogous to stock's
+    # curvature_smoothing_num_traj/num_ref_steer.
+    curvature_smoothing_stride: 1
+
+    # Physical limits
+    max_steering_angle: 0.7
+
+    max_acceleration: 3.0
+    min_acceleration: -5.0
+
+    max_jerk: 2.0
+    min_jerk: -5.0
+
+    # Steering-rate limit maps (curvature/velocity -> deg/s), MpcConstraintBuilder
+    curvature_for_steer_rate: [0.001, 0.002, 0.01]
+    steer_rate_deg_by_curvature: [40.0, 50.0, 60.0]
+    velocity_for_steer_rate: [10.0, 15.0, 20.0]
+    steer_rate_deg_by_velocity: [60.0, 50.0, 40.0]
+
+    # V1 cost weights
+    weight_lat_error: 0.1312108621257729
+    weight_heading_error_squared_vel: 1.1031970322308478
+    weight_velocity_error: 2.782278526608124
+    weight_acceleration_error: 0.14904891969349734
+
+    weight_steering_input: 0.25693352986042084
+    weight_steering_input_squared_vel: 0.5514508273664945
+    weight_jerk: 0.01511387381660142
+
+    terminal_weight_lat_error: 0.9589392138114324
+    terminal_weight_heading_error: 0.09687302122686255
+    terminal_weight_velocity_error: 10.0
+
+    # NOTE: steering/longitudinal actuator-delay compensation is not yet
+    # implemented (Batch 2 / Task 10). Do not add steering_input_delay or
+    # longitudinal_delay keys here until the node actually declares and
+    # consumes them - an unconsumed key silently does nothing and is a
+    # reproducibility hazard for the thesis artefact (CLAUDE.md #33/#43).

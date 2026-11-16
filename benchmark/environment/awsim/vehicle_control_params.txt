@@ -1,0 +1,24 @@
+===== wheel_base =====
+Double value is: 2.79
+===== wheel_tread =====
+Double value is: 1.64
+===== wheel_radius =====
+Double value is: 0.383
+===== front_overhang =====
+Double value is: 1.0
+===== rear_overhang =====
+Double value is: 1.1
+===== left_overhang =====
+Double value is: 0.128
+===== right_overhang =====
+Double value is: 0.128
+===== max_steer_angle =====
+Double value is: 0.7
+===== vehicle_model_type =====
+String value is: kinematics
+===== vehicle_model_steer_tau =====
+Double value is: 0.27
+===== input_delay =====
+Double value is: 0.24
+===== ctrl_period =====
+Double value is: 0.03

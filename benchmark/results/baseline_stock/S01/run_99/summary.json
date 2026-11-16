@@ -1,0 +1,118 @@
+{
+  "analysis_window": {
+    "start_time_s": 8.102476463,
+    "end_time_s": 49.30247432,
+    "duration_s": 41.199997857,
+    "samples": 824
+  },
+  "error_sources": {
+    "velocity": "velocity_error_raw",
+    "lateral": "lateral_error_raw",
+    "yaw": "yaw_error_raw"
+  },
+  "velocity_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "lateral_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "yaw_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "acceleration": {
+    "mean": 0.0,
+    "median": 0.0,
+    "std": 0.0,
+    "p95": 0.0,
+    "p99": 0.0,
+    "max": 0.0
+  },
+  "jerk": {
+    "rmse": 0.0,
+    "mae": 0.0,
+    "max_abs": 0.0,
+    "p95_abs": 0.0
+  },
+  "lateral_acceleration_abs": {
+    "mean": 0.0,
+    "median": 0.0,
+    "std": 0.0,
+    "p95": 0.0,
+    "p99": 0.0,
+    "max": 0.0
+  },
+  "steering_rate": {
+    "rmse": 0.0,
+    "mae": 0.0,
+    "max_abs": 0.0,
+    "p95_abs": 0.0
+  },
+  "required_steer": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "reference_curvature": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "controller_to_actual_steering_error": {
+    "rmse": null,
+    "mae": null,
+    "max_abs": null,
+    "p95_abs": null
+  },
+  "boundary": {
+    "departure_detected": false,
+    "first_departure_time_s": null,
+    "left_boundary_distance_min": null,
+    "right_boundary_distance_min": null,
+    "left_uncrossable_boundary_distance_min": 4.342292,
+    "right_uncrossable_boundary_distance_min": 4.357323
+  },
+  "lateral_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "longitudinal_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "integrated_callback_processing_time_ms": {
+    "mean": 0.08850828445747799,
+    "median": 0.051686,
+    "std": 0.1853773788780582,
+    "p95": 0.20341,
+    "p99": 0.8428110000000081,
+    "max": 2.026718
+  },
+  "integrated_solver_processing_time_ms": {
+    "mean": null,
+    "median": null,
+    "std": null,
+    "p95": null,
+    "p99": null,
+    "max": null
+  },
+  "scenario_status": "UNKNOWN"
+}

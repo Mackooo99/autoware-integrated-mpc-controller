@@ -1,0 +1,39 @@
+Starting benchmark logger...
+Running S01...
+[ERROR] Unknown controller: tuning_config_000_default
+Valid values are: baseline_stock, integrated_mpc_v1
+Stopping benchmark logger...
+Analyzing run...
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+Analysis complete: /home/nit-user/control_benchmark/results/tuning_config_000_default/S01/run_01
+Summary: /home/nit-user/control_benchmark/results/tuning_config_000_default/S01/run_01/summary.json
+Plots:   /home/nit-user/control_benchmark/results/tuning_config_000_default/S01/run_01/plots
+
+========================================
+Run complete
+Controller : tuning_config_000_default
+Scenario   : S01
+Run        : 1
+Status     : UNKNOWN
+Results    : /home/nit-user/control_benchmark/results/tuning_config_000_default/S01/run_01
+========================================
+Starting benchmark logger...
+Running S02...
+[ERROR] Unknown controller: tuning_config_000_default
+Valid values are: baseline_stock, integrated_mpc_v1
+Stopping benchmark logger...
+Analyzing run...
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+Analysis complete: /home/nit-user/control_benchmark/results/tuning_config_000_default/S02/run_01
+Summary: /home/nit-user/control_benchmark/results/tuning_config_000_default/S02/run_01/summary.json
+Plots:   /home/nit-user/control_benchmark/results/tuning_config_000_default/S02/run_01/plots
+
+========================================
+Run complete
+Controller : tuning_config_000_default
+Scenario   : S02
+Run        : 1
+Status     : UNKNOWN
+Results    : /home/nit-user/control_benchmark/results/tuning_config_000_default/S02/run_01
+========================================
+Starting benchmark logger...

@@ -1,0 +1,5634 @@
+[
+  {
+    "id": "config_000_default_S01",
+    "config_id": "config_000_default",
+    "scenario": 1,
+    "params": {
+      "q_y": 1.0,
+      "q_psi": 2.0,
+      "q_v": 2.0,
+      "q_a": 0.1,
+      "r_delta": 1.0,
+      "r_delta_v": 0.75,
+      "r_j": 0.1,
+      "terminal_q_y": 1.0,
+      "terminal_q_psi": 0.1,
+      "terminal_q_v": 1.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9839439587280374,
+    "breakdown": {
+      "lateral_error": 0.5472784878164357,
+      "lateral_error_rmse": 0.01824261626054786,
+      "yaw_error": 0.1909291156781786,
+      "yaw_error_rmse": 0.0063643038559392864,
+      "velocity_error": 0.5959593636848808,
+      "velocity_error_rmse": 0.1787878091054642,
+      "jerk": 0.2586908723643076,
+      "jerk_rmse": 0.5173817447286152,
+      "steering_rate": 0.3910861191842348,
+      "steering_rate_rmse": 0.039108611918423485,
+      "total": 1.9839439587280374
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.2182682256637167,
+      "median": 2.3945145,
+      "std": 0.8414579652860154,
+      "p95": 3.0887851,
+      "p99": 3.47103279,
+      "max": 4.400354
+    },
+    "solver_time_stats": {
+      "mean": 0.7035351509625126,
+      "median": 0.666903,
+      "std": 0.22146329424436198,
+      "p95": 1.3254564,
+      "p99": 1.4181989799999997,
+      "max": 2.022541
+    }
+  },
+  {
+    "id": "config_000_default_S02",
+    "config_id": "config_000_default",
+    "scenario": 2,
+    "params": {
+      "q_y": 1.0,
+      "q_psi": 2.0,
+      "q_v": 2.0,
+      "q_a": 0.1,
+      "r_delta": 1.0,
+      "r_delta_v": 0.75,
+      "r_j": 0.1,
+      "terminal_q_y": 1.0,
+      "terminal_q_psi": 0.1,
+      "terminal_q_v": 1.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.647091564380228,
+    "breakdown": {
+      "lateral_error": 5.835831971488599,
+      "lateral_error_rmse": 0.1945277323829533,
+      "yaw_error": 1.825405482154483,
+      "yaw_error_rmse": 0.06084684940514943,
+      "velocity_error": 0.7521301800860944,
+      "velocity_error_rmse": 0.22563905402582832,
+      "jerk": 0.3677749096069798,
+      "jerk_rmse": 0.7355498192139596,
+      "steering_rate": 1.8659490210440715,
+      "steering_rate_rmse": 0.18659490210440716,
+      "total": 10.647091564380228
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1141793950953676,
+      "median": 2.4720785,
+      "std": 1.1577554108524897,
+      "p95": 3.6817309000000003,
+      "p99": 4.01943877,
+      "max": 4.443905
+    },
+    "solver_time_stats": {
+      "mean": 0.9311325044404974,
+      "median": 0.810151,
+      "std": 0.38908008605176325,
+      "p95": 1.9280042999999998,
+      "p99": 2.0508740199999997,
+      "max": 2.183902
+    }
+  },
+  {
+    "id": "config_000_default_S03",
+    "config_id": "config_000_default",
+    "scenario": 3,
+    "params": {
+      "q_y": 1.0,
+      "q_psi": 2.0,
+      "q_v": 2.0,
+      "q_a": 0.1,
+      "r_delta": 1.0,
+      "r_delta_v": 0.75,
+      "r_j": 0.1,
+      "terminal_q_y": 1.0,
+      "terminal_q_psi": 0.1,
+      "terminal_q_v": 1.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.41317126165612,
+    "breakdown": {
+      "lateral_error": 2.1889371184328694,
+      "lateral_error_rmse": 0.07296457061442899,
+      "yaw_error": 0.48867000624441825,
+      "yaw_error_rmse": 0.016289000208147275,
+      "velocity_error": 0.4201435293197286,
+      "velocity_error_rmse": 0.12604305879591857,
+      "jerk": 0.2030565727881628,
+      "jerk_rmse": 0.4061131455763256,
+      "steering_rate": 1.1123640348709414,
+      "steering_rate_rmse": 0.11123640348709415,
+      "total": 4.41317126165612
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.32603083991996,
+      "median": 2.41318,
+      "std": 0.7364955138987195,
+      "p95": 3.263858,
+      "p99": 3.68395124,
+      "max": 4.604936
+    },
+    "solver_time_stats": {
+      "mean": 0.7005479240851994,
+      "median": 0.669108,
+      "std": 0.2558159617640592,
+      "p95": 1.367034,
+      "p99": 1.6495837,
+      "max": 2.01114
+    }
+  },
+  {
+    "id": "config_001_coarse_S01",
+    "config_id": "config_001_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 1.9004375238737135,
+      "q_psi": 0.0336622208651401,
+      "q_v": 0.35486129798045063,
+      "q_a": 0.027952552787507887,
+      "r_delta": 2.9712721228815235,
+      "r_delta_v": 0.5640777683972276,
+      "r_j": 0.6086381003274659,
+      "terminal_q_y": 0.14923739692858626,
+      "terminal_q_psi": 0.06979810621615139,
+      "terminal_q_v": 0.11470819313402358
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.517570860518071,
+    "breakdown": {
+      "lateral_error": 0.4986953835368518,
+      "lateral_error_rmse": 0.016623179451228393,
+      "yaw_error": 0.2232346088347703,
+      "yaw_error_rmse": 0.0074411536278256776,
+      "velocity_error": 1.3224181535639898,
+      "velocity_error_rmse": 0.3967254460691969,
+      "jerk": 0.13392663243590716,
+      "jerk_rmse": 0.2678532648718143,
+      "steering_rate": 0.3392960821465524,
+      "steering_rate_rmse": 0.03392960821465524,
+      "total": 2.517570860518071
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_001_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1161386538131963,
+      "median": 2.346205,
+      "std": 0.8114916855601888,
+      "p95": 2.812343,
+      "p99": 3.335897299999999,
+      "max": 3.814261
+    },
+    "solver_time_stats": {
+      "mean": 0.6484728967229394,
+      "median": 0.663036,
+      "std": 0.08222404644771267,
+      "p95": 0.7469876999999999,
+      "p99": 0.9353216399999998,
+      "max": 1.112935
+    }
+  },
+  {
+    "id": "config_001_coarse_S02",
+    "config_id": "config_001_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 1.9004375238737135,
+      "q_psi": 0.0336622208651401,
+      "q_v": 0.35486129798045063,
+      "q_a": 0.027952552787507887,
+      "r_delta": 2.9712721228815235,
+      "r_delta_v": 0.5640777683972276,
+      "r_j": 0.6086381003274659,
+      "terminal_q_y": 0.14923739692858626,
+      "terminal_q_psi": 0.06979810621615139,
+      "terminal_q_v": 0.11470819313402358
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_001_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.0969179383007415,
+      "median": 2.125628,
+      "std": 0.5436183812795968,
+      "p95": 2.7208900000000003,
+      "p99": 3.1538948999999987,
+      "max": 4.762259
+    },
+    "solver_time_stats": {
+      "mean": 0.46553650767583,
+      "median": 0.38078,
+      "std": 0.17616732993125656,
+      "p95": 0.846708,
+      "p99": 1.171254,
+      "max": 1.612837
+    }
+  },
+  {
+    "id": "config_001_coarse_S03",
+    "config_id": "config_001_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 1.9004375238737135,
+      "q_psi": 0.0336622208651401,
+      "q_v": 0.35486129798045063,
+      "q_a": 0.027952552787507887,
+      "r_delta": 2.9712721228815235,
+      "r_delta_v": 0.5640777683972276,
+      "r_j": 0.6086381003274659,
+      "terminal_q_y": 0.14923739692858626,
+      "terminal_q_psi": 0.06979810621615139,
+      "terminal_q_v": 0.11470819313402358
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_001_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.289832324410609,
+      "median": 2.279967,
+      "std": 0.5381505367262693,
+      "p95": 2.9414603499999994,
+      "p99": 3.44959351,
+      "max": 8.580037
+    },
+    "solver_time_stats": {
+      "mean": 0.5920485765788801,
+      "median": 0.538156,
+      "std": 0.11789314458000345,
+      "p95": 0.835029,
+      "p99": 1.0104303000000001,
+      "max": 1.605123
+    }
+  },
+  {
+    "id": "config_002_coarse_S01",
+    "config_id": "config_002_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.27370072613577456,
+      "q_psi": 0.30749059080404656,
+      "q_v": 0.11299830769305078,
+      "q_a": 0.02498476686585146,
+      "r_delta": 1.9942007514013254,
+      "r_delta_v": 0.30748431704010004,
+      "r_j": 0.02759823091528578,
+      "terminal_q_y": 1.5084515574125303,
+      "terminal_q_psi": 0.4157774327737046,
+      "terminal_q_v": 0.10303802350025233
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.026834550443715,
+    "breakdown": {
+      "lateral_error": 0.5126176904205698,
+      "lateral_error_rmse": 0.01708725634735233,
+      "yaw_error": 0.20903601829755405,
+      "yaw_error_rmse": 0.006967867276585136,
+      "velocity_error": 0.7855368908967845,
+      "velocity_error_rmse": 0.23566106726903532,
+      "jerk": 0.21146106966399175,
+      "jerk_rmse": 0.4229221393279835,
+      "steering_rate": 0.30818288116481474,
+      "steering_rate_rmse": 0.030818288116481476,
+      "total": 2.026834550443715
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_002_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1432802363796135,
+      "median": 2.336399,
+      "std": 0.827606105249853,
+      "p95": 3.0200362999999997,
+      "p99": 3.3707289799999978,
+      "max": 4.467523
+    },
+    "solver_time_stats": {
+      "mean": 0.6583866656534955,
+      "median": 0.6527,
+      "std": 0.19425585019178235,
+      "p95": 1.196279,
+      "p99": 1.2953159399999998,
+      "max": 1.5616
+    }
+  },
+  {
+    "id": "config_002_coarse_S02",
+    "config_id": "config_002_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.27370072613577456,
+      "q_psi": 0.30749059080404656,
+      "q_v": 0.11299830769305078,
+      "q_a": 0.02498476686585146,
+      "r_delta": 1.9942007514013254,
+      "r_delta_v": 0.30748431704010004,
+      "r_j": 0.02759823091528578,
+      "terminal_q_y": 1.5084515574125303,
+      "terminal_q_psi": 0.4157774327737046,
+      "terminal_q_v": 0.10303802350025233
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.746084368228908,
+    "breakdown": {
+      "lateral_error": 6.036587071702722,
+      "lateral_error_rmse": 0.20121956905675742,
+      "yaw_error": 1.6521702239672924,
+      "yaw_error_rmse": 0.055072340798909755,
+      "velocity_error": 1.0759706851149011,
+      "velocity_error_rmse": 0.3227912055344703,
+      "jerk": 0.27133490565007334,
+      "jerk_rmse": 0.5426698113001467,
+      "steering_rate": 1.71002148179392,
+      "steering_rate_rmse": 0.17100214817939202,
+      "total": 10.746084368228908
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_002_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1394043021276596,
+      "median": 2.477228,
+      "std": 1.1172683716931013,
+      "p95": 3.2706075999999986,
+      "p99": 4.22422372,
+      "max": 6.627617
+    },
+    "solver_time_stats": {
+      "mean": 0.8266939656419529,
+      "median": 0.693863,
+      "std": 0.3468242706478758,
+      "p95": 1.2894017999999994,
+      "p99": 2.2477303200000005,
+      "max": 3.419094
+    }
+  },
+  {
+    "id": "config_002_coarse_S03",
+    "config_id": "config_002_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.27370072613577456,
+      "q_psi": 0.30749059080404656,
+      "q_v": 0.11299830769305078,
+      "q_a": 0.02498476686585146,
+      "r_delta": 1.9942007514013254,
+      "r_delta_v": 0.30748431704010004,
+      "r_j": 0.02759823091528578,
+      "terminal_q_y": 1.5084515574125303,
+      "terminal_q_psi": 0.4157774327737046,
+      "terminal_q_v": 0.10303802350025233
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.79889014014102,
+    "breakdown": {
+      "lateral_error": 2.5352569700682914,
+      "lateral_error_rmse": 0.08450856566894305,
+      "yaw_error": 0.4990938966509231,
+      "yaw_error_rmse": 0.01663646322169744,
+      "velocity_error": 0.6628757795476758,
+      "velocity_error_rmse": 0.19886273386430275,
+      "jerk": 0.16746299683078808,
+      "jerk_rmse": 0.33492599366157616,
+      "steering_rate": 0.9342004970433412,
+      "steering_rate_rmse": 0.09342004970433412,
+      "total": 4.79889014014102
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_002_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.267085230339929,
+      "median": 2.377223,
+      "std": 0.7108610623521162,
+      "p95": 3.0628805000000003,
+      "p99": 3.4879312999999996,
+      "max": 4.347396
+    },
+    "solver_time_stats": {
+      "mean": 0.6371666670366259,
+      "median": 0.6134535000000001,
+      "std": 0.18469099579692458,
+      "p95": 1.0160570999999992,
+      "p99": 1.32873772,
+      "max": 1.874936
+    }
+  },
+  {
+    "id": "config_003_coarse_S01",
+    "config_id": "config_003_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 4.0892014268894155,
+      "q_psi": 0.7471366567212001,
+      "q_v": 0.479182592716103,
+      "q_a": 0.02046251447440721,
+      "r_delta": 8.211568960263008,
+      "r_delta_v": 0.11779560821156851,
+      "r_j": 0.015328218648951572,
+      "terminal_q_y": 0.15611072967698217,
+      "terminal_q_psi": 0.49543733704709675,
+      "terminal_q_v": 1.6123230498862888
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9617578872213706,
+    "breakdown": {
+      "lateral_error": 0.5191633330286314,
+      "lateral_error_rmse": 0.017305444434287713,
+      "yaw_error": 0.23863388722430084,
+      "yaw_error_rmse": 0.007954462907476695,
+      "velocity_error": 0.5329291690827367,
+      "velocity_error_rmse": 0.159878750724821,
+      "jerk": 0.2707714236051641,
+      "jerk_rmse": 0.5415428472103282,
+      "steering_rate": 0.40026007428053767,
+      "steering_rate_rmse": 0.04002600742805377,
+      "total": 1.9617578872213706
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_003_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.2400950467784644,
+      "median": 2.417167,
+      "std": 0.898691661306318,
+      "p95": 3.1997697999999986,
+      "p99": 3.822487640000003,
+      "max": 5.083979
+    },
+    "solver_time_stats": {
+      "mean": 0.7642091012269938,
+      "median": 0.686555,
+      "std": 0.23300097523147623,
+      "p95": 1.3481277999999999,
+      "p99": 1.656834130000001,
+      "max": 2.262298
+    }
+  },
+  {
+    "id": "config_003_coarse_S02",
+    "config_id": "config_003_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 4.0892014268894155,
+      "q_psi": 0.7471366567212001,
+      "q_v": 0.479182592716103,
+      "q_a": 0.02046251447440721,
+      "r_delta": 8.211568960263008,
+      "r_delta_v": 0.11779560821156851,
+      "r_j": 0.015328218648951572,
+      "terminal_q_y": 0.15611072967698217,
+      "terminal_q_psi": 0.49543733704709675,
+      "terminal_q_v": 1.6123230498862888
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 24.072515304702527,
+    "breakdown": {
+      "lateral_error": 14.682521628967102,
+      "lateral_error_rmse": 0.4894173876322367,
+      "yaw_error": 4.457316830366212,
+      "yaw_error_rmse": 0.14857722767887374,
+      "velocity_error": 0.5042645601565047,
+      "velocity_error_rmse": 0.15127936804695138,
+      "jerk": 0.37406397565923116,
+      "jerk_rmse": 0.7481279513184623,
+      "steering_rate": 4.054348309553483,
+      "steering_rate_rmse": 0.4054348309553483,
+      "total": 24.072515304702527
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_003_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.230286197142857,
+      "median": 2.5603935,
+      "std": 1.1379688028725397,
+      "p95": 3.4391899999999995,
+      "p99": 4.44715885,
+      "max": 5.112161
+    },
+    "solver_time_stats": {
+      "mean": 0.9799630688405797,
+      "median": 0.840958,
+      "std": 0.3835977098707145,
+      "p95": 1.6370601499999935,
+      "p99": 2.53771277,
+      "max": 3.286417
+    }
+  },
+  {
+    "id": "config_003_coarse_S03",
+    "config_id": "config_003_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 4.0892014268894155,
+      "q_psi": 0.7471366567212001,
+      "q_v": 0.479182592716103,
+      "q_a": 0.02046251447440721,
+      "r_delta": 8.211568960263008,
+      "r_delta_v": 0.11779560821156851,
+      "r_j": 0.015328218648951572,
+      "terminal_q_y": 0.15611072967698217,
+      "terminal_q_psi": 0.49543733704709675,
+      "terminal_q_v": 1.6123230498862888
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.870648801807625,
+    "breakdown": {
+      "lateral_error": 2.2437589700795098,
+      "lateral_error_rmse": 0.07479196566931699,
+      "yaw_error": 0.7217806205181638,
+      "yaw_error_rmse": 0.02405935401727213,
+      "velocity_error": 0.32981801280000284,
+      "velocity_error_rmse": 0.09894540384000085,
+      "jerk": 0.21427767465306188,
+      "jerk_rmse": 0.42855534930612377,
+      "steering_rate": 1.3610135237568866,
+      "steering_rate_rmse": 0.13610135237568866,
+      "total": 4.870648801807625
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_003_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.511124215228426,
+      "median": 2.5707425,
+      "std": 0.8107964097436378,
+      "p95": 3.454205099999999,
+      "p99": 4.114981259999999,
+      "max": 5.661064
+    },
+    "solver_time_stats": {
+      "mean": 0.7616201663902709,
+      "median": 0.700907,
+      "std": 0.19564702619837893,
+      "p95": 1.1276181999999997,
+      "p99": 1.7195712400000016,
+      "max": 2.321959
+    }
+  },
+  {
+    "id": "config_004_coarse_S01",
+    "config_id": "config_004_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 4.113926673237552,
+      "q_psi": 0.8641414317064691,
+      "q_v": 1.1815610957838971,
+      "q_a": 0.8835508071522766,
+      "r_delta": 0.5715691162711166,
+      "r_delta_v": 0.3177029673910267,
+      "r_j": 0.45583674266187096,
+      "terminal_q_y": 1.725994886520763,
+      "terminal_q_psi": 0.5289490002498284,
+      "terminal_q_v": 1.4279213611219028
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.314954451029334,
+    "breakdown": {
+      "lateral_error": 0.5688978523083603,
+      "lateral_error_rmse": 0.01896326174361201,
+      "yaw_error": 0.25899063804445815,
+      "yaw_error_rmse": 0.008633021268148605,
+      "velocity_error": 0.9611767252622565,
+      "velocity_error_rmse": 0.28835301757867693,
+      "jerk": 0.2083376818110049,
+      "jerk_rmse": 0.4166753636220098,
+      "steering_rate": 0.31755155360325393,
+      "steering_rate_rmse": 0.031755155360325395,
+      "total": 2.314954451029334
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_004_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.208022746017699,
+      "median": 2.433258,
+      "std": 0.8494183645519419,
+      "p95": 2.9231050499999998,
+      "p99": 3.397132010000001,
+      "max": 3.818294
+    },
+    "solver_time_stats": {
+      "mean": 0.7173307284836066,
+      "median": 0.6815015,
+      "std": 0.13652824521284457,
+      "p95": 1.05862575,
+      "p99": 1.18136325,
+      "max": 1.399172
+    }
+  },
+  {
+    "id": "config_004_coarse_S02",
+    "config_id": "config_004_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 4.113926673237552,
+      "q_psi": 0.8641414317064691,
+      "q_v": 1.1815610957838971,
+      "q_a": 0.8835508071522766,
+      "r_delta": 0.5715691162711166,
+      "r_delta_v": 0.3177029673910267,
+      "r_j": 0.45583674266187096,
+      "terminal_q_y": 1.725994886520763,
+      "terminal_q_psi": 0.5289490002498284,
+      "terminal_q_v": 1.4279213611219028
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 37.105232067532505,
+    "breakdown": {
+      "lateral_error": 16.46803447833559,
+      "lateral_error_rmse": 0.5489344826111863,
+      "yaw_error": 15.996692827906251,
+      "yaw_error_rmse": 0.5332230942635418,
+      "velocity_error": 0.6914706404293933,
+      "velocity_error_rmse": 0.20744119212881798,
+      "jerk": 0.25100544577462003,
+      "jerk_rmse": 0.5020108915492401,
+      "steering_rate": 3.6980286750866562,
+      "steering_rate_rmse": 0.36980286750866564,
+      "total": 37.105232067532505
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_004_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.136697559866962,
+      "median": 2.433507,
+      "std": 1.0019928620077985,
+      "p95": 3.133813649999999,
+      "p99": 3.6631090600000005,
+      "max": 5.146586
+    },
+    "solver_time_stats": {
+      "mean": 0.8022311989174561,
+      "median": 0.808928,
+      "std": 0.24178743518643575,
+      "p95": 1.1940569,
+      "p99": 1.42295924,
+      "max": 1.958391
+    }
+  },
+  {
+    "id": "config_004_coarse_S03",
+    "config_id": "config_004_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 4.113926673237552,
+      "q_psi": 0.8641414317064691,
+      "q_v": 1.1815610957838971,
+      "q_a": 0.8835508071522766,
+      "r_delta": 0.5715691162711166,
+      "r_delta_v": 0.3177029673910267,
+      "r_j": 0.45583674266187096,
+      "terminal_q_y": 1.725994886520763,
+      "terminal_q_psi": 0.5289490002498284,
+      "terminal_q_v": 1.4279213611219028
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_004_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.337253085163494,
+      "median": 2.3814945,
+      "std": 0.5010896317628121,
+      "p95": 2.888959,
+      "p99": 3.206372509999999,
+      "max": 4.235406
+    },
+    "solver_time_stats": {
+      "mean": 0.6171983817858955,
+      "median": 0.5561265,
+      "std": 0.1379000473209522,
+      "p95": 0.8561578999999999,
+      "p99": 1.1730779900000001,
+      "max": 1.739042
+    }
+  },
+  {
+    "id": "config_005_coarse_S01",
+    "config_id": "config_005_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 2.565332554330246,
+      "q_psi": 0.03704844820519318,
+      "q_v": 0.2856252195909328,
+      "q_a": 0.03791193291450958,
+      "r_delta": 0.14440557289906278,
+      "r_delta_v": 0.07303344407929781,
+      "r_j": 0.015922192080783576,
+      "terminal_q_y": 0.3597056059037238,
+      "terminal_q_psi": 0.1867965662033743,
+      "terminal_q_v": 0.5366169146920419
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_005_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 0.909727382015306,
+      "median": 0.12690200000000001,
+      "std": 1.3891056051423734,
+      "p95": 3.540564,
+      "p99": 4.0614608,
+      "max": 20.830947
+    },
+    "solver_time_stats": {
+      "mean": 1.2050427561837456,
+      "median": 1.03485,
+      "std": 0.9129161692136096,
+      "p95": 2.1039326,
+      "p99": 2.5720608799999987,
+      "max": 18.812955
+    }
+  },
+  {
+    "id": "config_005_coarse_S02",
+    "config_id": "config_005_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 2.565332554330246,
+      "q_psi": 0.03704844820519318,
+      "q_v": 0.2856252195909328,
+      "q_a": 0.03791193291450958,
+      "r_delta": 0.14440557289906278,
+      "r_delta_v": 0.07303344407929781,
+      "r_j": 0.015922192080783576,
+      "terminal_q_y": 0.3597056059037238,
+      "terminal_q_psi": 0.1867965662033743,
+      "terminal_q_v": 0.5366169146920419
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_005_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 0.6740754116985378,
+      "median": 0.125685,
+      "std": 1.496878310227162,
+      "p95": 3.210643899999999,
+      "p99": 4.997830760000009,
+      "max": 19.065075
+    },
+    "solver_time_stats": {
+      "mean": 1.6257731738148982,
+      "median": 1.157218,
+      "std": 2.0289971674059517,
+      "p95": 3.9960068999999847,
+      "p99": 13.477611099999997,
+      "max": 16.807456
+    }
+  },
+  {
+    "id": "config_005_coarse_S03",
+    "config_id": "config_005_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 2.565332554330246,
+      "q_psi": 0.03704844820519318,
+      "q_v": 0.2856252195909328,
+      "q_a": 0.03791193291450958,
+      "r_delta": 0.14440557289906278,
+      "r_delta_v": 0.07303344407929781,
+      "r_j": 0.015922192080783576,
+      "terminal_q_y": 0.3597056059037238,
+      "terminal_q_psi": 0.1867965662033743,
+      "terminal_q_v": 0.5366169146920419
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_005_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 0.6336676069469835,
+      "median": 0.120184,
+      "std": 1.1933318235087835,
+      "p95": 3.556444499999998,
+      "p99": 4.327344719999997,
+      "max": 5.837007
+    },
+    "solver_time_stats": {
+      "mean": 1.3104636183035716,
+      "median": 1.2198265,
+      "std": 0.5303831144222284,
+      "p95": 2.38130005,
+      "p99": 2.8094230499999964,
+      "max": 3.842467
+    }
+  },
+  {
+    "id": "config_006_coarse_S01",
+    "config_id": "config_006_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.5499990435224963,
+      "q_psi": 0.07872910534330674,
+      "q_v": 0.3419445168294109,
+      "q_a": 0.7469803465120838,
+      "r_delta": 1.9772918236129429,
+      "r_delta_v": 0.41323968327046934,
+      "r_j": 0.021992636512303425,
+      "terminal_q_y": 2.872457395370369,
+      "terminal_q_psi": 0.021222912695741628,
+      "terminal_q_v": 0.5739986665776137
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.273624125760214,
+    "breakdown": {
+      "lateral_error": 0.5097671388933235,
+      "lateral_error_rmse": 0.016992237963110782,
+      "yaw_error": 0.2124123728292127,
+      "yaw_error_rmse": 0.007080412427640423,
+      "velocity_error": 0.9155649047690301,
+      "velocity_error_rmse": 0.274669471430709,
+      "jerk": 0.2652607386159139,
+      "jerk_rmse": 0.5305214772318279,
+      "steering_rate": 0.3706189706527342,
+      "steering_rate_rmse": 0.03706189706527342,
+      "total": 2.273624125760214
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_006_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.0989007594381035,
+      "median": 2.282706,
+      "std": 0.8565228866443253,
+      "p95": 3.0766144999999994,
+      "p99": 3.3975558599999998,
+      "max": 4.16144
+    },
+    "solver_time_stats": {
+      "mean": 0.6879359804526749,
+      "median": 0.650578,
+      "std": 0.228114617798326,
+      "p95": 1.19187945,
+      "p99": 1.31065273,
+      "max": 1.616444
+    }
+  },
+  {
+    "id": "config_006_coarse_S02",
+    "config_id": "config_006_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.5499990435224963,
+      "q_psi": 0.07872910534330674,
+      "q_v": 0.3419445168294109,
+      "q_a": 0.7469803465120838,
+      "r_delta": 1.9772918236129429,
+      "r_delta_v": 0.41323968327046934,
+      "r_j": 0.021992636512303425,
+      "terminal_q_y": 2.872457395370369,
+      "terminal_q_psi": 0.021222912695741628,
+      "terminal_q_v": 0.5739986665776137
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 13.522059694008732,
+    "breakdown": {
+      "lateral_error": 7.8402344291111365,
+      "lateral_error_rmse": 0.2613411476370379,
+      "yaw_error": 2.259448690556425,
+      "yaw_error_rmse": 0.07531495635188083,
+      "velocity_error": 1.1470652246986786,
+      "velocity_error_rmse": 0.34411956740960353,
+      "jerk": 0.3971820296032469,
+      "jerk_rmse": 0.7943640592064938,
+      "steering_rate": 1.8781293200392437,
+      "steering_rate_rmse": 0.18781293200392438,
+      "total": 13.522059694008732
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_006_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.3345087788873036,
+      "median": 2.819403,
+      "std": 1.2442208221269753,
+      "p95": 3.47818,
+      "p99": 3.871519,
+      "max": 5.297034
+    },
+    "solver_time_stats": {
+      "mean": 0.8790791449814127,
+      "median": 0.84153,
+      "std": 0.22062653012906927,
+      "p95": 1.2943894,
+      "p99": 1.43184834,
+      "max": 1.998472
+    }
+  },
+  {
+    "id": "config_006_coarse_S03",
+    "config_id": "config_006_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.5499990435224963,
+      "q_psi": 0.07872910534330674,
+      "q_v": 0.3419445168294109,
+      "q_a": 0.7469803465120838,
+      "r_delta": 1.9772918236129429,
+      "r_delta_v": 0.41323968327046934,
+      "r_j": 0.021992636512303425,
+      "terminal_q_y": 2.872457395370369,
+      "terminal_q_psi": 0.021222912695741628,
+      "terminal_q_v": 0.5739986665776137
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.815576171284008,
+    "breakdown": {
+      "lateral_error": 2.3816017180898443,
+      "lateral_error_rmse": 0.07938672393632816,
+      "yaw_error": 0.5058522133329266,
+      "yaw_error_rmse": 0.01686174044443089,
+      "velocity_error": 0.6072023152684929,
+      "velocity_error_rmse": 0.18216069458054787,
+      "jerk": 0.21885660871262552,
+      "jerk_rmse": 0.43771321742525104,
+      "steering_rate": 1.1020633158801192,
+      "steering_rate_rmse": 0.11020633158801194,
+      "total": 4.815576171284008
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_006_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.261185288819876,
+      "median": 2.3813925,
+      "std": 0.7003371305602308,
+      "p95": 3.0088952499999997,
+      "p99": 3.4396501500000007,
+      "max": 4.299862
+    },
+    "solver_time_stats": {
+      "mean": 0.6557220372670807,
+      "median": 0.655754,
+      "std": 0.1883370436655268,
+      "p95": 1.0567315,
+      "p99": 1.3682005,
+      "max": 1.744624
+    }
+  },
+  {
+    "id": "config_007_coarse_S01",
+    "config_id": "config_007_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 9.528986271871103,
+      "q_psi": 0.5716375832073204,
+      "q_v": 1.2998687035928564,
+      "q_a": 0.2340068130553923,
+      "r_delta": 4.849576788635622,
+      "r_delta_v": 0.8911274705695773,
+      "r_j": 0.028714161845644855,
+      "terminal_q_y": 0.11593124179033586,
+      "terminal_q_psi": 0.04274704477806324,
+      "terminal_q_v": 0.3431482211997992
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.019805176680703,
+    "breakdown": {
+      "lateral_error": 0.5261944580388559,
+      "lateral_error_rmse": 0.017539815267961865,
+      "yaw_error": 0.24520640668532748,
+      "yaw_error_rmse": 0.008173546889510917,
+      "velocity_error": 0.5417830056257931,
+      "velocity_error_rmse": 0.1625349016877379,
+      "jerk": 0.28059061748965686,
+      "jerk_rmse": 0.5611812349793137,
+      "steering_rate": 0.4260306888410692,
+      "steering_rate_rmse": 0.04260306888410692,
+      "total": 2.019805176680703
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_007_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.2207918110720564,
+      "median": 2.4405275,
+      "std": 0.9013340075307156,
+      "p95": 3.2154103999999992,
+      "p99": 3.5523735599999973,
+      "max": 4.160361
+    },
+    "solver_time_stats": {
+      "mean": 0.775953125385406,
+      "median": 0.683034,
+      "std": 0.25361568350708796,
+      "p95": 1.5757298,
+      "p99": 1.6410663199999997,
+      "max": 1.804747
+    }
+  },
+  {
+    "id": "config_007_coarse_S02",
+    "config_id": "config_007_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 9.528986271871103,
+      "q_psi": 0.5716375832073204,
+      "q_v": 1.2998687035928564,
+      "q_a": 0.2340068130553923,
+      "r_delta": 4.849576788635622,
+      "r_delta_v": 0.8911274705695773,
+      "r_j": 0.028714161845644855,
+      "terminal_q_y": 0.11593124179033586,
+      "terminal_q_psi": 0.04274704477806324,
+      "terminal_q_v": 0.3431482211997992
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 17.233863146820845,
+    "breakdown": {
+      "lateral_error": 7.427476002056785,
+      "lateral_error_rmse": 0.24758253340189287,
+      "yaw_error": 5.158204923561361,
+      "yaw_error_rmse": 0.17194016411871205,
+      "velocity_error": 0.6883556804815543,
+      "velocity_error_rmse": 0.20650670414446626,
+      "jerk": 0.3982669045242146,
+      "jerk_rmse": 0.7965338090484292,
+      "steering_rate": 3.5615596361969293,
+      "steering_rate_rmse": 0.35615596361969293,
+      "total": 17.233863146820845
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_007_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1730955940298506,
+      "median": 2.6138515,
+      "std": 1.192442357163918,
+      "p95": 3.6502225999999998,
+      "p99": 3.9062722799999943,
+      "max": 5.058296
+    },
+    "solver_time_stats": {
+      "mean": 0.9147911062992127,
+      "median": 0.864553,
+      "std": 0.2546185022872077,
+      "p95": 1.4643754,
+      "p99": 1.6603608300000001,
+      "max": 2.228127
+    }
+  },
+  {
+    "id": "config_007_coarse_S03",
+    "config_id": "config_007_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 9.528986271871103,
+      "q_psi": 0.5716375832073204,
+      "q_v": 1.2998687035928564,
+      "q_a": 0.2340068130553923,
+      "r_delta": 4.849576788635622,
+      "r_delta_v": 0.8911274705695773,
+      "r_j": 0.028714161845644855,
+      "terminal_q_y": 0.11593124179033586,
+      "terminal_q_psi": 0.04274704477806324,
+      "terminal_q_v": 0.3431482211997992
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 5.017824899191134,
+    "breakdown": {
+      "lateral_error": 2.1497971927835424,
+      "lateral_error_rmse": 0.07165990642611808,
+      "yaw_error": 0.7663753131537696,
+      "yaw_error_rmse": 0.02554584377179232,
+      "velocity_error": 0.3692282099777122,
+      "velocity_error_rmse": 0.11076846299331367,
+      "jerk": 0.22244272274422675,
+      "jerk_rmse": 0.4448854454884535,
+      "steering_rate": 1.5099814605318833,
+      "steering_rate_rmse": 0.15099814605318834,
+      "total": 5.017824899191134
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_007_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.327584800304878,
+      "median": 2.4203954999999997,
+      "std": 0.7453259183683281,
+      "p95": 3.230926699999999,
+      "p99": 3.6581686199999996,
+      "max": 5.326632
+    },
+    "solver_time_stats": {
+      "mean": 0.760754372494432,
+      "median": 0.6796685,
+      "std": 0.23296416369084239,
+      "p95": 1.22468175,
+      "p99": 1.7298699499999994,
+      "max": 2.385771
+    }
+  },
+  {
+    "id": "config_008_coarse_S01",
+    "config_id": "config_008_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.2642199993596953,
+      "q_psi": 2.3064321511455734,
+      "q_v": 5.658942132735029,
+      "q_a": 0.04259471939964483,
+      "r_delta": 2.0458666862393637,
+      "r_delta_v": 0.15459797847988685,
+      "r_j": 0.6746758726878496,
+      "terminal_q_y": 0.827377497741251,
+      "terminal_q_psi": 0.03386572153346552,
+      "terminal_q_v": 0.3113544056792869
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.0714487500674146,
+    "breakdown": {
+      "lateral_error": 0.6039518393017884,
+      "lateral_error_rmse": 0.020131727976726282,
+      "yaw_error": 0.19706881410316185,
+      "yaw_error_rmse": 0.006568960470105396,
+      "velocity_error": 0.7289241478629994,
+      "velocity_error_rmse": 0.21867724435889982,
+      "jerk": 0.22974873848405739,
+      "jerk_rmse": 0.45949747696811477,
+      "steering_rate": 0.31175521031540754,
+      "steering_rate_rmse": 0.031175521031540757,
+      "total": 2.0714487500674146
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_008_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1750084406332455,
+      "median": 2.407885,
+      "std": 0.8332710367656692,
+      "p95": 2.9117356000000005,
+      "p99": 3.2400216000000017,
+      "max": 3.935237
+    },
+    "solver_time_stats": {
+      "mean": 0.6950709439918533,
+      "median": 0.6667095000000001,
+      "std": 0.1539056813667225,
+      "p95": 1.0854332999999998,
+      "p99": 1.178526669999999,
+      "max": 1.600507
+    }
+  },
+  {
+    "id": "config_008_coarse_S02",
+    "config_id": "config_008_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.2642199993596953,
+      "q_psi": 2.3064321511455734,
+      "q_v": 5.658942132735029,
+      "q_a": 0.04259471939964483,
+      "r_delta": 2.0458666862393637,
+      "r_delta_v": 0.15459797847988685,
+      "r_j": 0.6746758726878496,
+      "terminal_q_y": 0.827377497741251,
+      "terminal_q_psi": 0.03386572153346552,
+      "terminal_q_v": 0.3113544056792869
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 12.45023082048471,
+    "breakdown": {
+      "lateral_error": 6.802671198828081,
+      "lateral_error_rmse": 0.22675570662760272,
+      "yaw_error": 1.9619698172940327,
+      "yaw_error_rmse": 0.0653989939098011,
+      "velocity_error": 0.9617226867419809,
+      "velocity_error_rmse": 0.2885168060225943,
+      "jerk": 0.3224675366916525,
+      "jerk_rmse": 0.644935073383305,
+      "steering_rate": 2.4013995809289628,
+      "steering_rate_rmse": 0.2401399580928963,
+      "total": 12.45023082048471
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_008_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.063036735251799,
+      "median": 2.457809,
+      "std": 1.0571523273524457,
+      "p95": 3.1132709999999992,
+      "p99": 3.524055779999998,
+      "max": 3.999687
+    },
+    "solver_time_stats": {
+      "mean": 0.8227968722222222,
+      "median": 0.8086139999999999,
+      "std": 0.2440530610889323,
+      "p95": 1.3941152499999947,
+      "p99": 1.6630418700000005,
+      "max": 1.879579
+    }
+  },
+  {
+    "id": "config_008_coarse_S03",
+    "config_id": "config_008_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.2642199993596953,
+      "q_psi": 2.3064321511455734,
+      "q_v": 5.658942132735029,
+      "q_a": 0.04259471939964483,
+      "r_delta": 2.0458666862393637,
+      "r_delta_v": 0.15459797847988685,
+      "r_j": 0.6746758726878496,
+      "terminal_q_y": 0.827377497741251,
+      "terminal_q_psi": 0.03386572153346552,
+      "terminal_q_v": 0.3113544056792869
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.628316462483679,
+    "breakdown": {
+      "lateral_error": 2.395278074464839,
+      "lateral_error_rmse": 0.0798426024821613,
+      "yaw_error": 0.4556679024281759,
+      "yaw_error_rmse": 0.015188930080939198,
+      "velocity_error": 0.5364833133455797,
+      "velocity_error_rmse": 0.16094499400367393,
+      "jerk": 0.18034561144483457,
+      "jerk_rmse": 0.36069122288966915,
+      "steering_rate": 1.0605415608002495,
+      "steering_rate_rmse": 0.10605415608002496,
+      "total": 4.628316462483679
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_008_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.3943392341085272,
+      "median": 2.487545,
+      "std": 0.7954306421984478,
+      "p95": 3.1885632,
+      "p99": 4.140373480000006,
+      "max": 4.684929
+    },
+    "solver_time_stats": {
+      "mean": 0.6809402648893931,
+      "median": 0.68014,
+      "std": 0.2073591620694974,
+      "p95": 0.9535054999999997,
+      "p99": 1.7608745399999992,
+      "max": 2.253789
+    }
+  },
+  {
+    "id": "config_009_coarse_S01",
+    "config_id": "config_009_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 1.3265886227405383,
+      "q_psi": 0.10060150359743668,
+      "q_v": 1.4762910282153061,
+      "q_a": 0.6246629778508396,
+      "r_delta": 0.6292178150089432,
+      "r_delta_v": 0.06864067205258037,
+      "r_j": 0.9887243113682117,
+      "terminal_q_y": 1.0448467287655991,
+      "terminal_q_psi": 0.015199133316305674,
+      "terminal_q_v": 0.12423179229657026
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.487282312007973,
+    "breakdown": {
+      "lateral_error": 0.6062013375491914,
+      "lateral_error_rmse": 0.02020671125163971,
+      "yaw_error": 0.28607682134417955,
+      "yaw_error_rmse": 0.009535894044805985,
+      "velocity_error": 0.9723606030232986,
+      "velocity_error_rmse": 0.2917081809069896,
+      "jerk": 0.18015368407189944,
+      "jerk_rmse": 0.3603073681437989,
+      "steering_rate": 0.44248986601940404,
+      "steering_rate_rmse": 0.044248986601940404,
+      "total": 2.487282312007973
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_009_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.114986086177474,
+      "median": 2.3377855,
+      "std": 0.8456942425798029,
+      "p95": 2.8740222,
+      "p99": 3.4078339499999983,
+      "max": 4.329324
+    },
+    "solver_time_stats": {
+      "mean": 0.692042004985045,
+      "median": 0.663349,
+      "std": 0.14369483929753615,
+      "p95": 1.0796578,
+      "p99": 1.1573647,
+      "max": 1.706577
+    }
+  },
+  {
+    "id": "config_009_coarse_S02",
+    "config_id": "config_009_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 1.3265886227405383,
+      "q_psi": 0.10060150359743668,
+      "q_v": 1.4762910282153061,
+      "q_a": 0.6246629778508396,
+      "r_delta": 0.6292178150089432,
+      "r_delta_v": 0.06864067205258037,
+      "r_j": 0.9887243113682117,
+      "terminal_q_y": 1.0448467287655991,
+      "terminal_q_psi": 0.015199133316305674,
+      "terminal_q_v": 0.12423179229657026
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 40.433510743293446,
+    "breakdown": {
+      "lateral_error": 19.869231576425207,
+      "lateral_error_rmse": 0.6623077192141736,
+      "yaw_error": 15.681004395959837,
+      "yaw_error_rmse": 0.5227001465319946,
+      "velocity_error": 0.7579929948594043,
+      "velocity_error_rmse": 0.22739789845782127,
+      "jerk": 0.23777327189541625,
+      "jerk_rmse": 0.4755465437908325,
+      "steering_rate": 3.887508504153577,
+      "steering_rate_rmse": 0.38875085041535773,
+      "total": 40.433510743293446
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_009_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.0820464563662373,
+      "median": 2.513514,
+      "std": 1.09085249334545,
+      "p95": 3.1253073000000002,
+      "p99": 3.655562659999998,
+      "max": 4.489824
+    },
+    "solver_time_stats": {
+      "mean": 0.8332225788497217,
+      "median": 0.817346,
+      "std": 0.23690515988086241,
+      "p95": 1.4026617999999997,
+      "p99": 1.6021492000000006,
+      "max": 2.12582
+    }
+  },
+  {
+    "id": "config_009_coarse_S03",
+    "config_id": "config_009_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 1.3265886227405383,
+      "q_psi": 0.10060150359743668,
+      "q_v": 1.4762910282153061,
+      "q_a": 0.6246629778508396,
+      "r_delta": 0.6292178150089432,
+      "r_delta_v": 0.06864067205258037,
+      "r_j": 0.9887243113682117,
+      "terminal_q_y": 1.0448467287655991,
+      "terminal_q_psi": 0.015199133316305674,
+      "terminal_q_v": 0.12423179229657026
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_009_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.3076487667281955,
+      "median": 2.312234,
+      "std": 0.6414929828550103,
+      "p95": 3.1737594499999977,
+      "p99": 3.7489842500000004,
+      "max": 6.364665
+    },
+    "solver_time_stats": {
+      "mean": 0.6396703504252734,
+      "median": 0.515063,
+      "std": 0.34669028209668723,
+      "p95": 1.3219628999999995,
+      "p99": 1.86404874,
+      "max": 3.624011
+    }
+  },
+  {
+    "id": "config_010_coarse_S01",
+    "config_id": "config_010_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.1656907488239385,
+      "q_psi": 0.5395271923113852,
+      "q_v": 3.838475109023672,
+      "q_a": 0.06987469634783569,
+      "r_delta": 0.13398476297493989,
+      "r_delta_v": 0.14493677103438693,
+      "r_j": 0.9822968706135098,
+      "terminal_q_y": 1.1434803085900227,
+      "terminal_q_psi": 0.8752996508425258,
+      "terminal_q_v": 5.266952533687125
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.016140831403014,
+    "breakdown": {
+      "lateral_error": 0.5867382537027979,
+      "lateral_error_rmse": 0.019557941790093264,
+      "yaw_error": 0.18670978762247534,
+      "yaw_error_rmse": 0.006223659587415845,
+      "velocity_error": 0.7428711907376357,
+      "velocity_error_rmse": 0.22286135722129072,
+      "jerk": 0.20323515814603094,
+      "jerk_rmse": 0.4064703162920619,
+      "steering_rate": 0.29658644119407396,
+      "steering_rate_rmse": 0.029658644119407395,
+      "total": 2.016140831403014
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_010_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1653169452054795,
+      "median": 2.3837954999999997,
+      "std": 0.8342499164399091,
+      "p95": 2.919271299999999,
+      "p99": 3.3870891499999978,
+      "max": 4.465989
+    },
+    "solver_time_stats": {
+      "mean": 0.7092390861386139,
+      "median": 0.670953,
+      "std": 0.15201886054548636,
+      "p95": 1.08089155,
+      "p99": 1.1518571899999999,
+      "max": 1.758594
+    }
+  },
+  {
+    "id": "config_010_coarse_S02",
+    "config_id": "config_010_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.1656907488239385,
+      "q_psi": 0.5395271923113852,
+      "q_v": 3.838475109023672,
+      "q_a": 0.06987469634783569,
+      "r_delta": 0.13398476297493989,
+      "r_delta_v": 0.14493677103438693,
+      "r_j": 0.9822968706135098,
+      "terminal_q_y": 1.1434803085900227,
+      "terminal_q_psi": 0.8752996508425258,
+      "terminal_q_v": 5.266952533687125
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 12.583203119336957,
+    "breakdown": {
+      "lateral_error": 6.915792978740518,
+      "lateral_error_rmse": 0.23052643262468392,
+      "yaw_error": 2.07912715976581,
+      "yaw_error_rmse": 0.06930423865886033,
+      "velocity_error": 1.2027945150919976,
+      "velocity_error_rmse": 0.36083835452759927,
+      "jerk": 0.27740348817772376,
+      "jerk_rmse": 0.5548069763554475,
+      "steering_rate": 2.1080849775609085,
+      "steering_rate_rmse": 0.21080849775609087,
+      "total": 12.583203119336957
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_010_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1164710467532464,
+      "median": 2.4547784999999998,
+      "std": 1.091313568173142,
+      "p95": 3.316245,
+      "p99": 3.809014509999996,
+      "max": 5.044899
+    },
+    "solver_time_stats": {
+      "mean": 0.7966449669421487,
+      "median": 0.693715,
+      "std": 0.2879883535585037,
+      "p95": 1.4375665999999998,
+      "p99": 1.581753360000001,
+      "max": 2.091756
+    }
+  },
+  {
+    "id": "config_010_coarse_S03",
+    "config_id": "config_010_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.1656907488239385,
+      "q_psi": 0.5395271923113852,
+      "q_v": 3.838475109023672,
+      "q_a": 0.06987469634783569,
+      "r_delta": 0.13398476297493989,
+      "r_delta_v": 0.14493677103438693,
+      "r_j": 0.9822968706135098,
+      "terminal_q_y": 1.1434803085900227,
+      "terminal_q_psi": 0.8752996508425258,
+      "terminal_q_v": 5.266952533687125
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.6669158253773695,
+    "breakdown": {
+      "lateral_error": 2.3027499992241487,
+      "lateral_error_rmse": 0.07675833330747163,
+      "yaw_error": 0.43480750990597705,
+      "yaw_error_rmse": 0.01449358366353257,
+      "velocity_error": 0.6641526976784522,
+      "velocity_error_rmse": 0.19924580930353566,
+      "jerk": 0.15806309270699612,
+      "jerk_rmse": 0.31612618541399223,
+      "steering_rate": 1.1071425258617953,
+      "steering_rate_rmse": 0.11071425258617953,
+      "total": 4.6669158253773695
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_010_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2374739558599694,
+      "median": 2.339948,
+      "std": 0.6865048402819572,
+      "p95": 2.9348745000000003,
+      "p99": 3.4995361999999988,
+      "max": 4.095025
+    },
+    "solver_time_stats": {
+      "mean": 0.6358010525152017,
+      "median": 0.636919,
+      "std": 0.1853121124510937,
+      "p95": 0.9592607999999996,
+      "p99": 1.6328486000000053,
+      "max": 1.948217
+    }
+  },
+  {
+    "id": "config_011_coarse_S01",
+    "config_id": "config_011_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.10542947499733286,
+      "q_psi": 0.8290197813660543,
+      "q_v": 2.3089830140280134,
+      "q_a": 0.1185606743480818,
+      "r_delta": 0.3417042495808343,
+      "r_delta_v": 0.4784797977508224,
+      "r_j": 0.016714921726310127,
+      "terminal_q_y": 0.7405092730176209,
+      "terminal_q_psi": 0.08080670769085346,
+      "terminal_q_v": 8.084103312605688
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.8348786170898892,
+    "breakdown": {
+      "lateral_error": 0.6658404480719868,
+      "lateral_error_rmse": 0.022194681602399565,
+      "yaw_error": 0.18032800637234891,
+      "yaw_error_rmse": 0.0060109335457449635,
+      "velocity_error": 0.3121046107679085,
+      "velocity_error_rmse": 0.09363138323037255,
+      "jerk": 0.2974760086469278,
+      "jerk_rmse": 0.5949520172938556,
+      "steering_rate": 0.3791295432307171,
+      "steering_rate_rmse": 0.037912954323071714,
+      "total": 1.8348786170898892
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.4110692461538465,
+      "median": 2.4416884999999997,
+      "std": 1.1009767819487808,
+      "p95": 4.37509935,
+      "p99": 4.710452599999999,
+      "max": 6.946268
+    },
+    "solver_time_stats": {
+      "mean": 0.8300425734126984,
+      "median": 0.6885209999999999,
+      "std": 0.4503446482692434,
+      "p95": 2.04785265,
+      "p99": 2.18517049,
+      "max": 3.287137
+    }
+  },
+  {
+    "id": "config_011_coarse_S02",
+    "config_id": "config_011_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.10542947499733286,
+      "q_psi": 0.8290197813660543,
+      "q_v": 2.3089830140280134,
+      "q_a": 0.1185606743480818,
+      "r_delta": 0.3417042495808343,
+      "r_delta_v": 0.4784797977508224,
+      "r_j": 0.016714921726310127,
+      "terminal_q_y": 0.7405092730176209,
+      "terminal_q_psi": 0.08080670769085346,
+      "terminal_q_v": 8.084103312605688
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.60951881363609,
+    "breakdown": {
+      "lateral_error": 6.272251917610868,
+      "lateral_error_rmse": 0.2090750639203623,
+      "yaw_error": 1.7247675086479046,
+      "yaw_error_rmse": 0.05749225028826349,
+      "velocity_error": 0.49996869826147117,
+      "velocity_error_rmse": 0.14999060947844134,
+      "jerk": 0.4262977619090431,
+      "jerk_rmse": 0.8525955238180862,
+      "steering_rate": 1.6862329272068046,
+      "steering_rate_rmse": 0.16862329272068047,
+      "total": 10.60951881363609
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.069235482035928,
+      "median": 2.4271019999999996,
+      "std": 1.1583672334049886,
+      "p95": 3.4804546499999995,
+      "p99": 3.919035280000001,
+      "max": 5.577303
+    },
+    "solver_time_stats": {
+      "mean": 0.9456781699604743,
+      "median": 0.8274305,
+      "std": 0.3594151194435088,
+      "p95": 1.71322925,
+      "p99": 2.00317505,
+      "max": 3.083838
+    }
+  },
+  {
+    "id": "config_011_coarse_S03",
+    "config_id": "config_011_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.10542947499733286,
+      "q_psi": 0.8290197813660543,
+      "q_v": 2.3089830140280134,
+      "q_a": 0.1185606743480818,
+      "r_delta": 0.3417042495808343,
+      "r_delta_v": 0.4784797977508224,
+      "r_j": 0.016714921726310127,
+      "terminal_q_y": 0.7405092730176209,
+      "terminal_q_psi": 0.08080670769085346,
+      "terminal_q_v": 8.084103312605688
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 5.103976648633558,
+    "breakdown": {
+      "lateral_error": 2.8457672558123734,
+      "lateral_error_rmse": 0.09485890852707912,
+      "yaw_error": 0.6159348087073097,
+      "yaw_error_rmse": 0.020531160290243655,
+      "velocity_error": 0.2465086391399524,
+      "velocity_error_rmse": 0.07395259174198572,
+      "jerk": 0.234081650251725,
+      "jerk_rmse": 0.46816330050345,
+      "steering_rate": 1.161684294722197,
+      "steering_rate_rmse": 0.11616842947221971,
+      "total": 5.103976648633558
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2866657741607326,
+      "median": 2.3569430000000002,
+      "std": 0.7369580997622933,
+      "p95": 3.1998445,
+      "p99": 3.699578799999998,
+      "max": 7.961858
+    },
+    "solver_time_stats": {
+      "mean": 0.6842426215316315,
+      "median": 0.6222905000000001,
+      "std": 0.2924249478801455,
+      "p95": 1.5178646999999996,
+      "p99": 1.7470840900000002,
+      "max": 2.267984
+    }
+  },
+  {
+    "id": "config_012_coarse_S01",
+    "config_id": "config_012_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 5.645545094780982,
+      "q_psi": 0.10090190280398705,
+      "q_v": 1.0027027963307615,
+      "q_a": 0.022766892717418424,
+      "r_delta": 6.687375021404964,
+      "r_delta_v": 1.3771370049594451,
+      "r_j": 0.03952661129481048,
+      "terminal_q_y": 1.8962648276605054,
+      "terminal_q_psi": 0.16517351953452591,
+      "terminal_q_v": 0.20215223026741616
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9306204361425365,
+    "breakdown": {
+      "lateral_error": 0.4997154559044627,
+      "lateral_error_rmse": 0.01665718186348209,
+      "yaw_error": 0.22378229868238336,
+      "yaw_error_rmse": 0.007459409956079445,
+      "velocity_error": 0.6086913912635669,
+      "velocity_error_rmse": 0.18260741737907005,
+      "jerk": 0.2641652346266854,
+      "jerk_rmse": 0.5283304692533708,
+      "steering_rate": 0.33426605566543827,
+      "steering_rate_rmse": 0.03342660556654383,
+      "total": 1.9306204361425365
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_012_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.0748619656946827,
+      "median": 2.280728,
+      "std": 0.8457461784259274,
+      "p95": 3.1798777499999997,
+      "p99": 3.429789199999997,
+      "max": 4.802096
+    },
+    "solver_time_stats": {
+      "mean": 0.7095460530000001,
+      "median": 0.6628425,
+      "std": 0.27489160001398405,
+      "p95": 1.57396405,
+      "p99": 1.6935462099999998,
+      "max": 2.197013
+    }
+  },
+  {
+    "id": "config_012_coarse_S02",
+    "config_id": "config_012_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 5.645545094780982,
+      "q_psi": 0.10090190280398705,
+      "q_v": 1.0027027963307615,
+      "q_a": 0.022766892717418424,
+      "r_delta": 6.687375021404964,
+      "r_delta_v": 1.3771370049594451,
+      "r_j": 0.03952661129481048,
+      "terminal_q_y": 1.8962648276605054,
+      "terminal_q_psi": 0.16517351953452591,
+      "terminal_q_v": 0.20215223026741616
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 16.233328891625906,
+    "breakdown": {
+      "lateral_error": 8.834800945384023,
+      "lateral_error_rmse": 0.2944933648461341,
+      "yaw_error": 3.6368392031575847,
+      "yaw_error_rmse": 0.12122797343858616,
+      "velocity_error": 0.7623623366432698,
+      "velocity_error_rmse": 0.22870870099298093,
+      "jerk": 0.3737615693149117,
+      "jerk_rmse": 0.7475231386298234,
+      "steering_rate": 2.6255648371261175,
+      "steering_rate_rmse": 0.26255648371261175,
+      "total": 16.233328891625906
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_012_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1104721121751027,
+      "median": 2.471184,
+      "std": 1.0977734771395298,
+      "p95": 3.3579594999999998,
+      "p99": 3.7196918000000054,
+      "max": 4.714092
+    },
+    "solver_time_stats": {
+      "mean": 0.9231240157342657,
+      "median": 0.834603,
+      "std": 0.3311068899428723,
+      "p95": 1.6245545,
+      "p99": 1.7816513199999988,
+      "max": 2.328808
+    }
+  },
+  {
+    "id": "config_012_coarse_S03",
+    "config_id": "config_012_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 5.645545094780982,
+      "q_psi": 0.10090190280398705,
+      "q_v": 1.0027027963307615,
+      "q_a": 0.022766892717418424,
+      "r_delta": 6.687375021404964,
+      "r_delta_v": 1.3771370049594451,
+      "r_j": 0.03952661129481048,
+      "terminal_q_y": 1.8962648276605054,
+      "terminal_q_psi": 0.16517351953452591,
+      "terminal_q_v": 0.20215223026741616
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.2402853340212,
+    "breakdown": {
+      "lateral_error": 2.0477794173592168,
+      "lateral_error_rmse": 0.0682593139119739,
+      "yaw_error": 0.510033700231101,
+      "yaw_error_rmse": 0.0170011233410367,
+      "velocity_error": 0.395986874710563,
+      "velocity_error_rmse": 0.1187960624131689,
+      "jerk": 0.2096349617116807,
+      "jerk_rmse": 0.4192699234233614,
+      "steering_rate": 1.0768503800086389,
+      "steering_rate_rmse": 0.10768503800086389,
+      "total": 4.2402853340212
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_012_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2402463809766022,
+      "median": 2.342257,
+      "std": 0.6852835150653845,
+      "p95": 2.9927075000000003,
+      "p99": 3.381908199999999,
+      "max": 5.190731
+    },
+    "solver_time_stats": {
+      "mean": 0.6934891661129569,
+      "median": 0.6692745,
+      "std": 0.2010038559328994,
+      "p95": 1.0920345,
+      "p99": 1.3965683500000003,
+      "max": 1.986369
+    }
+  },
+  {
+    "id": "config_013_coarse_S01",
+    "config_id": "config_013_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 3.349820994748815,
+      "q_psi": 0.35964937917373563,
+      "q_v": 3.6078872525407086,
+      "q_a": 0.11500251667066991,
+      "r_delta": 0.10026371501770748,
+      "r_delta_v": 0.11123773126418168,
+      "r_j": 0.010938392040530837,
+      "terminal_q_y": 7.214350406840088,
+      "terminal_q_psi": 0.5720628634748103,
+      "terminal_q_v": 4.606075567280311
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_013_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.4115135472727274,
+      "median": 2.308098,
+      "std": 0.8389565603157155,
+      "p95": 3.6767987499999997,
+      "p99": 5.482799199999981,
+      "max": 11.847104
+    },
+    "solver_time_stats": {
+      "mean": 0.7870044235668792,
+      "median": 0.5307755,
+      "std": 0.6537707661937361,
+      "p95": 1.9468455999999996,
+      "p99": 3.6558592600000024,
+      "max": 9.9275
+    }
+  },
+  {
+    "id": "config_013_coarse_S02",
+    "config_id": "config_013_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 3.349820994748815,
+      "q_psi": 0.35964937917373563,
+      "q_v": 3.6078872525407086,
+      "q_a": 0.11500251667066991,
+      "r_delta": 0.10026371501770748,
+      "r_delta_v": 0.11123773126418168,
+      "r_j": 0.010938392040530837,
+      "terminal_q_y": 7.214350406840088,
+      "terminal_q_psi": 0.5720628634748103,
+      "terminal_q_v": 4.606075567280311
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_013_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 0.678203483226267,
+      "median": 0.1138925,
+      "std": 1.1477785115165218,
+      "p95": 3.1236712499999997,
+      "p99": 3.864461619999999,
+      "max": 7.979699
+    },
+    "solver_time_stats": {
+      "mean": 1.1736963506944444,
+      "median": 1.059348,
+      "std": 0.5047259731439867,
+      "p95": 2.07147575,
+      "p99": 2.811692,
+      "max": 6.319239
+    }
+  },
+  {
+    "id": "config_013_coarse_S03",
+    "config_id": "config_013_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 3.349820994748815,
+      "q_psi": 0.35964937917373563,
+      "q_v": 3.6078872525407086,
+      "q_a": 0.11500251667066991,
+      "r_delta": 0.10026371501770748,
+      "r_delta_v": 0.11123773126418168,
+      "r_j": 0.010938392040530837,
+      "terminal_q_y": 7.214350406840088,
+      "terminal_q_psi": 0.5720628634748103,
+      "terminal_q_v": 4.606075567280311
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_013_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 1.176125361334157,
+      "median": 0.122895,
+      "std": 2.3972840018040453,
+      "p95": 4.152823849999998,
+      "p99": 13.031557050000012,
+      "max": 28.438185
+    },
+    "solver_time_stats": {
+      "mean": 2.228136647482015,
+      "median": 1.454004,
+      "std": 3.1556291715290974,
+      "p95": 8.560837549999995,
+      "p99": 17.155887329999995,
+      "max": 26.400861
+    }
+  },
+  {
+    "id": "config_014_coarse_S01",
+    "config_id": "config_014_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.4121243268647269,
+      "q_psi": 0.03917162495187235,
+      "q_v": 5.701894775015761,
+      "q_a": 0.7832472713857842,
+      "r_delta": 0.14835661107446813,
+      "r_delta_v": 0.23438020798373707,
+      "r_j": 0.013753873857750116,
+      "terminal_q_y": 3.3205064678352967,
+      "terminal_q_psi": 0.34014873377721944,
+      "terminal_q_v": 0.18062710818982405
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.6804499745450945,
+    "breakdown": {
+      "lateral_error": 0.5132290803073558,
+      "lateral_error_rmse": 0.017107636010245196,
+      "yaw_error": 0.2062659711844315,
+      "yaw_error_rmse": 0.006875532372814383,
+      "velocity_error": 0.31429335170884004,
+      "velocity_error_rmse": 0.09428800551265201,
+      "jerk": 0.3020805481198841,
+      "jerk_rmse": 0.6041610962397682,
+      "steering_rate": 0.34458102322458317,
+      "steering_rate_rmse": 0.03445810232245832,
+      "total": 1.6804499745450945
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.208091343321918,
+      "median": 2.326278,
+      "std": 0.9265239074002649,
+      "p95": 3.516267799999999,
+      "p99": 3.9289662399999985,
+      "max": 5.476995
+    },
+    "solver_time_stats": {
+      "mean": 0.7955783501984126,
+      "median": 0.6653775,
+      "std": 0.3958183963069169,
+      "p95": 1.7534311999999999,
+      "p99": 2.0028913599999996,
+      "max": 2.609562
+    }
+  },
+  {
+    "id": "config_014_coarse_S02",
+    "config_id": "config_014_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.4121243268647269,
+      "q_psi": 0.03917162495187235,
+      "q_v": 5.701894775015761,
+      "q_a": 0.7832472713857842,
+      "r_delta": 0.14835661107446813,
+      "r_delta_v": 0.23438020798373707,
+      "r_j": 0.013753873857750116,
+      "terminal_q_y": 3.3205064678352967,
+      "terminal_q_psi": 0.34014873377721944,
+      "terminal_q_v": 0.18062710818982405
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 11.788963882477914,
+    "breakdown": {
+      "lateral_error": 6.713304595584582,
+      "lateral_error_rmse": 0.2237768198528194,
+      "yaw_error": 2.2352721466121297,
+      "yaw_error_rmse": 0.07450907155373766,
+      "velocity_error": 0.4801960062866622,
+      "velocity_error_rmse": 0.14405880188599865,
+      "jerk": 0.42199746818229567,
+      "jerk_rmse": 0.8439949363645913,
+      "steering_rate": 1.938193665812244,
+      "steering_rate_rmse": 0.19381936658122442,
+      "total": 11.788963882477914
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.214049144680851,
+      "median": 2.554739,
+      "std": 1.2095197379639264,
+      "p95": 3.6741288,
+      "p99": 4.033818480000002,
+      "max": 4.485343
+    },
+    "solver_time_stats": {
+      "mean": 1.0441431014760147,
+      "median": 0.8475575,
+      "std": 0.44024727228793753,
+      "p95": 1.8232726499999998,
+      "p99": 2.0496236200000006,
+      "max": 2.442389
+    }
+  },
+  {
+    "id": "config_014_coarse_S03",
+    "config_id": "config_014_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.4121243268647269,
+      "q_psi": 0.03917162495187235,
+      "q_v": 5.701894775015761,
+      "q_a": 0.7832472713857842,
+      "r_delta": 0.14835661107446813,
+      "r_delta_v": 0.23438020798373707,
+      "r_j": 0.013753873857750116,
+      "terminal_q_y": 3.3205064678352967,
+      "terminal_q_psi": 0.34014873377721944,
+      "terminal_q_v": 0.18062710818982405
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.0009582819341585,
+    "breakdown": {
+      "lateral_error": 2.065729735168836,
+      "lateral_error_rmse": 0.06885765783896121,
+      "yaw_error": 0.46697370468426286,
+      "yaw_error_rmse": 0.015565790156142095,
+      "velocity_error": 0.19679526570000247,
+      "velocity_error_rmse": 0.05903857971000074,
+      "jerk": 0.23620069045468384,
+      "jerk_rmse": 0.4724013809093677,
+      "steering_rate": 1.0352588859263738,
+      "steering_rate_rmse": 0.1035258885926374,
+      "total": 4.0009582819341585
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.3890488312531204,
+      "median": 2.439033,
+      "std": 0.8086848333356011,
+      "p95": 3.6260890999999993,
+      "p99": 4.0401049,
+      "max": 5.625611
+    },
+    "solver_time_stats": {
+      "mean": 0.7609181812227075,
+      "median": 0.673427,
+      "std": 0.377825164918434,
+      "p95": 1.7746268499999986,
+      "p99": 2.08427087,
+      "max": 3.037139
+    }
+  },
+  {
+    "id": "config_015_coarse_S01",
+    "config_id": "config_015_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.8924106740383819,
+      "q_psi": 0.3773361740901663,
+      "q_v": 0.3389325334428747,
+      "q_a": 0.5557328666174828,
+      "r_delta": 0.7019010311095819,
+      "r_delta_v": 0.06630349468713354,
+      "r_j": 0.11983734469766073,
+      "terminal_q_y": 2.8831161455779997,
+      "terminal_q_psi": 0.025252368997311016,
+      "terminal_q_v": 0.4201772966875001
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.332389963993823,
+    "breakdown": {
+      "lateral_error": 0.513379233732002,
+      "lateral_error_rmse": 0.017112641124400068,
+      "yaw_error": 0.2253595571562747,
+      "yaw_error_rmse": 0.00751198523854249,
+      "velocity_error": 1.0312947999017563,
+      "velocity_error_rmse": 0.3093884399705269,
+      "jerk": 0.22457493773975026,
+      "jerk_rmse": 0.4491498754795005,
+      "steering_rate": 0.3377814354640396,
+      "steering_rate_rmse": 0.03377814354640396,
+      "total": 2.332389963993823
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_015_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.219532737444934,
+      "median": 2.474209,
+      "std": 0.8747100066778077,
+      "p95": 2.9940339,
+      "p99": 3.4006472600000004,
+      "max": 4.138045
+    },
+    "solver_time_stats": {
+      "mean": 0.7166945216049384,
+      "median": 0.6817825,
+      "std": 0.13326301500303112,
+      "p95": 1.0164408999999999,
+      "p99": 1.2030386199999998,
+      "max": 1.631145
+    }
+  },
+  {
+    "id": "config_015_coarse_S02",
+    "config_id": "config_015_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.8924106740383819,
+      "q_psi": 0.3773361740901663,
+      "q_v": 0.3389325334428747,
+      "q_a": 0.5557328666174828,
+      "r_delta": 0.7019010311095819,
+      "r_delta_v": 0.06630349468713354,
+      "r_j": 0.11983734469766073,
+      "terminal_q_y": 2.8831161455779997,
+      "terminal_q_psi": 0.025252368997311016,
+      "terminal_q_v": 0.4201772966875001
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_015_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1859422833217024,
+      "median": 2.2098965,
+      "std": 0.5685276319032633,
+      "p95": 2.8640869999999996,
+      "p99": 3.2910136499999973,
+      "max": 4.942578
+    },
+    "solver_time_stats": {
+      "mean": 0.47563325350553504,
+      "median": 0.384929,
+      "std": 0.19720857813618994,
+      "p95": 0.8968468999999989,
+      "p99": 1.2655933099999999,
+      "max": 2.021895
+    }
+  },
+  {
+    "id": "config_015_coarse_S03",
+    "config_id": "config_015_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.8924106740383819,
+      "q_psi": 0.3773361740901663,
+      "q_v": 0.3389325334428747,
+      "q_a": 0.5557328666174828,
+      "r_delta": 0.7019010311095819,
+      "r_delta_v": 0.06630349468713354,
+      "r_j": 0.11983734469766073,
+      "terminal_q_y": 2.8831161455779997,
+      "terminal_q_psi": 0.025252368997311016,
+      "terminal_q_v": 0.4201772966875001
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_015_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.313826190080564,
+      "median": 2.327611,
+      "std": 0.5419639208688947,
+      "p95": 2.9686857999999994,
+      "p99": 3.55532904,
+      "max": 5.146399
+    },
+    "solver_time_stats": {
+      "mean": 0.6079318862322649,
+      "median": 0.5453885,
+      "std": 0.13118245849875929,
+      "p95": 0.8380844999999999,
+      "p99": 1.0517329499999999,
+      "max": 1.827301
+    }
+  },
+  {
+    "id": "config_016_coarse_S01",
+    "config_id": "config_016_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 9.779096084777775,
+      "q_psi": 0.5982426478175435,
+      "q_v": 0.7519693994566945,
+      "q_a": 0.10843055534028014,
+      "r_delta": 0.17458558872222116,
+      "r_delta_v": 0.07036143411799188,
+      "r_j": 0.047442888681984444,
+      "terminal_q_y": 1.501818455310721,
+      "terminal_q_psi": 0.028855557216825953,
+      "terminal_q_v": 0.27569873213331336
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_016_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 1.0070959035867062,
+      "median": 0.119382,
+      "std": 1.6113542143313029,
+      "p95": 4.3094512,
+      "p99": 4.9076879799999995,
+      "max": 6.889353
+    },
+    "solver_time_stats": {
+      "mean": 1.6482233152909336,
+      "median": 1.641485,
+      "std": 0.6404037202067274,
+      "p95": 2.6435531,
+      "p99": 3.01843242,
+      "max": 3.914899
+    }
+  },
+  {
+    "id": "config_016_coarse_S02",
+    "config_id": "config_016_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 9.779096084777775,
+      "q_psi": 0.5982426478175435,
+      "q_v": 0.7519693994566945,
+      "q_a": 0.10843055534028014,
+      "r_delta": 0.17458558872222116,
+      "r_delta_v": 0.07036143411799188,
+      "r_j": 0.047442888681984444,
+      "terminal_q_y": 1.501818455310721,
+      "terminal_q_psi": 0.028855557216825953,
+      "terminal_q_v": 0.27569873213331336
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_016_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 0.631574365917603,
+      "median": 0.123646,
+      "std": 1.2775183204032472,
+      "p95": 3.5534170499999984,
+      "p99": 5.124200329999998,
+      "max": 10.533847
+    },
+    "solver_time_stats": {
+      "mean": 1.70878917839196,
+      "median": 1.519742,
+      "std": 0.9619587968061414,
+      "p95": 3.93938825,
+      "p99": 5.4729198199999995,
+      "max": 8.695434
+    }
+  },
+  {
+    "id": "config_016_coarse_S03",
+    "config_id": "config_016_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 9.779096084777775,
+      "q_psi": 0.5982426478175435,
+      "q_v": 0.7519693994566945,
+      "q_a": 0.10843055534028014,
+      "r_delta": 0.17458558872222116,
+      "r_delta_v": 0.07036143411799188,
+      "r_j": 0.047442888681984444,
+      "terminal_q_y": 1.501818455310721,
+      "terminal_q_psi": 0.028855557216825953,
+      "terminal_q_v": 0.27569873213331336
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_016_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 0.5935211177777778,
+      "median": 0.1116085,
+      "std": 1.1945044434552603,
+      "p95": 3.5509525999999996,
+      "p99": 4.535149959999997,
+      "max": 7.714784
+    },
+    "solver_time_stats": {
+      "mean": 1.5896171364764267,
+      "median": 1.454395,
+      "std": 0.7278254439614223,
+      "p95": 3.0284863999999962,
+      "p99": 3.8360361400000005,
+      "max": 5.933518
+    }
+  },
+  {
+    "id": "config_017_coarse_S01",
+    "config_id": "config_017_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.13867116751235253,
+      "q_psi": 0.5486901567978928,
+      "q_v": 0.28700110419517016,
+      "q_a": 0.6469042822572686,
+      "r_delta": 5.239270248464792,
+      "r_delta_v": 0.03464612823120889,
+      "r_j": 0.029923284983748685,
+      "terminal_q_y": 2.177486928419671,
+      "terminal_q_psi": 0.02682091654045886,
+      "terminal_q_v": 0.18391777210494056
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.287173852493935,
+    "breakdown": {
+      "lateral_error": 0.5241865667235706,
+      "lateral_error_rmse": 0.017472885557452352,
+      "yaw_error": 0.21822307429495647,
+      "yaw_error_rmse": 0.007274102476498549,
+      "velocity_error": 0.9281165287817639,
+      "velocity_error_rmse": 0.27843495863452916,
+      "jerk": 0.25895736782022916,
+      "jerk_rmse": 0.5179147356404583,
+      "steering_rate": 0.35769031487341524,
+      "steering_rate_rmse": 0.03576903148734153,
+      "total": 2.287173852493935
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_017_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.088696718446602,
+      "median": 2.298922,
+      "std": 0.8209046823711036,
+      "p95": 2.9144071999999994,
+      "p99": 3.2151500800000012,
+      "max": 5.258527
+    },
+    "solver_time_stats": {
+      "mean": 0.6746242827868852,
+      "median": 0.6545875,
+      "std": 0.20243788803715726,
+      "p95": 1.107232,
+      "p99": 1.241969,
+      "max": 1.851206
+    }
+  },
+  {
+    "id": "config_017_coarse_S02",
+    "config_id": "config_017_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.13867116751235253,
+      "q_psi": 0.5486901567978928,
+      "q_v": 0.28700110419517016,
+      "q_a": 0.6469042822572686,
+      "r_delta": 5.239270248464792,
+      "r_delta_v": 0.03464612823120889,
+      "r_j": 0.029923284983748685,
+      "terminal_q_y": 2.177486928419671,
+      "terminal_q_psi": 0.02682091654045886,
+      "terminal_q_v": 0.18391777210494056
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 12.08586434753607,
+    "breakdown": {
+      "lateral_error": 6.8051895957348405,
+      "lateral_error_rmse": 0.22683965319116137,
+      "yaw_error": 1.9354430511067156,
+      "yaw_error_rmse": 0.06451476837022385,
+      "velocity_error": 1.1326168523276712,
+      "velocity_error_rmse": 0.33978505569830136,
+      "jerk": 0.377857088530071,
+      "jerk_rmse": 0.755714177060142,
+      "steering_rate": 1.8347577598367721,
+      "steering_rate_rmse": 0.18347577598367723,
+      "total": 12.08586434753607
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_017_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.045043473469388,
+      "median": 2.429566,
+      "std": 1.0911386464103177,
+      "p95": 3.1450581,
+      "p99": 3.864561319999997,
+      "max": 4.509449
+    },
+    "solver_time_stats": {
+      "mean": 0.8197806902654866,
+      "median": 0.770188,
+      "std": 0.2179704400062906,
+      "p95": 1.168059,
+      "p99": 1.4820160400000002,
+      "max": 2.063282
+    }
+  },
+  {
+    "id": "config_017_coarse_S03",
+    "config_id": "config_017_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.13867116751235253,
+      "q_psi": 0.5486901567978928,
+      "q_v": 0.28700110419517016,
+      "q_a": 0.6469042822572686,
+      "r_delta": 5.239270248464792,
+      "r_delta_v": 0.03464612823120889,
+      "r_j": 0.029923284983748685,
+      "terminal_q_y": 2.177486928419671,
+      "terminal_q_psi": 0.02682091654045886,
+      "terminal_q_v": 0.18391777210494056
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 5.022367704982975,
+    "breakdown": {
+      "lateral_error": 2.588453769100105,
+      "lateral_error_rmse": 0.08628179230333682,
+      "yaw_error": 0.5054260065465201,
+      "yaw_error_rmse": 0.01684753355155067,
+      "velocity_error": 0.6154928168958332,
+      "velocity_error_rmse": 0.18464784506874996,
+      "jerk": 0.2170206422711979,
+      "jerk_rmse": 0.4340412845423958,
+      "steering_rate": 1.0959744701693188,
+      "steering_rate_rmse": 0.10959744701693189,
+      "total": 5.022367704982975
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_017_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2517282053889174,
+      "median": 2.348735,
+      "std": 0.6731205482324106,
+      "p95": 2.9592761999999992,
+      "p99": 3.403023199999999,
+      "max": 4.708771
+    },
+    "solver_time_stats": {
+      "mean": 0.6608914864864865,
+      "median": 0.655845,
+      "std": 0.19861352065147425,
+      "p95": 1.0911673999999996,
+      "p99": 1.3809698,
+      "max": 2.006486
+    }
+  },
+  {
+    "id": "config_018_coarse_S01",
+    "config_id": "config_018_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 7.430678669106554,
+      "q_psi": 0.41610931823495123,
+      "q_v": 0.8817430650841521,
+      "q_a": 0.37088464082584016,
+      "r_delta": 4.120918215606733,
+      "r_delta_v": 0.06008413834166207,
+      "r_j": 0.015626496839844056,
+      "terminal_q_y": 0.7279513651415813,
+      "terminal_q_psi": 0.07033269290478109,
+      "terminal_q_v": 0.8591111114200224
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_018_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.3901355760546643,
+      "median": 2.276535,
+      "std": 0.7589503271594625,
+      "p95": 3.549281,
+      "p99": 4.95746609999999,
+      "max": 8.187466
+    },
+    "solver_time_stats": {
+      "mean": 0.7728356586807716,
+      "median": 0.540484,
+      "std": 0.5478507815989259,
+      "p95": 1.8085437,
+      "p99": 3.133340009999998,
+      "max": 6.495638
+    }
+  },
+  {
+    "id": "config_018_coarse_S02",
+    "config_id": "config_018_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 7.430678669106554,
+      "q_psi": 0.41610931823495123,
+      "q_v": 0.8817430650841521,
+      "q_a": 0.37088464082584016,
+      "r_delta": 4.120918215606733,
+      "r_delta_v": 0.06008413834166207,
+      "r_j": 0.015626496839844056,
+      "terminal_q_y": 0.7279513651415813,
+      "terminal_q_psi": 0.07033269290478109,
+      "terminal_q_v": 0.8591111114200224
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_018_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1838359320909664,
+      "median": 2.1455655,
+      "std": 0.6123655452500352,
+      "p95": 3.09412175,
+      "p99": 3.8211964999999974,
+      "max": 5.413146
+    },
+    "solver_time_stats": {
+      "mean": 0.5455645329122341,
+      "median": 0.38887099999999997,
+      "std": 0.34582059517778374,
+      "p95": 1.2470847500000002,
+      "p99": 1.84884766,
+      "max": 3.233056
+    }
+  },
+  {
+    "id": "config_018_coarse_S03",
+    "config_id": "config_018_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 7.430678669106554,
+      "q_psi": 0.41610931823495123,
+      "q_v": 0.8817430650841521,
+      "q_a": 0.37088464082584016,
+      "r_delta": 4.120918215606733,
+      "r_delta_v": 0.06008413834166207,
+      "r_j": 0.015626496839844056,
+      "terminal_q_y": 0.7279513651415813,
+      "terminal_q_psi": 0.07033269290478109,
+      "terminal_q_v": 0.8591111114200224
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_018_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 0.7932227142857143,
+      "median": 0.125835,
+      "std": 1.4245006141168155,
+      "p95": 3.9279716999999987,
+      "p99": 5.310365279999992,
+      "max": 13.08527
+    },
+    "solver_time_stats": {
+      "mean": 1.538452978984238,
+      "median": 1.330253,
+      "std": 1.0261311986259627,
+      "p95": 3.233632,
+      "p99": 5.283893099999974,
+      "max": 11.062173
+    }
+  },
+  {
+    "id": "config_019_coarse_S01",
+    "config_id": "config_019_coarse",
+    "scenario": 1,
+    "params": {
+      "q_y": 2.871783519890608,
+      "q_psi": 0.6665770382152602,
+      "q_v": 9.296734379221018,
+      "q_a": 0.01573387669445333,
+      "r_delta": 0.6386200716980338,
+      "r_delta_v": 0.1192738449296748,
+      "r_j": 0.5288652997019294,
+      "terminal_q_y": 0.31427704993262656,
+      "terminal_q_psi": 0.024011418481193987,
+      "terminal_q_v": 0.7892727260402028
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.222956234270605,
+    "breakdown": {
+      "lateral_error": 1.497197848673234,
+      "lateral_error_rmse": 0.04990659495577447,
+      "yaw_error": 0.6648870477072056,
+      "yaw_error_rmse": 0.02216290159024019,
+      "velocity_error": 0.6614864413156234,
+      "velocity_error_rmse": 0.198445932394687,
+      "jerk": 0.25641438927474963,
+      "jerk_rmse": 0.5128287785494993,
+      "steering_rate": 1.1429705072997913,
+      "steering_rate_rmse": 0.11429705072997914,
+      "total": 4.222956234270605
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_019_coarse/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1631997194183064,
+      "median": 2.358523,
+      "std": 0.8633149867499635,
+      "p95": 3.0414849999999998,
+      "p99": 3.494789079999999,
+      "max": 3.959613
+    },
+    "solver_time_stats": {
+      "mean": 0.7492104127617149,
+      "median": 0.676544,
+      "std": 0.21993713906579254,
+      "p95": 1.3449318000000001,
+      "p99": 1.4541827400000003,
+      "max": 1.726163
+    }
+  },
+  {
+    "id": "config_019_coarse_S02",
+    "config_id": "config_019_coarse",
+    "scenario": 2,
+    "params": {
+      "q_y": 2.871783519890608,
+      "q_psi": 0.6665770382152602,
+      "q_v": 9.296734379221018,
+      "q_a": 0.01573387669445333,
+      "r_delta": 0.6386200716980338,
+      "r_delta_v": 0.1192738449296748,
+      "r_j": 0.5288652997019294,
+      "terminal_q_y": 0.31427704993262656,
+      "terminal_q_psi": 0.024011418481193987,
+      "terminal_q_v": 0.7892727260402028
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 38.6421766142962,
+    "breakdown": {
+      "lateral_error": 24.633800870656028,
+      "lateral_error_rmse": 0.8211266956885342,
+      "yaw_error": 8.844921162370067,
+      "yaw_error_rmse": 0.2948307054123356,
+      "velocity_error": 0.5052498675877518,
+      "velocity_error_rmse": 0.15157496027632553,
+      "jerk": 0.3238582960887868,
+      "jerk_rmse": 0.6477165921775736,
+      "steering_rate": 4.334346417593566,
+      "steering_rate_rmse": 0.4334346417593566,
+      "total": 38.6421766142962
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_019_coarse/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.178616180952381,
+      "median": 2.514374,
+      "std": 1.1943728815684402,
+      "p95": 3.8036130999999993,
+      "p99": 4.613590039999995,
+      "max": 6.023686
+    },
+    "solver_time_stats": {
+      "mean": 1.0406221821366024,
+      "median": 0.87807,
+      "std": 0.48759376229886486,
+      "p95": 2.1596764999999998,
+      "p99": 2.9850888999999907,
+      "max": 3.600292
+    }
+  },
+  {
+    "id": "config_019_coarse_S03",
+    "config_id": "config_019_coarse",
+    "scenario": 3,
+    "params": {
+      "q_y": 2.871783519890608,
+      "q_psi": 0.6665770382152602,
+      "q_v": 9.296734379221018,
+      "q_a": 0.01573387669445333,
+      "r_delta": 0.6386200716980338,
+      "r_delta_v": 0.1192738449296748,
+      "r_j": 0.5288652997019294,
+      "terminal_q_y": 0.31427704993262656,
+      "terminal_q_psi": 0.024011418481193987,
+      "terminal_q_v": 0.7892727260402028
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_019_coarse/S03/run_01",
+    "callback_time_stats": {
+      "mean": 1.3090537070628097,
+      "median": 0.137506,
+      "std": 1.4783628674955236,
+      "p95": 3.6411103999999996,
+      "p99": 4.00974232,
+      "max": 9.874065
+    },
+    "solver_time_stats": {
+      "mean": 1.2491691886551943,
+      "median": 1.204789,
+      "std": 0.4549058717918241,
+      "p95": 2.010644,
+      "p99": 2.24953572,
+      "max": 2.928838
+    }
+  },
+  {
+    "id": "config_000_default_refine00_S01",
+    "config_id": "config_000_default_refine00",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.9542104674413103,
+      "q_psi": 1.7511527184722493,
+      "q_v": 1.7212160542355042,
+      "q_a": 0.12891194128302852,
+      "r_delta": 0.966454022142723,
+      "r_delta_v": 0.9315805589939175,
+      "r_j": 0.10306556853973375,
+      "terminal_q_y": 0.7636490131209364,
+      "terminal_q_psi": 0.1349277792854225,
+      "terminal_q_v": 1.2233788148367888
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9666521148032086,
+    "breakdown": {
+      "lateral_error": 0.5628851387992608,
+      "lateral_error_rmse": 0.01876283795997536,
+      "yaw_error": 0.19296628236878388,
+      "yaw_error_rmse": 0.006432209412292796,
+      "velocity_error": 0.6065232306771844,
+      "velocity_error_rmse": 0.18195696920315532,
+      "jerk": 0.2542634676986345,
+      "jerk_rmse": 0.508526935397269,
+      "steering_rate": 0.35001399525934485,
+      "steering_rate_rmse": 0.035001399525934486,
+      "total": 1.9666521148032086
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine00/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1749221704745167,
+      "median": 2.379292,
+      "std": 0.8524033631440223,
+      "p95": 3.092935,
+      "p99": 3.40469032,
+      "max": 4.258471
+    },
+    "solver_time_stats": {
+      "mean": 0.6909208950050969,
+      "median": 0.665132,
+      "std": 0.1996682203264569,
+      "p95": 1.228784,
+      "p99": 1.3059556,
+      "max": 1.776577
+    }
+  },
+  {
+    "id": "config_000_default_refine00_S02",
+    "config_id": "config_000_default_refine00",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.9542104674413103,
+      "q_psi": 1.7511527184722493,
+      "q_v": 1.7212160542355042,
+      "q_a": 0.12891194128302852,
+      "r_delta": 0.966454022142723,
+      "r_delta_v": 0.9315805589939175,
+      "r_j": 0.10306556853973375,
+      "terminal_q_y": 0.7636490131209364,
+      "terminal_q_psi": 0.1349277792854225,
+      "terminal_q_v": 1.2233788148367888
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.711125052148702,
+    "breakdown": {
+      "lateral_error": 5.8721431427680555,
+      "lateral_error_rmse": 0.1957381047589352,
+      "yaw_error": 1.7756740888344047,
+      "yaw_error_rmse": 0.059189136294480166,
+      "velocity_error": 0.8960681245344898,
+      "velocity_error_rmse": 0.26882043736034694,
+      "jerk": 0.35943198824776673,
+      "jerk_rmse": 0.7188639764955335,
+      "steering_rate": 1.807807707763986,
+      "steering_rate_rmse": 0.18078077077639862,
+      "total": 10.711125052148702
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine00/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.081081430397727,
+      "median": 2.445741,
+      "std": 1.1062165610950383,
+      "p95": 3.4001717000000005,
+      "p99": 3.8600773500000005,
+      "max": 4.398663
+    },
+    "solver_time_stats": {
+      "mean": 0.8543399009174312,
+      "median": 0.730433,
+      "std": 0.2947457317310231,
+      "p95": 1.307503,
+      "p99": 1.9687590799999997,
+      "max": 2.188536
+    }
+  },
+  {
+    "id": "config_000_default_refine00_S03",
+    "config_id": "config_000_default_refine00",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.9542104674413103,
+      "q_psi": 1.7511527184722493,
+      "q_v": 1.7212160542355042,
+      "q_a": 0.12891194128302852,
+      "r_delta": 0.966454022142723,
+      "r_delta_v": 0.9315805589939175,
+      "r_j": 0.10306556853973375,
+      "terminal_q_y": 0.7636490131209364,
+      "terminal_q_psi": 0.1349277792854225,
+      "terminal_q_v": 1.2233788148367888
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.613302254331099,
+    "breakdown": {
+      "lateral_error": 2.3848490315233524,
+      "lateral_error_rmse": 0.07949496771744508,
+      "yaw_error": 0.4851796021146172,
+      "yaw_error_rmse": 0.016172653403820573,
+      "velocity_error": 0.4845521764535518,
+      "velocity_error_rmse": 0.14536565293606554,
+      "jerk": 0.2001468047576367,
+      "jerk_rmse": 0.4002936095152734,
+      "steering_rate": 1.0585746394819413,
+      "steering_rate_rmse": 0.10585746394819413,
+      "total": 4.613302254331099
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine00/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.5104838368263476,
+      "median": 2.528616,
+      "std": 0.8767070371333678,
+      "p95": 3.7578478999999994,
+      "p99": 4.55004623,
+      "max": 6.296847
+    },
+    "solver_time_stats": {
+      "mean": 0.7041549407286568,
+      "median": 0.65336,
+      "std": 0.2963854431450661,
+      "p95": 1.2779234,
+      "p99": 2.0054662199999997,
+      "max": 2.836626
+    }
+  },
+  {
+    "id": "config_000_default_refine01_S01",
+    "config_id": "config_000_default_refine01",
+    "scenario": 1,
+    "params": {
+      "q_y": 1.324980515929039,
+      "q_psi": 2.5830409570213506,
+      "q_v": 2.465426022614917,
+      "q_a": 0.08185561088975721,
+      "r_delta": 0.9914216808326307,
+      "r_delta_v": 0.6316412471437278,
+      "r_j": 0.09423525434524195,
+      "terminal_q_y": 0.7673450109707481,
+      "terminal_q_psi": 0.09299577456854524,
+      "terminal_q_v": 1.3380125030821046
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9083184459815596,
+    "breakdown": {
+      "lateral_error": 0.5643717004562399,
+      "lateral_error_rmse": 0.018812390015207996,
+      "yaw_error": 0.19832125080866658,
+      "yaw_error_rmse": 0.006610708360288887,
+      "velocity_error": 0.5742977258779747,
+      "velocity_error_rmse": 0.1722893177633924,
+      "jerk": 0.2674642570628151,
+      "jerk_rmse": 0.5349285141256303,
+      "steering_rate": 0.3038635117758635,
+      "steering_rate_rmse": 0.03038635117758635,
+      "total": 1.9083184459815596
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine01/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.242814865842895,
+      "median": 2.427041,
+      "std": 0.8969564135070084,
+      "p95": 3.3532086,
+      "p99": 3.75331984,
+      "max": 4.373786
+    },
+    "solver_time_stats": {
+      "mean": 0.7171983775510204,
+      "median": 0.6640245,
+      "std": 0.26547919591429053,
+      "p95": 1.4962631,
+      "p99": 1.6207836100000002,
+      "max": 2.066889
+    }
+  },
+  {
+    "id": "config_000_default_refine01_S02",
+    "config_id": "config_000_default_refine01",
+    "scenario": 2,
+    "params": {
+      "q_y": 1.324980515929039,
+      "q_psi": 2.5830409570213506,
+      "q_v": 2.465426022614917,
+      "q_a": 0.08185561088975721,
+      "r_delta": 0.9914216808326307,
+      "r_delta_v": 0.6316412471437278,
+      "r_j": 0.09423525434524195,
+      "terminal_q_y": 0.7673450109707481,
+      "terminal_q_psi": 0.09299577456854524,
+      "terminal_q_v": 1.3380125030821046
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.310028624803941,
+    "breakdown": {
+      "lateral_error": 5.546660450438641,
+      "lateral_error_rmse": 0.18488868168128805,
+      "yaw_error": 1.7253329675175486,
+      "yaw_error_rmse": 0.05751109891725163,
+      "velocity_error": 0.6392847201704992,
+      "velocity_error_rmse": 0.19178541605114977,
+      "jerk": 0.34170811479217583,
+      "jerk_rmse": 0.6834162295843517,
+      "steering_rate": 2.0570423718850765,
+      "steering_rate_rmse": 0.20570423718850767,
+      "total": 10.310028624803941
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine01/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.3495862044444444,
+      "median": 2.630491,
+      "std": 1.1153611509031354,
+      "p95": 3.7286060999999995,
+      "p99": 4.13277925,
+      "max": 5.525907
+    },
+    "solver_time_stats": {
+      "mean": 0.9762895739484395,
+      "median": 0.943411,
+      "std": 0.3299996998527442,
+      "p95": 1.7006911999999998,
+      "p99": 1.9421926399999985,
+      "max": 2.720088
+    }
+  },
+  {
+    "id": "config_000_default_refine01_S03",
+    "config_id": "config_000_default_refine01",
+    "scenario": 3,
+    "params": {
+      "q_y": 1.324980515929039,
+      "q_psi": 2.5830409570213506,
+      "q_v": 2.465426022614917,
+      "q_a": 0.08185561088975721,
+      "r_delta": 0.9914216808326307,
+      "r_delta_v": 0.6316412471437278,
+      "r_j": 0.09423525434524195,
+      "terminal_q_y": 0.7673450109707481,
+      "terminal_q_psi": 0.09299577456854524,
+      "terminal_q_v": 1.3380125030821046
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.479663149333909,
+    "breakdown": {
+      "lateral_error": 2.191812354724392,
+      "lateral_error_rmse": 0.07306041182414641,
+      "yaw_error": 0.4879955119902901,
+      "yaw_error_rmse": 0.016266517066343005,
+      "velocity_error": 0.39751719258546225,
+      "velocity_error_rmse": 0.11925515777563868,
+      "jerk": 0.2064950947518115,
+      "jerk_rmse": 0.412990189503623,
+      "steering_rate": 1.1958429952819531,
+      "steering_rate_rmse": 0.11958429952819533,
+      "total": 4.479663149333909
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine01/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.344447869,
+      "median": 2.4281835000000003,
+      "std": 0.743451201012239,
+      "p95": 3.29291345,
+      "p99": 3.76273889,
+      "max": 4.875442
+    },
+    "solver_time_stats": {
+      "mean": 0.7201085849673202,
+      "median": 0.6752199999999999,
+      "std": 0.26579001564041427,
+      "p95": 1.48980625,
+      "p99": 1.663233050000001,
+      "max": 2.298942
+    }
+  },
+  {
+    "id": "config_000_default_refine02_S01",
+    "config_id": "config_000_default_refine02",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.8685951304550461,
+      "q_psi": 2.3716586002990625,
+      "q_v": 1.9467322564055467,
+      "q_a": 0.09548552617104683,
+      "r_delta": 1.315728605110626,
+      "r_delta_v": 1.00961749494363,
+      "r_j": 0.10340271097230554,
+      "terminal_q_y": 1.1400190413184073,
+      "terminal_q_psi": 0.08129205450016423,
+      "terminal_q_v": 0.8851702277741543
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9450833481134442,
+    "breakdown": {
+      "lateral_error": 0.5726353437735496,
+      "lateral_error_rmse": 0.019087844792451653,
+      "yaw_error": 0.18856612354908542,
+      "yaw_error_rmse": 0.0062855374516361815,
+      "velocity_error": 0.6265349212016962,
+      "velocity_error_rmse": 0.18796047636050886,
+      "jerk": 0.2551501474281254,
+      "jerk_rmse": 0.5103002948562508,
+      "steering_rate": 0.3021968121609875,
+      "steering_rate_rmse": 0.030219681216098748,
+      "total": 1.9450833481134442
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine02/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.3388554063301967,
+      "median": 2.478006,
+      "std": 1.0567849354050556,
+      "p95": 3.8574395999999993,
+      "p99": 4.303159839999999,
+      "max": 5.769041
+    },
+    "solver_time_stats": {
+      "mean": 0.7339952034412955,
+      "median": 0.6940405000000001,
+      "std": 0.26652682439258846,
+      "p95": 1.5259059,
+      "p99": 1.6667334699999998,
+      "max": 2.054756
+    }
+  },
+  {
+    "id": "config_000_default_refine02_S02",
+    "config_id": "config_000_default_refine02",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.8685951304550461,
+      "q_psi": 2.3716586002990625,
+      "q_v": 1.9467322564055467,
+      "q_a": 0.09548552617104683,
+      "r_delta": 1.315728605110626,
+      "r_delta_v": 1.00961749494363,
+      "r_j": 0.10340271097230554,
+      "terminal_q_y": 1.1400190413184073,
+      "terminal_q_psi": 0.08129205450016423,
+      "terminal_q_v": 0.8851702277741543
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.81071025446556,
+    "breakdown": {
+      "lateral_error": 6.047840907459193,
+      "lateral_error_rmse": 0.20159469691530646,
+      "yaw_error": 1.7273271651113404,
+      "yaw_error_rmse": 0.05757757217037801,
+      "velocity_error": 0.764107098234184,
+      "velocity_error_rmse": 0.22923212947025517,
+      "jerk": 0.35903673814075887,
+      "jerk_rmse": 0.7180734762815177,
+      "steering_rate": 1.9123983455200837,
+      "steering_rate_rmse": 0.19123983455200838,
+      "total": 10.81071025446556
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine02/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1028996975748933,
+      "median": 2.42677,
+      "std": 1.110109521422206,
+      "p95": 3.314508,
+      "p99": 4.121534,
+      "max": 5.592301
+    },
+    "solver_time_stats": {
+      "mean": 0.9032740275229357,
+      "median": 0.785397,
+      "std": 0.34492906263921047,
+      "p95": 1.5443637999999993,
+      "p99": 2.0050709599999994,
+      "max": 2.852636
+    }
+  },
+  {
+    "id": "config_000_default_refine02_S03",
+    "config_id": "config_000_default_refine02",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.8685951304550461,
+      "q_psi": 2.3716586002990625,
+      "q_v": 1.9467322564055467,
+      "q_a": 0.09548552617104683,
+      "r_delta": 1.315728605110626,
+      "r_delta_v": 1.00961749494363,
+      "r_j": 0.10340271097230554,
+      "terminal_q_y": 1.1400190413184073,
+      "terminal_q_psi": 0.08129205450016423,
+      "terminal_q_v": 0.8851702277741543
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.479745663777532,
+    "breakdown": {
+      "lateral_error": 2.3405330096412498,
+      "lateral_error_rmse": 0.07801776698804166,
+      "yaw_error": 0.46998967860347873,
+      "yaw_error_rmse": 0.01566632262011596,
+      "velocity_error": 0.46770643823003466,
+      "velocity_error_rmse": 0.1403119314690104,
+      "jerk": 0.20211325506429062,
+      "jerk_rmse": 0.40422651012858124,
+      "steering_rate": 0.999403282238478,
+      "steering_rate_rmse": 0.0999403282238478,
+      "total": 4.479745663777532
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine02/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2895006365482233,
+      "median": 2.3765169999999998,
+      "std": 0.7325978646040279,
+      "p95": 3.2310328,
+      "p99": 3.6651624099999998,
+      "max": 4.791235
+    },
+    "solver_time_stats": {
+      "mean": 0.6699189001109878,
+      "median": 0.648771,
+      "std": 0.23687237609191017,
+      "p95": 1.0990203499999998,
+      "p99": 1.6132787000000002,
+      "max": 2.122393
+    }
+  },
+  {
+    "id": "config_000_default_refine03_S01",
+    "config_id": "config_000_default_refine03",
+    "scenario": 1,
+    "params": {
+      "q_y": 1.3247524595208937,
+      "q_psi": 2.0973095466078964,
+      "q_v": 2.0512806417241247,
+      "q_a": 0.11604238615068146,
+      "r_delta": 0.7666684526014934,
+      "r_delta_v": 0.78885281975116,
+      "r_j": 0.1001711693028671,
+      "terminal_q_y": 1.2356929863114652,
+      "terminal_q_psi": 0.0814207229865071,
+      "terminal_q_v": 1.3184638935742314
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9626386660061899,
+    "breakdown": {
+      "lateral_error": 0.5449332168724808,
+      "lateral_error_rmse": 0.018164440562416024,
+      "yaw_error": 0.19115134525571434,
+      "yaw_error_rmse": 0.006371711508523812,
+      "velocity_error": 0.5966050616552971,
+      "velocity_error_rmse": 0.17898151849658914,
+      "jerk": 0.2593910371282132,
+      "jerk_rmse": 0.5187820742564264,
+      "steering_rate": 0.37055800509448444,
+      "steering_rate_rmse": 0.03705580050944845,
+      "total": 1.9626386660061899
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine03/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1531211093474427,
+      "median": 2.3265335,
+      "std": 0.8463620233754187,
+      "p95": 3.1986437999999997,
+      "p99": 3.6994030800000033,
+      "max": 4.409582
+    },
+    "solver_time_stats": {
+      "mean": 0.7058042000000001,
+      "median": 0.661115,
+      "std": 0.2573876621646586,
+      "p95": 1.4850708,
+      "p99": 1.65206272,
+      "max": 1.876724
+    }
+  },
+  {
+    "id": "config_000_default_refine03_S02",
+    "config_id": "config_000_default_refine03",
+    "scenario": 2,
+    "params": {
+      "q_y": 1.3247524595208937,
+      "q_psi": 2.0973095466078964,
+      "q_v": 2.0512806417241247,
+      "q_a": 0.11604238615068146,
+      "r_delta": 0.7666684526014934,
+      "r_delta_v": 0.78885281975116,
+      "r_j": 0.1001711693028671,
+      "terminal_q_y": 1.2356929863114652,
+      "terminal_q_psi": 0.0814207229865071,
+      "terminal_q_v": 1.3184638935742314
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 9.90158006798533,
+    "breakdown": {
+      "lateral_error": 5.378567959496797,
+      "lateral_error_rmse": 0.17928559864989324,
+      "yaw_error": 1.6839784693506703,
+      "yaw_error_rmse": 0.056132615645022345,
+      "velocity_error": 0.7032517609006984,
+      "velocity_error_rmse": 0.21097552827020952,
+      "jerk": 0.33087708451668124,
+      "jerk_rmse": 0.6617541690333625,
+      "steering_rate": 1.8049047937204834,
+      "steering_rate_rmse": 0.18049047937204835,
+      "total": 9.90158006798533
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine03/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1206483181169755,
+      "median": 2.541014,
+      "std": 1.1049963677210561,
+      "p95": 3.33137,
+      "p99": 3.709476,
+      "max": 4.684937
+    },
+    "solver_time_stats": {
+      "mean": 0.8874321282051283,
+      "median": 0.8028535,
+      "std": 0.32127459689777227,
+      "p95": 1.53453975,
+      "p99": 1.8310097499999998,
+      "max": 2.65122
+    }
+  },
+  {
+    "id": "config_000_default_refine03_S03",
+    "config_id": "config_000_default_refine03",
+    "scenario": 3,
+    "params": {
+      "q_y": 1.3247524595208937,
+      "q_psi": 2.0973095466078964,
+      "q_v": 2.0512806417241247,
+      "q_a": 0.11604238615068146,
+      "r_delta": 0.7666684526014934,
+      "r_delta_v": 0.78885281975116,
+      "r_j": 0.1001711693028671,
+      "terminal_q_y": 1.2356929863114652,
+      "terminal_q_psi": 0.0814207229865071,
+      "terminal_q_v": 1.3184638935742314
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.1928502415958775,
+    "breakdown": {
+      "lateral_error": 2.121011068281015,
+      "lateral_error_rmse": 0.0707003689427005,
+      "yaw_error": 0.4619786384663067,
+      "yaw_error_rmse": 0.015399287948876891,
+      "velocity_error": 0.4357664329568034,
+      "velocity_error_rmse": 0.13072992988704102,
+      "jerk": 0.20352408873151348,
+      "jerk_rmse": 0.40704817746302696,
+      "steering_rate": 0.9705700131602394,
+      "steering_rate_rmse": 0.09705700131602395,
+      "total": 4.1928502415958775
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine03/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.309152857360406,
+      "median": 2.4024605,
+      "std": 0.7152193593677649,
+      "p95": 3.1594008,
+      "p99": 3.6743499299999995,
+      "max": 5.678101
+    },
+    "solver_time_stats": {
+      "mean": 0.6801546219646799,
+      "median": 0.6591560000000001,
+      "std": 0.243742396962621,
+      "p95": 1.1248434,
+      "p99": 1.6541629199999994,
+      "max": 2.740136
+    }
+  },
+  {
+    "id": "config_000_default_refine04_S01",
+    "config_id": "config_000_default_refine04",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.7772967212702571,
+      "q_psi": 1.6563926861142075,
+      "q_v": 2.11735622003748,
+      "q_a": 0.11108522707146384,
+      "r_delta": 0.8531007183685531,
+      "r_delta_v": 0.5970525750339835,
+      "r_j": 0.1263862348735534,
+      "terminal_q_y": 0.8587557056559335,
+      "terminal_q_psi": 0.10583504239073843,
+      "terminal_q_v": 1.07425662011427
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.022533985320565,
+    "breakdown": {
+      "lateral_error": 0.5605534223310031,
+      "lateral_error_rmse": 0.018685114077700106,
+      "yaw_error": 0.194230149970338,
+      "yaw_error_rmse": 0.0064743383323446,
+      "velocity_error": 0.6492756415069342,
+      "velocity_error_rmse": 0.19478269245208024,
+      "jerk": 0.2530547908074389,
+      "jerk_rmse": 0.5061095816148778,
+      "steering_rate": 0.36541998070485054,
+      "steering_rate_rmse": 0.036541998070485054,
+      "total": 2.022533985320565
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine04/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.1674630140845075,
+      "median": 2.3829885,
+      "std": 0.8711843471887043,
+      "p95": 3.2565575,
+      "p99": 3.670544450000002,
+      "max": 4.24716
+    },
+    "solver_time_stats": {
+      "mean": 0.7187726758691207,
+      "median": 0.6699005,
+      "std": 0.279748474309131,
+      "p95": 1.6058389499999999,
+      "p99": 1.71475624,
+      "max": 2.20659
+    }
+  },
+  {
+    "id": "config_000_default_refine04_S02",
+    "config_id": "config_000_default_refine04",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.7772967212702571,
+      "q_psi": 1.6563926861142075,
+      "q_v": 2.11735622003748,
+      "q_a": 0.11108522707146384,
+      "r_delta": 0.8531007183685531,
+      "r_delta_v": 0.5970525750339835,
+      "r_j": 0.1263862348735534,
+      "terminal_q_y": 0.8587557056559335,
+      "terminal_q_psi": 0.10583504239073843,
+      "terminal_q_v": 1.07425662011427
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.51219288035767,
+    "breakdown": {
+      "lateral_error": 5.702740696265235,
+      "lateral_error_rmse": 0.19009135654217452,
+      "yaw_error": 1.6980118791875571,
+      "yaw_error_rmse": 0.05660039597291858,
+      "velocity_error": 0.7766684933637947,
+      "velocity_error_rmse": 0.23300054800913841,
+      "jerk": 0.35748198145606297,
+      "jerk_rmse": 0.7149639629121259,
+      "steering_rate": 1.97728983008502,
+      "steering_rate_rmse": 0.197728983008502,
+      "total": 10.51219288035767
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine04/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.064561805714286,
+      "median": 2.424907,
+      "std": 1.0775115768896217,
+      "p95": 3.30593505,
+      "p99": 3.6356167599999996,
+      "max": 3.994238
+    },
+    "solver_time_stats": {
+      "mean": 0.8613812440366971,
+      "median": 0.779605,
+      "std": 0.31192647782097493,
+      "p95": 1.600452,
+      "p99": 1.718218239999999,
+      "max": 2.25506
+    }
+  },
+  {
+    "id": "config_000_default_refine04_S03",
+    "config_id": "config_000_default_refine04",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.7772967212702571,
+      "q_psi": 1.6563926861142075,
+      "q_v": 2.11735622003748,
+      "q_a": 0.11108522707146384,
+      "r_delta": 0.8531007183685531,
+      "r_delta_v": 0.5970525750339835,
+      "r_j": 0.1263862348735534,
+      "terminal_q_y": 0.8587557056559335,
+      "terminal_q_psi": 0.10583504239073843,
+      "terminal_q_v": 1.07425662011427
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.4183403144455395,
+    "breakdown": {
+      "lateral_error": 2.2813545717218027,
+      "lateral_error_rmse": 0.07604515239072676,
+      "yaw_error": 0.4931126366399208,
+      "yaw_error_rmse": 0.01643708788799736,
+      "velocity_error": 0.47750112067032857,
+      "velocity_error_rmse": 0.14325033620109856,
+      "jerk": 0.19860407975590105,
+      "jerk_rmse": 0.3972081595118021,
+      "steering_rate": 0.9677679056575864,
+      "steering_rate_rmse": 0.09677679056575865,
+      "total": 4.4183403144455395
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine04/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.230044093495935,
+      "median": 2.3175815,
+      "std": 0.6870292218103491,
+      "p95": 3.052240749999999,
+      "p99": 3.5650607899999995,
+      "max": 4.764375
+    },
+    "solver_time_stats": {
+      "mean": 0.6723571754966887,
+      "median": 0.649723,
+      "std": 0.23848883270969753,
+      "p95": 1.0944694499999998,
+      "p99": 1.6292022299999989,
+      "max": 2.405792
+    }
+  },
+  {
+    "id": "config_000_default_refine05_S01",
+    "config_id": "config_000_default_refine05",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.952690634500986,
+      "q_psi": 2.1029698377581916,
+      "q_v": 2.0275269717517515,
+      "q_a": 0.12979988789957095,
+      "r_delta": 0.8374074906193902,
+      "r_delta_v": 0.8538779663259093,
+      "r_j": 0.08548849090275805,
+      "terminal_q_y": 0.9393862975080132,
+      "terminal_q_psi": 0.11085070763559807,
+      "terminal_q_v": 0.8869188827268246
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 2.00769078504063,
+    "breakdown": {
+      "lateral_error": 0.5671132065217545,
+      "lateral_error_rmse": 0.018903773550725148,
+      "yaw_error": 0.18751108809986686,
+      "yaw_error_rmse": 0.006250369603328896,
+      "velocity_error": 0.5914588831212902,
+      "velocity_error_rmse": 0.17743766493638707,
+      "jerk": 0.2639912133516771,
+      "jerk_rmse": 0.5279824267033542,
+      "steering_rate": 0.39761639394604126,
+      "steering_rate_rmse": 0.03976163939460413,
+      "total": 2.00769078504063
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine05/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.441863730633803,
+      "median": 2.6891404999999997,
+      "std": 0.9631126036786255,
+      "p95": 3.48947,
+      "p99": 3.9825841500000014,
+      "max": 4.86321
+    },
+    "solver_time_stats": {
+      "mean": 0.7201874690982776,
+      "median": 0.678436,
+      "std": 0.24086849024160115,
+      "p95": 1.3805053999999999,
+      "p99": 1.5222547399999997,
+      "max": 2.151827
+    }
+  },
+  {
+    "id": "config_000_default_refine05_S02",
+    "config_id": "config_000_default_refine05",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.952690634500986,
+      "q_psi": 2.1029698377581916,
+      "q_v": 2.0275269717517515,
+      "q_a": 0.12979988789957095,
+      "r_delta": 0.8374074906193902,
+      "r_delta_v": 0.8538779663259093,
+      "r_j": 0.08548849090275805,
+      "terminal_q_y": 0.9393862975080132,
+      "terminal_q_psi": 0.11085070763559807,
+      "terminal_q_v": 0.8869188827268246
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 9.950835036886236,
+    "breakdown": {
+      "lateral_error": 5.373375617502321,
+      "lateral_error_rmse": 0.17911252058341068,
+      "yaw_error": 1.6920060411422566,
+      "yaw_error_rmse": 0.05640020137140856,
+      "velocity_error": 0.7823923050109659,
+      "velocity_error_rmse": 0.23471769150328975,
+      "jerk": 0.33824470014332875,
+      "jerk_rmse": 0.6764894002866575,
+      "steering_rate": 1.7648163730873625,
+      "steering_rate_rmse": 0.17648163730873626,
+      "total": 9.950835036886236
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine05/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1481434792560803,
+      "median": 2.488115,
+      "std": 1.1351825392179293,
+      "p95": 3.458996,
+      "p99": 4.017811759999999,
+      "max": 4.897334
+    },
+    "solver_time_stats": {
+      "mean": 0.9155697779816514,
+      "median": 0.789484,
+      "std": 0.3579853224475847,
+      "p95": 1.6127927999999991,
+      "p99": 2.12429876,
+      "max": 3.091221
+    }
+  },
+  {
+    "id": "config_000_default_refine05_S03",
+    "config_id": "config_000_default_refine05",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.952690634500986,
+      "q_psi": 2.1029698377581916,
+      "q_v": 2.0275269717517515,
+      "q_a": 0.12979988789957095,
+      "r_delta": 0.8374074906193902,
+      "r_delta_v": 0.8538779663259093,
+      "r_j": 0.08548849090275805,
+      "terminal_q_y": 0.9393862975080132,
+      "terminal_q_psi": 0.11085070763559807,
+      "terminal_q_v": 0.8869188827268246
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.424287385725911,
+    "breakdown": {
+      "lateral_error": 2.294265462048643,
+      "lateral_error_rmse": 0.07647551540162144,
+      "yaw_error": 0.45307805957342295,
+      "yaw_error_rmse": 0.015102601985780766,
+      "velocity_error": 0.43655944194553625,
+      "velocity_error_rmse": 0.13096783258366088,
+      "jerk": 0.20628124418339472,
+      "jerk_rmse": 0.41256248836678944,
+      "steering_rate": 1.0341031779749148,
+      "steering_rate_rmse": 0.10341031779749148,
+      "total": 4.424287385725911
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_000_default_refine05/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.254643188716925,
+      "median": 2.325622,
+      "std": 0.722303551830798,
+      "p95": 3.085325,
+      "p99": 3.8171498,
+      "max": 5.783428
+    },
+    "solver_time_stats": {
+      "mean": 0.6913520826985855,
+      "median": 0.647664,
+      "std": 0.30910520517232887,
+      "p95": 1.3228625,
+      "p99": 2.0386407999999996,
+      "max": 3.165189
+    }
+  },
+  {
+    "id": "config_014_coarse_refine00_S01",
+    "config_id": "config_014_coarse_refine00",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.3690866298861742,
+      "q_psi": 0.04556187657710419,
+      "q_v": 4.411983691409195,
+      "q_a": 0.7638869138497899,
+      "r_delta": 0.20007485555342547,
+      "r_delta_v": 0.31564005121847527,
+      "r_j": 0.010646987115744178,
+      "terminal_q_y": 2.795497002449035,
+      "terminal_q_psi": 0.29545106518790787,
+      "terminal_q_v": 0.23425033641028378
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.6948065136331403,
+    "breakdown": {
+      "lateral_error": 0.5187670715918657,
+      "lateral_error_rmse": 0.01729223571972886,
+      "yaw_error": 0.2008092799573765,
+      "yaw_error_rmse": 0.006693642665245883,
+      "velocity_error": 0.3107962012641737,
+      "velocity_error_rmse": 0.0932388603792521,
+      "jerk": 0.30012987816440545,
+      "jerk_rmse": 0.6002597563288109,
+      "steering_rate": 0.3643040826553187,
+      "steering_rate_rmse": 0.03643040826553187,
+      "total": 1.6948065136331403
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine00/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.206746307557118,
+      "median": 2.3787814999999997,
+      "std": 0.9323589738779443,
+      "p95": 3.4505078499999993,
+      "p99": 3.8402126399999967,
+      "max": 4.502777
+    },
+    "solver_time_stats": {
+      "mean": 0.7559883767967146,
+      "median": 0.6628324999999999,
+      "std": 0.34863833788746323,
+      "p95": 1.7137405999999997,
+      "p99": 1.85188554,
+      "max": 2.109298
+    }
+  },
+  {
+    "id": "config_014_coarse_refine00_S02",
+    "config_id": "config_014_coarse_refine00",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.3690866298861742,
+      "q_psi": 0.04556187657710419,
+      "q_v": 4.411983691409195,
+      "q_a": 0.7638869138497899,
+      "r_delta": 0.20007485555342547,
+      "r_delta_v": 0.31564005121847527,
+      "r_j": 0.010646987115744178,
+      "terminal_q_y": 2.795497002449035,
+      "terminal_q_psi": 0.29545106518790787,
+      "terminal_q_v": 0.23425033641028378
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 11.443125626986378,
+    "breakdown": {
+      "lateral_error": 6.779896414147723,
+      "lateral_error_rmse": 0.22599654713825748,
+      "yaw_error": 2.0469732561642884,
+      "yaw_error_rmse": 0.06823244187214295,
+      "velocity_error": 0.41449907782231415,
+      "velocity_error_rmse": 0.12434972334669424,
+      "jerk": 0.4312373707042269,
+      "jerk_rmse": 0.8624747414084538,
+      "steering_rate": 1.7705195081478238,
+      "steering_rate_rmse": 0.1770519508147824,
+      "total": 11.443125626986378
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine00/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1527793669291335,
+      "median": 2.53353,
+      "std": 1.1557805205570493,
+      "p95": 3.3574551999999995,
+      "p99": 3.9801002799999994,
+      "max": 5.039509
+    },
+    "solver_time_stats": {
+      "mean": 0.9802779775051125,
+      "median": 0.876085,
+      "std": 0.3158080477125978,
+      "p95": 1.5916659999999996,
+      "p99": 1.8684978800000003,
+      "max": 2.440747
+    }
+  },
+  {
+    "id": "config_014_coarse_refine00_S03",
+    "config_id": "config_014_coarse_refine00",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.3690866298861742,
+      "q_psi": 0.04556187657710419,
+      "q_v": 4.411983691409195,
+      "q_a": 0.7638869138497899,
+      "r_delta": 0.20007485555342547,
+      "r_delta_v": 0.31564005121847527,
+      "r_j": 0.010646987115744178,
+      "terminal_q_y": 2.795497002449035,
+      "terminal_q_psi": 0.29545106518790787,
+      "terminal_q_v": 0.23425033641028378
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.373749629240287,
+    "breakdown": {
+      "lateral_error": 2.290288796396525,
+      "lateral_error_rmse": 0.07634295987988418,
+      "yaw_error": 0.5235012100804339,
+      "yaw_error_rmse": 0.017450040336014466,
+      "velocity_error": 0.30005070299060876,
+      "velocity_error_rmse": 0.09001521089718263,
+      "jerk": 0.2391916036262471,
+      "jerk_rmse": 0.4783832072524942,
+      "steering_rate": 1.0207173161464713,
+      "steering_rate_rmse": 0.10207173161464714,
+      "total": 4.373749629240287
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine00/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.330145186659773,
+      "median": 2.3706055,
+      "std": 0.7462851985108857,
+      "p95": 3.4186245499999988,
+      "p99": 3.7951903700000003,
+      "max": 4.819097
+    },
+    "solver_time_stats": {
+      "mean": 0.7292590803822373,
+      "median": 0.664671,
+      "std": 0.32034256369005404,
+      "p95": 1.5763812999999998,
+      "p99": 1.93869422,
+      "max": 2.540383
+    }
+  },
+  {
+    "id": "config_014_coarse_refine01_S01",
+    "config_id": "config_014_coarse_refine01",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.5179317994378583,
+      "q_psi": 0.049181364278135443,
+      "q_v": 5.272553548542713,
+      "q_a": 0.6378457899158215,
+      "r_delta": 0.1812479317367211,
+      "r_delta_v": 0.26482482568648846,
+      "r_j": 0.014707053063822232,
+      "terminal_q_y": 4.448011578502306,
+      "terminal_q_psi": 0.3730710055262737,
+      "terminal_q_v": 0.1344414239788315
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.6478055063832224,
+    "breakdown": {
+      "lateral_error": 0.5139215941981503,
+      "lateral_error_rmse": 0.01713071980660501,
+      "yaw_error": 0.209659499368017,
+      "yaw_error_rmse": 0.0069886499789339005,
+      "velocity_error": 0.26160559749911244,
+      "velocity_error_rmse": 0.07848167924973373,
+      "jerk": 0.29917609323237976,
+      "jerk_rmse": 0.5983521864647595,
+      "steering_rate": 0.36344272208556283,
+      "steering_rate_rmse": 0.03634427220855629,
+      "total": 1.6478055063832224
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine01/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.3811708215200684,
+      "median": 2.412394,
+      "std": 1.0882814664226224,
+      "p95": 4.4084755,
+      "p99": 5.230421,
+      "max": 6.535582
+    },
+    "solver_time_stats": {
+      "mean": 0.849284127826942,
+      "median": 0.672356,
+      "std": 0.5079491946365665,
+      "p95": 2.1959392,
+      "p99": 2.4057854000000005,
+      "max": 3.300662
+    }
+  },
+  {
+    "id": "config_014_coarse_refine01_S02",
+    "config_id": "config_014_coarse_refine01",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.5179317994378583,
+      "q_psi": 0.049181364278135443,
+      "q_v": 5.272553548542713,
+      "q_a": 0.6378457899158215,
+      "r_delta": 0.1812479317367211,
+      "r_delta_v": 0.26482482568648846,
+      "r_j": 0.014707053063822232,
+      "terminal_q_y": 4.448011578502306,
+      "terminal_q_psi": 0.3730710055262737,
+      "terminal_q_v": 0.1344414239788315
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.617414380218122,
+    "breakdown": {
+      "lateral_error": 5.737601181498707,
+      "lateral_error_rmse": 0.1912533727166236,
+      "yaw_error": 2.3101091080757707,
+      "yaw_error_rmse": 0.07700363693585903,
+      "velocity_error": 0.4552095282738001,
+      "velocity_error_rmse": 0.13656285848214003,
+      "jerk": 0.35751752251102425,
+      "jerk_rmse": 0.7150350450220485,
+      "steering_rate": 1.7569770398588185,
+      "steering_rate_rmse": 0.17569770398588186,
+      "total": 10.617414380218122
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine01/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.59190200136612,
+      "median": 2.9537044999999997,
+      "std": 1.3862637562966411,
+      "p95": 4.5032298,
+      "p99": 5.023705349999999,
+      "max": 5.394672
+    },
+    "solver_time_stats": {
+      "mean": 1.1403573136915077,
+      "median": 0.900661,
+      "std": 0.5199483821424237,
+      "p95": 2.2171317999999998,
+      "p99": 2.33008204,
+      "max": 2.558056
+    }
+  },
+  {
+    "id": "config_014_coarse_refine01_S03",
+    "config_id": "config_014_coarse_refine01",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.5179317994378583,
+      "q_psi": 0.049181364278135443,
+      "q_v": 5.272553548542713,
+      "q_a": 0.6378457899158215,
+      "r_delta": 0.1812479317367211,
+      "r_delta_v": 0.26482482568648846,
+      "r_j": 0.014707053063822232,
+      "terminal_q_y": 4.448011578502306,
+      "terminal_q_psi": 0.3730710055262737,
+      "terminal_q_v": 0.1344414239788315
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.018636808538961,
+    "breakdown": {
+      "lateral_error": 1.9889439144181522,
+      "lateral_error_rmse": 0.06629813048060508,
+      "yaw_error": 0.45969158703811297,
+      "yaw_error_rmse": 0.015323052901270432,
+      "velocity_error": 0.23144753929515308,
+      "velocity_error_rmse": 0.06943426178854592,
+      "jerk": 0.23858067589323478,
+      "jerk_rmse": 0.47716135178646957,
+      "steering_rate": 1.0999730918943074,
+      "steering_rate_rmse": 0.10999730918943074,
+      "total": 4.018636808538961
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine01/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.534384492760859,
+      "median": 2.578073,
+      "std": 0.8936746244779755,
+      "p95": 3.9623892999999994,
+      "p99": 4.536672280000001,
+      "max": 5.936383
+    },
+    "solver_time_stats": {
+      "mean": 0.7759505942265794,
+      "median": 0.6916964999999999,
+      "std": 0.36618513761613697,
+      "p95": 1.704607,
+      "p99": 2.208748800000001,
+      "max": 2.954516
+    }
+  },
+  {
+    "id": "config_014_coarse_refine02_S01",
+    "config_id": "config_014_coarse_refine02",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.4984920039895419,
+      "q_psi": 0.03472916704509886,
+      "q_v": 6.289186721232473,
+      "q_a": 1.0,
+      "r_delta": 0.11912740830772306,
+      "r_delta_v": 0.18608467637746537,
+      "r_j": 0.010864951025677999,
+      "terminal_q_y": 3.4282554148552435,
+      "terminal_q_psi": 0.2967208807995969,
+      "terminal_q_v": 0.19235307713557825
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.8440353435496473,
+    "breakdown": {
+      "lateral_error": 0.4975564067321392,
+      "lateral_error_rmse": 0.016585213557737975,
+      "yaw_error": 0.2048726099432291,
+      "yaw_error_rmse": 0.006829086998107636,
+      "velocity_error": 0.3422405267823209,
+      "velocity_error_rmse": 0.10267215803469627,
+      "jerk": 0.297653354197224,
+      "jerk_rmse": 0.595306708394448,
+      "steering_rate": 0.5017124458947342,
+      "steering_rate_rmse": 0.050171244589473425,
+      "total": 1.8440353435496473
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine02/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.2888914219298244,
+      "median": 2.4558245000000003,
+      "std": 0.9854129895050745,
+      "p95": 3.8603014499999997,
+      "p99": 4.340564559999999,
+      "max": 5.730538
+    },
+    "solver_time_stats": {
+      "mean": 0.8178181395112016,
+      "median": 0.673663,
+      "std": 0.4441594527327355,
+      "p95": 2.147048049999999,
+      "p99": 2.2763546699999995,
+      "max": 3.350054
+    }
+  },
+  {
+    "id": "config_014_coarse_refine02_S02",
+    "config_id": "config_014_coarse_refine02",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.4984920039895419,
+      "q_psi": 0.03472916704509886,
+      "q_v": 6.289186721232473,
+      "q_a": 1.0,
+      "r_delta": 0.11912740830772306,
+      "r_delta_v": 0.18608467637746537,
+      "r_j": 0.010864951025677999,
+      "terminal_q_y": 3.4282554148552435,
+      "terminal_q_psi": 0.2967208807995969,
+      "terminal_q_v": 0.19235307713557825
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 13.01798547346592,
+    "breakdown": {
+      "lateral_error": 7.139577293338673,
+      "lateral_error_rmse": 0.2379859097779558,
+      "yaw_error": 2.8148794824059626,
+      "yaw_error_rmse": 0.09382931608019876,
+      "velocity_error": 0.3912383418155998,
+      "velocity_error_rmse": 0.11737150254467994,
+      "jerk": 0.42658565858598263,
+      "jerk_rmse": 0.8531713171719653,
+      "steering_rate": 2.2457046973197015,
+      "steering_rate_rmse": 0.22457046973197015,
+      "total": 13.01798547346592
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine02/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.10498612,
+      "median": 2.4450345,
+      "std": 1.1711504984640848,
+      "p95": 3.67977315,
+      "p99": 3.85486102,
+      "max": 4.382742
+    },
+    "solver_time_stats": {
+      "mean": 1.045187077212806,
+      "median": 0.848745,
+      "std": 0.44599128823391365,
+      "p95": 2.0949065,
+      "p99": 2.1937988000000006,
+      "max": 2.265459
+    }
+  },
+  {
+    "id": "config_014_coarse_refine02_S03",
+    "config_id": "config_014_coarse_refine02",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.4984920039895419,
+      "q_psi": 0.03472916704509886,
+      "q_v": 6.289186721232473,
+      "q_a": 1.0,
+      "r_delta": 0.11912740830772306,
+      "r_delta_v": 0.18608467637746537,
+      "r_j": 0.010864951025677999,
+      "terminal_q_y": 3.4282554148552435,
+      "terminal_q_psi": 0.2967208807995969,
+      "terminal_q_v": 0.19235307713557825
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 3.978050767725505,
+    "breakdown": {
+      "lateral_error": 1.9267390037169094,
+      "lateral_error_rmse": 0.06422463345723033,
+      "yaw_error": 0.45040764383406817,
+      "yaw_error_rmse": 0.015013588127802272,
+      "velocity_error": 0.23797848133583882,
+      "velocity_error_rmse": 0.07139354440075164,
+      "jerk": 0.23728258837271113,
+      "jerk_rmse": 0.47456517674542226,
+      "steering_rate": 1.1256430504659778,
+      "steering_rate_rmse": 0.11256430504659778,
+      "total": 3.978050767725505
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine02/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.313943027411168,
+      "median": 2.364214,
+      "std": 0.7747146687480333,
+      "p95": 3.4094428999999997,
+      "p99": 4.025994859999999,
+      "max": 5.980975
+    },
+    "solver_time_stats": {
+      "mean": 0.7448940460343871,
+      "median": 0.66379,
+      "std": 0.3531765659753009,
+      "p95": 1.492977599999999,
+      "p99": 2.15953698,
+      "max": 3.247703
+    }
+  },
+  {
+    "id": "config_014_coarse_refine03_S01",
+    "config_id": "config_014_coarse_refine03",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.4696052181453097,
+      "q_psi": 0.03278958776538329,
+      "q_v": 6.180142389663537,
+      "q_a": 0.6798272944054625,
+      "r_delta": 0.1473392897953599,
+      "r_delta_v": 0.2989111917925342,
+      "r_j": 0.016928231777101996,
+      "terminal_q_y": 2.599960889655707,
+      "terminal_q_psi": 0.32490357232924433,
+      "terminal_q_v": 0.15797595925263797
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.6348048461668965,
+    "breakdown": {
+      "lateral_error": 0.5042235616589328,
+      "lateral_error_rmse": 0.016807452055297763,
+      "yaw_error": 0.20505096615280075,
+      "yaw_error_rmse": 0.0068350322050933585,
+      "velocity_error": 0.29923161918599345,
+      "velocity_error_rmse": 0.08976948575579803,
+      "jerk": 0.2995784814155104,
+      "jerk_rmse": 0.5991569628310208,
+      "steering_rate": 0.32672021775365895,
+      "steering_rate_rmse": 0.0326720217753659,
+      "total": 1.6348048461668965
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine03/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.300332157522124,
+      "median": 2.4039485000000003,
+      "std": 0.9573419390903192,
+      "p95": 3.9170518499999996,
+      "p99": 4.463425890000003,
+      "max": 5.489979
+    },
+    "solver_time_stats": {
+      "mean": 0.8251647651821863,
+      "median": 0.684438,
+      "std": 0.4657862171773682,
+      "p95": 2.2462368,
+      "p99": 2.39816248,
+      "max": 2.943505
+    }
+  },
+  {
+    "id": "config_014_coarse_refine03_S02",
+    "config_id": "config_014_coarse_refine03",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.4696052181453097,
+      "q_psi": 0.03278958776538329,
+      "q_v": 6.180142389663537,
+      "q_a": 0.6798272944054625,
+      "r_delta": 0.1473392897953599,
+      "r_delta_v": 0.2989111917925342,
+      "r_j": 0.016928231777101996,
+      "terminal_q_y": 2.599960889655707,
+      "terminal_q_psi": 0.32490357232924433,
+      "terminal_q_v": 0.15797595925263797
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 12.381938129011477,
+    "breakdown": {
+      "lateral_error": 7.111683534725714,
+      "lateral_error_rmse": 0.23705611782419048,
+      "yaw_error": 2.3989168490333053,
+      "yaw_error_rmse": 0.07996389496777684,
+      "velocity_error": 0.43955899355271055,
+      "velocity_error_rmse": 0.13186769806581317,
+      "jerk": 0.4290049274563052,
+      "jerk_rmse": 0.8580098549126104,
+      "steering_rate": 2.0027738242434427,
+      "steering_rate_rmse": 0.20027738242434429,
+      "total": 12.381938129011477
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine03/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.509359164772727,
+      "median": 2.882025,
+      "std": 1.3998352453594147,
+      "p95": 4.51320265,
+      "p99": 4.8907483900000015,
+      "max": 5.944417
+    },
+    "solver_time_stats": {
+      "mean": 1.0848155690607735,
+      "median": 0.886915,
+      "std": 0.4989141736506661,
+      "p95": 2.3106147999999997,
+      "p99": 2.4039178,
+      "max": 3.014016
+    }
+  },
+  {
+    "id": "config_014_coarse_refine03_S03",
+    "config_id": "config_014_coarse_refine03",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.4696052181453097,
+      "q_psi": 0.03278958776538329,
+      "q_v": 6.180142389663537,
+      "q_a": 0.6798272944054625,
+      "r_delta": 0.1473392897953599,
+      "r_delta_v": 0.2989111917925342,
+      "r_j": 0.016928231777101996,
+      "terminal_q_y": 2.599960889655707,
+      "terminal_q_psi": 0.32490357232924433,
+      "terminal_q_v": 0.15797595925263797
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.449307204996123,
+    "breakdown": {
+      "lateral_error": 2.2617644584066916,
+      "lateral_error_rmse": 0.07539214861355639,
+      "yaw_error": 0.49963463305904204,
+      "yaw_error_rmse": 0.016654487768634735,
+      "velocity_error": 0.21850245636230473,
+      "velocity_error_rmse": 0.06555073690869141,
+      "jerk": 0.23800733791902481,
+      "jerk_rmse": 0.47601467583804963,
+      "steering_rate": 1.2313983192490598,
+      "steering_rate_rmse": 0.12313983192490599,
+      "total": 4.449307204996123
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine03/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.3989094105894107,
+      "median": 2.4269455,
+      "std": 0.8058195563178879,
+      "p95": 3.69571835,
+      "p99": 4.2363335399999995,
+      "max": 5.275949
+    },
+    "solver_time_stats": {
+      "mean": 0.7754270244565218,
+      "median": 0.6682325,
+      "std": 0.4180648767354034,
+      "p95": 1.9599801999999993,
+      "p99": 2.3543891099999996,
+      "max": 2.896437
+    }
+  },
+  {
+    "id": "config_014_coarse_refine04_S01",
+    "config_id": "config_014_coarse_refine04",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.30595942083712613,
+      "q_psi": 0.04609129784348888,
+      "q_v": 6.1908138896704195,
+      "q_a": 0.6790003232178211,
+      "r_delta": 0.1714612776451563,
+      "r_delta_v": 0.24176178210651722,
+      "r_j": 0.013169883514170087,
+      "terminal_q_y": 2.47420502303923,
+      "terminal_q_psi": 0.2636254353736494,
+      "terminal_q_v": 0.22730632711069604
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.6333804216695005,
+    "breakdown": {
+      "lateral_error": 0.5223249031309622,
+      "lateral_error_rmse": 0.01741083010436541,
+      "yaw_error": 0.20515201659104212,
+      "yaw_error_rmse": 0.006838400553034738,
+      "velocity_error": 0.23818992033080313,
+      "velocity_error_rmse": 0.07145697609924094,
+      "jerk": 0.30347162617909756,
+      "jerk_rmse": 0.6069432523581951,
+      "steering_rate": 0.3642419554375954,
+      "steering_rate_rmse": 0.036424195543759544,
+      "total": 1.6333804216695005
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine04/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.297261687390543,
+      "median": 2.4430915,
+      "std": 1.0047589910283299,
+      "p95": 3.89534905,
+      "p99": 4.3207347899999995,
+      "max": 5.073582
+    },
+    "solver_time_stats": {
+      "mean": 0.8123516707566462,
+      "median": 0.671048,
+      "std": 0.4524707927005898,
+      "p95": 2.1512065999999996,
+      "p99": 2.33014856,
+      "max": 2.770242
+    }
+  },
+  {
+    "id": "config_014_coarse_refine04_S02",
+    "config_id": "config_014_coarse_refine04",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.30595942083712613,
+      "q_psi": 0.04609129784348888,
+      "q_v": 6.1908138896704195,
+      "q_a": 0.6790003232178211,
+      "r_delta": 0.1714612776451563,
+      "r_delta_v": 0.24176178210651722,
+      "r_j": 0.013169883514170087,
+      "terminal_q_y": 2.47420502303923,
+      "terminal_q_psi": 0.2636254353736494,
+      "terminal_q_v": 0.22730632711069604
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 11.153247601880922,
+    "breakdown": {
+      "lateral_error": 6.586269089098948,
+      "lateral_error_rmse": 0.21954230296996496,
+      "yaw_error": 2.0204300852747252,
+      "yaw_error_rmse": 0.06734766950915752,
+      "velocity_error": 0.3750652518907642,
+      "velocity_error_rmse": 0.11251957556722925,
+      "jerk": 0.4263960467728046,
+      "jerk_rmse": 0.8527920935456093,
+      "steering_rate": 1.7450871288436811,
+      "steering_rate_rmse": 0.17450871288436812,
+      "total": 11.153247601880922
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine04/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.5217985704125176,
+      "median": 2.964765,
+      "std": 1.368973052824184,
+      "p95": 4.3066835,
+      "p99": 4.710320459999999,
+      "max": 5.76883
+    },
+    "solver_time_stats": {
+      "mean": 1.1104977642725598,
+      "median": 0.896904,
+      "std": 0.48893365333536903,
+      "p95": 2.1883125999999997,
+      "p99": 2.3069302200000013,
+      "max": 2.582361
+    }
+  },
+  {
+    "id": "config_014_coarse_refine04_S03",
+    "config_id": "config_014_coarse_refine04",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.30595942083712613,
+      "q_psi": 0.04609129784348888,
+      "q_v": 6.1908138896704195,
+      "q_a": 0.6790003232178211,
+      "r_delta": 0.1714612776451563,
+      "r_delta_v": 0.24176178210651722,
+      "r_j": 0.013169883514170087,
+      "terminal_q_y": 2.47420502303923,
+      "terminal_q_psi": 0.2636254353736494,
+      "terminal_q_v": 0.22730632711069604
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.163158158535855,
+    "breakdown": {
+      "lateral_error": 2.182472873111461,
+      "lateral_error_rmse": 0.07274909577038205,
+      "yaw_error": 0.46742973391451814,
+      "yaw_error_rmse": 0.015580991130483939,
+      "velocity_error": 0.21186324016734473,
+      "velocity_error_rmse": 0.06355897205020342,
+      "jerk": 0.24082541666289234,
+      "jerk_rmse": 0.4816508333257847,
+      "steering_rate": 1.0605668946796383,
+      "steering_rate_rmse": 0.10605668946796383,
+      "total": 4.163158158535855
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine04/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2977628178589553,
+      "median": 2.371044,
+      "std": 0.7788750925574891,
+      "p95": 3.3587534999999997,
+      "p99": 3.939278999999998,
+      "max": 5.538546
+    },
+    "solver_time_stats": {
+      "mean": 0.7199850790205898,
+      "median": 0.654942,
+      "std": 0.3474355749724657,
+      "p95": 1.4334567999999976,
+      "p99": 2.13398136,
+      "max": 3.149878
+    }
+  },
+  {
+    "id": "config_014_coarse_refine05_S01",
+    "config_id": "config_014_coarse_refine05",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.5251490940801569,
+      "q_psi": 0.04025792202290835,
+      "q_v": 6.969584066724467,
+      "q_a": 0.8229983419324869,
+      "r_delta": 0.12011807064846393,
+      "r_delta_v": 0.1874312157511694,
+      "r_j": 0.012259185950666754,
+      "terminal_q_y": 4.218612215569085,
+      "terminal_q_psi": 0.40628559861894953,
+      "terminal_q_v": 0.22427125513058777
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.5917459681672357,
+    "breakdown": {
+      "lateral_error": 0.5088110585207439,
+      "lateral_error_rmse": 0.016960368617358133,
+      "yaw_error": 0.2172219514943184,
+      "yaw_error_rmse": 0.00724073171647728,
+      "velocity_error": 0.24683282929365596,
+      "velocity_error_rmse": 0.07404984878809678,
+      "jerk": 0.30575149854343453,
+      "jerk_rmse": 0.6115029970868691,
+      "steering_rate": 0.31312863031508303,
+      "steering_rate_rmse": 0.031312863031508306,
+      "total": 1.5917459681672357
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine05/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.627063250880282,
+      "median": 2.8282005,
+      "std": 1.088463451579923,
+      "p95": 4.01727875,
+      "p99": 4.701794850000004,
+      "max": 5.744957
+    },
+    "solver_time_stats": {
+      "mean": 0.810909925128205,
+      "median": 0.700556,
+      "std": 0.35316144696432816,
+      "p95": 1.6823602,
+      "p99": 2.0442974999999994,
+      "max": 2.680581
+    }
+  },
+  {
+    "id": "config_014_coarse_refine05_S02",
+    "config_id": "config_014_coarse_refine05",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.5251490940801569,
+      "q_psi": 0.04025792202290835,
+      "q_v": 6.969584066724467,
+      "q_a": 0.8229983419324869,
+      "r_delta": 0.12011807064846393,
+      "r_delta_v": 0.1874312157511694,
+      "r_j": 0.012259185950666754,
+      "terminal_q_y": 4.218612215569085,
+      "terminal_q_psi": 0.40628559861894953,
+      "terminal_q_v": 0.22427125513058777
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 13.414059807941353,
+    "breakdown": {
+      "lateral_error": 7.265426037996994,
+      "lateral_error_rmse": 0.24218086793323312,
+      "yaw_error": 2.952026078019677,
+      "yaw_error_rmse": 0.09840086926732257,
+      "velocity_error": 0.4385627669686995,
+      "velocity_error_rmse": 0.13156883009060985,
+      "jerk": 0.42625370954907654,
+      "jerk_rmse": 0.8525074190981531,
+      "steering_rate": 2.3317912154069074,
+      "steering_rate_rmse": 0.23317912154069076,
+      "total": 13.414059807941353
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine05/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.4971210127478756,
+      "median": 2.9560139999999997,
+      "std": 1.3674102213048156,
+      "p95": 4.158783,
+      "p99": 4.706779750000001,
+      "max": 5.144587
+    },
+    "solver_time_stats": {
+      "mean": 1.0666377366482505,
+      "median": 0.901992,
+      "std": 0.4142948823663026,
+      "p95": 1.9259285999999998,
+      "p99": 2.1663865200000005,
+      "max": 2.466551
+    }
+  },
+  {
+    "id": "config_014_coarse_refine05_S03",
+    "config_id": "config_014_coarse_refine05",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.5251490940801569,
+      "q_psi": 0.04025792202290835,
+      "q_v": 6.969584066724467,
+      "q_a": 0.8229983419324869,
+      "r_delta": 0.12011807064846393,
+      "r_delta_v": 0.1874312157511694,
+      "r_j": 0.012259185950666754,
+      "terminal_q_y": 4.218612215569085,
+      "terminal_q_psi": 0.40628559861894953,
+      "terminal_q_v": 0.22427125513058777
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.115646370875037,
+    "breakdown": {
+      "lateral_error": 2.0285161595561205,
+      "lateral_error_rmse": 0.06761720531853736,
+      "yaw_error": 0.5117054236911688,
+      "yaw_error_rmse": 0.017056847456372294,
+      "velocity_error": 0.20467415017495874,
+      "velocity_error_rmse": 0.06140224505248762,
+      "jerk": 0.23874404700257243,
+      "jerk_rmse": 0.47748809400514486,
+      "steering_rate": 1.132006590450216,
+      "steering_rate_rmse": 0.1132006590450216,
+      "total": 4.115646370875037
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_014_coarse_refine05/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.3785280263702173,
+      "median": 2.4514285,
+      "std": 0.7405814423223094,
+      "p95": 3.33564845,
+      "p99": 3.818080880000001,
+      "max": 5.561274
+    },
+    "solver_time_stats": {
+      "mean": 0.7475496646102074,
+      "median": 0.688734,
+      "std": 0.28167058720676547,
+      "p95": 1.4535930999999993,
+      "p99": 1.7541943400000004,
+      "max": 2.901673
+    }
+  },
+  {
+    "id": "config_011_coarse_refine00_S01",
+    "config_id": "config_011_coarse_refine00",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.1339406816729999,
+      "q_psi": 0.6966547421231888,
+      "q_v": 1.9867994302032712,
+      "q_a": 0.09341958589639415,
+      "r_delta": 0.40424265981390944,
+      "r_delta_v": 0.6025043052098787,
+      "r_j": 0.015801869738625168,
+      "terminal_q_y": 0.7961081650576132,
+      "terminal_q_psi": 0.0656798368453339,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.8140797142526612,
+    "breakdown": {
+      "lateral_error": 0.63402670578467,
+      "lateral_error_rmse": 0.021134223526155668,
+      "yaw_error": 0.1877397718985201,
+      "yaw_error_rmse": 0.006257992396617337,
+      "velocity_error": 0.3854561606961037,
+      "velocity_error_rmse": 0.1156368482088311,
+      "jerk": 0.29932394262348755,
+      "jerk_rmse": 0.5986478852469751,
+      "steering_rate": 0.30753313324987985,
+      "steering_rate_rmse": 0.030753313324987985,
+      "total": 1.8140797142526612
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine00/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.200025127640845,
+      "median": 2.3646965,
+      "std": 0.9435370580821131,
+      "p95": 3.65216975,
+      "p99": 3.986980800000002,
+      "max": 5.331876
+    },
+    "solver_time_stats": {
+      "mean": 0.797563737654321,
+      "median": 0.6764875,
+      "std": 0.4129748336157332,
+      "p95": 2.0819182499999997,
+      "p99": 2.213231779999999,
+      "max": 3.160747
+    }
+  },
+  {
+    "id": "config_011_coarse_refine00_S02",
+    "config_id": "config_011_coarse_refine00",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.1339406816729999,
+      "q_psi": 0.6966547421231888,
+      "q_v": 1.9867994302032712,
+      "q_a": 0.09341958589639415,
+      "r_delta": 0.40424265981390944,
+      "r_delta_v": 0.6025043052098787,
+      "r_j": 0.015801869738625168,
+      "terminal_q_y": 0.7961081650576132,
+      "terminal_q_psi": 0.0656798368453339,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.465505121116013,
+    "breakdown": {
+      "lateral_error": 6.369634770676457,
+      "lateral_error_rmse": 0.21232115902254858,
+      "yaw_error": 1.6854012312580986,
+      "yaw_error_rmse": 0.05618004104193663,
+      "velocity_error": 0.4879640629155093,
+      "velocity_error_rmse": 0.14638921887465278,
+      "jerk": 0.4241655348970752,
+      "jerk_rmse": 0.8483310697941504,
+      "steering_rate": 1.498339521368874,
+      "steering_rate_rmse": 0.1498339521368874,
+      "total": 10.465505121116013
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine00/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1764106775106082,
+      "median": 2.485246,
+      "std": 1.1613588865145632,
+      "p95": 3.7385298,
+      "p99": 4.015308879999999,
+      "max": 4.347691
+    },
+    "solver_time_stats": {
+      "mean": 1.039056970749543,
+      "median": 0.850667,
+      "std": 0.44644483707463245,
+      "p95": 2.1144374,
+      "p99": 2.2537168799999994,
+      "max": 2.304509
+    }
+  },
+  {
+    "id": "config_011_coarse_refine00_S03",
+    "config_id": "config_011_coarse_refine00",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.1339406816729999,
+      "q_psi": 0.6966547421231888,
+      "q_v": 1.9867994302032712,
+      "q_a": 0.09341958589639415,
+      "r_delta": 0.40424265981390944,
+      "r_delta_v": 0.6025043052098787,
+      "r_j": 0.015801869738625168,
+      "terminal_q_y": 0.7961081650576132,
+      "terminal_q_psi": 0.0656798368453339,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.817630581295905,
+    "breakdown": {
+      "lateral_error": 2.750880657353007,
+      "lateral_error_rmse": 0.0916960219117669,
+      "yaw_error": 0.6072041868790825,
+      "yaw_error_rmse": 0.020240139562636084,
+      "velocity_error": 0.21336926439124365,
+      "velocity_error_rmse": 0.06401077931737309,
+      "jerk": 0.23647314472050712,
+      "jerk_rmse": 0.47294628944101424,
+      "steering_rate": 1.0097033279520646,
+      "steering_rate_rmse": 0.10097033279520648,
+      "total": 4.817630581295905
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine00/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2551612939121752,
+      "median": 2.299454,
+      "std": 0.743828938865815,
+      "p95": 3.3715109999999995,
+      "p99": 3.95375332,
+      "max": 5.741801
+    },
+    "solver_time_stats": {
+      "mean": 0.6998752892876563,
+      "median": 0.61624,
+      "std": 0.3424888519268549,
+      "p95": 1.5945472,
+      "p99": 2.12687162,
+      "max": 3.188949
+    }
+  },
+  {
+    "id": "config_011_coarse_refine01_S01",
+    "config_id": "config_011_coarse_refine01",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.1312108621257729,
+      "q_psi": 1.1031970322308478,
+      "q_v": 2.782278526608124,
+      "q_a": 0.14904891969349734,
+      "r_delta": 0.25693352986042084,
+      "r_delta_v": 0.5514508273664945,
+      "r_j": 0.01511387381660142,
+      "terminal_q_y": 0.9589392138114324,
+      "terminal_q_psi": 0.09687302122686255,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.849022800548303,
+    "breakdown": {
+      "lateral_error": 0.6826158608444518,
+      "lateral_error_rmse": 0.022753862028148397,
+      "yaw_error": 0.17413002147457957,
+      "yaw_error_rmse": 0.005804334049152652,
+      "velocity_error": 0.3047656082223673,
+      "velocity_error_rmse": 0.0914296824667102,
+      "jerk": 0.302158242337191,
+      "jerk_rmse": 0.604316484674382,
+      "steering_rate": 0.3853530676697131,
+      "steering_rate_rmse": 0.03853530676697131,
+      "total": 1.849022800548303
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine01/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.2076194360105914,
+      "median": 2.376584,
+      "std": 0.9058291568134818,
+      "p95": 3.3472741999999998,
+      "p99": 3.823908000000002,
+      "max": 5.17294
+    },
+    "solver_time_stats": {
+      "mean": 0.7488617245632067,
+      "median": 0.667485,
+      "std": 0.32178985809849336,
+      "p95": 1.6058014,
+      "p99": 1.7739352,
+      "max": 2.542363
+    }
+  },
+  {
+    "id": "config_011_coarse_refine01_S02",
+    "config_id": "config_011_coarse_refine01",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.1312108621257729,
+      "q_psi": 1.1031970322308478,
+      "q_v": 2.782278526608124,
+      "q_a": 0.14904891969349734,
+      "r_delta": 0.25693352986042084,
+      "r_delta_v": 0.5514508273664945,
+      "r_j": 0.01511387381660142,
+      "terminal_q_y": 0.9589392138114324,
+      "terminal_q_psi": 0.09687302122686255,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 9.013718729192037,
+    "breakdown": {
+      "lateral_error": 5.36472569162755,
+      "lateral_error_rmse": 0.17882418972091835,
+      "yaw_error": 1.3764132661053763,
+      "yaw_error_rmse": 0.04588044220351254,
+      "velocity_error": 0.41044920137227586,
+      "velocity_error_rmse": 0.12313476041168275,
+      "jerk": 0.3866160837601496,
+      "jerk_rmse": 0.7732321675202992,
+      "steering_rate": 1.4755144863266858,
+      "steering_rate_rmse": 0.14755144863266859,
+      "total": 9.013718729192037
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine01/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.2024088616262483,
+      "median": 2.574122,
+      "std": 1.1556815774110014,
+      "p95": 3.491453,
+      "p99": 3.97751,
+      "max": 4.526264
+    },
+    "solver_time_stats": {
+      "mean": 0.9876837605893186,
+      "median": 0.857159,
+      "std": 0.3284767299142878,
+      "p95": 1.6339192999999999,
+      "p99": 1.7645098800000014,
+      "max": 2.210123
+    }
+  },
+  {
+    "id": "config_011_coarse_refine01_S03",
+    "config_id": "config_011_coarse_refine01",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.1312108621257729,
+      "q_psi": 1.1031970322308478,
+      "q_v": 2.782278526608124,
+      "q_a": 0.14904891969349734,
+      "r_delta": 0.25693352986042084,
+      "r_delta_v": 0.5514508273664945,
+      "r_j": 0.01511387381660142,
+      "terminal_q_y": 0.9589392138114324,
+      "terminal_q_psi": 0.09687302122686255,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.748437840234511,
+    "breakdown": {
+      "lateral_error": 2.6501362866898885,
+      "lateral_error_rmse": 0.0883378762229963,
+      "yaw_error": 0.5999592921233912,
+      "yaw_error_rmse": 0.01999864307077971,
+      "velocity_error": 0.21062147414690818,
+      "velocity_error_rmse": 0.06318644224407245,
+      "jerk": 0.23613172287379067,
+      "jerk_rmse": 0.47226344574758133,
+      "steering_rate": 1.0515890644005328,
+      "steering_rate_rmse": 0.1051589064400533,
+      "total": 4.748437840234511
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine01/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.32195681982447,
+      "median": 2.405337,
+      "std": 0.7536491027923753,
+      "p95": 3.1938465999999988,
+      "p99": 3.8257754399999993,
+      "max": 5.430541
+    },
+    "solver_time_stats": {
+      "mean": 0.6876257152542372,
+      "median": 0.6338079999999999,
+      "std": 0.2713305665883355,
+      "p95": 1.3203224499999997,
+      "p99": 1.7117109000000001,
+      "max": 2.724683
+    }
+  },
+  {
+    "id": "config_011_coarse_refine02_S01",
+    "config_id": "config_011_coarse_refine02",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.1270387090755798,
+      "q_psi": 0.7207753029559677,
+      "q_v": 2.743492872095753,
+      "q_a": 0.09371724575540472,
+      "r_delta": 0.4271971709738375,
+      "r_delta_v": 0.5933413945511592,
+      "r_j": 0.014150671340857304,
+      "terminal_q_y": 0.8954175265738852,
+      "terminal_q_psi": 0.0789047886662277,
+      "terminal_q_v": 7.192322227376867
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.7713678030049698,
+    "breakdown": {
+      "lateral_error": 0.6515719530920349,
+      "lateral_error_rmse": 0.021719065103067828,
+      "yaw_error": 0.1838740340267916,
+      "yaw_error_rmse": 0.006129134467559721,
+      "velocity_error": 0.2634462049042712,
+      "velocity_error_rmse": 0.07903386147128134,
+      "jerk": 0.3010494337783626,
+      "jerk_rmse": 0.6020988675567251,
+      "steering_rate": 0.3714261772035097,
+      "steering_rate_rmse": 0.03714261772035097,
+      "total": 1.7713678030049698
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine02/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.2371918333333336,
+      "median": 2.3653925,
+      "std": 0.9699991861886157,
+      "p95": 3.7259391499999994,
+      "p99": 4.174191379999996,
+      "max": 5.859501
+    },
+    "solver_time_stats": {
+      "mean": 0.8014701388611388,
+      "median": 0.66477,
+      "std": 0.4292282850466307,
+      "p95": 2.092805,
+      "p99": 2.220903,
+      "max": 3.46787
+    }
+  },
+  {
+    "id": "config_011_coarse_refine02_S02",
+    "config_id": "config_011_coarse_refine02",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.1270387090755798,
+      "q_psi": 0.7207753029559677,
+      "q_v": 2.743492872095753,
+      "q_a": 0.09371724575540472,
+      "r_delta": 0.4271971709738375,
+      "r_delta_v": 0.5933413945511592,
+      "r_j": 0.014150671340857304,
+      "terminal_q_y": 0.8954175265738852,
+      "terminal_q_psi": 0.0789047886662277,
+      "terminal_q_v": 7.192322227376867
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.493788949223275,
+    "breakdown": {
+      "lateral_error": 6.617865483182449,
+      "lateral_error_rmse": 0.2205955161060816,
+      "yaw_error": 1.5157817518040164,
+      "yaw_error_rmse": 0.050526058393467216,
+      "velocity_error": 0.3761458967536065,
+      "velocity_error_rmse": 0.11284376902608194,
+      "jerk": 0.4318503432636706,
+      "jerk_rmse": 0.8637006865273412,
+      "steering_rate": 1.552145474219532,
+      "steering_rate_rmse": 0.1552145474219532,
+      "total": 10.493788949223275
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine02/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1952181489971347,
+      "median": 2.4700569999999997,
+      "std": 1.1701037186234715,
+      "p95": 3.5697250499999997,
+      "p99": 4.053341349999998,
+      "max": 4.865116
+    },
+    "solver_time_stats": {
+      "mean": 1.036235197053407,
+      "median": 0.829668,
+      "std": 0.43096835060790034,
+      "p95": 1.7722021000000001,
+      "p99": 2.2470587800000006,
+      "max": 2.422911
+    }
+  },
+  {
+    "id": "config_011_coarse_refine02_S03",
+    "config_id": "config_011_coarse_refine02",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.1270387090755798,
+      "q_psi": 0.7207753029559677,
+      "q_v": 2.743492872095753,
+      "q_a": 0.09371724575540472,
+      "r_delta": 0.4271971709738375,
+      "r_delta_v": 0.5933413945511592,
+      "r_j": 0.014150671340857304,
+      "terminal_q_y": 0.8954175265738852,
+      "terminal_q_psi": 0.0789047886662277,
+      "terminal_q_v": 7.192322227376867
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 5.185339552278293,
+    "breakdown": {
+      "lateral_error": 2.964019661269891,
+      "lateral_error_rmse": 0.09880065537566303,
+      "yaw_error": 0.6573466517595452,
+      "yaw_error_rmse": 0.021911555058651506,
+      "velocity_error": 0.2387510280333415,
+      "velocity_error_rmse": 0.07162530841000245,
+      "jerk": 0.24158646717209578,
+      "jerk_rmse": 0.48317293434419156,
+      "steering_rate": 1.0836357440434203,
+      "steering_rate_rmse": 0.10836357440434205,
+      "total": 5.185339552278293
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine02/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.316247848379052,
+      "median": 2.358086,
+      "std": 0.8484387419507625,
+      "p95": 3.6470681999999988,
+      "p99": 4.41850132,
+      "max": 6.224698
+    },
+    "solver_time_stats": {
+      "mean": 0.7174527784496977,
+      "median": 0.624109,
+      "std": 0.377654457706378,
+      "p95": 1.7063161999999998,
+      "p99": 2.1946573199999997,
+      "max": 3.01729
+    }
+  },
+  {
+    "id": "config_011_coarse_refine03_S01",
+    "config_id": "config_011_coarse_refine03",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.1258699895694233,
+      "q_psi": 0.7040161589970837,
+      "q_v": 1.7349972610411586,
+      "q_a": 0.09862282467045243,
+      "r_delta": 0.3082474182020027,
+      "r_delta_v": 0.5953954194159239,
+      "r_j": 0.02211896310052524,
+      "terminal_q_y": 0.6485980269832038,
+      "terminal_q_psi": 0.08796588080946863,
+      "terminal_q_v": 7.611852789368295
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.888950870340599,
+    "breakdown": {
+      "lateral_error": 0.6475412003714973,
+      "lateral_error_rmse": 0.021584706679049912,
+      "yaw_error": 0.1815367410121595,
+      "yaw_error_rmse": 0.006051224700405317,
+      "velocity_error": 0.3986843923881586,
+      "velocity_error_rmse": 0.11960531771644758,
+      "jerk": 0.2872459078009203,
+      "jerk_rmse": 0.5744918156018406,
+      "steering_rate": 0.3739426287678632,
+      "steering_rate_rmse": 0.03739426287678632,
+      "total": 1.888950870340599
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine03/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.110709172797263,
+      "median": 2.318194,
+      "std": 0.8898701033094648,
+      "p95": 3.1397104,
+      "p99": 3.610571399999999,
+      "max": 5.011377
+    },
+    "solver_time_stats": {
+      "mean": 0.747765236418511,
+      "median": 0.6662275,
+      "std": 0.2968801737058626,
+      "p95": 1.4772011999999999,
+      "p99": 1.7668337699999976,
+      "max": 2.095368
+    }
+  },
+  {
+    "id": "config_011_coarse_refine03_S02",
+    "config_id": "config_011_coarse_refine03",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.1258699895694233,
+      "q_psi": 0.7040161589970837,
+      "q_v": 1.7349972610411586,
+      "q_a": 0.09862282467045243,
+      "r_delta": 0.3082474182020027,
+      "r_delta_v": 0.5953954194159239,
+      "r_j": 0.02211896310052524,
+      "terminal_q_y": 0.6485980269832038,
+      "terminal_q_psi": 0.08796588080946863,
+      "terminal_q_v": 7.611852789368295
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.769848046887546,
+    "breakdown": {
+      "lateral_error": 6.559654587635855,
+      "lateral_error_rmse": 0.2186551529211952,
+      "yaw_error": 1.6503242603934378,
+      "yaw_error_rmse": 0.05501080867978127,
+      "velocity_error": 0.5091640418463994,
+      "velocity_error_rmse": 0.15274921255391982,
+      "jerk": 0.4114832781327577,
+      "jerk_rmse": 0.8229665562655154,
+      "steering_rate": 1.6392218788790973,
+      "steering_rate_rmse": 0.16392218788790974,
+      "total": 10.769848046887546
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine03/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.1040338524096382,
+      "median": 2.3861005,
+      "std": 1.1080250173605453,
+      "p95": 3.4714794500000004,
+      "p99": 3.8551167000000004,
+      "max": 5.195952
+    },
+    "solver_time_stats": {
+      "mean": 0.9579523853564549,
+      "median": 0.789442,
+      "std": 0.400534985009707,
+      "p95": 1.7950379999999997,
+      "p99": 2.0134318000000055,
+      "max": 2.867408
+    }
+  },
+  {
+    "id": "config_011_coarse_refine03_S03",
+    "config_id": "config_011_coarse_refine03",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.1258699895694233,
+      "q_psi": 0.7040161589970837,
+      "q_v": 1.7349972610411586,
+      "q_a": 0.09862282467045243,
+      "r_delta": 0.3082474182020027,
+      "r_delta_v": 0.5953954194159239,
+      "r_j": 0.02211896310052524,
+      "terminal_q_y": 0.6485980269832038,
+      "terminal_q_psi": 0.08796588080946863,
+      "terminal_q_v": 7.611852789368295
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 5.224905674789849,
+    "breakdown": {
+      "lateral_error": 2.966168767761508,
+      "lateral_error_rmse": 0.09887229225871694,
+      "yaw_error": 0.6676407220218981,
+      "yaw_error_rmse": 0.02225469073406327,
+      "velocity_error": 0.3337152641382736,
+      "velocity_error_rmse": 0.10011457924148208,
+      "jerk": 0.23073725170560858,
+      "jerk_rmse": 0.46147450341121715,
+      "steering_rate": 1.0266436691625602,
+      "steering_rate_rmse": 0.10266436691625602,
+      "total": 5.224905674789849
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine03/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2277147009829283,
+      "median": 2.305833,
+      "std": 0.7071644319027858,
+      "p95": 3.0590159999999997,
+      "p99": 3.50229676,
+      "max": 4.904022
+    },
+    "solver_time_stats": {
+      "mean": 0.6544425816845676,
+      "median": 0.555177,
+      "std": 0.2493297728417361,
+      "p95": 1.1823761999999995,
+      "p99": 1.6690138799999998,
+      "max": 2.645046
+    }
+  },
+  {
+    "id": "config_011_coarse_refine04_S01",
+    "config_id": "config_011_coarse_refine04",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.14071436537914112,
+      "q_psi": 0.8472310604216301,
+      "q_v": 3.0052160376172674,
+      "q_a": 0.09412558492690909,
+      "r_delta": 0.4531331276095143,
+      "r_delta_v": 0.39455347394190216,
+      "r_j": 0.02206124449819495,
+      "terminal_q_y": 0.6433043714763224,
+      "terminal_q_psi": 0.06388608058193249,
+      "terminal_q_v": 7.7728573219661365
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.9321827089799937,
+    "breakdown": {
+      "lateral_error": 0.6527727712875611,
+      "lateral_error_rmse": 0.021759092376252037,
+      "yaw_error": 0.18817217533520386,
+      "yaw_error_rmse": 0.006272405844506795,
+      "velocity_error": 0.3894846735345819,
+      "velocity_error_rmse": 0.11684540206037455,
+      "jerk": 0.30333127431649304,
+      "jerk_rmse": 0.6066625486329861,
+      "steering_rate": 0.3984218145061538,
+      "steering_rate_rmse": 0.03984218145061538,
+      "total": 1.9321827089799937
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine04/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.2190320185185186,
+      "median": 2.3452764999999998,
+      "std": 0.9477088607253109,
+      "p95": 3.52829835,
+      "p99": 3.94070437,
+      "max": 8.976752
+    },
+    "solver_time_stats": {
+      "mean": 0.7641903729508196,
+      "median": 0.6571815,
+      "std": 0.37546467891462343,
+      "p95": 1.841647,
+      "p99": 1.9420867499999999,
+      "max": 2.96332
+    }
+  },
+  {
+    "id": "config_011_coarse_refine04_S02",
+    "config_id": "config_011_coarse_refine04",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.14071436537914112,
+      "q_psi": 0.8472310604216301,
+      "q_v": 3.0052160376172674,
+      "q_a": 0.09412558492690909,
+      "r_delta": 0.4531331276095143,
+      "r_delta_v": 0.39455347394190216,
+      "r_j": 0.02206124449819495,
+      "terminal_q_y": 0.6433043714763224,
+      "terminal_q_psi": 0.06388608058193249,
+      "terminal_q_v": 7.7728573219661365
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.763280074171618,
+    "breakdown": {
+      "lateral_error": 6.292183538979561,
+      "lateral_error_rmse": 0.20973945129931873,
+      "yaw_error": 1.7836569394432624,
+      "yaw_error_rmse": 0.05945523131477542,
+      "velocity_error": 0.478699114425529,
+      "velocity_error_rmse": 0.1436097343276587,
+      "jerk": 0.4292850037749274,
+      "jerk_rmse": 0.8585700075498548,
+      "steering_rate": 1.7794554775483387,
+      "steering_rate_rmse": 0.17794554775483387,
+      "total": 10.763280074171618
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine04/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.134059755364807,
+      "median": 2.467364,
+      "std": 1.1749740233279522,
+      "p95": 3.6194844,
+      "p99": 3.8950017199999993,
+      "max": 4.362091
+    },
+    "solver_time_stats": {
+      "mean": 1.0282692654205607,
+      "median": 0.851779,
+      "std": 0.40588413775956644,
+      "p95": 1.9234842,
+      "p99": 2.1110927,
+      "max": 2.306775
+    }
+  },
+  {
+    "id": "config_011_coarse_refine04_S03",
+    "config_id": "config_011_coarse_refine04",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.14071436537914112,
+      "q_psi": 0.8472310604216301,
+      "q_v": 3.0052160376172674,
+      "q_a": 0.09412558492690909,
+      "r_delta": 0.4531331276095143,
+      "r_delta_v": 0.39455347394190216,
+      "r_j": 0.02206124449819495,
+      "terminal_q_y": 0.6433043714763224,
+      "terminal_q_psi": 0.06388608058193249,
+      "terminal_q_v": 7.7728573219661365
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 4.779128652176966,
+    "breakdown": {
+      "lateral_error": 2.5658716450497856,
+      "lateral_error_rmse": 0.08552905483499285,
+      "yaw_error": 0.5820757044469189,
+      "yaw_error_rmse": 0.019402523481563967,
+      "velocity_error": 0.26577911455404274,
+      "velocity_error_rmse": 0.07973373436621281,
+      "jerk": 0.23616886619906347,
+      "jerk_rmse": 0.47233773239812693,
+      "steering_rate": 1.1292333219271549,
+      "steering_rate_rmse": 0.1129233321927155,
+      "total": 4.779128652176966
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine04/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.254442602746694,
+      "median": 2.3161294999999997,
+      "std": 0.7273931151080993,
+      "p95": 3.26993225,
+      "p99": 3.8104777999999984,
+      "max": 4.906787
+    },
+    "solver_time_stats": {
+      "mean": 0.6901160692520776,
+      "median": 0.635056,
+      "std": 0.3104828910558808,
+      "p95": 1.4079886,
+      "p99": 1.9358197200000002,
+      "max": 2.731427
+    }
+  },
+  {
+    "id": "config_011_coarse_refine05_S01",
+    "config_id": "config_011_coarse_refine05",
+    "scenario": 1,
+    "params": {
+      "q_y": 0.12092485049161672,
+      "q_psi": 0.7413333617897476,
+      "q_v": 2.460913163918612,
+      "q_a": 0.11937606081317396,
+      "r_delta": 0.31895909178243276,
+      "r_delta_v": 0.5009803186308178,
+      "r_j": 0.014427488935556067,
+      "terminal_q_y": 0.8393345089358252,
+      "terminal_q_psi": 0.05992385931858974,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 1.84897059399087,
+    "breakdown": {
+      "lateral_error": 0.6751761324550479,
+      "lateral_error_rmse": 0.02250587108183493,
+      "yaw_error": 0.18958858744651944,
+      "yaw_error_rmse": 0.006319619581550648,
+      "velocity_error": 0.32244675628621544,
+      "velocity_error_rmse": 0.09673402688586463,
+      "jerk": 0.301699407787157,
+      "jerk_rmse": 0.603398815574314,
+      "steering_rate": 0.3600597100159304,
+      "steering_rate_rmse": 0.03600597100159304,
+      "total": 1.84897059399087
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine05/S01/run_01",
+    "callback_time_stats": {
+      "mean": 2.270402330114135,
+      "median": 2.375386,
+      "std": 1.0122726867850722,
+      "p95": 4.058664899999999,
+      "p99": 4.411341959999996,
+      "max": 6.679984
+    },
+    "solver_time_stats": {
+      "mean": 0.7780993575819671,
+      "median": 0.661861,
+      "std": 0.3916865646444613,
+      "p95": 1.92110425,
+      "p99": 2.08069775,
+      "max": 2.719358
+    }
+  },
+  {
+    "id": "config_011_coarse_refine05_S02",
+    "config_id": "config_011_coarse_refine05",
+    "scenario": 2,
+    "params": {
+      "q_y": 0.12092485049161672,
+      "q_psi": 0.7413333617897476,
+      "q_v": 2.460913163918612,
+      "q_a": 0.11937606081317396,
+      "r_delta": 0.31895909178243276,
+      "r_delta_v": 0.5009803186308178,
+      "r_j": 0.014427488935556067,
+      "terminal_q_y": 0.8393345089358252,
+      "terminal_q_psi": 0.05992385931858974,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 10.438150039180476,
+    "breakdown": {
+      "lateral_error": 6.349399170772358,
+      "lateral_error_rmse": 0.21164663902574526,
+      "yaw_error": 1.689221178027283,
+      "yaw_error_rmse": 0.056307372600909435,
+      "velocity_error": 0.3585462158703775,
+      "velocity_error_rmse": 0.10756386476111324,
+      "jerk": 0.42640955652247536,
+      "jerk_rmse": 0.8528191130449507,
+      "steering_rate": 1.6145739179879808,
+      "steering_rate_rmse": 0.1614573917987981,
+      "total": 10.438150039180476
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine05/S02/run_01",
+    "callback_time_stats": {
+      "mean": 2.2525552600000003,
+      "median": 2.554405,
+      "std": 1.1891116958709356,
+      "p95": 3.6440707499999996,
+      "p99": 3.9979438399999996,
+      "max": 5.403039
+    },
+    "solver_time_stats": {
+      "mean": 1.0458021733576643,
+      "median": 0.845985,
+      "std": 0.44010078054553103,
+      "p95": 1.86182835,
+      "p99": 2.0993801499999996,
+      "max": 2.888584
+    }
+  },
+  {
+    "id": "config_011_coarse_refine05_S03",
+    "config_id": "config_011_coarse_refine05",
+    "scenario": 3,
+    "params": {
+      "q_y": 0.12092485049161672,
+      "q_psi": 0.7413333617897476,
+      "q_v": 2.460913163918612,
+      "q_a": 0.11937606081317396,
+      "r_delta": 0.31895909178243276,
+      "r_delta_v": 0.5009803186308178,
+      "r_j": 0.014427488935556067,
+      "terminal_q_y": 0.8393345089358252,
+      "terminal_q_psi": 0.05992385931858974,
+      "terminal_q_v": 10.0
+    },
+    "status": "PASS",
+    "status_stage": "done",
+    "score": 5.166479963651288,
+    "breakdown": {
+      "lateral_error": 3.007829359303257,
+      "lateral_error_rmse": 0.1002609786434419,
+      "yaw_error": 0.6152944439381612,
+      "yaw_error_rmse": 0.02050981479793871,
+      "velocity_error": 0.2059045815580052,
+      "velocity_error_rmse": 0.06177137446740156,
+      "jerk": 0.23757574316436422,
+      "jerk_rmse": 0.47515148632872845,
+      "steering_rate": 1.0998758356875002,
+      "steering_rate_rmse": 0.10998758356875003,
+      "total": 5.166479963651288
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine05/S03/run_01",
+    "callback_time_stats": {
+      "mean": 2.2842852625954198,
+      "median": 2.343506,
+      "std": 0.761456933082522,
+      "p95": 3.4096129999999993,
+      "p99": 3.82346856,
+      "max": 5.091678
+    },
+    "solver_time_stats": {
+      "mean": 0.6976889020589873,
+      "median": 0.625117,
+      "std": 0.32582861316614503,
+      "p95": 1.5509883999999996,
+      "p99": 1.9424611999999997,
+      "max": 2.60269
+    }
+  },
+  {
+    "id": "config_011_coarse_refine01_heldout_S04",
+    "config_id": "config_011_coarse_refine01_heldout",
+    "scenario": 4,
+    "params": {
+      "q_y": 0.1312108621257729,
+      "q_psi": 1.1031970322308478,
+      "q_v": 2.782278526608124,
+      "q_a": 0.14904891969349734,
+      "r_delta": 0.25693352986042084,
+      "r_delta_v": 0.5514508273664945,
+      "r_j": 0.01511387381660142,
+      "terminal_q_y": 0.9589392138114324,
+      "terminal_q_psi": 0.09687302122686255,
+      "terminal_q_v": 10.0
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine01_heldout/S04/run_01",
+    "callback_time_stats": {
+      "mean": 2.1858367797636205,
+      "median": 2.203663,
+      "std": 0.5570072086825064,
+      "p95": 2.8951746,
+      "p99": 3.464879480000001,
+      "max": 5.327964
+    },
+    "solver_time_stats": {
+      "mean": 0.5319588600424113,
+      "median": 0.39668,
+      "std": 0.2606396469069157,
+      "p95": 1.018952,
+      "p99": 1.63952,
+      "max": 2.270106
+    }
+  },
+  {
+    "id": "config_011_coarse_refine01_heldout_S05",
+    "config_id": "config_011_coarse_refine01_heldout",
+    "scenario": 5,
+    "params": {
+      "q_y": 0.1312108621257729,
+      "q_psi": 1.1031970322308478,
+      "q_v": 2.782278526608124,
+      "q_a": 0.14904891969349734,
+      "r_delta": 0.25693352986042084,
+      "r_delta_v": 0.5514508273664945,
+      "r_j": 0.01511387381660142,
+      "terminal_q_y": 0.9589392138114324,
+      "terminal_q_psi": 0.09687302122686255,
+      "terminal_q_v": 10.0
+    },
+    "status": "FAIL",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "FAIL",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_real_config_011_coarse_refine01_heldout/S05/run_01",
+    "callback_time_stats": {
+      "mean": 2.3620834752335123,
+      "median": 2.38903,
+      "std": 0.5556686362484896,
+      "p95": 2.9222102,
+      "p99": 3.7337509599999974,
+      "max": 8.760349
+    },
+    "solver_time_stats": {
+      "mean": 0.7096302563571851,
+      "median": 0.6685885,
+      "std": 0.2035464844226058,
+      "p95": 0.9745608499999998,
+      "p99": 1.7176039700000005,
+      "max": 2.54521
+    }
+  }
+]

@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing control_benchmark_monitor.egg-info/PKG-INFO
+writing dependency_links to control_benchmark_monitor.egg-info/dependency_links.txt
+writing entry points to control_benchmark_monitor.egg-info/entry_points.txt
+writing requirements to control_benchmark_monitor.egg-info/requires.txt
+writing top-level names to control_benchmark_monitor.egg-info/top_level.txt
+reading manifest file 'control_benchmark_monitor.egg-info/SOURCES.txt'
+writing manifest file 'control_benchmark_monitor.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/lib/python3.10/site-packages/control-benchmark-monitor.egg-link (link to .)
+Installing logger_node script to /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/lib/control_benchmark_monitor
+
+Installed /home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor
+running symlink_data

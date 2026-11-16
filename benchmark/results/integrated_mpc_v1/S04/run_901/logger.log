@@ -1,0 +1,3 @@
+[INFO] [1790176560.703447033] [benchmark_logger]: Benchmark logger started: controller=integrated_mpc_v1, scenario=S04, run=901, output=/home/nit-user/control_benchmark/results/integrated_mpc_v1/S04/run_901
+[INFO] [1790176640.164219725] [benchmark_logger]: Benchmark data saved to /home/nit-user/control_benchmark/results/integrated_mpc_v1/S04/run_901
+Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389

@@ -1,0 +1,29 @@
+{
+  "best_config_id": "config_011_coarse_refine01",
+  "best_dev_score": 5.203726456658284,
+  "best_params": {
+    "q_y": 0.1312108621257729,
+    "q_psi": 1.1031970322308478,
+    "q_v": 2.782278526608124,
+    "q_a": 0.14904891969349734,
+    "r_delta": 0.25693352986042084,
+    "r_delta_v": 0.5514508273664945,
+    "r_j": 0.01511387381660142,
+    "terminal_q_y": 0.9589392138114324,
+    "terminal_q_psi": 0.09687302122686255,
+    "terminal_q_v": 10.0
+  },
+  "held_out_score": 1000.0,
+  "dev_scenarios": [
+    1,
+    2,
+    3
+  ],
+  "held_out_scenarios": [
+    4,
+    5
+  ],
+  "v1_default_dev_score": 5.681402261588128,
+  "num_candidates_evaluated": 38,
+  "dry_run": false
+}

@@ -1,0 +1,22 @@
+stdin is not a terminal device. Keyboard handling disabled.[INFO] [1789119163.719431845] [rosbag2_recorder]: Press SPACE for pausing/resuming
+[INFO] [1789119163.722153870] [rosbag2_storage]: Opened database '/home/nit-user/control_benchmark/results/baseline_stock/S05/run_01/bag/bag_0.db3' for READ_WRITE.
+[INFO] [1789119163.722932963] [rosbag2_recorder]: Listening for topics...
+[INFO] [1789119163.722958090] [rosbag2_recorder]: Event publisher thread: Starting
+[INFO] [1789119163.722998645] [rosbag2_recorder]: Recording...
+[INFO] [1789119171.249483579] [rosbag2_recorder]: Subscribed to topic '/localization/acceleration'
+[INFO] [1789119171.251963342] [rosbag2_recorder]: Subscribed to topic '/localization/kinematic_state'
+[INFO] [1789119171.253863756] [rosbag2_recorder]: Subscribed to topic '/vehicle/status/steering_status'
+[INFO] [1789119184.491961914] [rosbag2_recorder]: Subscribed to topic '/control/control_evaluator/metrics/jerk'
+[INFO] [1789119184.498079880] [rosbag2_recorder]: Subscribed to topic '/planning/trajectory'
+[INFO] [1789119184.679641844] [rosbag2_recorder]: Subscribed to topic '/control/command/control_cmd'
+[INFO] [1789119184.683032416] [rosbag2_recorder]: Subscribed to topic '/control/trajectory_follower/control_cmd'
+[INFO] [1789119184.687705639] [rosbag2_recorder]: Subscribed to topic '/control/trajectory_follower/controller_node_exe/lateral/debug/processing_time_ms'
+[INFO] [1789119184.692384483] [rosbag2_recorder]: Subscribed to topic '/control/trajectory_follower/controller_node_exe/longitudinal/debug/processing_time_ms'
+[INFO] [1789119185.106639332] [rosbag2_recorder]: Subscribed to topic '/diagnostics/motion_velocity_planner/boundary_departure'
+[INFO] [1789119188.938674772] [rosbag2_recorder]: Subscribed to topic '/control/control_evaluator/metrics/yaw_deviation'
+[INFO] [1789119188.939908292] [rosbag2_recorder]: Subscribed to topic '/control/control_evaluator/metrics/lateral_deviation'
+[INFO] [1789119188.941111896] [rosbag2_recorder]: Subscribed to topic '/control/control_evaluator/metrics/longitudinal_velocity_deviation'
+[INFO] [1789119188.941130100] [rosbag2_recorder]: All requested topics are subscribed. Stopping discovery...
+[INFO] [1789119287.462376662] [rosbag2_cpp]: Writing remaining messages from cache to the bag. It may take a while
+[INFO] [1789119287.463534791] [rosbag2_recorder]: Event publisher thread: Exiting
+[INFO] [1789119287.463594973] [rosbag2_recorder]: Recording stopped

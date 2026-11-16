@@ -1,0 +1,26 @@
+[0.549s] Invoking command in '/home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor': PYTHONPATH=/home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/build --no-deps symlink_data
+[0.747s] running develop
+[0.853s] running egg_info
+[0.853s] creating control_benchmark_monitor.egg-info
+[0.853s] writing control_benchmark_monitor.egg-info/PKG-INFO
+[0.853s] writing dependency_links to control_benchmark_monitor.egg-info/dependency_links.txt
+[0.853s] writing entry points to control_benchmark_monitor.egg-info/entry_points.txt
+[0.853s] writing requirements to control_benchmark_monitor.egg-info/requires.txt
+[0.853s] writing top-level names to control_benchmark_monitor.egg-info/top_level.txt
+[0.853s] writing manifest file 'control_benchmark_monitor.egg-info/SOURCES.txt'
+[0.854s] reading manifest file 'control_benchmark_monitor.egg-info/SOURCES.txt'
+[0.854s] writing manifest file 'control_benchmark_monitor.egg-info/SOURCES.txt'
+[0.855s] running build_ext
+[0.855s] Creating /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/lib/python3.10/site-packages/control-benchmark-monitor.egg-link (link to .)
+[0.856s] Installing logger_node script to /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/lib/control_benchmark_monitor
+[0.856s] 
+[0.856s] Installed /home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor
+[0.856s] running symlink_data
+[0.856s] creating /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/share/ament_index
+[0.856s] creating /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/share/ament_index/resource_index
+[0.856s] creating /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/share/ament_index/resource_index/packages
+[0.856s] symbolically linking /home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/resource/control_benchmark_monitor -> /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/share/ament_index/resource_index/packages
+[0.856s] symbolically linking /home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/package.xml -> /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/share/control_benchmark_monitor
+[0.856s] creating /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/share/control_benchmark_monitor/config
+[0.856s] symbolically linking /home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/config/benchmark.yaml -> /home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/share/control_benchmark_monitor/config
+[0.868s] Invoked command in '/home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor' returned '0': PYTHONPATH=/home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nit-user/control_benchmark/monitor_ws/install/control_benchmark_monitor/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/nit-user/control_benchmark/monitor_ws/build/control_benchmark_monitor/build --no-deps symlink_data

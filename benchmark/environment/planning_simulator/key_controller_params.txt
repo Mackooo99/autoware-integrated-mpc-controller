@@ -1,0 +1,44 @@
+===== lateral_controller_mode =====
+String value is: mpc
+===== longitudinal_controller_mode =====
+String value is: pid
+===== ctrl_period =====
+Double value is: 0.03
+===== kp =====
+Double value is: 1.0
+===== ki =====
+Double value is: 0.1
+===== kd =====
+Double value is: 0.0
+===== max_out =====
+Double value is: 1.0
+===== min_out =====
+Double value is: -1.0
+===== max_acc =====
+Double value is: 3.0
+===== min_acc =====
+Double value is: -5.0
+===== max_jerk =====
+Double value is: 2.0
+===== min_jerk =====
+Double value is: -5.0
+===== mpc_prediction_horizon =====
+Integer value is: 50
+===== mpc_prediction_dt =====
+Double value is: 0.1
+===== mpc_acceleration_limit =====
+Double value is: 2.0
+===== vehicle_model_type =====
+String value is: kinematics
+===== vehicle_model_steer_tau =====
+Double value is: 0.27
+===== input_delay =====
+Double value is: 0.24
+===== wheel_base =====
+Double value is: 2.79
+===== max_steer_angle =====
+Double value is: 0.7
+===== qp_solver_type =====
+String value is: osqp
+===== use_sim_time =====
+Boolean value is: False

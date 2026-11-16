@@ -1,0 +1,86 @@
+[
+  {
+    "id": "config_000_default_S01",
+    "config_id": "config_000_default",
+    "scenario": 1,
+    "params": {
+      "q_y": 1.0,
+      "q_psi": 2.0,
+      "q_v": 2.0,
+      "q_a": 0.1,
+      "r_delta": 1.0,
+      "r_delta_v": 0.75,
+      "r_j": 0.1,
+      "terminal_q_y": 1.0,
+      "terminal_q_psi": 0.1,
+      "terminal_q_v": 1.0
+    },
+    "status": "UNKNOWN",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "UNKNOWN",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_config_000_default/S01/run_01",
+    "callback_time_stats": {
+      "mean": null,
+      "median": null,
+      "std": null,
+      "p95": null,
+      "p99": null,
+      "max": null
+    },
+    "solver_time_stats": {
+      "mean": null,
+      "median": null,
+      "std": null,
+      "p95": null,
+      "p99": null,
+      "max": null
+    }
+  },
+  {
+    "id": "config_000_default_S02",
+    "config_id": "config_000_default",
+    "scenario": 2,
+    "params": {
+      "q_y": 1.0,
+      "q_psi": 2.0,
+      "q_v": 2.0,
+      "q_a": 0.1,
+      "r_delta": 1.0,
+      "r_delta_v": 0.75,
+      "r_j": 0.1,
+      "terminal_q_y": 1.0,
+      "terminal_q_psi": 0.1,
+      "terminal_q_v": 1.0
+    },
+    "status": "UNKNOWN",
+    "status_stage": "failed",
+    "score": 1000.0,
+    "breakdown": {
+      "failure_penalty": 1000.0,
+      "status": "UNKNOWN",
+      "total": 1000.0
+    },
+    "run_dir": "/home/nit-user/control_benchmark/results/tuning_config_000_default/S02/run_01",
+    "callback_time_stats": {
+      "mean": null,
+      "median": null,
+      "std": null,
+      "p95": null,
+      "p99": null,
+      "max": null
+    },
+    "solver_time_stats": {
+      "mean": null,
+      "median": null,
+      "std": null,
+      "p95": null,
+      "p99": null,
+      "max": null
+    }
+  }
+]

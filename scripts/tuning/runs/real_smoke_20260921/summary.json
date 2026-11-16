@@ -1,0 +1,26 @@
+{
+  "best_config_id": "config_000_default",
+  "best_dev_score": 2.015165352636715,
+  "best_params": {
+    "q_y": 1.0,
+    "q_psi": 2.0,
+    "q_v": 2.0,
+    "q_a": 0.1,
+    "r_delta": 1.0,
+    "r_delta_v": 0.75,
+    "r_j": 0.1,
+    "terminal_q_y": 1.0,
+    "terminal_q_psi": 0.1,
+    "terminal_q_v": 1.0
+  },
+  "held_out_score": 9.521839543290923,
+  "dev_scenarios": [
+    1
+  ],
+  "held_out_scenarios": [
+    2
+  ],
+  "v1_default_dev_score": 2.015165352636715,
+  "num_candidates_evaluated": 1,
+  "dry_run": false
+}

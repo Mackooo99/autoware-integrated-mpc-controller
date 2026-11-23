@@ -89,21 +89,23 @@ Three successful runs were performed for each controller–scenario combination 
 
 In the S2 development experiment, lateral RMSE was approximately **1.53 m without delay compensation** and **0.23 m with delay compensation** (an improvement of approximately **85%**). The run without compensation did not successfully complete the scenario. The paper also reports an approximately **91% reduction in heading RMSE** for that comparison.
 
-**Figure to add:** `docs/figures/delay_compensation_s2.png` — lateral error over time for the no-compensation and compensated configurations. Export this image from the original plot or generate it from benchmark data.
+![Actuator-delay compensation in S2: lateral tracking error over time](docs/figures/delay_compensation_s2.png)
 
-<!-- After uploading the image, uncomment the next line:
-![Influence of actuator-delay compensation on lateral tracking error in S2](docs/figures/delay_compensation_s2.png)
--->
+*Original plot from the associated Serbian-language paper (labels in Serbian). The three curves represent no compensation, compensation, and the finally tuned configuration. See the paper for experimental context.*
 
 ### Runtime
 
 The integrated controller's reported mean execution time was **2.20–2.26 ms**, with approximately **3–4 ms P95**, compared with a **30 ms control period** in the tested simulation configuration. These timings are environment-specific and should not be interpreted as real-time guarantees on other hardware.
 
-**Additional suggested figure:** `docs/figures/benchmark_comparison.png` — baseline vs. integrated MPC metrics for S1–S3, plotted with separate axes or panels and clearly labeled units.
+### Visual comparison of benchmark metrics
 
-<!-- After uploading the figure, uncomment:
-![Benchmark comparison across S1–S3](docs/figures/benchmark_comparison.png)
--->
+![Velocity tracking RMSE: baseline vs integrated MPC](docs/figures/velocity_rmse.png)
+
+![Lateral tracking RMSE: baseline vs integrated MPC](docs/figures/lateral_rmse.png)
+
+![Jerk metric: baseline vs integrated MPC](docs/figures/jerk_metric.png)
+
+*Charts reproduce the rounded mean values in Tables 1–3 of the accompanying paper. Each metric is plotted separately to avoid mixing units; error bars are omitted here (consult the paper for standard deviations).*
 
 ## Repository contents
 
@@ -142,7 +144,7 @@ The original Serbian PDF and a clearly labeled **English translation** can be ad
 
 ## Citation
 
-If you use this code or its datasets in academic work, **please cite this repository**, and also cite the associated paper when its methodology or findings are used. A machine-readable [`CITATION.cff`](CITATION.cff) file can be added to enable GitHub's **Cite this repository** action.
+If you use this code or its datasets in academic work, **please cite this repository**, and also cite the associated paper when its methodology or findings are used. A machine-readable [`CITATION.cff`](CITATION.cff) file enables GitHub's **Cite this repository** action.
 
 Suggested software citation (until a versioned release and DOI are available):
 

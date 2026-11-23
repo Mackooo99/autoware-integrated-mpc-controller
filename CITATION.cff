@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its datasets in research, please cite this repository.
+type: software
+title: Integrated Longitudinal-Lateral MPC Controller for Autoware
+authors:
+  - family-names: Ninković
+    given-names: Marija
+repository-code: https://github.com/Mackooo99/autoware-integrated-mpc-controller
+url: https://github.com/Mackooo99/autoware-integrated-mpc-controller
+license: Apache-2.0

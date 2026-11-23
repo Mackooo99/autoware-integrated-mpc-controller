@@ -117,7 +117,7 @@ The integrated controller's reported mean execution time was **2.20–2.26 ms**,
 | [`scripts/`](scripts/) | Development tools, checks, and parameter tuning |
 | [`benchmark/`](benchmark/) | Scenario scripts, analyses, datasets, and results |
 | [`integration/`](integration/) | Integration helpers and recorded upstream Autoware commit |
-| [`docs/`](docs/) | Technical notes; research figures and papers can be added here |
+| [`docs/`](docs/) | Technical notes, figures, research papers, and master's thesis |
 
 ## Getting started
 
@@ -132,25 +132,48 @@ The integrated controller's reported mean execution time was **2.20–2.26 ms**,
 
 A fully validated, copy-paste installation and experiment-reproduction guide is **not yet available**. Exact installation commands, launch arguments, simulator assets, topic remappings, and hardware requirements should be documented after testing on a clean checkout. Please do not assume the repository is plug-and-play with arbitrary Autoware versions.
 
-## Publications and supporting materials
+## Publications and Master's Thesis
 
-This implementation accompanies the Serbian-language research paper:
+This repository accompanies research conducted by **Marija Ninković** at the **Faculty of Technical Sciences, University of Novi Sad**, under the supervision of **Prof. Milan Rapaić** (2026). The documents below provide the theoretical foundation, implementation details, and experimental analysis behind the integrated longitudinal–lateral MPC controller.
 
-**Marija Ninković**, *Projektovanje i implementacija integrisanog kontrolera kretanja uz oslonac na Autoware platformu* (2026). English title: *Design and Implementation of an Integrated Motion Controller Based on the Autoware Platform*.
+### Research paper
 
-The paper describes the mathematical formulation, actuator-delay compensation, simulation setup, and results. It was derived from a master's thesis supervised by Prof. Milan Rapaić at the Faculty of Technical Sciences, University of Novi Sad.
+**M. Ninković**, *Projektovanje i implementacija integrisanog kontrolera kretanja uz oslonac na Autoware platformu* (2026).
 
-The original Serbian PDF and a clearly labeled **English translation** can be added under `docs/papers/`, subject to the relevant publication and distribution permissions. Do not assign a DOI or assert peer-reviewed publication status unless verified against the publisher's record.
+English title: *Design and Implementation of an Integrated Motion Controller Based on the Autoware Platform*.
+
+- **[Original research paper — Serbian (PDF)](docs/papers/paper_sr.pdf)**
+- **[English-language adaptation (PDF)](docs/papers/paper_en.pdf)**
+
+The paper describes the prediction model, MPC formulation, actuator-delay compensation, and comparison with Autoware's baseline controller across scenarios S1–S3. The English document is an adaptation of the Serbian-language paper, not a separate peer-reviewed publication.
+
+### Master's thesis
+
+**M. Ninković**, *Master's thesis*, Faculty of Technical Sciences, University of Novi Sad (2026).
+
+- **[Full master's thesis — Serbian (PDF)](docs/thesis/master_thesis_sr.pdf)**
+
+The full thesis offers a more detailed discussion of the mathematical formulation, software implementation, experimental methodology, and evaluation. An English translation may be added in the future.
+
+### Related repository materials
+
+- [Controller implementation](src/) and [configuration files](config/)
+- [Benchmark scripts, datasets, and results](benchmark/)
+- [Experimental figures](docs/figures/)
+
+> **Publication note:** The research paper and master's thesis are supporting academic documents. The English paper is an adapted translation of the Serbian-language version. Publication identifiers and peer-review status should be included only if verified against official records.
 
 ## Citation
 
-If you use this code or its datasets in academic work, **please cite this repository**, and also cite the associated paper when its methodology or findings are used. A machine-readable [`CITATION.cff`](CITATION.cff) file enables GitHub's **Cite this repository** action.
+If you use the **software or benchmark datasets**, please cite this repository using GitHub's **Cite this repository** feature, enabled by [`CITATION.cff`](CITATION.cff). When using the **mathematical formulation, methodology, or research findings**, please also cite the research paper or master's thesis, as appropriate.
 
-Suggested software citation (until a versioned release and DOI are available):
+**Suggested software citation** (until an archived release and DOI are available):
 
 > Ninković, M. (2026). *Integrated Longitudinal–Lateral MPC Controller for Autoware* [Computer software]. GitHub. https://github.com/Mackooo99/autoware-integrated-mpc-controller
 
-For archival research use, cite a **specific commit or release** so that the referenced implementation is unambiguous. Citation is requested scholarly practice; it is not an extra condition imposed by the Apache-2.0 software license.
+For the paper and thesis, use the official bibliographic details from their final published or deposited versions, if available. Do not assign a DOI or claim peer-reviewed publication status without confirmation. For reproducibility, cite a specific software commit or release.
+
+The repository's Apache-2.0 license governs software use under its terms; the citation request does not impose an additional legal requirement. Academic PDFs may have separate distribution and reuse terms.
 
 ## Limitations and future work
 
